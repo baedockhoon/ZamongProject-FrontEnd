@@ -78,7 +78,6 @@
 									
 
 
-
 <div id="conts" class="cont_type ban">
 
 					

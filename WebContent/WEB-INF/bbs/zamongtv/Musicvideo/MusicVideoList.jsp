@@ -61,7 +61,6 @@
 			<!-- contents -->
 			
 			
-			
 
 <!-- contents -->
 				<div id="conts" class="cont_type">
