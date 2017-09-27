@@ -36,7 +36,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM MV_MUSICVIDEO ORDER BY MV_NO DESC
 	</select>
 	
-	
+	<select id="MusicVideoView" parameterType="java.util.Map" resultMap="MusicVideoDTOResult">
+		<!-- UPDATE MV_MUSICVIDEO SET MV_HITCOUNT=MV_HITCOUNT+1 WHERE MV_NO=#{mv_no} -->
+		SELECT * FROM MV_MUSICVIDEO WHERE MV_NO=#{mv_no}
+	</select> 
            
        <!--     
            
@@ -50,7 +53,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="ReplyBBSinsert" parameterType="ReplyBBSDto">
 		INSERT INTO REPLYBBS(NO,ID,TITLE,CONTENT,REFER) VALUES(SEQ_REPLYBBS.NEXTVAL,#{id},#{title},#{content},SEQ_REPLYBBS.CURRVAL)
 	</insert>
-	<select id="ReplyBBSone" parameterType="java.util.Map" resultType="ReplyBBSDto">
+	<select id="MusicVideoView" parameterType="java.util.Map" resultType="ReplyBBSDto">
 		SELECT RE.*,NAME FROM MEMBER M JOIN REPLYBBS RE ON M.ID=RE.ID WHERE NO=#{no}
 	</select>
 	<update id="ReplyBBSupdate" parameterType="ReplyBBSDto">
