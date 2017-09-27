@@ -297,7 +297,7 @@
 					<tr >
 						<td class="no"><div class="wrap">${item.mg_no}</div></td>
 						<td><div class="wrap">${item.mg_division}</div></td>
-						<td><div class="wrap fc_strong"> <span class="ellipsis" style="max-width:580px;"><a href='<c:url value="/MagazineView.do?mg_no=${item.mg_no}"/>'>${item.mg_title}</a></span></div></td>
+						<td><div class="wrap fc_strong"> <span class="ellipsis" style="max-width:580px;"><a href='<c:url value="/ZamongFrontEnd/MagazineView.do?mg_no=${item.mg_no}"/>'>${item.mg_title}</a></span></div></td>
 						<td><div class="wrap">${item.mg_hitcount}</div></td>
 						<td><div class="wrap">${item.mg_regidate}</div></td>
 					</tr>
@@ -317,7 +317,6 @@
        <td>${pagingString }</td>
      </tr>
    </table>
-	
 	
 	
 <!-- contents -->

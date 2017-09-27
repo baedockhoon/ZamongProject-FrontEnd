@@ -67,7 +67,7 @@ public class MagazineController {
 		return "/WEB-INF/bbs/magazine/Magazine.jsp";
 	}//////////////////list()
 	
-	@RequestMapping("/MagazineView.do")
+	@RequestMapping("/ZamongFrontEnd/MagazineView.do")
 	public String view(MagazineDTO dto, Model model, HttpServletRequest req)throws Exception {
 		 dto = service.selectOne(dto);
 	
