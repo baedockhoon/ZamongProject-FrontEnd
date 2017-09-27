@@ -1,4 +1,4 @@
-﻿package com.zamong.mg.service.impl;
+﻿package com.zamong.web;
 
 public class PagingUtil {
 	
