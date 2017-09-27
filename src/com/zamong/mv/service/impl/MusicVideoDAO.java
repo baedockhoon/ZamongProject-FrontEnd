@@ -35,11 +35,10 @@ public class MusicVideoDAO implements MusicVideoService{
 	}
 
 	@Override
-	public MusicVideoDTO selectOne(Map map) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public MusicVideoDTO selectOne(MusicVideoDTO dto) throws Exception {
+		return template.selectOne("MusicVideoView", dto);
 	}
-
+	
 	@Override
 	public int insert(MusicVideoDTO dto) throws Exception {
 		// TODO Auto-generated method stub

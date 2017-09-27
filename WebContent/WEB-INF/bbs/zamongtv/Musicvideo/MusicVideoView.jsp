@@ -50,31 +50,18 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/b0oedst30j.css" type="text/css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/14j3tr44urn.css" type="text/css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/14g2jf0vkd.css" type="text/css" />
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/melonweb_tv.css" type="text/css" />
 
 </head>
 <body>
 <jsp:include page="/WEB-INF/bbs/template/Top.jsp" />
 <!-- contents -->
-<div id="cont_wrap" class="clfix">
-		<div id="conts_section" class="my_fold">
-			<!-- contents -->
-			
-			
-			
 
-<!-- contents -->
-				<div id="conts" class="cont_type">
-					<div class="f_tit f_tit_wrap line">
-						<h2 class="music_vdo"><span class="none">뮤직비디오</span></h2>
-						<p class="info_txt music_vdo"><span class="none">음악의 감동을 두배로! 영상으로 즐기는 음악! 뮤직비디오를 감상해보세요.</span></p>
-					</div>
 	<div class="cont_area">
 		<div class="ltcont">
 			<div class="s_tit_wrap pt0">
 				<h3 class="all_vdo"><span class="none">전체 영상</span></h3>
 			</div>
-
+			
 			<!-- Tab Area -->
 			<div class="wrap_tab03 type02 page_move">
 				<ul style="width:100%;">
@@ -90,84 +77,124 @@
 				<div id="pageList">
 									
 
-	
-	
-                   
-    <ul id="d_rel_videos" class="list_vdo04 small_style d_video_list">
-	
-	
-	<c:choose>
-           	<c:when test="${empty list }">		                        
-               	<tr bgcolor="white" align="center">
-                	<td colspan="8">등록된 자료가 없습니다</td>
-               	</tr>
-    			</c:when>       
-             	<c:otherwise>               	
-                   <c:forEach var="item" items="${list }">
-                   
-	               
-	<li class="vdo_li04 " >
-			<div class="wrap_video04">
-				<a href='<c:url value="/ZamongFrontEnd/MusicVideoView.do?mv_no=${item.mv_no}"/>' class="thumb">
-				
-					<span class="thumb_frame"></span><!-- 이미지 상단 반투명 Border -->
-					
-					
 
-					<img onerror="WEBPOCIMG.defaultMvImg(this);" width="172" height="97" src="${item.mv_image }" alt=""/>
+
+<div id="conts" class="cont_type ban">
+
 					
-					<span class="playtime">
-						<strong class="none">재생시간</strong>
-						<span class="time">03:50</span>
-					</span>
 					
-				</a>
-				
-				<dl>
-					<dt>
-						<span class="vdo_title">
-							<span>
-								<!--
-								<span title="전체 이용가능" class="icon_agellevel age_all">전체 이용가능</span>
-								<span title="12세 이상 이용가능" class="icon_agellevel age_12">12세 이상 이용가능</span>
-								<span title="15세 이상 이용가능" class="icon_agellevel age_15">15세 이상 이용가능</span>
-								<span title="19세 미만 청소년 이용불가" class="icon_agellevel age_19">19세 미만 청소년 이용불가</span>
-								-->
+					<h2 class="f_tit line">
+					${dto.mv_title }
+					</h2>
+					<!-- //131219_수정_line클래스추가 -->
+					<!-- 띠배너 -->
+					<hr/>
+					<!-- //띠배너 -->
+					<div class="cont_area">
+						<div class="ltcont">
+							<div class="vod_field vod_position">
+								<!-- 동영상 플레이어 -->
 								
-								<span class="icon_agellevel age_12" title="12세 이상 이용가능">12세 이상 이용가능</span>
+								</div>
+								<!-- 2016-04-12 LBY youTube 연결처리 -->
+								${dto.mv_link }
+									
 								
-								<strong class="none">영상명</strong>
-								<a href='<c:url value="/ZamongFrontEnd/MusicVideoView.do?mv_no=${item.mv_no}"/>' title="${item.mv_title} - 페이지 이동">${item.mv_title}</a>
-								
-							</span>
-						</span>
-					</dt>
-					<dd class="atistname">
-						<strong class="none">아티스트명</strong>
-						<div class="ellipsis">
-							<a href='<c:url value="/ZamongFrontEnd/MusicVideoView.do?mv_no=${item.mv_no}"/>' title="${item.at_no} - 페이지 이동">${item.at_no}</a><span class="checkEllipsisTypeFourRight" style="display:none"><a href="javascript:melon.link.goArtistDetail('1956612');" title="${item.at_no} - 페이지 이동">${item.at_no}</a></span>
+								<!-- SNS 포스팅용 이미지 -->
+								<div id="mvdImgArea" style="display:none;"><img onerror="WEBPOCIMG.defaultMvImg(this);" width="100px" src="http://cdnimg.melon.co.kr/cm/mv/images/43/501/72/925/50172925.jpg" alt="어젯밤 이야기"/></div>
+								<!-- //SNS 포스팅용 이미지 -->
+
+								<div class="sharing_vod">
+									<div class="hourly_ancm" style="display:none;"><div><div class="d_layer"><!-- style="display:none;" -->
+										
+										<a href="#" title="공지 닫기" class="delt d_close"><img width="15" height="15" src="http://image.melon.co.kr/resource/image/web/common/btn_close.png" alt="공지 닫기"/></a>
+									</div></div></div>
+									<input type="hidden" class="src_info" id="urlObj" readonly="readonly" value="http://www.melon.com/video/detail.htm?mvId=50172925"/>
+									<div class="sns_wrap">
+										
+										<span class="wrap_btn_sns">
+											<button type="button" class="btn_sns frend type" title="친구에게 영상 추천하기 - 새 창" onclick="javascript:melon.link.goMultiMessagePop('mv','50172925');"><span class="odd_span">친구</span></button>
+											<button type="button" id="mvdFacebook" class="btn_sns facebook type" title="페이스북 - 새 창"><span class="odd_span">페이스북</span></button>
+											<button type="button" id="mvdTwitter" class="btn_sns twitter" title="트위터 - 새 창"><span class="odd_span">트위터</span></button>
+										</span>
+										
+										
+
+										
+									</div>
+									<div class="like_wrap d_video_list">
+										<button type="button" title="어젯밤 이야기 다운로드 - 새창"  class="btn_small dl " data-control="dropdown" data-dropdown-target="#d_vdo_type" onClick="melon.buy.goBuyProduct('frmMvInform', '50172925', '3C0002', '','0', '60030101');"><span class="odd_span"><span class="even_span"><span class="icon"></span>다운로드</span></span></button>
+										
+											
+											
+												<button style="display:none;" type="button" title="어젯밤 이야기 좋아요" class="btn_like_m like" data-video-no="50172925" data-video-menuId="60030101" data-target-id="d_like_count" name="likeMv"><span class="odd_span">좋아요</span></button><span class="cnt_like_m" style="display:none;"><span id="d_like_count" class="cnt_span">0</span></span>
+											
+										
+
+									</div>
+								</div>
+
+								<!-- 영상정보 -->
+								<div class="vod_sumry d_artist_list">
+									<dl class="player_info pt10 line">
+										<!--<dl class="player_info ynlk">--><!-- 다운로드 버튼이 없을경우 -->
+										<dt class="title"><span class="none"></span>어젯밤 이야기</dt>
+										
+										<dd class="vdo_artist">
+											<div class="box_userlk02 vdo_detail">
+												<a href="javascript:melon.link.goArtistDetail('261143')" title="아이유 - 페이지 이동" class="thumb">
+													<span class="thumb_frame"></span>
+													<img onerror="WEBPOCIMG.defaultArtistImg(this);" width="64" height="64" src="http://cdnimg.melon.co.kr/cm/artistcrop/images/002/61/143/261143.jpg" alt=""/>
+												</a>
+												<dl>
+													<dt>
+														<span class="ellipsis"><a href="javascript:melon.link.goArtistDetail('261143')" title="아이유 - 페이지 이동">아이유</a></span>
+													</dt>
+													<dd>
+														
+														
+														
+															<button type="button" title="아이유 팬입니다." class="btn_join_fan" data-artist-no="261143" data-artist-menuId="60030101" name="likeFan_261143"><span class="odd_span">팬맺기</span></button><span class="cnt_fan l5"><span id="d_fan_cnt_261143" class="cnt_span">0</span></span>
+														
+														
+														<input type="hidden" name="artistId" value="261143" />
+														<!-- //140401_수정 -->
+														<!-- 140410_추가 khr -->
+														
+													</dd>
+												</dl>
+											</div>
+										</dd>
+										
+										<dd class="eval vdo_info">
+											<span class="btn_knd view">
+												<span class="count"><span>조회</span><strong id="stronReadCnt">0</strong></span>
+											</span>
+											<span class="datelk mt3"><span>등록일 </span><em>2017.09.22</em></span>
+										</dd>
+									</dl>
+
+									<div class="atist_sumry">
+										<div class="castdesc_area">
+											<div class="text" style="height:auto;" id="d_atist_sumry"><!-- height:auto; 로 변경시, 확장됨 height:105px;-->
+											${dto.mv_contents }
+											</div>
+											<button type="button" title="영상 소개글 더보기" style="display:none;" class="btn_text arrow_d" data-control="expose" data-expose-type="height" data-expose-target="#d_atist_sumry">
+												<span class="text">더보기</span>
+												<span class="icon"></span>
+											</button>
+											<button type="button" title="영상 소개글 접기" class="btn_text arrow_u" data-control="expose" data-expose-type="height" data-expose-target="#d_atist_sumry" style="display:none">
+												<span class="text">접기</span>
+												<span class="icon"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<!-- //영상정보 -->
+
+							</div>
 						</div>
-						
-					</dd>
-					<dd class="cnt_click">
-						<a href="#" title="Stan Lee (Feat. 니화, DJ DREV)" class="btn_like d_btn" data-video-no="50173132" data-video-menuId="60050000"><!-- class="on" 추가시 활성 -->
-							<span class="icon">좋아요</span>
-							<strong class="none">총건수</strong>0
-						</a>
-						<em class="bar">|</em>
-						<span class="cnt_view"><span>조회</span> ${item.mv_hitcount}</span>
-					</dd>
-				</dl>
-			</div>
-		</li>
-	</c:forEach>
-	
-              	</c:otherwise>  
-          </c:choose>
-	</ul>                         
-	</div>
-	</div>
-	</div>
+
 		
 
 
@@ -231,10 +258,15 @@ var pageObj = new Pagination('/tv/index.htm', 'pageList', 'pageObjNavgation', '2
 							</script>
 						</div>
 
-
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 <jsp:include page="/WEB-INF/bbs/template/Foot.jsp" />
-</div>
-</body>
 
 </html>

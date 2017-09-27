@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.zamong.mv.service.MusicVideoDTO;
 import com.zamong.mv.service.impl.MusicVideoServiceImpl;
+import com.zamong.nt.service.NotiDataDTO;
 
 @Controller
 public class MusicVideoController {
@@ -20,7 +21,7 @@ public class MusicVideoController {
 	@Resource(name="musicVideoServiceImpl")
 	private MusicVideoServiceImpl service;
 	
-	
+	//List
 	@RequestMapping("/ZamongFrontEnd/MusicVideoList.do")
 	public String list(
 			HttpServletRequest req,//페이징용 메소드에 전달
@@ -33,6 +34,21 @@ public class MusicVideoController {
 		model.addAttribute("list", list);
 		
 		return "/WEB-INF/bbs/zamongtv/Musicvideo/MusicVideoList.jsp";
-	}//////////////////list()
+	}
 	
+	
+	//View
+	@RequestMapping("/ZamongFrontEnd/MusicVideoView.do")
+	public String view(MusicVideoDTO dto, Model model, HttpServletRequest req)throws Exception{
+		dto = service.selectOne(dto);
+		
+		//줄바꿈 처리
+		dto.setMv_contents(dto.getMv_contents().replace("\r\n","<br/>"));
+		
+		
+		//5]필요한 값 리퀘스트 영역에 저장
+	
+		model.addAttribute("dto", dto);
+		return "/WEB-INF/bbs/zamongtv/Musicvideo/MusicVideoView.jsp";
+	}
 }
