@@ -203,22 +203,77 @@
 	})();
 	</script>
 </head>
-<body>
+
 <jsp:include page="/WEB-INF/bbs/template/Top.jsp" />
-<body role="document">
+<body>
+<div id="conts" align="center">
+    <h2 class="f_tit mb20" align="center">고객지원센터</h2>
+    <div class="wrap_tab03 type05" align="center">
+        <ul>
+            <li style="text-align: center;" class="first_child"><a href="http://faqs2.melon.com/customer/index.htm" class="link_tab" title="홈 - 페이지 이동">
+                <span class="cntt">홈</span>
+            </a></li>
+            <!--  <li><a href="http://www.melon.com/customer/serviceintro/index.htm" class="link_tab" title="멜론 서비스 소개 - 페이지 이동">
+                <span class="cntt">멜론 서비스 소개</span>
+            </a></li>
+            <li><a href="http://www.melon.com/customer/aztalk/index.htm" class="link_tab" title="아지톡 서비스 소개 - 페이지 이동">
+                    <span class="cntt">아지톡 서비스 소개</span>
+                </a></li> -->
+            <li class="on"><a href="http://www.melon.com/customer/announce/index.htm" class="link_tab" title="공지사항 - 페이지 이동">
+                <span class="cntt">공지사항</span>
+            </a></li>
+            <li><a href="http://faqs2.melon.com/customer/faq/index.htm" class="link_tab" title="자주하는 질문 - 페이지 이동">
+                <span class="cntt">자주 하는 질문</span>
+            </a></li>
+            <li><a href="https://help.melon.com/web/customer/help/index.htm" class="link_tab" title="나의 문의 내역 - 페이지 이동">
+                <span class="cntt">나의 문의 내역</span>
+            </a></li>
+            <li class="last_child"><a href="http://www.melon.com/customer/dcf/index.htm" class="link_tab" title="DCF 지원 기기 - 페이지 이동">
+                <span class="cntt">DCF 지원 기기</span>
+            </a></li>
+        </ul>
+    </div>
+ <div class="search_head mt24">
+				<div class="search_head mt24">
+						<div class="select_wrap" align="left">
+				
+						<!-- Select Box -->
+                          <form method="post">
+				<select name="Notice_category" >
+				
+					<option value="서비스소식">서비스 소식</option>
+					<option value="서비스오픈">서비스 오픈</option>
+					<option value="서비스종료">서비스 종료</option>
+					<option value="서비스점검">서비스 점검</option>
+					<option value="안내">안내</option>
+				</select><input type="submit" value="검색" />
+                           </form>
+                        </div>
+						<!-- //Select Box -->
+						<!--140502 삭제 lyr-->
+						<!--<button type="button" id="confBtn" class="btn btn_base"><span class="odd_span"><span class="even_span">확인</span></span></button>-->
+						<!--140502 삭제 lyr-->
+				
+  
+					
+				
+
+
+
+		<div class="tb_list02 type02 mt8">
 	<table class="table table-striped">
+		<caption>이 표는 공지사항 서비스소식 리스트로 NO., 분류, 제목, 조회, 등록일 내용을 포함하고 있습니다.</caption>
+		<colgroup><col style="width:60px" /><col style="width:120px" /><col /><col style="width:80px" /><col style="width:100px" /></colgroup>
 		<thead>
 			<tr>
-				<th>글번호</th>
-				<th>분류</th>
-				<th>제목</th>
-				<th>조회수</th>
-				<th>작성일</th>
-				<th>관리</th>
-				
+				<th scope="col"><div class="wrap pd_none">NO.</div></th>
+				<th scope="col" class="t_center"><div class="wrap">분류</div></th>
+				<th scope="col"><div class="wrap">제목</div></th>
+				<th scope="col"><div class="wrap">조회</div></th>
+				<th scope="col"><div class="wrap">등록일</div></th>
 			</tr>
-
 		</thead>
+	
 		<c:choose>
 			<c:when test="${empty list }">
 				<tr bgcolor="white" align="center">
@@ -227,7 +282,7 @@
 			</c:when>
 			<c:otherwise>
 				<c:forEach var="item" items="${list}" varStatus="loop">
-					<tr bgcolor="white" align="center">
+					<%-- <tr bgcolor="white" align="center">
 						<td>${item.nt_no}</td>
 						<td>${item.nt_classification}</td>
 						<td><a
@@ -238,13 +293,29 @@
 						<td><a href='javascript:isDelete(${item.nt_no})'><button
 									type="button" class="btn btn-xs btn-primary">삭제</button></a></td>
 
+					</tr> --%>
+					
+					<tr >
+						<td class="no"><div class="wrap">${item.nt_no}</div></td>
+						<td><div class="wrap">${item.nt_classification}</div></td>
+						<td><div class="wrap fc_strong"> <span class="ellipsis" style="max-width:580px;"><a href='<c:url value="/ZAMONG/NoticeView.do?nt_no=${item.nt_no}&nowPage=${nowPage }"/>'>${item.nt_title}</a></span></div></td>
+						<td><div class="wrap">${item.nt_hitcount}</div></td>
+						<td><div class="wrap">${item.nt_regidate}</div></td>
 					</tr>
+					
 				</c:forEach>
 			</c:otherwise>
 		</c:choose>
 
 	</table>
-
+	<div class="wrap_search">
+        <input type="text" id="schText" title="공지사항 검색 입력 편집창" value="" placeholder="검색어를 입력해 주세요" class="input_text" style="width:184px;" onKeypress="if(event.keyCode==13) {javascript:jsSearch(); return false;}"/>
+        <button type="button" id="schBtn" title="글 검색" class="btn_base02"><span class="odd_span"><span class="even_span">검색</span></span></button>
+    </div>
+	</div>
+</div>
+</div>
+</div>
 <jsp:include page="/WEB-INF/bbs/template/Foot.jsp" />
-
+</body>
 </html>
