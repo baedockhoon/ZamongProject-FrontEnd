@@ -9,7 +9,7 @@ public interface MusicVideoService {
 	//목록
 	List<MusicVideoDTO> selectList(Map map) throws Exception;
 	//상세보기
-	MusicVideoDTO selectOne(Map map) throws Exception;
+	MusicVideoDTO selectOne(MusicVideoDTO dto) throws Exception;
 	//입력/수정/삭제]
 	int insert(MusicVideoDTO dto) throws Exception;
 	int update(MusicVideoDTO dto) throws Exception;

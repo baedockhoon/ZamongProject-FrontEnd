@@ -13,7 +13,6 @@ public class MusicVideoDTO {
 	private String mv_link;
 	private String mv_hitcount;
 	private String mv_image;
-	
 	/*	MV_NO
 	MV_REGIDATE
 	AT_NO
