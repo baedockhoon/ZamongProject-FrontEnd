@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<%@page import="com.zamong.nt.service.impl.NotiDataDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html lang="ko">
+<!-- layout -->
+
+
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -15,9 +19,11 @@
 	<meta name="description" content="국내 최대 1000만곡 확보 No.1 음악사이트, 멜론! 최신음악과 실시간 차트는 기본, 내 취향을 아는 똑똑한 추천 라디오, 내가 좋아하는 아티스트의 새로운 소식까지 함께 즐겨보세요." />
 	
 	
-<link rel="stylesheet" href="${pageContext.request.contextPath}/bbs/Styles/css/uo3devx9uj.css" type="text/css" />
 
-<script type="text/javascript" src="${pageContext.request.contextPath}/bbs/Styles/js/jquery-1.9.1.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnimg.melon.co.kr/static/member/resource/style/me1/qy/y/1edydz6hfyj.css" type="text/css" />
+
+<script type="text/javascript" src="/resource/script/web/common/jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
 var httpMemberDomain = "http://member.melon.com";
 var httpsMemberDomain = "https://member.melon.com";
@@ -33,16 +39,20 @@ if(CP_ID!="" && CP_ID!=null){
 	POC_ID = CP_ID;
 }
 </script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/ZamongFrontEnd/styles/js/1y11awuvhbx.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/ZamongFrontEnd/styles/js/1o7ul7h9xd9.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/ZamongFrontEnd/styles/js/1y35dxk43qt.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/ZamongFrontEnd/styles/js/un23x6hm05.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/ZamongFrontEnd/styles/js/1y290uwse6p.js"></script>
+<script type="text/javascript" src="https://cdnimg.melon.co.kr/static/member/resource/script/me1/s9/e/1eeifwqd5cb.js"></script>
+<script type="text/javascript" src="https://cdnimg.melon.co.kr/static/member/resource/script/me1/zu/w/14h9ostnaor.js"></script>
+<script type="text/javascript" src="https://cdnimg.melon.co.kr/static/member/resource/script/me1/f9/t/1y2ecxy8gp7.js"></script>
+<script type="text/javascript" src="https://cdnimg.melon.co.kr/static/member/resource/script/me1/3p/j/un23x6hm05.js"></script>
+<script type="text/javascript" src="https://cdnimg.melon.co.kr/static/member/resource/script/me1/2p/i/1y290uwse6p.js"></script>
 </head>
 
-<script type="text/javascript" src="${pageContext.request.contextPath}/ZamongFrontEnd/styles/js/netfunnel.js"></script>
 
-	<script type="text/javascript" src="${pageContext.request.contextPath}/ZamongFrontEnd/styles/js/kakao.min.js"></script>
+
+<script type="text/javascript" src="/resource/script/muid/web/netfunnel.js?2016042900"></script>
+
+	
+	
+	<script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 	
 
 
@@ -59,18 +69,22 @@ if(CP_ID!="" && CP_ID!=null){
 	<div id="member_cont_wrap" class="clfix">
 		<div id="conts_section">
 			<div class="wrap_login_cont">
-			<form id="login_form" name="login_form" action="" method="post">
+			<form id="login_form" name="login_form" action="" method="post" action="/ZamongFrontEnd/LoginCheck.do">
 				<input type="hidden"	id="saveId"			name="saveId"			value="N"/>
-				<input type="hidden"	id="returnPage"		name="returnPage"		value="http://www.melon.com/mymusic/main/mymusicmain_list.htm"/>
+				<input type="hidden"	id="returnPage"		name="returnPage"		value=""/>
 				<input type="hidden"	id="reqProtocol"	name="reqProtocol"		value=""/>
-				<input type="hidden"	id="reqType"		name="reqType"			value="TYPE01"/>
-				<input type="hidden"	id="memberId"		name="memberId"			value=""/>
-				<input type="hidden"	id="memberPwd"		name="memberPwd"		value=""/>
+				<input type="hidden"	id="reqType"		name="reqType"			value=""/>
+				<input type="hidden"	id="memberId"		name="me_id"			value=""/>
+				<input type="hidden"	id="memberPwd"		name="me_pass"		value=""/>
 				<input type="hidden"	id="publicKey"		name="publicKey"		value=""/>
 				<input type="hidden" 	id="reToken"		name="reToken"			value=""/>
 			</form>
 				<div class="login_input_area02 style02">
 					<div class="wrap_login_input">
+						
+							
+														
+							
 							
 							
 						
@@ -121,6 +135,15 @@ if(CP_ID!="" && CP_ID!=null){
 			
 		</ul>
 		<ul class="footer_menu">
+			
+			
+			
+				<li class="menu01 first"><a href="http://ticket.melon.com" title="Melon 티켓" target="_blank"><span>Melon 티켓</span></a></li>
+			
+			
+			<li class="menu04"><a href="http://aztweb.melon.com/aztalk/guide/web/main.htm" title="Melon Aztalk" target="_blank"><span>Melon Aztalk</span></a></li>
+			
+			
 			
 				<li class="txt"><span>문의(평일 9시~18시) : 1566-7727(유료)</span></li>
 			
@@ -291,9 +314,13 @@ if(CP_ID!="" && CP_ID!=null){
 	}
 	
 	function kakaoPopupOpen(){
-		MemberKakao.loginPopOpen("_KAKAO_"+"LOGIN", "_POP_KAKAO_"+"LOGIN", "https://kauth.kakao.com/oauth/authorize?client_id=6cfb479f221a5adc670fe301e1b6690c&redirect_uri=https%3A%2F%2Fmember.melon.com%2Foauth.htm&response_type=code&state=Pq0xGvF4hs0lGxjkDiKiW6xijuWefYEUwkRTmmBF%40bK4xwO5Z8m6p5CS3m1TcjMT7KjuQDLFxsW0lST73lglgSxlKFk7Nk5fGpHMSsZmg1mA4mahMI2gm34JSPyKIZn0&encode_state=false");
+		MemberKakao.loginPopOpen("_KAKAO_"+"LOGIN", "_POP_KAKAO_"+"LOGIN", "https://kauth.kakao.com/oauth/authorize?client_id=6cfb479f221a5adc670fe301e1b6690c&redirect_uri=https%3A%2F%2Fmember.melon.com%2Foauth.htm&response_type=code&state=QoPOExRFFYvp3zu2pt%2Fp8qVwjOKFv0TmmND4Df3G4%40kB1q4%2FmQ%2FVoZ2oxJIwK4tk&encode_state=false");
 	}
 </script>
+
+
+
+
 
 </body>
 
