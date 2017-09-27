@@ -8,7 +8,8 @@ import com.zamong.nt.service.NotiDataDTO;
 public interface MagazineService {
 	//목록
 	List<MagazineDTO> selectList(Map map) throws Exception;
-	//상세보기
+	//조회수
+	int hitcount(MagazineDTO dto) throws Exception;
 
 	//입력/수정/삭제]
 	int insert(MagazineDTO dto) throws Exception;

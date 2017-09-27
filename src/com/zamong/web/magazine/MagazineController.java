@@ -34,7 +34,8 @@ public class MagazineController {
 			HttpServletRequest req,//페이징용 메소드에 전달
 			@RequestParam Map map,//검색용 파라미터 받기
 			@RequestParam(required=false,defaultValue="1") int nowPage,
-			Model model//리퀘스트 영역 저장용
+			Model model,//리퀘스트 영역 저장용
+			MagazineDTO dto
 			) throws Exception{
 		
 		//페이징을 위한 로직 시작]
@@ -51,6 +52,7 @@ public class MagazineController {
 		
 		//서비스 호출]
 		List<MagazineDTO> list= service.selectList(map);
+		
 		
 		//페이징용 서비스 호출
 		String pagingString = PagingUtil.pagingText(
@@ -69,8 +71,9 @@ public class MagazineController {
 	
 	@RequestMapping("/ZamongFrontEnd/MagazineView.do")
 	public String view(MagazineDTO dto, Model model, HttpServletRequest req)throws Exception {
-		 dto = service.selectOne(dto);
-	
+		service.hitcount(dto);
+
+		dto = service.selectOne(dto);
 		//줄바꿈 처리
 		dto.setMg_contents(dto.getMg_contents().replace("\r\n","<br/>"));
 		

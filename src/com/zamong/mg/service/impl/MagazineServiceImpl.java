@@ -54,6 +54,11 @@ public class MagazineServiceImpl implements MagazineService {
 	public MagazineDTO selectOne(MagazineDTO dto) throws Exception {
 		return dao.selectOne(dto);
 	}
+
+	@Override
+	public int hitcount(MagazineDTO dto) throws Exception {
+		return dao.hitcount(dto);
+	}
 	
 	
 	

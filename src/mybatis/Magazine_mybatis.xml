@@ -38,11 +38,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</if> -->
   </select>
   
-  <select id="MagazineView" parameterType="java.util.Map" resultMap="MagazineDTOResult">
+  	<select id="MagazineView" parameterType="java.util.Map" resultMap="MagazineDTOResult">
 		SELECT * FROM MG_MAGAZINE WHERE MG_NO=#{mg_no}
-	</select> 
+	</select>
 
-           
+    <update id="MagazineCount" parameterType="java.util.Map">
+		UPDATE MG_MAGAZINE SET MG_HITCOUNT=MG_HITCOUNT+1 WHERE MG_NO=#{mg_no}
+	</update>
            
            
        <!--     
