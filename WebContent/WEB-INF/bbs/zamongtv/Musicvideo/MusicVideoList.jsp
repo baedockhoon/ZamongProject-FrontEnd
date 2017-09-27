@@ -98,7 +98,7 @@
 					
 					
 
-					<img onerror="WEBPOCIMG.defaultMvImg(this);" width="172" height="97" src="https://img.youtube.com/vi/BCYDsMC0aB8/0.jpg" alt=""/>
+					<img onerror="WEBPOCIMG.defaultMvImg(this);" width="172" height="97" src="${item.mv_image }" alt=""/>
 					
 					<span class="playtime">
 						<strong class="none">재생시간</strong>
