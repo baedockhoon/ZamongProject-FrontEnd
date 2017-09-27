@@ -18,6 +18,8 @@
 	 <context:annotation-config/>
 	<mvc:annotation-driven/>	
 	 
+	 <context:property-placeholder location="classpath:/com/zamong/mg/resource/resource.properties" />
+	 
 	<!-- 사용자 요청을 처리할 빈 등록 -->
 	<!-- <bean class="com.zamong.web.musicvideo.MusicVideoController"/> -->
 

@@ -14,14 +14,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	    <result property="mg_division" column="mg_division"/>
 	    <result property="mg_hitcount" column="mg_hitcount"/>
  	</resultMap>
- 	
-	<!-- private String nt_no;//키값
-	private java.util.Date nt_regidate;//날짜
-	private String ad_no;//관리자 키값
-	private String nt_classification;//분류(서비스소식,종료,오픈등등)
-	private String nt_title;//제목
-	private String nt_contents;//내용
-	private String nt_hitcount;//조회수 -->
 	
 	
 	
@@ -29,11 +21,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
            식별자로 사용 -->
     
    <select id="MagazineList" parameterType="java.util.Map" resultMap="MagazineDTOResult">
-  	<!-- SELECT * FROM (SELECT T.*, ROWNUM R FROM (SELECT * FROM MG_MAGAZINE ORDER BY MG_NO DESC) T) WHERE R BETWEEN #{start} AND #{end} -->
+	<!-- SELECT * FROM MG_MAGAZINE ORDER BY MG_NO DESC -->
+	
+	SELECT * FROM (SELECT T.*, ROWNUM R FROM (SELECT * FROM MG_MAGAZINE
 	<!-- <if test="searchColumn != null">
 		WHERE ${searchColumn} LIKE '%' || searchWord || '%'
 	</if> -->
-	SELECT * FROM MG_MAGAZINE ORDER BY MG_NO DESC
+	ORDER BY MG_NO DESC) T) WHERE R BETWEEN #{start} AND #{end}
+	
   </select>
   
    <select id="MagazineTotal" parameterType="java.util.Map" resultType="int">

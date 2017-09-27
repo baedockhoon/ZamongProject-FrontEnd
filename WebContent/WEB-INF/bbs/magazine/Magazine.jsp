@@ -311,7 +311,12 @@
 </div>
 </div>
 	
-	
+	<!-- 페이징 -->
+   <table width="100%">
+     <tr align="center">
+       <td>${pagingString }</td>
+     </tr>
+   </table>
 	
 	
 	
