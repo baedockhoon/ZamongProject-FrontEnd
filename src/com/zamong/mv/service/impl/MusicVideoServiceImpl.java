@@ -27,9 +27,9 @@ public class MusicVideoServiceImpl implements MusicVideoService {
 	}
 
 	@Override
-	public MusicVideoDTO selectOne(Map map) throws Exception {
+	public MusicVideoDTO selectOne(MusicVideoDTO dto) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.selectOne(dto);
 	}
 
 	@Override
