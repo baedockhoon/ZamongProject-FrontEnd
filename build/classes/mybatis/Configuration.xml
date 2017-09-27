@@ -15,7 +15,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias alias="MusicVideo" type="com.zamong.mv.service.MusicVideoDTO"/>
 		<typeAlias alias="Magazine" type="com.zamong.mg.service.MagazineDTO"/>
 		<typeAlias alias="UserData" type="com.zamong.qu.service.UserQuestionDTO"/>
-		<typeAlias alias="SoundData" type="com.zamong.qu.service.SoundDTO"/>
+		<typeAlias alias="SoundData" type="com.zamong.ss.service.SoundDTO"/>
 	</typeAliases>
 			<!-- JNDI-->
 			<!-- 커넥션 풀 사용 -->

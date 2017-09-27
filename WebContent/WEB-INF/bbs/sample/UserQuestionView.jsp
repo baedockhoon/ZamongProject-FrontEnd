@@ -244,10 +244,10 @@
 		<li class="first_child"><a href="http://faqs2.melon.com/customer/index.htm" class="link_tab" title="홈 - 페이지 이동">
 			<span class="cntt">홈</span>
 		</a></li>
-		<li ><a href="ZamongFrontEnd/NoticeList.do" class="link_tab" title="공지사항 - 페이지 이동">
+		<li ><a href="NoticeList.do" class="link_tab" title="공지사항 - 페이지 이동">
 			<span class="cntt">공지사항</span>
 		</a></li>
-		<li class="on"><a href="ZamongFrontEnd/UserQuestionList.do" class="link_tab" title="자주하는 질문 - 페이지 이동">
+		<li class="on"><a href="UserQuestionList.do" class="link_tab" title="자주하는 질문 - 페이지 이동">
 			<span class="cntt">자주 하는 질문</span>
 		</a></li>
 		<li ><a href="https://help.melon.com/web/customer/help/index.htm" class="link_tab" title="나의 문의 내역 - 페이지 이동">

@@ -221,7 +221,10 @@
             </a></li>
             <li><a href="https://help.melon.com/web/customer/help/index.htm" class="link_tab" title="나의 문의 내역 - 페이지 이동">
                 <span class="cntt">나의 문의 내역</span>
-            </a></li>          
+            </a></li>   
+           	<li class="last_child"><a href="http://www.melon.com/customer/dcf/index.htm" class="link_tab" title="DCF 지원 기기 - 페이지 이동">
+			<span class="cntt">DCF 지원 기기</span>
+		</a></li> 
         </ul>
     </div>
  <div class="search_head mt24">
@@ -289,7 +292,7 @@
 					<tr >
 						<td class="no"><div class="wrap">${item.nt_no}</div></td>
 						<td><div class="wrap">${item.nt_classification}</div></td>
-						<td><div class="wrap fc_strong"> <span class="ellipsis" style="max-width:580px;"><a href='<c:url value="/NoticeView.do?nt_no=${item.nt_no}"/>'>${item.nt_title}</a></span></div></td>
+						<td><div class="wrap fc_strong"> <span class="ellipsis" style="max-width:580px;"><a href='<c:url value="/ZamongFrontEnd/NoticeView.do?nt_no=${item.nt_no}"/>'>${item.nt_title}</a></span></div></td>
 						<td><div class="wrap">${item.nt_hitcount}</div></td>
 						<td><div class="wrap">${item.nt_regidate}</div></td>
 					</tr>

@@ -38,7 +38,7 @@ public class UserQuestionController {
 		
 		return "/WEB-INF/bbs/sample/UserQuestion.jsp";
 	}//////////////////list()
-	@RequestMapping("/UserQuestionView.do")
+	@RequestMapping("/ZamongFrontEnd/UserQuestionView.do")
 	public String view(UserQuestionDTO dto, Model model, HttpServletRequest req)throws Exception {
 		 dto = service.selectOne(dto);
 	
