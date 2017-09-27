@@ -28,7 +28,7 @@
 					<!-- //140603_수정 -->
 
 				<!-- 140603_수정 -->
-				<h1><a href="<c:url value='/'/>" title="Zamong 로고 - 홈으로 이동" class="mlog" data="LOG_PRT_CODE=1&MENU_PRT_CODE=0&MENU_ID_LV1=&CLICK_AREA_PRT_CODE=M01&ACTION_AF_CLICK=V1"><img width="142" height="99" src="Styles/image/zamonglogotitle.png" alt="MelOn 로고 이미지"/></a></h1>
+				<h1><a href="<c:url value='/'/>" title="Zamong 로고 - 홈으로 이동" class="mlog" data="LOG_PRT_CODE=1&MENU_PRT_CODE=0&MENU_ID_LV1=&CLICK_AREA_PRT_CODE=M01&ACTION_AF_CLICK=V1"><img width="142" height="99" src="${pageContext.request.contextPath}/Styles/image/zamonglogotitle.png" alt="MelOn 로고 이미지"/></a></h1>
 				
 				<!-- //140603_수정 -->
 				<!-- 통합검색 영역 -->
@@ -92,7 +92,7 @@
 					</li>
 					<li class="nth4">
 						
-						<a href="http://www.melon.com/dj/today/djtoday_list.htm" class="cur_menu mlog" data="LOG_PRT_CODE=1&MENU_PRT_CODE=0&MENU_ID_LV1=&CLICK_AREA_PRT_CODE=S04&ACTION_AF_CLICK=V1"><span class="cur_status none">현재 선택된 메뉴-</span><span class="menu_bg menu04">멜론TV</span></a>
+						<a href="<c:url value='/ZamongFrontEnd/MusicVideoList.do'/>" class="cur_menu mlog" data="LOG_PRT_CODE=1&MENU_PRT_CODE=0&MENU_ID_LV1=&CLICK_AREA_PRT_CODE=S04&ACTION_AF_CLICK=V1"><span class="cur_status none">현재 선택된 메뉴-</span><span class="menu_bg menu04">멜론TV</span></a>
 					</li>
 					<li class="nth5">
 						
@@ -105,7 +105,7 @@
 					<!-- 160314 수정 -->
 					<li class="nth7">
 						
-						<a href="<c:url value='/NoticeList.do'/>" class="cur_menu mlog" data="LOG_PRT_CODE=1&MENU_PRT_CODE=0&MENU_ID_LV1=&CLICK_AREA_PRT_CODE=S09&ACTION_AF_CLICK=V1"><span class="cur_status none">현재 선택된 메뉴-</span><span class="menu_bg menu07">공지사항</span></a>
+						<a href="<c:url value='/ZamongFrontEnd/NoticeList.do'/>" class="cur_menu mlog" data="LOG_PRT_CODE=1&MENU_PRT_CODE=0&MENU_ID_LV1=&CLICK_AREA_PRT_CODE=S09&ACTION_AF_CLICK=V1"><span class="cur_status none">현재 선택된 메뉴-</span><span class="menu_bg menu07">공지사항</span></a>
 					</li>
 					<!-- 
 					// 160314 수정
