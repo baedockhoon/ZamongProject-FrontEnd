@@ -40,7 +40,7 @@ public class ProblemController {
 		
 		return "/WEB-INF/bbs/sample/ProblemList.jsp";
 	}//////////////////list()
-	/*@RequestMapping("/ZamongFrontEnd/UserQuestionView.do")
+	@RequestMapping("/ZamongFrontEnd/ProblemView.do")
 	public String view(ProblemDTO dto, Model model, HttpServletRequest req)throws Exception {
 		 dto = service.selectOne(dto);
 	
@@ -52,6 +52,6 @@ public class ProblemController {
 	
 		model.addAttribute("dto", dto);
 		
-		return "/WEB-INF/bbs/sample/UserQuestionView.jsp";
-	}*/
+		return "/WEB-INF/bbs/sample/ProblemView.jsp";
+	}
 }

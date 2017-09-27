@@ -75,6 +75,14 @@ public class UserQuestionServiceImpl implements UserQeustionService {
 
 
 
+	@Override
+	public int hitcount(UserQuestionDTO dto) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.update(dto);
+	}
+
+
+
 
 
 	

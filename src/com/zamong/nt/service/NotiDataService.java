@@ -6,8 +6,8 @@ import java.util.Map;
 public interface NotiDataService {
 	//목록
 	List<NotiDataDTO> selectList(Map map) throws Exception;
-	//상세보기
-
+	//조회수
+	int hitcount(NotiDataDTO dto) throws Exception;
 	//입력/수정/삭제]
 	int insert(NotiDataDTO dto) throws Exception;
 	int update(NotiDataDTO  dto) throws Exception;
