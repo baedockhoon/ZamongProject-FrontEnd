@@ -245,5 +245,6 @@
 
 	</table>
 
+<jsp:include page="/WEB-INF/bbs/template/Foot.jsp" />
 
 </html>
