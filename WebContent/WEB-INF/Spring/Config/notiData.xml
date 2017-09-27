@@ -19,6 +19,6 @@
 	<mvc:annotation-driven/>	
 	 
 	<!-- 사용자 요청을 처리할 빈 등록 -->
-<!-- 	<bean class="com.zamong.web.notice.NotiDataController"/> -->
+	<!-- <bean class="com.zamong.web.musicvideo.MusicVideoController"/> -->
 
 </beans>
