@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.zamong.mg.service.MagazineDTO;
 import com.zamong.mg.service.impl.MagazineServiceImpl;
-import com.zamong.mg.service.impl.PagingUtil;
+import com.zamong.web.PagingUtil;
 
 @Controller
 public class MagazineController {
