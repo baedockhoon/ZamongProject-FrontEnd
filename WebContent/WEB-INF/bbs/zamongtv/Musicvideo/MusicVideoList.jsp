@@ -231,7 +231,6 @@ var pageObj = new Pagination('/tv/index.htm', 'pageList', 'pageObjNavgation', '2
 						</div>
 
 
-
 <jsp:include page="/WEB-INF/bbs/template/Foot.jsp" />
 </div>
 </body>

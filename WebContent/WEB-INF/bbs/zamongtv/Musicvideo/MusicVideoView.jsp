@@ -81,7 +81,6 @@
 <div id="conts" class="cont_type ban">
 
 					
-					
 					<h2 class="f_tit line">
 					${dto.mv_title }
 					</h2>
