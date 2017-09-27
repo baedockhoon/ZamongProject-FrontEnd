@@ -52,8 +52,7 @@ public class MagazineServiceImpl implements MagazineService {
 
 	@Override
 	public MagazineDTO selectOne(MagazineDTO dto) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.selectOne(dto);
 	}
 	
 	

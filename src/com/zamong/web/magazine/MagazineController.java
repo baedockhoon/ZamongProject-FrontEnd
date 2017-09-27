@@ -37,6 +37,20 @@ public class MagazineController {
 		return "/WEB-INF/bbs/magazine/Magazine.jsp";
 	}//////////////////list()
 	
+	@RequestMapping("/MagazineView.do")
+	public String view(MagazineDTO dto, Model model, HttpServletRequest req)throws Exception {
+		 dto = service.selectOne(dto);
+	
+		//줄바꿈 처리
+		dto.setMg_contents(dto.getMg_contents().replace("\r\n","<br/>"));
+		
+		
+		//5]필요한 값 리퀘스트 영역에 저장
+	
+		model.addAttribute("dto", dto);
+		return "/WEB-INF/bbs/magazine/MagazineView.jsp";
+	}
+	
 	
 	
 }

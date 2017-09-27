@@ -239,82 +239,46 @@
 <body>
 <jsp:include page="/WEB-INF/bbs/template/Top.jsp" />
 <!-- contents -->
- <div class="search_head mt24">
-				<div class="search_head mt24">
-						<div class="select_wrap" align="left">
-				
-						<!-- Select Box -->
-                          <form method="post">
-				<select name="Notice_category" >
-				
-					<option value="전체">전체</option>
-					<option value="금주의 신보">금주의 신보</option>
-					<option value="금주의 차트">금주의 차트</option>
-					<option value="아티스트 갤러리">아티스트 갤러리</option>
-					<option value="이슈 포커스">이슈 포커스</option>
-					<option value="멜론 스테이지">멜론 스테이지</option>
-					<option value="HIPHOPLE">HIPHOPLE</option>
-					<option value="원더풀 재즈">원더풀 재즈</option>
-					<option value="스쿨 오브 록">스쿨 오브 록</option>
-					<option value="클래식 AtoZ">클래식 AtoZ</option>
-					<option value="EDM Floor">EDM Floor</option>
-					<option value="인디 스트리트">인디 스트리트</option>
-					<option value="TV별책부록">TV별책부록</option>
-					<option value="아이돌 탐구생활">아이돌 탐구생활</option>
-					<option value="STATION H">STATION H</option>
-					<option value="SM STATION">SM STATION</option>
-					<option value="Hi-Fi 가이드">Hi-Fi 가이드</option>
-					<option value="뮤직툰">뮤직툰</option>
-				</select><input type="submit" value="검색" />
-                           </form>
-                        </div>
-				
+ <div class="tb_list02 type02 mt24">
+		<table border="1" style="width:100%">
+			<caption>이 표는 선택하신 공지사항 상세 내용 입니다.</caption>
+			<colgroup><col style="width:60px" /><col style="width:120px" /><col /><col style="width:80px" /><col style="width:100px" /></colgroup>
+			<thead>
+				<tr>
+					
+					
 
+					
+					
+						<th scope="col" class="th02"><div class="wrap">${dto.mg_no }</div></th>
+					
 
-
-		<div class="tb_list02 type02 mt8">
-	<table class="table table-striped">
-		<colgroup><col style="width:60px" /><col style="width:120px" /><col /><col style="width:80px" /><col style="width:100px" /></colgroup>
-		<thead>
-			<tr>
-				<th scope="col"><div class="wrap pd_none">NO.</div></th>
-				<th scope="col" class="t_center"><div class="wrap">분류</div></th>
-				<th scope="col"><div class="wrap">제목</div></th>
-				<th scope="col"><div class="wrap">조회</div></th>
-				<th scope="col"><div class="wrap">등록일</div></th>
-			</tr>
-		</thead>
-	
-		<c:choose>
-			<c:when test="${empty list }">
-				<tr bgcolor="white" align="center">
-					<td colspan="6">등록된 자료가 없어요</td>
+					<th scope="col" class="th02"><div class="wrap">${dto.mg_division}</div></th>
+					<!-- 140521_수정 -->
+					<th scope="col" class="t_left fc_strong"><div class="wrap subject_type">${dto.mg_title}</div></th>
+					<!-- //140521_수정 -->
+					<th scope="col" class="th02"><div class="wrap">${dto.mg_hitcount}</div></th>
+					<th scope="col" class="th02"><div class="wrap">${dto.mg_regidate}</div></th>
 				</tr>
-			</c:when>
-			<c:otherwise>
-				<c:forEach var="item" items="${list}" varStatus="loop">
-					
-					<tr >
-						<td class="no"><div class="wrap">${item.mg_no}</div></td>
-						<td><div class="wrap">${item.mg_division}</div></td>
-						<td><div class="wrap fc_strong"> <span class="ellipsis" style="max-width:580px;"><a href='<c:url value="/MagazineView.do?mg_no=${item.mg_no}"/>'>${item.mg_title}</a></span></div></td>
-						<td><div class="wrap">${item.mg_hitcount}</div></td>
-						<td><div class="wrap">${item.mg_regidate}</div></td>
-					</tr>
-					
-				</c:forEach>
-			</c:otherwise>
-		</c:choose>
-
-	</table>
+			</thead>
+			<tbody>
+				<tr class="first_child"><!-- 140502_수정 aty -->
+					<td colspan="5" class="no_bg">
+						<div class="dtl">
+							
+						${dto.mg_contents }
+									
+								
+								
+							
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
-</div>
-</div>
-	
-	
-	
-	
-	
+ 
+ 
 <!-- contents -->
 			
 </body>

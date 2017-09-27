@@ -53,8 +53,7 @@ public class MagazineDAO implements MagazineService {
 
 	@Override
 	public MagazineDTO selectOne(MagazineDTO dto) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return template.selectOne("MagazineView",dto);
 	}
 	
 	
