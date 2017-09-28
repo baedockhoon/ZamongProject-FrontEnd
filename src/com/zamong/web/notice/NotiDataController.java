@@ -11,9 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
 import com.zamong.nt.service.NotiDataDTO;
-import com.zamong.nt.service.impl.NotiDataDAO;
 import com.zamong.nt.service.impl.NotiDataServiceImpl;
 
 @Controller
@@ -23,7 +21,7 @@ public class NotiDataController {
 	private NotiDataServiceImpl service;
 	
 	
-	@RequestMapping("/NoticeList.do")
+	@RequestMapping("/ZamongFrontEnd/NoticeList.do")
 	public String list(
 			HttpServletRequest req,//페이징용 메소드에 전달
 			@RequestParam Map map,//검색용 파라미터 받기
@@ -37,19 +35,5 @@ public class NotiDataController {
 		
 		return "/WEB-INF/bbs/sample/NoticeList.jsp";
 	}//////////////////list()
-	@RequestMapping("/NoticeView.do")
-	public String view(NotiDataDTO dto, Model model, HttpServletRequest req)throws Exception {
-		 dto = service.selectOne(dto);
 	
-		//줄바꿈 처리
-		dto.setNt_contents(dto.getNt_contents().replace("\r\n","<br/>"));
-		
-		
-		//5]필요한 값 리퀘스트 영역에 저장
-	
-		model.addAttribute("dto", dto);
-		
-		return "/WEB-INF/bbs/sample/NoticeView.jsp";
-	}
-
 }
