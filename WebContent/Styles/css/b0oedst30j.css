@@ -12662,7 +12662,7 @@ a.btn_like_big.on.mactive .icon {
 
 .cnt_like_b span.cnt_span {
 	display: inline-block;
-	min-width: 106px;
+	min-width: 100px;
 	height: 25px;
 	padding: 5px 8px 0 0;
 	background:

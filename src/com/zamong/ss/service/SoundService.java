@@ -15,8 +15,11 @@ public interface SoundService {
 	int delete(SoundDTO dto) throws Exception;
 	//전체 레코드 수]
 	int getTotalCount(Map map) throws Exception;
+	
 	SoundDTO selectOne(SoundDTO dto) throws Exception;
 	SoundDTO selectAlbumOne(SoundDTO dto) throws Exception;
+	SoundDTO selectSoundOne(Map map) throws Exception;
+	
 	
 	
 	//자원반납및 커넥션 풀 반납용]

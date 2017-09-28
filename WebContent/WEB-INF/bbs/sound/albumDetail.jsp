@@ -19,20 +19,17 @@
 <meta name="viewport" content="width=device-width" />
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?2" id="favicon" />
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/140q53fiwr.css" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/up4ryzftkr.css" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/b0oedst30j.css" type="text/css" />
 <!-- 댓글 css 파일 네임 변경 -->
 <link rel="stylesheet" href="http://cdnimg.melon.co.kr/static/web/resource/style/w1/qd/e/uolshpokn9.css" type="text/css" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/album/album.css" type="text/css" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/melonweb_new_4x.css" type="text/css" />
-<link rel="stylesheet" href="http://cdnimg.melon.co.kr/static/web/resource/style/w1/ej/e/up4ryzftkr.css" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Nunito:400" rel="stylesheet">
 <!-- <script type="text/javascript" src="/resource/script/web/common/jquery-1.9.1.min.js"></script> -->
 
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/Styles/js/jquery-1.9.1.min.js"></script>
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/Styles/css/b0oedst30j.css"
-	type="text/css" />
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/Styles/css/14j3tr44urn.css"
 	type="text/css" />
@@ -50,23 +47,44 @@
 				checkBoxName="input_check"
 			}
 			$("#"+formId).find("input[name='"+checkBoxName+"']:checked").each(function(){
-				if(!isNaN(this.value)){
+				if(!isNaN(this.value)) {
 					songIds.push($(this).val())
 					}
-				});
-				if(songIds.length==0){
+				})
+				if(songIds.length==0) {
 					alert("곡을 선택해 주세요")
-					}
-			else{
+				}
+			else {
 				MELON.WEBSVC.POC.play.playSong(menuId,songIds)
 				}
-			}
+		};
+			
+		
 		
 
 		function goAlbumDetail(al_no){
 			location.href = "<c:url value='/ZamongFrontEnd/album/Detail.do' />?al_no="+al_no;
 		};
 	});
+</script>
+<script type="text/javascript">
+function playSong(ss_no){
+	var url    ="<c:url value='/ZamongFrontEnd/audio/Play.do' />";
+	  var title  = "testpop";
+	  var status = "toolbar=yes,scrollbars=yes,resizable=no,location=no,top=500,left=500,width=420,height=800"; 
+	  window.open("", title,status); //window.open(url,title,status); window.open 함수에 url을 앞에와 같이
+	                                            //인수로  넣어도 동작에는 지장이 없으나 form.action에서 적용하므로 생략
+	                                            //가능합니다.
+	  frm1.target = title;                    //form.target 이 부분이 빠지면 form값 전송이 되지 않습니다. 
+	  frm1.action = url;                    //form.action 이 부분이 빠지면 action값을 찾지 못해서 제대로 된 팝업이 뜨질 않습니다.
+	  frm1.method = "post";
+	  frm1.ss_no.value = ss_no;
+	  frm1.submit();     
+
+	
+	/* window.open("<c:url value='/ZamongFrontEnd/audio/Play.do?ss_no="+ss_no+"' />", "_blank"
+			, "toolbar=yes,scrollbars=yes,resizable=no,location=no,top=500,left=500,width=400,height=400"); */
+};
 </script>
 </head>
 
@@ -462,6 +480,7 @@
 										</tr>
 									</thead>
 									<tbody>
+									
 										<c:forEach var="item" items="${list }" varStatus="loop">
 											<tr>
 												<td><div class="wrap pd_none left">
@@ -473,7 +492,7 @@
 												<td class="t_left"><div class="wrap pd_none">
 														<div class="ellipsis" style="max-width: 100%">
 															<button type="button" class="btn_icon play" title="재생"
-																onClick="melon.play.playSong('28010101',${item.ss_no });">
+																onClick="playSong(${item.ss_no });">
 																<span class="odd_span">재생</span>
 															</button>
 															<button type="button" class="btn_icon add" title="담기"
@@ -516,8 +535,6 @@
 														</button>
 													</div></td>
 												<td><div class="wrap pd_none">
-
-
 														<button type="button" class="btn_icon dl flac"
 															title="FLAC 다운로드"
 															onClick="melon.buy.goBuyProduct('frm', '30648925', '3C0001', '','0', '28010101');">
@@ -572,6 +589,9 @@
 									</button>
 								</div>
 							</div>
+						</form>
+						<form name="frm1" id="frm1">
+							<input type="hidden" name="ss_no" value="" />
 						</form>
 						<!-- //수록곡_CD번호 표시 -->
 					</div>

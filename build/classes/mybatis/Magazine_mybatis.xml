@@ -34,8 +34,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- SELECT * FROM MG_MAGAZINE ORDER BY MG_NO DESC -->
 	SELECT * FROM (SELECT T.*, ROWNUM R FROM (SELECT * FROM MG_MAGAZINE WHERE TO_CHAR(MG_REGIDATE,'YYYY-MM-DD') = TO_CHAR(SYSDATE,'YYYY-MM-DD')
 	<!-- <if test="searchColumn != null">
-		WHERE ${searchColumn} LIKE '%' || searchWord || '%'
-	</if> -->
+		  WHERE ${searchColumn} LIKE '%' || searchWord || '%'
+		 </if> 
+	-->
 	ORDER BY MG_NO DESC) T) WHERE R BETWEEN #{start} AND #{end}
 	
   </select>
@@ -43,8 +44,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    <select id="MagazineTotal" parameterType="java.util.Map" resultType="int">
   	SELECT COUNT(*) FROM MG_MAGAZINE
 	<!-- <if test="searchColumn != null">
-		WHERE ${searchColumn} LIKE '%' || searchWord || '%'
-	</if> -->
+		  WHERE ${searchColumn} LIKE '%' || searchWord || '%'
+		 </if> 
+	-->
   </select>
   
   	<select id="MagazineView" parameterType="java.util.Map" resultMap="MagazineDTOResult">

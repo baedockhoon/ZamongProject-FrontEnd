@@ -84,6 +84,21 @@ public class SoundController {
 		return "/WEB-INF/bbs/sound/albumDetail.jsp";
 	}//////////////////albumDetail()
 	
+	@RequestMapping("/ZamongFrontEnd/audio/Play.do")
+	public String audioPlay(
+			HttpServletRequest req,//페이징용 메소드에 전달
+			Map map,//검색용 파라미터 받기
+			Model model//리퀘스트 영역 저장용
+			) throws Exception{
+		map.put("ss_no", req.getParameter("ss_no"));
+		SoundDTO dto = service.selectSoundOne(map);
+		
+		model.addAttribute("dto",dto);
+		
+		return "/WEB-INF/bbs/audio/audio.jsp";
+	}//////////////////audioPlay()
+	
+	
 	/*@RequestMapping("/ZamongFrontEnd/SoundView.do")
 	public String view(SoundDTO dto, Model model, HttpServletRequest req)throws Exception {
 		 dto = service.selectOne(dto);

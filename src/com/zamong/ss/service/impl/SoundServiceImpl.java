@@ -71,4 +71,9 @@ public class SoundServiceImpl implements SoundService {
 		return dao.selectAlbumOne(dto);
 	}
 
+	@Override
+	public SoundDTO selectSoundOne(Map map) throws Exception {
+		return dao.selectSoundOne(map);
+	}
+
 }

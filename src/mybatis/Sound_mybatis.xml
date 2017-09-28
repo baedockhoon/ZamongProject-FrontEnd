@@ -25,6 +25,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM AL_ALBUM A JOIN SS_SOUNDSOURCE S ON A.AL_NO = S.AL_NO WHERE A.AL_NO = #{al_no} AND ROWNUM = 1
 	</select>
 	
+	<select id="selectSoundOne" parameterType="java.util.Map" resultType="SoundData">
+		SELECT S.*, L.LY_CONTENTS FROM SS_SOUNDSOURCE S JOIN LY_LYLICS L ON S.SS_NO = L.SS_NO WHERE S.SS_NO = #{ss_no}
+	</select>
+	
 	
 	
  <!-- 	<update id="NotiDateUpdate"  parameterType="java.util.Map">

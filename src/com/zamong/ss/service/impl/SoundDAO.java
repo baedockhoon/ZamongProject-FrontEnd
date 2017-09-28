@@ -76,6 +76,11 @@ public class SoundDAO implements SoundService {
 		return null;
 	}
 
+	@Override
+	public SoundDTO selectSoundOne(Map map) throws Exception {
+		return template.selectOne("selectSoundOne", map);
+	}
+
 
 
 	

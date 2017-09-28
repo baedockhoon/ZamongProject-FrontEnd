@@ -16,7 +16,7 @@
 <meta name="viewport" content="width=device-width" />
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?2" id="favicon" />
 
-<link rel="stylesheet" href="http://cdnimg.melon.co.kr/static/web/resource/style/w1/66/g/140q53fiwr.css" type="text/css" />
+<!-- <link rel="stylesheet" href="http://cdnimg.melon.co.kr/static/web/resource/style/w1/66/g/140q53fiwr.css" type="text/css" /> -->
 <!-- 댓글 css 파일 네임 변경 -->
 <link rel="stylesheet" href="http://cdnimg.melon.co.kr/static/web/resource/style/w1/qd/e/uolshpokn9.css" type="text/css" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/melonweb_new_4x.css" type="text/css" />
