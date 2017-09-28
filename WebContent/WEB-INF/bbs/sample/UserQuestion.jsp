@@ -509,7 +509,7 @@
 		<li class="on"><a href="<c:url value='/ZamongFrontEnd/UserQuestionList.do'/>" class="link_tab" title="자주하는 질문 - 페이지 이동">
 			<span class="cntt">자주 하는 질문</span>
 		</a></li>
-		<li ><a href="https://help.melon.com/web/customer/help/index.htm" class="link_tab" title="나의 문의 내역 - 페이지 이동">
+		<li ><a href="<c:url value='/ZamongFrontEnd/ProblemList.do'/>" class="link_tab" title="나의 문의 내역 - 페이지 이동">
 			<span class="cntt">나의 문의 내역</span>
 		</a></li>
 		<li class="last_child"><a href="http://www.melon.com/customer/dcf/index.htm" class="link_tab" title="DCF 지원 기기 - 페이지 이동">
@@ -715,7 +715,7 @@
 								<td><div class="wrap f11 right">${item.qu_largedivide}</div></td>
 								<td><div class="wrap f11 right">${item.qu_mediumdivide}</div></td>
 								<td><div class="wrap right"><a
-									href='<c:url value="/UserQuestionView.do?qu_no=${item.qu_no}"/>'>${item.qu_title}</a></div></td>
+									href='<c:url value="/ZamongFrontEnd/UserQuestionView.do?qu_no=${item.qu_no}"/>'>${item.qu_title}</a></div></td>
 								<td><div class="wrap">${item.qu_hitcount}</div></td>
 								<td class="t_center"><div class="wrap">${item.qu_regidate}</div></td>
 								
@@ -727,6 +727,15 @@
 			</table>
 		</div>
 	</div>
+	<div class="paginate">
+        <div id="pageObjNavgation" style="display: block;"><div class="paginate"><a class="btn_first disabled" href="javascript:;"><span>맨처음</span></a> <a class="btn_pre disabled" href="javascript:;"><span>이전</span></a> <span class="page_num"><strong><span class="none">현재페이지</span>1</strong><a href="javascript:pageObj.sendPage('21');">2</a><a href="javascript:pageObj.sendPage('41');">3</a><a href="javascript:pageObj.sendPage('61');">4</a><a href="javascript:pageObj.sendPage('81');">5</a><a href="javascript:pageObj.sendPage('101');">6</a><a href="javascript:pageObj.sendPage('121');">7</a><a href="javascript:pageObj.sendPage('141');">8</a><a href="javascript:pageObj.sendPage('161');">9</a><a href="javascript:pageObj.sendPage('181');">10</a></span> <a class="btn_next" href="javascript:pageObj.sendPage('201');"><span>다음</span></a> <a class="btn_last" href="javascript:pageObj.sendPage('321');"><span>맨끝</span></a></div></div>
+<script src="/resource/script/common/jquery.ba-bbq.min.js" type="text/javascript"></script>
+<script src="/resource/script/common/historypager.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageObj = new Pagination('/cds/customer/announce/announce_listPaging.htm', 'pageList', 'pageObjNavgation', '20', 'pageObj', false);
+</script>
+
+    </div>
 </div>
 <!-- //contents -->
 <!-- 전체 공통 스크립트 -->

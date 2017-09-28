@@ -39,9 +39,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM QU_QUESTION1 WHERE QU_NO=#{qu_no}
 	</select> 
 	
- <!-- 	<update id="NotiDateUpdate"  parameterType="java.util.Map">
-		UPDATE NT_NOTICE SET NT_HITCOUNT=#{nt_hitcount}+1 WHERE NT_NO=#{nt_no}
-	</update>  --> 
+ 	<update id="UserDateUpdate"  parameterType="java.util.Map">
+		UPDATE QU_QUESTION1 SET QU_HITCOUNT=QU_HITCOUNT+1 WHERE NT_NO=#{qu_no}
+	</update>  
 
            
        <!--     

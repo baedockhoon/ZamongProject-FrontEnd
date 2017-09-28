@@ -73,7 +73,16 @@ public class UserQuestionDAO implements UserQeustionService{
 	@Override
 	public int update(UserQuestionDTO dto) throws Exception {
 		
-		return template.update("NotiDateUpdate",dto);
+		/*return template.update("UserDateUpdate",dto);*/
+		return 0;
+	}
+
+
+
+	@Override
+	public int hitcount(UserQuestionDTO dto) throws Exception {
+
+		return template.update("UserDateUpdate",dto);
 	}
 
 	

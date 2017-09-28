@@ -4838,8 +4838,8 @@ body.scroll_no #id_box .expn .id_logout .btn_icon.my_simple {
 
 #gnb_menu ul li .cur_menu .menu07 {
 	display: block;
-	width: 56px;
-	background-position: -477px 0
+	width: 75px;
+	background-position: -475px 0
 }
 
 #gnb_menu ul li .cur_menu .menu08 {
@@ -4922,7 +4922,7 @@ body.scroll_no #id_box .expn .id_logout .btn_icon.my_simple {
 }
 
 #gnb_menu ul li a.cur_menu:hover .menu07 {
-	background-position: -477px -70px
+	background-position: -475px -70px
 }
 
 #gnb_menu ul li.on a .menu07 {

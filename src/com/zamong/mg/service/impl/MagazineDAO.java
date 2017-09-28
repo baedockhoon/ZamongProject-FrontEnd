@@ -55,6 +55,16 @@ public class MagazineDAO implements MagazineService {
 	public MagazineDTO selectOne(MagazineDTO dto) throws Exception {
 		return template.selectOne("MagazineView",dto);
 	}
+
+	@Override
+	public int hitcount(MagazineDTO dto) throws Exception {
+		return template.update("MagazineCount",dto);
+	}
+
+	@Override
+	public List<MagazineDTO> selectList_Today(Map map) throws Exception {
+		return template.selectList("MagazineList_Today",map);
+	}
 	
 	
 	

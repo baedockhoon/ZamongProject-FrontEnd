@@ -38,9 +38,11 @@ public class UserQuestionController {
 		
 		return "/WEB-INF/bbs/sample/UserQuestion.jsp";
 	}//////////////////list()
-	@RequestMapping("/UserQuestionView.do")
+	@RequestMapping("/ZamongFrontEnd/UserQuestionView.do")
 	public String view(UserQuestionDTO dto, Model model, HttpServletRequest req)throws Exception {
-		 dto = service.selectOne(dto);
+		service.hitcount(dto);
+		
+		dto = service.selectOne(dto);
 	
 		//줄바꿈 처리
 		dto.setQu_contents(dto.getQu_contents().replace("\r\n","<br/>"));

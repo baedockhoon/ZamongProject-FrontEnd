@@ -39,12 +39,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  	<update id="NotiDateUpdate"  parameterType="java.util.Map">
 		UPDATE NT_NOTICE SET NT_HITCOUNT=#{nt_hitcount}+1 WHERE NT_NO=#{nt_no}
 	</update>  -->
-
+			
            
-       
+       		
            
  	<select id="userLogin" parameterType="java.util.Map" resultType="int">
-		SELECT COUNT(*) FROM ME_MEMBER WHERE me_ID=#{me_id} AND me_pass=#{me_pass}	
+		SELECT COUNT(*) FROM ME_MEMBER WHERE me_id=#{me_id} AND me_pass=#{me_pass}	
 	</select>
 	
 	<!-- <select id="ReplyBBStotal" parameterType="java.util.Map" resultType="int">
