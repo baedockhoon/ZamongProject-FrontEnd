@@ -32,8 +32,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="NotiDatalist" parameterType="java.util.Map" resultMap="NotiDataDTOResult">
 		SELECT * FROM NT_NOTICE
 	</select>
+ 	<select id="NotiDataView" parameterType="java.util.Map" resultMap="NotiDataDTOResult">
+		SELECT * FROM NT_NOTICE WHERE NT_NO=#{nt_no}
+	</select> 
 	
-	
+ 	<update id="NotiDateUpdate"  parameterType="java.util.Map">
+		UPDATE NT_NOTICE SET NT_HITCOUNT=#{nt_hitcount}+1 WHERE NT_NO=#{nt_no}
+	</update> 
+
            
        <!--     
            

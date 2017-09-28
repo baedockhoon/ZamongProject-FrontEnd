@@ -26,11 +26,7 @@ public class NotiDataServiceImpl implements NotiDataService {
 		return dao.selectList(map);
 	}
 
-	@Override
-	public NotiDataDTO selectOne(Map map) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 	@Override
 	public int insert(NotiDataDTO dto) throws Exception {
@@ -38,11 +34,7 @@ public class NotiDataServiceImpl implements NotiDataService {
 		return 0;
 	}
 
-	@Override
-	public int update(NotiDataDTO dto) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+
 
 	@Override
 	public int delete(NotiDataDTO dto) throws Exception {
@@ -61,6 +53,29 @@ public class NotiDataServiceImpl implements NotiDataService {
 		// TODO Auto-generated method stub
 		
 	}
+
+
+
+	@Override
+	public NotiDataDTO selectOne(NotiDataDTO dto) throws Exception {
+	
+		return dao.selectOne(dto);
+		/*return null;*/
+	}
+
+
+
+	@Override
+	public int update(NotiDataDTO dto) throws Exception {
+		
+		return dao.update(dto);
+	}
+
+
+
+
+
+	
 	
 
 

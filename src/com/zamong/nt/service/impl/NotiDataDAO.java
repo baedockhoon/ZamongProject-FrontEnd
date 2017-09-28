@@ -22,11 +22,7 @@ public class NotiDataDAO implements NotiDataService{
 		return template.selectList("NotiDatalist",map);
 	}
 	
-	@Override
-	public NotiDataDTO selectOne(Map map) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override
 	public int insert(NotiDataDTO dto) throws Exception {
@@ -34,11 +30,7 @@ public class NotiDataDAO implements NotiDataService{
 		return 0;
 	}
 
-	@Override
-	public int update(NotiDataDTO dto) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 
 	@Override
 	public int delete(NotiDataDTO dto) throws Exception {
@@ -57,6 +49,32 @@ public class NotiDataDAO implements NotiDataService{
 		// TODO Auto-generated method stub
 		
 	}
+
+
+
+	@Override
+	public NotiDataDTO selectOne(NotiDataDTO dto) throws Exception {
+		// TODO Auto-generated method stub
+		return template.selectOne("NotiDataView", dto);
+	
+	}
+
+
+
+	public Map<String, NotiDataDTO> prevNnext(String no) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	@Override
+	public int update(NotiDataDTO dto) throws Exception {
+		
+		return template.update("NotiDateUpdate",dto);
+	}
+
+	
 	
 
 }
