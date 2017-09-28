@@ -25,6 +25,12 @@ public class MusicVideoServiceImpl implements MusicVideoService {
 	public List<MusicVideoDTO> selectList(Map map) throws Exception {
 		return dao.selectList(map);
 	}
+	
+	@Override
+	public List<MusicVideoDTO> selectList_pop(Map map) throws Exception {
+		return dao.selectList_pop(map);
+	}
+	
 
 	@Override
 	public MusicVideoDTO selectOne(MusicVideoDTO dto) throws Exception {
@@ -61,6 +67,12 @@ public class MusicVideoServiceImpl implements MusicVideoService {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void hitcount(MusicVideoDTO dto) throws Exception {
+		dao.hitcount(dto);
+	}
+
 
 
 }

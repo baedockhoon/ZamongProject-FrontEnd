@@ -35,6 +35,11 @@ public class MusicVideoDAO implements MusicVideoService{
 	}
 
 	@Override
+	public List<MusicVideoDTO> selectList_pop(Map map) throws Exception {
+		return template.selectList("MusicVideolist_pop",map);
+	}
+	
+	@Override
 	public MusicVideoDTO selectOne(MusicVideoDTO dto) throws Exception {
 		return template.selectOne("MusicVideoView", dto);
 	}
@@ -68,6 +73,13 @@ public class MusicVideoDAO implements MusicVideoService{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void hitcount(MusicVideoDTO dto) throws Exception {
+		template.selectOne("MusicVideoHitcount", dto);
+	}
+
+
 
 	
 }

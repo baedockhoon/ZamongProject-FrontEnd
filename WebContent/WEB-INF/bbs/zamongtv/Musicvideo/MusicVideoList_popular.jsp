@@ -77,9 +77,9 @@
 			<!-- Tab Area -->
 			<div class="wrap_tab03 type02 page_move">
 				<ul style="width:100%;">
-					<li data-gubn="D" class="first_child on">
+					<li data-gubn="D" class="first_child ">
 						<a href="<c:url value='/ZamongFrontEnd/MusicVideoList.do'/>" title="최신 영상 - 페이지 이동" class="link_tab"><span class="cntt">최신 영상</span></a></li>
-					<li data-gubn="H" class="last_child ">
+					<li data-gubn="H" class="last_child on">
 						<a href="<c:url value='/ZamongFrontEnd/MusicVideoList_popular.do'/>" title="인기 영상 - 페이지 이동" class="link_tab"><span class="cntt">인기 영상</span></a></li>
 				</ul>
 			</div>

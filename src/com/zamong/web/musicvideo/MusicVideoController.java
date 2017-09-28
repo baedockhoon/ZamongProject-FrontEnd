@@ -21,7 +21,7 @@ public class MusicVideoController {
 	@Resource(name="musicVideoServiceImpl")
 	private MusicVideoServiceImpl service;
 	
-	//List
+	//기본List
 	@RequestMapping("/ZamongFrontEnd/MusicVideoList.do")
 	public String list(
 			HttpServletRequest req,//페이징용 메소드에 전달
@@ -36,10 +36,26 @@ public class MusicVideoController {
 		return "/WEB-INF/bbs/zamongtv/Musicvideo/MusicVideoList.jsp";
 	}
 	
+	//인기영상 List
+	@RequestMapping("/ZamongFrontEnd/MusicVideoList_popular.do")
+	public String list_pop(
+			HttpServletRequest req,//페이징용 메소드에 전달
+			@RequestParam Map map,//검색용 파라미터 받기
+			Model model//리퀘스트 영역 저장용
+			) throws Exception{
+		//서비스 호출]
+		List<MusicVideoDTO> list= service.selectList_pop(map);
+		//데이타 저장]		
+		model.addAttribute("list", list);
+		
+		return "/WEB-INF/bbs/zamongtv/Musicvideo/MusicVideoList_popular.jsp";
+	}
+	
 	
 	//View
 	@RequestMapping("/ZamongFrontEnd/MusicVideoView.do")
 	public String view(MusicVideoDTO dto, Model model, HttpServletRequest req)throws Exception{
+		service.hitcount(dto);
 		dto = service.selectOne(dto);
 		
 		//줄바꿈 처리

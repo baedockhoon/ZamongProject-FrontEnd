@@ -166,9 +166,9 @@
 										
 										<dd class="eval vdo_info">
 											<span class="btn_knd view">
-												<span class="count"><span>조회</span><strong id="stronReadCnt">0</strong></span>
+												<span class="count"><span>조회</span><strong id="stronReadCnt">${dto.mv_hitcount }</strong></span>
 											</span>
-											<span class="datelk mt3"><span>등록일 </span><em>2017.09.22</em></span>
+											<span class="datelk mt3"><span>등록일 </span><em>${dto.mv_regidate }</em></span>
 										</dd>
 									</dl>
 
