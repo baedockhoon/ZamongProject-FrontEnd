@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 
-
 public interface MusicVideoService {
 	//목록
 	List<MusicVideoDTO> selectList(Map map) throws Exception;
