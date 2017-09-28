@@ -250,9 +250,9 @@
 	})();
 	</script>
 </head>
-
+<jsp:include page="/WEB-INF/bbs/template/Top.jsp" />
 <body>
-<div id="wrap">
+<!-- <div id="wrap">
 	<div id="skip_nav">skip navigation
 		<ul>
 			<li><a href="#gnb_menu">메뉴</a></li>
@@ -262,12 +262,12 @@
 		</ul>
 	</div>
 
-	<!--  header -->
+	 header
 	
 	<div id="header" class="">
-		<div id="header_wrap" class="my_fold">  <!-- 1024이상 마이영역 접었을때 클래스 my_fold 추가 -->
+		<div id="header_wrap" class="my_fold">  1024이상 마이영역 접었을때 클래스 my_fold 추가
 			<div id="gnb" class="clfix">
-				<!-- 상단 빠른 메뉴 -->
+				상단 빠른 메뉴
 				<div id="util_menu">
 					<p class="none">상단 빠른 메뉴</p>
 					<div class="top_left">
@@ -275,10 +275,10 @@
 							
 							<li class="first_child d_melon_ticket"><a href="http://ticket.melon.com/main/index.htm" title="멜론 티켓" class="menu01 mlog" data="LOG_PRT_CODE=1&MENU_PRT_CODE=0&MENU_ID_LV1=&CLICK_AREA_PRT_CODE=V08&ACTION_AF_CLICK=V1"><span>멜론 티켓</span></a></li>
 							
-							<li><a href="http://aztweb.melon.com/aztalk/guide/web/main.htm" title="멜론 아지톡" class="menu03 mlog" data="LOG_PRT_CODE=1&MENU_PRT_CODE=0&MENU_ID_LV1=&CLICK_AREA_PRT_CODE=V05&ACTION_AF_CLICK=V1"><span>멜론 아지톡</span></a></li><!-- 161206 -->
+							<li><a href="http://aztweb.melon.com/aztalk/guide/web/main.htm" title="멜론 아지톡" class="menu03 mlog" data="LOG_PRT_CODE=1&MENU_PRT_CODE=0&MENU_ID_LV1=&CLICK_AREA_PRT_CODE=V05&ACTION_AF_CLICK=V1"><span>멜론 아지톡</span></a></li>161206
 						</ul>
 					</div>
-					<!-- 140603_수정 -->
+					140603_수정
 					<div class="top_right ">
 						<ul class="clfix">
 							
@@ -289,28 +289,28 @@
 							<li class="last_child"><a href="/event/index.htm" title="이벤트" class="menu03 mlog" data="LOG_PRT_CODE=1&MENU_PRT_CODE=0&MENU_ID_LV1=&CLICK_AREA_PRT_CODE=B03&ACTION_AF_CLICK=V1"><span>이벤트</span></a></li>
 						</ul>
 					</div>
-					<!-- //140603_수정 -->
+					//140603_수정
 				</div>
-				<!-- //상단 빠른 메뉴 -->
+				//상단 빠른 메뉴
 
-				<!-- 140603_수정 -->
+				140603_수정
 				
 				<h1><a href="http://www.melon.com/index.htm" title="MelOn 로고 - 홈으로 이동" class="mlog" data="LOG_PRT_CODE=1&MENU_PRT_CODE=0&MENU_ID_LV1=&CLICK_AREA_PRT_CODE=M01&ACTION_AF_CLICK=V1"><img width="142" height="99" src="http://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png" alt="MelOn 로고 이미지"/></a></h1>
 				
-				<!-- //140603_수정 -->
-				<!-- 통합검색 영역 -->
+				//140603_수정
+				통합검색 영역
 				<fieldset>
 					<legend>통합검색영역</legend>
 					<input type="text" title="검색 입력 편집창" placeholder="" name="" id="top_search" style="width:249px" onkeypress="if(event.keyCode == 13){goSearch();}"/><input type="hidden" name="keywordLink" id="keywordLink" value="" />
-					<button type="button" style="display: none;" id="top_search_autocomplete_toggle" class="btn_icon btn_auto close" title="자동검색 펼침"><span class="odd_span">자동검색 펼침</span></button> <!-- open/close 클래스 사용 -->
+					<button type="button" style="display: none;" id="top_search_autocomplete_toggle" class="btn_icon btn_auto close" title="자동검색 펼침"><span class="odd_span">자동검색 펼침</span></button> open/close 클래스 사용
 					<button type="button" class="btn_icon search_m" title="검색"><span class="odd_span">검색</span></button>
-					<div class="auto_complete" id="top_search_autocomplete"><div class="auto_complete_cont" style="display:block;"><!-- 자동완성 레이어 --></div></div>
-					<div class="auto_complete" id="top_search_autocomplete_template" style="display: none;"> <!-- 자동완성 레이어 템플릿 -->
-						<!-- 텍스트 결과 -->
+					<div class="auto_complete" id="top_search_autocomplete"><div class="auto_complete_cont" style="display:block;">자동완성 레이어</div></div>
+					<div class="auto_complete" id="top_search_autocomplete_template" style="display: none;"> 자동완성 레이어 템플릿
+						텍스트 결과
 						<ul class="text_result">
 							<li><a href="#" class="autocomplete-label"></a></li>
 						</ul>
-						<!-- 섬네일 결과 -->
+						섬네일 결과
 						<ul class="thumb_result">
 							<li class="cate"></li>
 							<li class="class02">
@@ -326,7 +326,7 @@
 								</a>
 							</li>
 						</ul>
-						<!-- 검색어가 없을 때 -->
+						검색어가 없을 때
 						<ul class="text_result">
 							<li class="result_none">
 								<span>해당글자로 시작하는 단어가 없습니다.</span>
@@ -338,16 +338,16 @@
 					<input type="hidden" name="q"/>
 					<input type="hidden" name="section"/>
 				</form>
-				<!-- //통합검색 영역 -->
+				//통합검색 영역
 
-				<!-- 실시간 검색어 -->
+				실시간 검색어
 				<div class="realtime_soar_keyword">
-					<!-- 140519_수정 -->
+					140519_수정
 					<a href="http://www.melon.com/search/trend/index.htm" class="title">급상승 키워드</a>
-					<!-- //140519_수정 -->
+					//140519_수정
 					<div class="keyword_overlay">
 						<ol style="overflow:hidden; height:20px;">
-							<!-- 롤링 영역
+							롤링 영역
 							<li>
 								<div style="top:;">
 									<strong class="order bg2 on"><span class="none">1 위</span></strong>
@@ -358,27 +358,27 @@
 									</span>
 								</div>
 							</li>
-							//롤링 영역 -->
+							//롤링 영역
 						</ol>
-						<!-- 140423_추가 -->
+						140423_추가
 						<a href="http://www.melon.com/search/trend/index.htm" class="keyword_more" title="실시간 순위"><span>더보기 <span></span></span></a>
-						<!-- //140423_추가 -->
+						//140423_추가
 					</div>
-					<!-- 140423_삭제 -->
-					<!-- <a href="#" class="d_btn_ctrl pause" title="이벤트 일시정지"><span><span class="none">일시정지</span></span></a> -->
-					<!-- //140423_삭제 -->
+					140423_삭제
+					<a href="#" class="d_btn_ctrl pause" title="이벤트 일시정지"><span><span class="none">일시정지</span></span></a>
+					//140423_삭제
 				</div>
-				<!-- //실시간 검색어 -->
+				//실시간 검색어
 
-				<!-- 배너 영역 -->
+				배너 영역
 				<div class="cmn_banner"></div>
 
                 <script type="text/javascript">
 				MelonPersonal.printLayout();
 				</script>
-			</div>
+			</div> -->
             <!-- 140314_gnb마크업 수정 -->
-			<div id="gnb_menu">
+			<!-- <div id="gnb_menu">
 				<ul>
 					<li class="nth1">
 						
@@ -404,9 +404,9 @@
 								<li class="first_child"><a href="http://www.melon.com/new/index.htm"><span class="menu_new m1">최신곡</span></a></li>
 								<li class=""><a href="http://www.melon.com/new/album/index.htm"><span class="menu_new m2">최신앨범</span></a></li>
 								<li class=""><a href="http://www.melon.com/new/mv/index.htm"><span class="menu_new m3">최신 뮤직비디오</span></a></li>
-								<!-- 160404 제거 -->
+								160404 제거
 								
-								<!-- // 160404 제거 -->
+								// 160404 제거
 							</ul>							
 						</div>
 					</li>
@@ -467,30 +467,30 @@
 							</div>
 						</div>
 					</li>
-					<!-- 160314 수정 -->
+					160314 수정
 					<li class="nth7">
 						
 						<a href="http://www.melon.com/musicstory/today/index.htm" class="cur_menu mlog" data="LOG_PRT_CODE=1&MENU_PRT_CODE=0&MENU_ID_LV1=&CLICK_AREA_PRT_CODE=S09&ACTION_AF_CLICK=V1"><span class="cur_status none">현재 선택된 메뉴-</span><span class="menu_bg menu07">멜론매거진</span></a>
 					</li>
-					<!-- // 160314 수정 -->
+					// 160314 수정
 					<li class="nth8">
 						
 						<a href="http://www.melon.com/melonaward/timeline.htm" class="cur_menu mlog" data="LOG_PRT_CODE=1&MENU_PRT_CODE=0&MENU_ID_LV1=&CLICK_AREA_PRT_CODE=S11&ACTION_AF_CLICK=V1"><span class="cur_status none">현재 선택된 메뉴-</span><span class="menu_bg menu08">뮤직어워드</span></a>
 					</li>
 					
-					<!-- 170531 수정 kjh -->
+					170531 수정 kjh
 					<li class="nth10">
 						
 						<a href="http://www.melon.com/flac/index.htm" data="LOG_PRT_CODE=1&MENU_PRT_CODE=0&MENU_ID_LV1=&CLICK_AREA_PRT_CODE=C05&ACTION_AF_CLICK=V1" class="cur_menu mlog"><span class="cur_status none">현재 선택된 메뉴-</span><span class="menu_bg menu12">멜론Hi-Fi</span><span class="icon_new"></span></a>
 					</li>
-					<!-- //170531 수정 kjh -->
+					//170531 수정 kjh
 					
 					
 					<li class="nth9 last_child">
-					<!-- //140523_수정 -->
+					//140523_수정
 						
 						<a href="#" class="cur_menu mlog_without_page_change" data="LOG_PRT_CODE=1&MENU_PRT_CODE=0&MENU_ID_LV1=&CLICK_AREA_PRT_CODE=S99&ACTION_AF_CLICK=V1"><span class="cur_status none">현재 선택된 메뉴-</span><span class="menu_bg menu09">더보기</span></a>
-						<div class="more_wrap" style="display:none"><!-- more_lay일때 display:block -->
+						<div class="more_wrap" style="display:none">more_lay일때 display:block
 							<ul>
 								
 								<li class="first_child"><a href="http://www.melon.com/smartradio/index.htm" class="mlog" data="LOG_PRT_CODE=1&MENU_PRT_CODE=0&MENU_ID_LV1=&CLICK_AREA_PRT_CODE=S06&ACTION_AF_CLICK=V1"><span class="menu_more m1">스마트라디오</span></a></li>
@@ -514,11 +514,11 @@
 					</li>
 				</ul>
 			</div>
-			<!-- location 기획 요청으로 제거 2014-04-01 -->
+			location 기획 요청으로 제거 2014-04-01
 
-			<!-- //location -->
+			//location
 		</div>
-	</div>
+	</div> -->
 	<!-- //header -->
 
 	<div id="cont_wrap" class="clfix">
@@ -541,10 +541,10 @@
 					<li><a href="http://www.melon.com/customer/aztalk/index.htm" class="link_tab" title="아지톡 서비스 소개 - 페이지 이동">
 							<span class="cntt">아지톡 서비스 소개</span>
 						</a></li> -->
-					<li class="on"><a href="http://www.melon.com/customer/announce/index.htm" class="link_tab" title="공지사항 - 페이지 이동">
+					<li class="on"><a href="ZamongFrontEnd/NoticeList.do" class="link_tab" title="공지사항 - 페이지 이동">
 						<span class="cntt">공지사항</span>
 					</a></li>
-					<li><a href="http://faqs2.melon.com/customer/faq/index.htm" class="link_tab" title="자주하는 질문 - 페이지 이동">
+					<li><a href="ZamongFrontEnd/UserQuestionList.do" class="link_tab" title="자주하는 질문 - 페이지 이동">
 						<span class="cntt">자주 하는 질문</span>
 					</a></li>
 					<li><a href="https://help.melon.com/web/customer/help/index.htm" class="link_tab" title="나의 문의 내역 - 페이지 이동">
@@ -594,7 +594,7 @@
 					</table>
 				</div>
 				<div class="btn_wrap t_right">
-					<button type="button" id="listBtn" title="
+					<button type="button" onclick="javascript:goList();" id="listBtn" title="
 
  전체 목록 이동 버튼 - 페이지 이동" class="btn btn_big"><span class="odd_span"><span class="even_span">목록</span></span></button>
 				</div>
@@ -670,13 +670,14 @@
 	<script type="text/javascript" src="/resource/script/web/customer/melonweb_customer.js"></script>
 	<!-- 화면 내부 전용 스크립트 -->
 	<script type="text/javascript">
-		$(document).ready(function(){
-			//목록으로 돌아가기
-			$("#listBtn").click(function(){
-				$('#dataForm').attr('action','/customer/announce/index.htm');
-				$('#dataForm').submit();
-			});
-		});
+	function goList(){
+		if('' == '' && '' == '' && '' == ''){
+			location.href ="ZamongFrontEnd/NoticeList.do";
+		}else{
+			$("#form2").attr({action : "http://faqs2.melon.com/customer/faq/search.htm"});
+			$("#form2").submit();
+		}
+	}
 		//상세보기 페이지로 이동
 		function goDetail(flag, ancm_seq) {
 

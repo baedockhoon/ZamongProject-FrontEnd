@@ -206,31 +206,22 @@
 
 <jsp:include page="/WEB-INF/bbs/template/Top.jsp" />
 <body>
-<div id="conts" align="center">
     <h2 class="f_tit mb20" align="center">고객지원센터</h2>
+<div id="conts" align="center">
     <div class="wrap_tab03 type05" align="center">
         <ul>
             <li style="text-align: center;" class="first_child"><a href="http://faqs2.melon.com/customer/index.htm" class="link_tab" title="홈 - 페이지 이동">
                 <span class="cntt">홈</span>
             </a></li>
-            <!--  <li><a href="http://www.melon.com/customer/serviceintro/index.htm" class="link_tab" title="멜론 서비스 소개 - 페이지 이동">
-                <span class="cntt">멜론 서비스 소개</span>
-            </a></li>
-            <li><a href="http://www.melon.com/customer/aztalk/index.htm" class="link_tab" title="아지톡 서비스 소개 - 페이지 이동">
-                    <span class="cntt">아지톡 서비스 소개</span>
-                </a></li> -->
-            <li class="on"><a href="http://www.melon.com/customer/announce/index.htm" class="link_tab" title="공지사항 - 페이지 이동">
-                <span class="cntt">공지사항</span>
+      
+            <li class="on"><a href="<c:url value='/ZamongFrontEnd/NoticeList.do'/>" class="link_tab" title="공지사항 - 페이지 이동">              <span class="cntt">공지사항</span>
             </a></li>
             <li><a href="<c:url value='/ZamongFrontEnd/UserQuestionList.do'/>" class="link_tab" title="자주하는 질문 - 페이지 이동">
                 <span class="cntt">자주 하는 질문</span>
             </a></li>
             <li><a href="https://help.melon.com/web/customer/help/index.htm" class="link_tab" title="나의 문의 내역 - 페이지 이동">
                 <span class="cntt">나의 문의 내역</span>
-            </a></li>
-            <li class="last_child"><a href="http://www.melon.com/customer/dcf/index.htm" class="link_tab" title="DCF 지원 기기 - 페이지 이동">
-                <span class="cntt">DCF 지원 기기</span>
-            </a></li>
+            </a></li>          
         </ul>
     </div>
  <div class="search_head mt24">
