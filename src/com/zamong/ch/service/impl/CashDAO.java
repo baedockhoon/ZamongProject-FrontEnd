@@ -1,4 +1,4 @@
-package com.zamong.bp.service.impl;
+package com.zamong.ch.service.impl;
 
 import java.util.List;
 import java.util.Map;
@@ -10,30 +10,31 @@ import org.springframework.stereotype.Repository;
 
 import com.zamong.bp.service.BuyproductDTO;
 import com.zamong.bp.service.BuyproductService;
+import com.zamong.ch.service.CashDTO;
+import com.zamong.ch.service.CashService;
 import com.zamong.nt.service.NotiDataDTO;
 import com.zamong.nt.service.NotiDataService;
 
 @Repository
-public class BuyproductDAO implements BuyproductService{
+public class CashDAO implements CashService{
 
 	@Resource(name="template")
 	private SqlSessionTemplate template;
 
 	@Override
-	public List<BuyproductDTO> selectList(Map map) throws Exception {
+	public List<CashDTO> selectList(Map map) throws Exception {
 		// TODO Auto-generated method stub
-		return template.selectList("Buylist", map);
+		return template.selectList("CashPointlist", map);
 	}
 
-
 	@Override
-	public int update(BuyproductDTO dto) throws Exception {
+	public int update(CashDTO dto) throws Exception {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int delete(BuyproductDTO dto) throws Exception {
+	public int delete(CashDTO dto) throws Exception {
 		// TODO Auto-generated method stub
 		return 0;
 	}
@@ -51,27 +52,11 @@ public class BuyproductDAO implements BuyproductService{
 	}
 
 	@Override
-	public BuyproductDTO selectOne(BuyproductDTO dto) throws Exception {
+	public CashDTO selectOne(CashDTO dto) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public int insertCash(BuyproductDTO dto) throws Exception {
-		// TODO Auto-generated method stub
-		return template.insert("insertCash",dto);
-	}
-
-	@Override
-	public int insertStreaming(BuyproductDTO dto) throws Exception {
-		// TODO Auto-generated method stub
-		return template.insert("insertStreaming",dto);
-	}
-	@Override
-	public int insertBuyproduct(BuyproductDTO dto) throws Exception {
-		// TODO Auto-generated method stub
-		return template.insert("insertBuyproduct",dto);
-	}
 
 	
 

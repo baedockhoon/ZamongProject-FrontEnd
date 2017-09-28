@@ -40,12 +40,12 @@ dao.close();
 	href="<c:url value='/bootstrap/css/bootstrap-theme.min.css'/>">
 	<script>
 	function goSubmit() {
-	    /* window.opener.name = "parentPage"; // 부모창의 이름 설정
-	    document.myForm.target = "parentPage"; // 타켓을 부모창으로 설정  */
+	     window.opener.name = "parentPage"; // 부모창의 이름 설정
+	    document.myForm.target = "parentPage"; // 타켓을 부모창으로 설정  
 	    document.myForm.action = "<c:url value='/ZamongFrontEnd/PaymentWrite.do'/>";
 	    document.myForm.submit();
 	    alert("충전성공");
-	   
+	    self.close();
 	}
 	
 	</script>  

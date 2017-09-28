@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -23,6 +24,15 @@
 	<script type="text/javascript">
 		var pocId = getCookie("POC");
 		memberMyinfoGnb('PRODUCTCENTER',pocId);
+		
+		function goPopup() {
+			// 주소검색을 수행할 팝업 페이지를 호출합니다.
+			// 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
+			var pop = window.open("<c:url value='/ZamongFrontEnd/Payment.do'/>", "pop",
+					"width=700,height=600, scrollbars=yes, resizable=yes");
+
+			
+		}
 	</script>
 
 	<div id="cont_wrap" class="clfix">
@@ -62,8 +72,8 @@
 					<span class="fc_point f_arial">0</span>
 					원
 				</strong>
-				<button type="button" title="캐쉬 충전 - 페이지 이동" class="btn_emphs_small" id="d_move"><span class="odd_span"><span class="even_span">캐쉬 충전</span></span></button>
-				<button type="button" title="소멸 예정 캐쉬 - 새창" class="btn_emphs02_small ml0" id="d_open"><span class="odd_span"><span class="even_span">소멸 예정 캐쉬</span></span></button>
+				<button type="button" title="캐쉬 충전 - 페이지 이동" onclick="goPopup();" class="btn_emphs_small" ><span class="odd_span"><span class="even_span">캐쉬 충전</span></span></button>
+				
 			</div>
 			<ul class="list_bullet03">
 				<li>멜론 캐쉬는 멜론 이용권, 곡, 뮤직비디오 등 구매 시 사용 하실 수 있습니다</li>
@@ -96,18 +106,38 @@
 						<th scope="col"><div class="wrap">유형</div></th>
 						<th scope="col"><div class="wrap">내용</div></th>
 						<th scope="col"><div class="wrap">적립금액</div></th>
-						<th scope="col"><div class="wrap">차감금액</div></th>
-						<th scope="col"><div class="wrap">유효기간</div></th>
-					</tr>
-				</thead>
-				<tbody id="pageList">
-					
+					 	<th scope="col"><div class="wrap">차감금액</div></th>
 		
-	
-	
-		<tr>
-			<td colspan="7"><div class="wrap search_wrong">멜론 캐쉬 이용내역이 없습니다.</div></td>
-		</tr>
+					</tr>
+					
+					
+				
+					
+				</thead>
+	<c:choose>
+			<c:when test="${empty list }">
+				<tr bgcolor="white" align="center">
+					<td colspan="6">등록된 자료가 없어요</td>
+				</tr>
+			</c:when>
+			<c:otherwise>
+				<c:forEach var="item" items="${list}" varStatus="loop">
+				
+					
+					<tr >
+						<td class="no"align="center"><div class="wrap">${item.ch_no}</div></td>
+						<td><div class="wrap"align="center">${item.ch_regidate}</div></td>
+							<td div class="wrap" align="center">캐쉬</td>
+							<td div class="wrap"align="center">캐쉬결제</td>
+						<td><div class="wrap"align="center">${item.ch_havecash}원</div></td>
+							<td><div class="wrap"></div></td>
+				
+					</tr>
+					
+				</c:forEach>
+			</c:otherwise>
+		</c:choose>		
+			
 	
 
 <script type="text/javascript">
@@ -149,12 +179,7 @@ var pageobj = new Pagination('/commerce/mypage/cash/web/meloncash_listChargedSpe
 		var melon = MELON.WEBSVC.POC;
 	</script>
 <script type="text/javascript">
-(function() {
-	// 캐쉬충전 페이지 이동
-	$("#d_move").on('click', function(e) {
-		window.open(httpsWww + '/buy/meloncash/charge.htm', 'melonCash','app_, width=645, height=612, status=no, toolbar=no, scrollbars=yes');
-		return false;
-	});
+
 
 	// 소멸예정 캐쉬 팝업
 	$("#d_open").on('click', function(e) {

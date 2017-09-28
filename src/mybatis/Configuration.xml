@@ -20,6 +20,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias alias="Comment" type="com.zamong.mg.service.CommentDTO"/>
 		<typeAlias alias="MusicAward" type="com.zamong.ma.service.MusicAwardDTO"/>
 		<typeAlias alias="BuyProduct" type="com.zamong.bp.service.BuyproductDTO"/>
+		<typeAlias alias="CashPoint" type="com.zamong.ch.service.CashDTO"/>
 	</typeAliases>
 			<!-- JNDI-->
 			<!-- 커넥션 풀 사용 -->
@@ -40,5 +41,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="mybatis/Login_mybatis.xml"/>
 		<mapper resource="mybatis/Comment_mybatis.xml"/>
 		<mapper resource="mybatis/Buyproduct_mybatis.xml"/>
+		<mapper resource="mybatis/CashPoint_mybatis.xml"/>
 	</mappers>
 </configuration>

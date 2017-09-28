@@ -1,4 +1,4 @@
-package com.zamong.web.bpproduct;
+package com.zamong.web.cash;
 
 import java.util.List;
 import java.util.Map;
@@ -21,20 +21,20 @@ import com.zamong.bp.service.BuyproductDTO;
 import com.zamong.bp.service.impl.BuyproductDAO;
 import com.zamong.bp.service.impl.BuyproductServiceImpl;
 import com.zamong.ch.service.CashDTO;
-
+import com.zamong.ch.service.impl.CashServiceImpl;
 import com.zamong.nt.service.NotiDataDTO;
 import com.zamong.nt.service.impl.NotiDataServiceImpl;
 import com.zamong.st.service.StreamingDTO;
 
 
 @Controller
-public class BpproductController {
+public class CashController {
 	
-	@Resource(name="buyproductServiceImpl")
-	private BuyproductServiceImpl service;
+	@Resource(name="cashServiceImpl")
+	private CashServiceImpl service;
 	
 	
-	@RequestMapping("/ZamongFrontEnd/CashList.do")
+	/*@RequestMapping("/ZamongFrontEnd/CashList.do")
 	public String view(HttpSession session)throws Exception {
 		
 		
@@ -60,10 +60,10 @@ public class BpproductController {
 		
 		
 		
-		/*return "/WEB-INF/bbs/cash/PaymentList.jsp";*/
+		return "/WEB-INF/bbs/cash/PaymentList.jsp";
 		return "/ZamongFrontEnd/PaymentList.do";
-	}
-	/*@RequestMapping("/ZamongFrontEnd/PaymentList.do")
+	}*/
+	@RequestMapping("/ZamongFrontEnd/PaymentList.do")
 	public String list(
 			HttpServletRequest req,//페이징용 메소드에 전달
 			@RequestParam Map map,//검색용 파라미터 받기
@@ -71,13 +71,13 @@ public class BpproductController {
 			) throws Exception{
 			
 		//서비스 호출]
-		List<BuyproductDTO> list= service.selectList(map);
+		List<CashDTO> list= service.selectList(map);
 		//데이타 저장]		
 		model.addAttribute("list", list);
 		
 		
 		return "/WEB-INF/bbs/cash/PaymentList.jsp";
 	}//////////////////list()
-*/	
+	
 	
 }

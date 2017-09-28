@@ -4,10 +4,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace속성:매퍼파일의 완전한경로 .xml는 생략 -->
 <!-- ※ibatis와는 다르게 id값에 .(dot)를 사용 못한다. -->
-<mapper namespace="mybatis.Buyproduct_mybatis.xml">
+<mapper namespace="mybatis.NotiData_mybatis">
 	<!--resultMap사용시 column속성 필수  -->
-	
- 
+	<resultMap id="CashDTOResult" type="CashPoint">
+	    <result property="me_id" column="me_id"/>
+	    <result property="ch_no" column="ch_no"/>
+	    <result property="me_no" column="me_no"/>
+	    <result property="ch_havecash" column="ch_havecash"/>
+
+ 	</resultMap>
  	
 	<!-- private String nt_no;//키값
 	private java.util.Date nt_regidate;//날짜
@@ -22,25 +27,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  	<!-- id속성에 지정한 값을 자바코드(DAO계열 클래스)에서 
            식별자로 사용 -->
            
-<!--  <select id="Buylist" parameterType="java.util.Map" resultType="BuyProduct">
-		SELECT * FROM BP_BUYPRODUCT
-	</select> -->
- 	<!-- <select id="NotiDataView" parameterType="BuyproductDTO" resultType="BuyProduct">
+	<select id="CashPointlist" parameterType="java.util.Map" resultMap="CashDTOResult">
+		SELECT * FROM CH_PAYMENT ORDER BY CH_REGIDATE DESC,CH_NO DESC
+	</select>
+ 	<!-- <select id="NotiDataView" parameterType="java.util.Map" resultMap="CashDTOResult">
 		SELECT * FROM NT_NOTICE WHERE NT_NO=#{nt_no}
-	</select>  --> 
+	</select> 
 	
- 	<insert id="insertBuyproduct"  parameterType="BuyProduct">
-		<!-- INSERT INTO BP_BUYPRODUCT VALUES(BP_SEQ.NEXTVAL,SYSDATE,#{pd_no},(select me_no from me_member where me_id = #{me_id}),#{bp_price},1) -->
-		INSERT INTO BP_BUYPRODUCT VALUES(BP_SEQ.NEXTVAL,SYSDATE,#{pd_no},23,#{bp_price},1)
-	</insert>
-	 <insert id="insertCash"  parameterType="BuyProduct">
-		INSERT INTO CH_PAYMENT VALUES(CH_SEQ.NEXTVAL,SYSDATE,23,#{ch_havecash})
-<!-- 		INSERT INTO CH_PAYMENT VALUES(CH_SEQ.NEXTVAL,SYSDATE,(select me_no from me_member where me_id =#{me_id}),#{ch_havecash}) -->
-	</insert>
-        <insert id="insertStreaming"  parameterType="BuyProduct">
-		INSERT INTO ST_STREAMING VALUES(ST_SEQ.NEXTVAL,SYSDATE,SYSDATE+30 ,BP_SEQ.CURRVAL,23)
-		<!-- INSERT INTO ST_STREAMING VALUES(ST_SEQ.NEXTVAL,SYSDATE,SYSDATE+30 ,BP_SEQ.CURRVAL,(select me_no from me_member where me_id =#{me_id})) -->
-	</insert>    
+ 	<update id="NotiDateUpdate"  parameterType="java.util.Map">
+		UPDATE NT_NOTICE SET NT_HITCOUNT=NT_HITCOUNT+1 WHERE NT_NO=#{nt_no}
+	</update>  -->
+
+           
        <!--     
            
  	<select id="ReplyBBSLogin" parameterType="java.util.Map" resultType="int">
