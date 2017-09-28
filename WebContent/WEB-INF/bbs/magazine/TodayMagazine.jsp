@@ -126,13 +126,21 @@
 				</c:forEach>
 			</c:otherwise>
 		</c:choose>
-
 	</table>
+	
 	</div>
+	<!-- 페이징 -->
+   <table width="100%">
+     <tr align="center">
+       <td>${pagingString }</td>
+     </tr>
+   </table>
 </div>
 </div>
 </div>
+
 </div>
 </div>
 </body>
+<jsp:include page="/WEB-INF/bbs/template/Foot.jsp" />
 </html>

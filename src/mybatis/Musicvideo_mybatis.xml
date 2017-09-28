@@ -36,19 +36,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM MV_MUSICVIDEO ORDER BY MV_NO DESC
 	</select>
 	
-	<select id="MusicVideolist_pop" parameterType="java.util.Map" resultMap="MusicVideoDTOResult">
-		SELECT * FROM MV_MUSICVIDEO ORDER BY mv_hitcount desc
-	</select>
-	
 	<select id="MusicVideoView" parameterType="java.util.Map" resultMap="MusicVideoDTOResult">
 		<!-- UPDATE MV_MUSICVIDEO SET MV_HITCOUNT=MV_HITCOUNT+1 WHERE MV_NO=#{mv_no} -->
 		SELECT * FROM MV_MUSICVIDEO WHERE MV_NO=#{mv_no}
 	</select> 
            
-    <select id="MusicVideoHitcount" parameterType="java.util.Map" resultMap="MusicVideoDTOResult">
-		UPDATE MV_MUSICVIDEO SET MV_HITCOUNT=MV_HITCOUNT+1 WHERE MV_NO=#{mv_no}
-	</select> 
-	
        <!--     
            
  	<select id="ReplyBBSLogin" parameterType="java.util.Map" resultType="int">

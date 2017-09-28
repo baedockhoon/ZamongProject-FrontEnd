@@ -1,5 +1,6 @@
 package com.zamong.web.magazine;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -12,7 +13,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.zamong.mg.service.CommentDTO;
+import com.zamong.mg.service.CommentService;
 import com.zamong.mg.service.MagazineDTO;
+import com.zamong.mg.service.impl.CommentServiceImpl;
 import com.zamong.mg.service.impl.MagazineServiceImpl;
 import com.zamong.web.PagingUtil;
 
@@ -26,8 +30,9 @@ public class MagazineController {
 	private int blockPage;
 	
 	@Resource(name="magazineServiceImpl")
-	private MagazineServiceImpl service;
-	
+	private MagazineServiceImpl MagazineService;
+	@Resource(name="commentServiceImpl")
+	private CommentServiceImpl CommentService;
 	
 	@RequestMapping("/ZamongFrontEnd/Magazine.do")
 	public String list(
@@ -40,7 +45,7 @@ public class MagazineController {
 		
 		//페이징을 위한 로직 시작]
 		//전체 레코드 수
-		int totalRecordCount=service.getTotalCount(map);
+		int totalRecordCount=MagazineService.getTotalCount(map);
 		//전체 페이지수]
 		int totalPage = (int)Math.ceil((double)totalRecordCount/pageSize);		
 		//시작 및 끝 ROWNUM구하기]
@@ -51,7 +56,7 @@ public class MagazineController {
 		map.put("end"  , end);
 		
 		//서비스 호출]
-		List<MagazineDTO> list= service.selectList(map);
+		List<MagazineDTO> list= MagazineService.selectList(map);
 		
 		
 		//페이징용 서비스 호출
@@ -65,6 +70,8 @@ public class MagazineController {
 		//데이타 저장]		
 		model.addAttribute("list", list);
 		model.addAttribute("pagingString",pagingString);
+		model.addAttribute("start",start);
+		model.addAttribute("end",end);
 		
 		return "/WEB-INF/bbs/magazine/Magazine.jsp";
 	}//////////////////list()
@@ -80,7 +87,7 @@ public class MagazineController {
 		
 		//페이징을 위한 로직 시작]
 		//전체 레코드 수
-		int totalRecordCount=service.getTotalCount(map);
+		int totalRecordCount=MagazineService.getTotalCount(map);
 		//전체 페이지수]
 		int totalPage = (int)Math.ceil((double)totalRecordCount/pageSize);		
 		//시작 및 끝 ROWNUM구하기]
@@ -91,7 +98,7 @@ public class MagazineController {
 		map.put("end"  , end);
 		
 		//서비스 호출]
-		List<MagazineDTO> list= service.selectList_Today(map);
+		List<MagazineDTO> list= MagazineService.selectList_Today(map);
 		
 		
 		//페이징용 서비스 호출
@@ -112,10 +119,13 @@ public class MagazineController {
 	
 	
 	@RequestMapping("/ZamongFrontEnd/MagazineView.do")
-	public String view(MagazineDTO dto, Model model, HttpServletRequest req)throws Exception {
-		service.hitcount(dto);
-
-		dto = service.selectOne(dto);
+	public String view(MagazineDTO dto, Model model)throws Exception {
+		MagazineService.hitcount(dto);
+		dto = MagazineService.selectOne(dto);
+		
+		Map map = new HashMap();
+		map.put("no", dto.getMg_no());
+		List<CommentDTO> comments = CommentService.selectList(map);
 		//줄바꿈 처리
 		dto.setMg_contents(dto.getMg_contents().replace("\r\n","<br/>"));
 		
@@ -123,6 +133,8 @@ public class MagazineController {
 		//5]필요한 값 리퀘스트 영역에 저장
 	
 		model.addAttribute("dto", dto);
+		model.addAttribute("memo",comments);
+		
 		return "/WEB-INF/bbs/magazine/MagazineView.jsp";
 	}
 	
