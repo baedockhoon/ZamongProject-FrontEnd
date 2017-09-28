@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -699,99 +699,38 @@
 					<th scope="col"><div class="wrap">최종수정일</div></th>
 				</tr>
 				</thead>
-				<tbody>
-				
-					<tr class="first_child">
-						<td class="no"><div class="wrap">1</div></td>
-						<td><div class="wrap f11 right">서비스문의/오류</div></td>
-						<td><div class="wrap f11 right">Windows 플레이어</div></td>
-						<td><div class="wrap right"><span class="ellipsis" style="max-width:565px;"><a href="javascript:doView('1','QUES20140618000080');" title="멜론 플레이어에서 사용기기는 어떻게 등록하나요? - 페이지 이동">멜론 플레이어에서 사용기기는 어떻게 등록하나요?</a></span></div></td>
-						<td><div class="wrap">3,031,481</div></td>
-						<td class="t_center"><div class="wrap">2014.06.18</div></td>
-					</tr>
-				
+			<c:choose>
+			<c:when test="${empty list }">
+				<tr bgcolor="white" align="center">
+					<td colspan="6">등록된 자료가 없어요</td>
+				</tr>
+			</c:when>
+			<c:otherwise>
+				<c:forEach var="item" items="${list}" varStatus="loop">
+					<%-- <tr bgcolor="white" align="center">
+						<td>${item.nt_no}</td>
+						<td>${item.nt_classification}</td>
+						<td><a
+							href='<c:url value="/ZAMONG/NoticeView.do?nt_no=${item.nt_no}&nowPage=${nowPage }"/>'>${item.nt_title}</a></td>
+						<td>${item.nt_hitcount}</td>
+						<td>${item.nt_regidate}</td>
+
+						<td><a href='javascript:isDelete(${item.nt_no})'><button
+									type="button" class="btn btn-xs btn-primary">삭제</button></a></td>
+
+					</tr> --%>
+					
 					<tr >
-						<td class="no"><div class="wrap">2</div></td>
-						<td><div class="wrap f11 right">서비스문의/오류</div></td>
-						<td><div class="wrap f11 right">재생/다운로드</div></td>
-						<td><div class="wrap right"><span class="ellipsis" style="max-width:565px;"><a href="javascript:doView('2','QUES20140611000001');" title="다운로드한 음악 파일은 내 컴퓨터의 어디에 저장되나요? - 페이지 이동">다운로드한 음악 파일은 내 컴퓨터의 어디에 저장되나요?</a></span></div></td>
-						<td><div class="wrap">961,914</div></td>
-						<td class="t_center"><div class="wrap">2017.06.07</div></td>
+						<td class="no"><div class="wrap">${item.nt_no}</div></td>
+						<td><div class="wrap">${item.nt_classification}</div></td>
+						<td><div class="wrap fc_strong"> <span class="ellipsis" style="max-width:580px;"><a href='<c:url value="/NoticeView.do?nt_no=${item.nt_no}"/>'>${item.nt_title}</a></span></div></td>
+						<td><div class="wrap">${item.nt_hitcount}</div></td>
+						<td><div class="wrap">${item.nt_regidate}</div></td>
 					</tr>
-				
-					<tr >
-						<td class="no"><div class="wrap">3</div></td>
-						<td><div class="wrap f11 right">서비스문의/오류</div></td>
-						<td><div class="wrap f11 right">파일변환(DCF)</div></td>
-						<td><div class="wrap right"><span class="ellipsis" style="max-width:565px;"><a href="javascript:doView('3','QUES20140610000010');" title="MP3 파일을 DCF파일로 바꾸는 방법 - 페이지 이동">MP3 파일을 DCF파일로 바꾸는 방법</a></span></div></td>
-						<td><div class="wrap">69,506</div></td>
-						<td class="t_center"><div class="wrap">2014.06.21</div></td>
-					</tr>
-				
-					<tr >
-						<td class="no"><div class="wrap">4</div></td>
-						<td><div class="wrap f11 right">서비스문의/오류</div></td>
-						<td><div class="wrap f11 right">재생/다운로드</div></td>
-						<td><div class="wrap right"><span class="ellipsis" style="max-width:565px;"><a href="javascript:doView('4','QUES20140610000009');" title="다운로드 이용 PC 제한이 뭔가요? - 페이지 이동">다운로드 이용 PC 제한이 뭔가요?</a></span></div></td>
-						<td><div class="wrap">190,809</div></td>
-						<td class="t_center"><div class="wrap">2014.06.17</div></td>
-					</tr>
-				
-					<tr >
-						<td class="no"><div class="wrap">5</div></td>
-						<td><div class="wrap f11 right">결제/해지/환불</div></td>
-						<td><div class="wrap f11 right">해지/환불 요청</div></td>
-						<td><div class="wrap right"><span class="ellipsis" style="max-width:565px;"><a href="javascript:doView('5','QUES20140610000011');" title="멜론 캐쉬 환불안내 - 페이지 이동">멜론 캐쉬 환불안내</a></span></div></td>
-						<td><div class="wrap">159,621</div></td>
-						<td class="t_center"><div class="wrap">2017.05.19</div></td>
-					</tr>
-				
-					<tr >
-						<td class="no"><div class="wrap">6</div></td>
-						<td><div class="wrap f11 right">서비스문의/오류</div></td>
-						<td><div class="wrap f11 right">재생/다운로드</div></td>
-						<td><div class="wrap right"><span class="ellipsis" style="max-width:565px;"><a href="javascript:doView('6','QUES20140615000053');" title="Mac에서 멜론을 이용하고 싶어요. - 페이지 이동">Mac에서 멜론을 이용하고 싶어요.</a></span></div></td>
-						<td><div class="wrap">103,830</div></td>
-						<td class="t_center"><div class="wrap">2015.03.26</div></td>
-					</tr>
-				
-					<tr >
-						<td class="no"><div class="wrap">7</div></td>
-						<td><div class="wrap f11 right">결제/해지/환불</div></td>
-						<td><div class="wrap f11 right">해지/환불 요청</div></td>
-						<td><div class="wrap right"><span class="ellipsis" style="max-width:565px;"><a href="javascript:doView('7','QUES20140619000019');" title="이용권을 해지하고 싶은데 어떻게 해야 하나요? - 페이지 이동">이용권을 해지하고 싶은데 어떻게 해야 하나요?</a></span></div></td>
-						<td><div class="wrap">382,907</div></td>
-						<td class="t_center"><div class="wrap">2017.06.29</div></td>
-					</tr>
-				
-					<tr >
-						<td class="no"><div class="wrap">8</div></td>
-						<td><div class="wrap f11 right">결제/해지/환불</div></td>
-						<td><div class="wrap f11 right">해지/환불 요청</div></td>
-						<td><div class="wrap right"><span class="ellipsis" style="max-width:565px;"><a href="javascript:doView('8','QUES20140619000023');" title="멜론에서 이용권 사용 중 중도해지할 경우 이용한 금액은 어떻게 환불되나요? - 페이지 이동">멜론에서 이용권 사용 중 중도해지할 경우 이용한 금액은 어떻게 환불되나요?</a></span></div></td>
-						<td><div class="wrap">184,960</div></td>
-						<td class="t_center"><div class="wrap">2017.06.13</div></td>
-					</tr>
-				
-					<tr >
-						<td class="no"><div class="wrap">9</div></td>
-						<td><div class="wrap f11 right">결제/해지/환불</div></td>
-						<td><div class="wrap f11 right">결제 방법</div></td>
-						<td><div class="wrap right"><span class="ellipsis" style="max-width:565px;"><a href="javascript:doView('9','QUES20140618000049');" title="SKT T멤버십 할인한도 30% 차감 혜택을 계속해서 받을수는 없나요? - 페이지 이동">SKT T멤버십 할인한도 30% 차감 혜택을 계속해서 받을수는 없나요?</a></span></div></td>
-						<td><div class="wrap">69,326</div></td>
-						<td class="t_center"><div class="wrap">2015.03.26</div></td>
-					</tr>
-				
-					<tr >
-						<td class="no"><div class="wrap">10</div></td>
-						<td><div class="wrap f11 right">결제/해지/환불</div></td>
-						<td><div class="wrap f11 right">해지/환불 요청</div></td>
-						<td><div class="wrap right"><span class="ellipsis" style="max-width:565px;"><a href="javascript:doView('10','QUES20140619000024');" title="멜론 이용권을 해지 신청 했는데 멜론 서비스 사용이 아직도 되네요. 해지된 게 맞나요? - 페이지 이동">멜론 이용권을 해지 신청 했는데 멜론 서비스 사용이 아직도 되네요. 해지된 게 맞나요?</a></span></div></td>
-						<td><div class="wrap">73,824</div></td>
-						<td class="t_center"><div class="wrap">2015.03.26</div></td>
-					</tr>
-				
-				</tbody>
+					
+				</c:forEach>
+			</c:otherwise>
+		</c:choose>
 			</table>
 		</div>
 	</div>

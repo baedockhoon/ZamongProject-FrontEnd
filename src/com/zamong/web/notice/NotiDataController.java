@@ -33,6 +33,7 @@ public class NotiDataController {
 		//데이타 저장]		
 		model.addAttribute("list", list);
 		
+		
 		return "/WEB-INF/bbs/sample/NoticeList.jsp";
 	}//////////////////list()
 	@RequestMapping("/NoticeView.do")

@@ -57,7 +57,7 @@ public class UserQuestionDAO implements UserQeustionService{
 	@Override
 	public UserQuestionDTO selectOne(UserQuestionDTO dto) throws Exception {
 		// TODO Auto-generated method stub
-		return template.selectOne("NotiDataView", dto);
+		return template.selectOne("UserDataView", dto);
 	
 	}
 

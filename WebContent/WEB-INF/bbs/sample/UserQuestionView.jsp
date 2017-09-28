@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -25,7 +24,7 @@
 	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?2" />
 	
 	
-	<script type="text/javascript" src="${pageContext.request.contextPath}/Styles/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/Styles/js/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/Styles/js/melonweb_member_external.js"></script>
 	
 	
@@ -492,7 +491,7 @@
 
 <!-- contents -->
 <div id="conts">
-	<!-- 고객센터 공통 메뉴  start-->	
+	<!-- 고객센터 공통 메뉴  start-->
 	
 
 <h2 class="f_tit mb20">고객지원센터</h2>
@@ -519,12 +518,12 @@
 </div>
 	
 	<!-- 고객센터 공통 메뉴  end -->
-	
+
 	<form name="form1" method="get" onsubmit="javascript:return false;">
 		<div class="que_box mt24">
 			<label for="quick">빠르게 찾기</label>
 			<div class="que_box_input">
-				<input type="text" id="faq_search" name="SEARCH_KEY" class="text" title="자주하는 질문 검색 입력 편집창" placeholder="무엇을 도와드릴까요?" style="width:603px;"/>
+				<input type="text" id="faq_search" value="" class="text" title="자주하는 질문 검색 입력 편집창" placeholder="무엇을 도와드릴까요?" style="width:599px;" />
 			</div>
 			<button type="button" class="btn btn_big green" onclick="javascript:jsSearch();"><span class="odd_span"><span class="even_span">검색</span></span></button>
 			<div class="input_list" id="faq_search_autocomplete"><!-- 자동완성 레이어 --></div>
@@ -560,10 +559,10 @@
 	</form>
 	<form name="form2" id="form2" method="get" >
 		<input type="hidden" id="no" name="no"/>
-		<input type="hidden" id="faqId" name="faqId"/>
-		<input type="hidden" id="searchKey" 		name="SEARCH_KEY"/>
-		<input type="hidden" id="searchParCategory"	name="SEARCH_PAR_CATEGORY"/>
-		<input type="hidden" id="searchCategory" 	name="SEARCH_CATEGORY"/>
+		<input type="hidden" id="orderChk" 			name="orderChk" 			value=""/>
+		<input type="hidden" id="searchKey" 		name="SEARCH_KEY" 			value=""/>
+		<input type="hidden" id="searchParCategory"	name="SEARCH_PAR_CATEGORY" 	value=""/>
+		<input type="hidden" id="searchCategory" 	name="SEARCH_CATEGORY"		value=""/>
 	</form>
 	<div class="wrap_section pd0">
 		<h4 class="type02">유형별로 찾기</h4>
@@ -598,27 +597,35 @@
 		<div class="wrap_tab02 page_move" id="SUB_CATE20130909000001" style="display:none">
 			<ul class="tab_ul02">
 				<li class="tab_li02 first_child"><a href="javascript:doCategorySearch('CATE20130909000001','');" title="서비스 문의/오류 전체 - 페이지 이동" class="link_tab03">전체</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20140612000001');" title="서비스 문의/오류 멜론 메인 - 페이지 이동" class="link_tab03">멜론 메인</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130909000008');" title="서비스 문의/오류 멜론 차트 - 페이지 이동" class="link_tab03">멜론 차트</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130909000009');" title="서비스 문의/오류 멜론TV - 페이지 이동" class="link_tab03">멜론TV</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130909000010');" title="서비스 문의/오류 스타포스트 - 페이지 이동" class="link_tab03">스타포스트</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20170323000001');" title="서비스 문의/오류 채널 - 페이지 이동" class="link_tab03">채널</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20170323000002');" title="서비스 문의/오류 친밀도 - 페이지 이동" class="link_tab03">친밀도</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130930000001');" title="서비스 문의/오류 마이뮤직 - 페이지 이동" class="link_tab03">마이뮤직</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130930000002');" title="서비스 문의/오류 친구 - 페이지 이동" class="link_tab03">친구</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130930000003');" title="서비스 문의/오류 멜론DJ - 페이지 이동" class="link_tab03">멜론DJ</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130930000006');" title="서비스 문의/오류 스마트 라디오 - 페이지 이동" class="link_tab03">스마트 라디오</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20170315000001');" title="서비스 문의/오류 어워드/주간인기상 - 페이지 이동" class="link_tab03">어워드/주간인기상</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130930000007');" title="서비스 문의/오류 어학 - 페이지 이동" class="link_tab03">어학</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130930000008');" title="서비스 문의/오류 폰꾸미기 - 페이지 이동" class="link_tab03">폰꾸미기</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130930000009');" title="서비스 문의/오류 제휴 서비스 - 페이지 이동" class="link_tab03">제휴 서비스</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130930000010');" title="서비스 문의/오류 멜론설치/지원기기 - 페이지 이동" class="link_tab03">멜론설치/지원기기</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130930000011');" title="서비스 문의/오류 재생/다운로드 - 페이지 이동" class="link_tab03">재생/다운로드</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130930000012');" title="서비스 문의/오류 파일변환(DCF) - 페이지 이동" class="link_tab03">파일변환(DCF)</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20140610000001');" title="서비스 문의/오류 Windows 플레이어 - 페이지 이동" class="link_tab03">Windows 플레이어</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20170516000001');" title="서비스 문의/오류 Mac 플레이어 - 페이지 이동" class="link_tab03">Mac 플레이어</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20140508000001');" title="서비스 문의/오류 피드 - 페이지 이동" class="link_tab03">피드</a></li>
-				<li class="tab_li02 last_child"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130930000014');" title="서비스 문의/오류 기타 - 페이지 이동" class="link_tab03">기타</a></li>
+				<li class="tab_li02" id="IN_CATE20140612000001"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20140612000001');" title="서비스 문의/오류 멜론 메인 - 페이지 이동" class="link_tab03">멜론 메인</a></li>
+				<li class="tab_li02" id="IN_CATE20130909000008"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130909000008');" title="서비스 문의/오류 멜론 차트 - 페이지 이동" class="link_tab03">멜론 차트</a></li>
+				<li class="tab_li02" id="IN_CATE20130909000009"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130909000009');" title="서비스 문의/오류 멜론TV - 페이지 이동" class="link_tab03">멜론TV</a></li>
+				<li class="tab_li02" id="IN_CATE20130909000010"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130909000010');" title="서비스 문의/오류 스타포스트 - 페이지 이동" class="link_tab03">스타포스트</a></li>
+				<li class="tab_li02" id="IN_CATE20170323000001"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20170323000001');" title="서비스 문의/오류 채널 - 페이지 이동" class="link_tab03">채널</a></li>
+				<li class="tab_li02" id="IN_CATE20170323000002"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20170323000002');" title="서비스 문의/오류 친밀도 - 페이지 이동" class="link_tab03">친밀도</a></li>
+				<li class="tab_li02" id="IN_CATE20130930000001"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130930000001');" title="서비스 문의/오류 마이뮤직 - 페이지 이동" class="link_tab03">마이뮤직</a></li>
+				<li class="tab_li02" id="IN_CATE20130930000002"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130930000002');" title="서비스 문의/오류 친구 - 페이지 이동" class="link_tab03">친구</a></li>
+				<li class="tab_li02" id="IN_CATE20130930000003"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130930000003');" title="서비스 문의/오류 멜론DJ - 페이지 이동" class="link_tab03">멜론DJ</a></li>
+				<li class="tab_li02" id="IN_CATE20130930000006"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130930000006');" title="서비스 문의/오류 스마트 라디오 - 페이지 이동" class="link_tab03">스마트 라디오</a></li>
+				<li class="tab_li02" id="IN_CATE20170315000001"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20170315000001');" title="서비스 문의/오류 어워드/주간인기상 - 페이지 이동" class="link_tab03">어워드/주간인기상</a></li>
+				<li class="tab_li02" id="IN_CATE20130930000007"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130930000007');" title="서비스 문의/오류 어학 - 페이지 이동" class="link_tab03">어학</a></li>
+				<li class="tab_li02" id="IN_CATE20130930000008"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130930000008');" title="서비스 문의/오류 폰꾸미기 - 페이지 이동" class="link_tab03">폰꾸미기</a></li>
+				<li class="tab_li02" id="IN_CATE20130930000009"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130930000009');" title="서비스 문의/오류 제휴 서비스 - 페이지 이동" class="link_tab03">제휴 서비스</a></li>
+				<li class="tab_li02" id="IN_CATE20130930000010"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130930000010');" title="서비스 문의/오류 멜론설치/지원기기 - 페이지 이동" class="link_tab03">멜론설치/지원기기</a></li>
+				<li class="tab_li02" id="IN_CATE20130930000011"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130930000011');" title="서비스 문의/오류 재생/다운로드 - 페이지 이동" class="link_tab03">재생/다운로드</a></li>
+				<li class="tab_li02" id="IN_CATE20130930000012"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130930000012');" title="서비스 문의/오류 파일변환(DCF) - 페이지 이동" class="link_tab03">파일변환(DCF)</a></li>
+				<li class="tab_li02" id="IN_CATE20140610000001"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20140610000001');" title="서비스 문의/오류 Windows 플레이어 - 페이지 이동" class="link_tab03">Windows 플레이어</a></li>
+				<li class="tab_li02" id="IN_CATE20170516000001"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20170516000001');" title="서비스 문의/오류 Mac 플레이어 - 페이지 이동" class="link_tab03">Mac 플레이어</a></li>
+				<li class="tab_li02" id="IN_CATE20140508000001"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20140508000001');" title="서비스 문의/오류 피드 - 페이지 이동" class="link_tab03">피드</a></li>
+				<li class="tab_li02 last_child" id="IN_CATE20130930000014"><a href="javascript:doCategorySearch('CATE20130909000001','CATE20130930000014');" title="서비스 문의/오류 기타 - 페이지 이동" class="link_tab03">기타</a></li>
+			</ul>
+		</div>
+		<div class="wrap_tab02 page_move" id="SUB_CATE20130909000002" style="display:none">
+			<ul class="tab_ul02">
+				<li class="tab_li02 first_child"><a href="javascript:doCategorySearch('CATE20130909000002','');" title="결제/해지/환불 전체 - 페이지 이동" class="link_tab03">전체</a></li>
+				<li class="tab_li02" id="IN_CATE20130909000011"><a href="javascript:doCategorySearch('CATE20130909000002','CATE20130909000011');" title="결제/해지/환불 결제 방법 - 페이지 이동" class="link_tab03">결제 방법</a></li>
+				<li class="tab_li02" id="IN_CATE20130909000012"><a href="javascript:doCategorySearch('CATE20130909000002','CATE20130909000012');" title="결제/해지/환불 구매 이력 - 페이지 이동" class="link_tab03">구매 이력</a></li>
+				<li class="tab_li02 last_child" id="IN_CATE20130909000013"><a href="javascript:doCategorySearch('CATE20130909000002','CATE20130909000013');" title="결제/해지/환불 해지/환불 요청 - 페이지 이동" class="link_tab03">해지/환불 요청</a></li>
 			</ul>
 		</div>
 		<div class="wrap_tab02 page_move" id="SUB_CATE20141224000001" style="display:none">
@@ -633,35 +640,28 @@
 				<li id="IN_CATE20150819000007" class="tab_li02 last_child"><a href="javascript:doCategorySearch('CATE20141224000001','CATE20150819000007');" title="아지톡 서비스 문의/오류 - 페이지 이동" class="link_tab03">서비스 문의/오류</a></li>
 			</ul>
 		</div>
-		<div class="wrap_tab02 page_move" id="SUB_CATE20130909000002" style="display:none">
-			<ul class="tab_ul02">
-				<li class="tab_li02 first_child"><a href="javascript:doCategorySearch('CATE20130909000002','');" title="결제/해지/환불 전체 - 페이지 이동" class="link_tab03">전체</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000002','CATE20130909000011');" title="결제/해지/환불 결제 방법 - 페이지 이동" class="link_tab03">결제 방법</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000002','CATE20130909000012');" title="결제/해지/환불 구매 이력 - 페이지 이동" class="link_tab03">구매 이력</a></li>
-				<li class="tab_li02 last_child"><a href="javascript:doCategorySearch('CATE20130909000002','CATE20130909000013');" title="결제/해지/환불 해지/환불 요청 - 페이지 이동" class="link_tab03">해지/환불 요청</a></li>
-			</ul>
-		</div>
 		<div class="wrap_tab02 page_move" id="SUB_CATE20130909000003" style="display:none">
 			<ul class="tab_ul02">
 				<li class="tab_li02 first_child"><a href="javascript:doCategorySearch('CATE20130909000003','');" title="이벤트 전체 - 페이지 이동" class="link_tab03">전체</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000003','CATE20130909000014');" title="이벤트 상품 이벤트 - 페이지 이동" class="link_tab03">이벤트</a></li>
+				<li class="tab_li02" id="IN_CATE20130909000014"><a href="javascript:doCategorySearch('CATE20130909000003','CATE20130909000014');" title="이벤트 상품 이벤트 - 페이지 이동" class="link_tab03">이벤트</a></li>
 			</ul>
 		</div>
 		<div class="wrap_tab02 page_move" id="SUB_CATE20130909000004" style="display:none">
 			<ul class="tab_ul02">
 				<li class="tab_li02 first_child"><a href="javascript:doCategorySearch('CATE20130909000004','');" title="이용권 사용문의 전체 - 페이지 이동" class="link_tab03">전체</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000004','CATE20130909000016');" title="이용권 사용문의 이용권 가입/변경 - 페이지 이동" class="link_tab03">이용권 가입/변경</a></li>
-				<li class="tab_li02 last_child"><a href="javascript:doCategorySearch('CATE20130909000004','CATE20130909000017');" title="이용권 사용문의 이용권 안내 - 페이지 이동" class="link_tab03">이용권 안내</a></li>
+				<li class="tab_li02" id="IN_CATE20130909000016"><a href="javascript:doCategorySearch('CATE20130909000004','CATE20130909000016');" title="이용권 사용문의 이용권 가입/변경 - 페이지 이동" class="link_tab03">이용권 가입/변경</a></li>
+				<li class="tab_li02 last_child" id="IN_CATE20130909000017"><a href="javascript:doCategorySearch('CATE20130909000004','CATE20130909000017');" title="이용권 사용문의 이용권 안내 - 페이지 이동" class="link_tab03">이용권 안내</a></li>
 			</ul>
 		</div>
 		<div class="wrap_tab02 page_move" id="SUB_CATE20130909000005" style="display:none">
 			<ul class="tab_ul02">
 				<li class="tab_li02 first_child"><a href="javascript:doCategorySearch('CATE20130909000005','');" title="회원정보 전체 - 페이지 이동" class="link_tab03">전체</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000005','CATE20130909000018');" title="회원정보 회원가입 - 페이지 이동" class="link_tab03">회원가입</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000005','CATE20130909000019');" title="회원정보 아이디/패스워드찾기 - 페이지 이동" class="link_tab03">아이디/패스워드찾기</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000005','CATE20130909000020');" title="회원정보 정보변경 - 페이지 이동" class="link_tab03">정보변경</a></li>
-				<li class="tab_li02"><a href="javascript:doCategorySearch('CATE20130909000005','CATE20130930000016');" title="회원정보 회원탈퇴 - 페이지 이동" class="link_tab03">회원탈퇴</a></li>
-				<li class="tab_li02 last_child"><a href="javascript:doCategorySearch('CATE20130909000005','CATE20130930000018');" title="회원정보 기타 - 페이지 이동" class="link_tab03">기타</a></li>
+				<li class="tab_li02" id="IN_CATE20130909000018"><a href="javascript:doCategorySearch('CATE20130909000005','CATE20130909000018');" title="회원정보 회원가입 - 페이지 이동" class="link_tab03">회원가입</a></li>
+				<li class="tab_li02" id="IN_CATE20130909000019"><a href="javascript:doCategorySearch('CATE20130909000005','CATE20130909000019');" title="회원정보 아이디/비밀번호 찾기 - 페이지 이동" class="link_tab03">아이디/패스워드찾기</a></li>
+				<li class="tab_li02" id="IN_CATE20130909000020"><a href="javascript:doCategorySearch('CATE20130909000005','CATE20130909000020');" title="회원정보 로그인/내정보 관리 - 페이지 이동" class="link_tab03">로그인/내정보 관리</a></li>
+				<li class="tab_li02" id="IN_CATE20160712000001"><a href="javascript:doCategorySearch('CATE20130909000005','CATE20160712000001');" title="회원정보 카카오계정 관리 - 페이지 이동" class="link_tab03">카카오계정 관리</a></li>
+				<li class="tab_li02" id="IN_CATE20130930000016"><a href="javascript:doCategorySearch('CATE20130909000005','CATE20130930000016');" title="회원정보 회원탈퇴 - 페이지 이동" class="link_tab03">회원탈퇴</a></li>
+				<li class="tab_li02 last_child" id="IN_CATE20130930000018"><a href="javascript:doCategorySearch('CATE20130909000005','CATE20130930000018');" title="회원정보 기타 - 페이지 이동" class="link_tab03">기타</a></li>
 			</ul>
 		</div>
 		<div class="wrap_tab02 page_move" id="SUB_CATE20150813000001" style="display:none">
@@ -679,53 +679,109 @@
 		<div class="wrap_tab02 page_move" id="SUB_CATE20130909000006" style="display:none">
 			<ul class="tab_ul02">
 				<li class="tab_li02 first_child"><a href="javascript:doCategorySearch('CATE20130909000006','');" title="기타 전체 - 페이지 이동" class="link_tab03">전체</a></li>
-				<li class="tab_li02 last_child"><a href="javascript:doCategorySearch('CATE20130909000006','CATE20130909000021');" title="기타 기타 - 페이지 이동" class="link_tab03">기타</a></li>
+				<li class="tab_li02 last_child" id="IN_CATE20130909000021"><a href="javascript:doCategorySearch('CATE20130909000006','CATE20130909000021');" title="기타 기타 - 페이지 이동" class="link_tab03">기타</a></li>
 			</ul>
 		</div>
 	</div>
-	<div class="wrap_section pd0">
-		<h4 class="type02">질문 TOP 10</h4>
-		<div class="tb_list02 type02">
-			<table border="1" style="width:100%">
-				<caption><span>이 표는 질문TOP10 리스트로 순서, 대분류, 중분류, 제목 조회, 최종수정일 내용을 포함하고 있습니다. </span></caption>
-				<colgroup><col style="width:54px" /><col style="width:92px" /><col style="width:110px" /><col /><col style="width:88px" /><col style="width:120px" /></colgroup>
-				<thead>
-				<tr>
-					<th scope="col"><div class="wrap pd_none">순서</div></th>
-					<th scope="col" class="t_center"><div class="wrap">대분류</div></th>
-					<th scope="col" class="t_center"><div class="wrap">중분류</div></th>
-					<th scope="col"><div class="wrap">제목</div></th>
-					<th scope="col"><div class="wrap">조회</div></th>
-					<th scope="col"><div class="wrap">등록일</div></th>
-				</tr>
-				</thead>
-				<tbody>
-				
-			<c:choose>
-					<c:when test="${empty list }">
-						<tr bgcolor="white" align="center">
-							<td colspan="6">등록된 자료가 없어요</td>
-						</tr>
-					</c:when>
-					<c:otherwise>
-						<c:forEach var="item" items="${list}" varStatus="loop">
-							<tr bgcolor="white" align="center">
-								<td><div class="wrap">${item.qu_no}</div></td>
-					
-								<td><div class="wrap f11 right">${item.qu_largedivide}</div></td>
-								<td><div class="wrap f11 right">${item.qu_mediumdivide}</div></td>
-								<td><div class="wrap right"><a
-									href='<c:url value="/UserQuestionView.do?qu_no=${item.qu_no}"/>'>${item.qu_title}</a></div></td>
-								<td><div class="wrap">${item.qu_hitcount}</div></td>
-								<td class="t_center"><div class="wrap">${item.qu_regidate}</div></td>
-								
-							</tr>
-						</c:forEach>
-					</c:otherwise>
-				</c:choose>
+	<div class="tb_list02 type02 mt30">
+		<table border="1" style="width:100%">
+			<caption><span>이 표는 선택하신 자주하는 질문 상세 내용 입니다.</span></caption>
+			<colgroup><col style="width:60px" /><col style="width:170px" /><col style="width:130px" /><col /><col style="width:80px" /><col style="width:100px" /></colgroup>
+			<thead>
+			<tr>
+				<th scope="col" class="th02"><div class="wrap pd_none">${dto.qu_no }</div></th>
+				<th scope="col" class="th02"><div class="wrap">${dto.qu_largedivide}</div></th>
+				<th scope="col" class="th02"><div class="wrap">${dto.qu_mediumdivide}</div></th>
+				<th scope="col" class="t_left fc_gray"><div class="wrap subject_type">${dto.qu_title}</div></th>
+				<th scope="col" class="th02"><div class="wrap">${dto.qu_hitcount}</div></th>
+				<th scope="col" class="th02"><div class="wrap">${dto.qu_lastdate}</div></th>
+			</tr>
 			
-			</table>
+			</thead>
+			<tbody>
+			<tr class="first_child"><!-- 140502_수정 aty -->
+				<td colspan="6" class="no_bg">
+					<div class="dtl">
+				${dto.qu_contents }
+
+					</div>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="help_check_wrap">
+		<div class="help_check">
+			<span class="fc_strong">이 도움말에 만족하셨습니까?</span>
+			<label for="help1"><input type="radio" name="help" id="help1" value="1"/>아주 만족</label>
+			<label for="help2"><input type="radio" name="help" id="help2" value="2"/>만족</label>
+			<label for="help3"><input type="radio" name="help" id="help3" value="3"/>보통</label>
+			<label for="help4"><input type="radio" name="help" id="help4" value="4"/>불만</label>
+			<label for="help5"><input type="radio" name="help" id="help5" value="5"/>아주 불만</label>
+			<button type="button" onclick="javascript:goSurvey();" class="btn_emphs03_small" title="도움말 평가하기 버튼 - 새창"><span class="odd_span"><span class="even_span">평가하기</span></span></button>
 		</div>
+
+		<!-- 만족도 평가 레이어 팝업 -->
+		<div class="layer_popup small" style="top:50%; left:30%; width:384px; display:none;" id="required">
+			<h1 class="layer_title">만족도 평가</h1>
+			<div class="layer_cntt">
+				<div><p class="txt_emphs mb0">만족도를 선택하신 후 평가해 주세요</p></div>
+				<div class="wrap_btn_c">
+					<button type="button" class="btn_emphs02_small d_close" title="만족도 평가 닫기 버튼"><span class="odd_span"><span class="even_span">닫기</span></span></button>
+				</div>
+			</div>
+			<button type="button" class="btn_close d_close" title="만족도 평가 닫기 버튼"><span class="odd_span">닫기</span></button>
+			<span class="shadow"></span>
+		</div>
+		<!-- //만족도 평가 레이어 팝업 -->
+		<!-- 만족도 평가 레이어 팝업 -->
+		<div class="layer_popup small" style="width:390px; display:none;" id="already">
+			<h1 class="layer_title">만족도 평가</h1>
+			<div class="layer_cntt">
+				<div><p class="txt_emphs mb0">고객님의 답변 만족도는 이미 반영되었습니다.</p></div>
+				<div class="wrap_btn_c">
+					<button type="button" class="btn_emphs02_small d_close" title="만족도 평가 닫기 버튼"><span class="odd_span"><span class="even_span">닫기</span></span></button>
+				</div>
+			</div>
+			<button type="button" class="btn_close d_close" title="만족도 평가 닫기 버튼"><span class="odd_span">닫기</span></button>
+			<span class="shadow"></span>
+		</div>
+		<!-- //만족도 평가 레이어 팝업 -->
+		<!-- 만족도 평가 레이어 팝업 -->
+		<div class="layer_popup small" style="top:68%; left:30%; width:384px; display:none;" id="success">
+			<h1 class="layer_title">만족도 평가</h1>
+			<div class="layer_cntt">
+				<div class="box_default">
+					<p class="txt_emphs ">고객님의 <span class="fc_point">답변 만족도</span>를 반영하였습니다.</p>
+					<p class="fc_strong">고객님께서 보내주신 소중한 의견은 보다 나은<br />멜론서비스를 위한 소중한 자료로 사용하겠습니다.<br /><br />감사합니다.</p>
+				</div>
+				<div class="wrap_btn_c">
+					<button type="button" class="btn_emphs02_small d_close" title="만족도 평가 닫기 버튼"><span class="odd_span"><span class="even_span">닫기</span></span></button>
+				</div>
+			</div>
+			<button type="button" class="btn_close d_close" title="만족도 평가 닫기 버튼"><span class="odd_span">닫기</span></button>
+			<span class="shadow"></span>
+		</div>
+		<!-- //만족도 평가 레이어 팝업 -->
+		<!-- 만족도 평가 레이어 팝업 -->
+		<div class="layer_popup small" style="top:68%; left:30%; width:384px; display:none;" id="fail">
+			<h1 class="layer_title">만족도 평가</h1>
+			<div class="layer_cntt">
+				<div class="box_default">
+					<p class="txt_emphs ">고객님의 <span class="fc_point">답변 만족도</span>를 반영하지 못했습니다.</p>
+				</div>
+				<div class="wrap_btn_c">
+					<button type="button" class="btn_emphs02_small d_close" title="만족도 평가 닫기 버튼"><span class="odd_span"><span class="even_span">닫기</span></span></button>
+				</div>
+			</div>
+			<button type="button" class="btn_close d_close" title="만족도 평가 닫기 버튼"><span class="odd_span">닫기</span></button>
+			<span class="shadow"></span>
+		</div>
+		<!-- //만족도 평가 레이어 팝업 -->
+	</div>
+	<div class="btn_wrap clfix">
+		<button type="button" onclick="javascript:goHelp();" class="btn btn_big fl_left" title="1:1문의하기 버튼 - 페이지 이동"><span class="odd_span"><span class="even_span">1:1문의하기</span></span></button>
+		<button type="button" onclick="javascript:goList();" class="btn btn_big fl_right" title="질문 전체 목록 이동 버튼 - 페이지 이동"><span class="odd_span"><span class="even_span">목록</span></span></button>
 	</div>
 </div>
 <!-- //contents -->
@@ -754,8 +810,14 @@
 <script type="text/javascript" src="/resource/web/customer/js/melonweb_customer.js"></script>
 <!-- 화면 내부 전용 스크립트 -->
 <script type="text/javascript">
+	var flag = "N";
 
 	$(document).ready(function(){
+		//유형별로 찾기 카테고리 펼침...
+		$("#" + 'CATE20130909000002').addClass("on");
+		$("#SUB_" + 'CATE20130909000002').show();
+		$("#SUB_" + 'CATE20130909000002').addClass("on");
+		$("#IN_" + 'CATE20130909000011').addClass("on");
 
 		//검색어 자동완성
 		var $autocompleteTemplate1 = $('#faq_search_autocomplete_template');
@@ -934,6 +996,16 @@
 
 	});
 
+	//목록
+	function goList(){
+		if('' == '' && '' == '' && '' == ''){
+			location.href = "http://faqs2.melon.com/customer/faq/index.htm";
+		}else{
+			$("#form2").attr({action : "http://faqs2.melon.com/customer/faq/search.htm"});
+			$("#form2").submit();
+		}
+	}
+
 	//100bytes 초과 시 제한
 	function substringByByte(str){
 
@@ -992,26 +1064,62 @@
 	function doCategorySearch(par_cate_id, cate_id){
 		$("#searchParCategory").val(par_cate_id);
 		$("#searchCategory").val(cate_id);
+		$("#searchKey").val('');
 
 		$("#form2").attr({action : "http://faqs2.melon.com/customer/faq/search.htm"});
-		$("#form2").submit();
-	}
-
-	//상세보기
-	function doView(no, seq){
-		$("#no").val(no);
-		$("#faqId").val(seq);
-		$("#form2").attr({action : "http://faqs2.melon.com/customer/faq/informFaq.htm"});
 		$("#form2").submit();
 	}
 
 	//추천검색어조회
 	function doRecmSearch(schKey){
+
+		$("#searchParCategory").val('');
+		$("#searchCategory").val('');
+
 		$("#searchKey").val(schKey);
 		$("#form2").attr({action : "http://faqs2.melon.com/customer/faq/search.htm"});
 		$("#form2").submit();
 	}
+
+	//1:1문의 하기
+	function goHelp(){
+		if($("#searchParCategory").val() == "CATE20141224000009"){
+			location.href="https://help.melon.com/web/customer/store_form.htm?type=shop";
+		}else{
+			location.href="https://help.melon.com/web/customer/help/helpForm.htm";
+		}
+
+	}
+	//만족도평가
+	function goSurvey(){
+		if($('input:radio[name="help"]:checked').length < 1){
+			showModal('required');
+			return;
+		}
+
+		if(flag == "Y"){
+			showModal('already');
+			return;
+		}
+
+		$.get("/customer/faq/survey.json",
+				{ surveyId : $('input:radio[name="help"]:checked').val(), faqId: 'QUES20140618000049', categoryId : 'CATE20130909000011' },
+				function(data){
+					if( data.RESULT && data.RESULT == "1") {
+						flag = "Y";
+						showModal("success");
+					} else {
+						showModal("fail");
+					}
+				}
+		);
+	}
+
+	function showModal(name){
+		$('#'+name).modal();
+	}
 </script>
+
 			<!-- //contents -->
 		</div>
 	</div>
