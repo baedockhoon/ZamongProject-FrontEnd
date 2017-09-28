@@ -39,9 +39,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="Problemlist" parameterType="java.util.Map" resultMap="ProblemDTOResult">
 		SELECT * FROM MQ_MYQUESTION
 	</select>
- <!--  <select id="UserDataView" parameterType="java.util.Map" resultMap="UserQuestionDTOResult">
-		SELECT * FROM QU_QUESTION1 WHERE QU_NO=#{qu_no}
-	</select>  -->
+  <select id="ProblemOne" parameterType="java.util.Map" resultMap="ProblemDTOResult">
+		SELECT * FROM MQ_MYQUESTION WHERE MQ_NO=#{mq_no}
+	</select>  
 	
  <!-- 	<update id="NotiDateUpdate"  parameterType="java.util.Map">
 		UPDATE NT_NOTICE SET NT_HITCOUNT=#{nt_hitcount}+1 WHERE NT_NO=#{nt_no}

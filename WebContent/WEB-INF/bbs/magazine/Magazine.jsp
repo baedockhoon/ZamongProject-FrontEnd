@@ -13,7 +13,7 @@
 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title>멜론매거진>멜론</title>
+	<title>Zamong::음악이 필요한 지금, 자몽</title>
 	<meta name="keywords" content="음악서비스, 멜론차트, 멜론TOP100, 최신음악, 인기가요, 뮤직비디오, 앨범, 플레이어, 스트리밍, 다운로드, 아티스트플러스, 아티스트채널" />
 	<meta name="description" content="국내 최대 1,000만곡 확보 No.1 음악사이트, 멜론! 최신음악과 실시간 차트는 기본, 내 취향을 아는 똑똑한 추천 라디오, 내가 좋아하는 아티스트의 새로운 소식까지 함께 즐겨보세요." />
 	<meta name="naver-site-verification" content="f13fc46b807bef984aa341efeb1adec8de12264c"/>
@@ -234,17 +234,43 @@
 		}
 	})();
 	</script>
+	
 </head>
 
 <body>
+
 <jsp:include page="/WEB-INF/bbs/template/Top.jsp" />
+
 <!-- contents -->
+<h2 class="f_tit mb20" align="center">자몽매거진</h2>
+
+<div id="conts" align="center">
+    <div class="wrap_tab03 type05" align="center">
+        <ul>
+            <li style="text-align: center;"><a href="<c:url value='/ZamongFrontEnd/Magazine.do'/>" class="link_tab" title="홈 - 페이지 이동">
+                <span class="cntt">자몽매거진</span>
+            </a></li>
+      		
+            <li><a href="<c:url value='/ZamongFrontEnd/MagazineToday.do'/>" class="link_tab" title="공지사항 - 페이지 이동">
+            <span class="cntt">오늘의 매거진</span>
+            </a></li>
+        </ul>
+    </div>
  <div class="search_head mt24">
 				<div class="search_head mt24">
-						<div class="select_wrap" align="left">
+  
+					
+				
+
+
+
+		<div class="search_head mt24">
+
+				<div class="search_head mt24">
+						<div class="select_wrap">
 				
 						<!-- Select Box -->
-                          <form method="post">
+                <form method="post">
 				<select name="Notice_category" >
 				
 					<option value="전체">전체</option>
@@ -265,7 +291,9 @@
 					<option value="SM STATION">SM STATION</option>
 					<option value="Hi-Fi 가이드">Hi-Fi 가이드</option>
 					<option value="뮤직툰">뮤직툰</option>
-				</select><input type="submit" value="검색" />
+					
+				</select>
+				<input type="submit" value="검색" />
                            </form>
                         </div>
 				
@@ -310,15 +338,9 @@
 	</div>
 </div>
 </div>
-	
-	<!-- 페이징 -->
-   <table width="100%">
-     <tr align="center">
-       <td>${pagingString }</td>
-     </tr>
-   </table>
-	
-	
+</div>
+</div>
+</div>
 <!-- contents -->
 			
 </body>

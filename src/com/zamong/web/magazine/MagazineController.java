@@ -69,6 +69,48 @@ public class MagazineController {
 		return "/WEB-INF/bbs/magazine/Magazine.jsp";
 	}//////////////////list()
 	
+	@RequestMapping("/ZamongFrontEnd/MagazineToday.do")
+	public String Today_list(
+			HttpServletRequest req,//페이징용 메소드에 전달
+			@RequestParam Map map,//검색용 파라미터 받기
+			@RequestParam(required=false,defaultValue="1") int nowPage,
+			Model model,//리퀘스트 영역 저장용
+			MagazineDTO dto
+			) throws Exception{
+		
+		//페이징을 위한 로직 시작]
+		//전체 레코드 수
+		int totalRecordCount=service.getTotalCount(map);
+		//전체 페이지수]
+		int totalPage = (int)Math.ceil((double)totalRecordCount/pageSize);		
+		//시작 및 끝 ROWNUM구하기]
+		int start= (nowPage-1)*pageSize+1;
+		int end = nowPage*pageSize;
+		//페이징을 위한 로직 끝]
+		map.put("start", start);
+		map.put("end"  , end);
+		
+		//서비스 호출]
+		List<MagazineDTO> list= service.selectList_Today(map);
+		
+		
+		//페이징용 서비스 호출
+		String pagingString = PagingUtil.pagingText(
+				totalRecordCount, 
+				pageSize, 
+				blockPage, 
+				nowPage,
+				req.getContextPath()+"/ZamongFrontEnd/MagazineToday.do?");
+		
+		//데이타 저장]		
+		model.addAttribute("list", list);
+		model.addAttribute("pagingString",pagingString);
+		
+		return "/WEB-INF/bbs/magazine/TodayMagazine.jsp";
+	}//////////////////Today_list()
+	
+	
+	
 	@RequestMapping("/ZamongFrontEnd/MagazineView.do")
 	public String view(MagazineDTO dto, Model model, HttpServletRequest req)throws Exception {
 		service.hitcount(dto);
@@ -83,6 +125,8 @@ public class MagazineController {
 		model.addAttribute("dto", dto);
 		return "/WEB-INF/bbs/magazine/MagazineView.jsp";
 	}
+	
+	
 	
 	
 	
