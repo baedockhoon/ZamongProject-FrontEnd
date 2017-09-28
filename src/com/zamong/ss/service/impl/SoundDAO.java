@@ -22,8 +22,17 @@ public class SoundDAO implements SoundService {
 		return template.selectList("soundList",map);
 	}
 	
-	
+	@Override
+	public SoundDTO selectAlbumOne(SoundDTO dto) throws Exception {
+		// TODO Auto-generated method stub
+		return template.selectOne("selectAlbumOne", dto);
+	}
 
+	@Override
+	public List<SoundDTO> selectSoundList(SoundDTO dto) throws Exception {
+		return template.selectList("selectSoundList", dto);
+	}
+	
 	@Override
 	public int insert(SoundDTO dto) throws Exception {
 		// TODO Auto-generated method stub
@@ -50,29 +59,24 @@ public class SoundDAO implements SoundService {
 		
 	}
 
-
-
-	@Override
-	public SoundDTO selectOne(SoundDTO dto) throws Exception {
-		// TODO Auto-generated method stub
-		return template.selectOne("NotiDataView", dto);
-	
-	}
-
-
-
 	public Map<String, SoundDTO> prevNnext(String no) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
 
 	@Override
 	public int update(SoundDTO dto) throws Exception {
 		
 		return template.update("NotiDateUpdate",dto);
 	}
+
+	@Override
+	public SoundDTO selectOne(SoundDTO dto) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 
 	
 	

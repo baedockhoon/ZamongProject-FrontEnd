@@ -61,4 +61,14 @@ public class SoundServiceImpl implements SoundService {
 		
 	}
 
+	@Override
+	public List<SoundDTO> selectSoundList(SoundDTO dto) throws Exception {
+		return dao.selectSoundList(dto);
+	}
+
+	@Override
+	public SoundDTO selectAlbumOne(SoundDTO dto) throws Exception {
+		return dao.selectAlbumOne(dto);
+	}
+
 }

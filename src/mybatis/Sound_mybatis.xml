@@ -6,23 +6,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- ※ibatis와는 다르게 id값에 .(dot)를 사용 못한다. -->
 <mapper namespace="mybatis/UserQuestion_mybatis.xml">
 	<!--resultMap사용시 column속성 필수  -->
- 	
-	<!-- private String nt_no;//키값
-	private java.util.Date nt_regidate;//날짜
-	private String ad_no;//관리자 키값
-	private String nt_classification;//분류(서비스소식,종료,오픈등등)
-	private String nt_title;//제목
-	private String nt_contents;//내용
-	private String nt_hitcount;//조회수 -->
-	
-	
 	
  	<!-- id속성에 지정한 값을 자바코드(DAO계열 클래스)에서 
            식별자로 사용 -->
            
 	<select id="soundList" parameterType="java.util.Map" resultType="SoundData">
-		SELECT * FROM (SELECT T.*, ROWNUM R FROM (SELECT S.*, A.AL_ALBUMNAME, A.AL_ALBUMIMAGE FROM SS_SOUNDSOURCE S JOIN AL_ALBUM A ON S.AL_NO = A.AL_NO ORDER BY SS_REGIDATE DESC) T) WHERE R BETWEEN #{start} AND #{end}
+		SELECT * FROM (SELECT T.*, ROWNUM R FROM 
+			(SELECT S.*, A.AL_ALBUMNAME, A.AL_ALBUMIMAGE, A.AL_ARTIST, A.AL_ARTISTNO FROM SS_SOUNDSOURCE S JOIN AL_ALBUM A 
+			ON S.AL_NO = A.AL_NO ORDER BY SS_REGIDATE DESC) T)
+		WHERE R BETWEEN #{start} AND #{end}
 	</select>
+	
+	<select id="selectSoundList" parameterType="java.util.Map" resultType="SoundData">
+		SELECT * FROM SS_SOUNDSOURCE WHERE AL_NO = #{al_no} ORDER BY SS_REGIDATE
+	</select>
+	
+	<select id="selectAlbumOne" parameterType="java.util.Map" resultType="SoundData">
+		SELECT * FROM AL_ALBUM A JOIN SS_SOUNDSOURCE S ON A.AL_NO = S.AL_NO WHERE A.AL_NO = #{al_no} AND ROWNUM = 1
+	</select>
+	
+	
 	
  <!-- 	<update id="NotiDateUpdate"  parameterType="java.util.Map">
 		UPDATE NT_NOTICE SET NT_HITCOUNT=#{nt_hitcount}+1 WHERE NT_NO=#{nt_no}

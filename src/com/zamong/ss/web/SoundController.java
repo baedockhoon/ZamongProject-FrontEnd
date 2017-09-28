@@ -29,7 +29,7 @@ public class SoundController {
 	private int blockPage;
 	
 	
-	@RequestMapping("/ZamongFrontEnd/SoundList.do")
+	@RequestMapping("/ZamongFrontEnd/Sound/List.do")
 	public String list(
 			HttpServletRequest req,//페이징용 메소드에 전달
 			@RequestParam Map map,//검색용 파라미터 받기
@@ -64,8 +64,26 @@ public class SoundController {
 		model.addAttribute("list",list);
 		model.addAttribute("pagingString",pagingString);
 		
-		return "/WEB-INF/bbs/new/newSound.jsp";
+		return "/WEB-INF/bbs/sound/newSoundList.jsp";
 	}//////////////////list()
+	
+	@RequestMapping("/ZamongFrontEnd/album/Detail.do")
+	public String albumDetail(
+			HttpServletRequest req,//페이징용 메소드에 전달
+			SoundDTO dto,//검색용 파라미터 받기
+			Model model//리퀘스트 영역 저장용
+			) throws Exception{
+		
+		dto = service.selectAlbumOne(dto);
+
+		List<SoundDTO> list = service.selectSoundList(dto);
+		
+		model.addAttribute("list",list);
+		model.addAttribute("dto",dto);
+		
+		return "/WEB-INF/bbs/sound/albumDetail.jsp";
+	}//////////////////albumDetail()
+	
 	/*@RequestMapping("/ZamongFrontEnd/SoundView.do")
 	public String view(SoundDTO dto, Model model, HttpServletRequest req)throws Exception {
 		 dto = service.selectOne(dto);
