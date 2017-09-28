@@ -25,7 +25,6 @@ public class MusicVideoDTO {
 	
 	public MusicVideoDTO() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public MusicVideoDTO(String mv_no, Date mv_regidate, String at_no, String ss_no, String mv_title,
