@@ -50,4 +50,5 @@ public class NotiDataController {
 		model.addAttribute("dto", dto);
 		return "/WEB-INF/bbs/sample/NoticeView.jsp";
 	}
+	
 }

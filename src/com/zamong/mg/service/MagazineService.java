@@ -3,8 +3,6 @@ package com.zamong.mg.service;
 import java.util.List;
 import java.util.Map;
 
-import com.zamong.mg.service.MagazineDTO;
-
 public interface MagazineService {
 	//목록
 	List<MagazineDTO> selectList(Map map) throws Exception;

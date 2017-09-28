@@ -3,14 +3,17 @@ package com.zamong.web.login;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.zamong.ul.service.impl.LoginServiceImpl;
-
+@SessionAttributes("me_id")
 @Controller
 public class LoginController {
 	
@@ -30,7 +33,7 @@ public class LoginController {
 	 @RequestMapping("/ZamongFrontEnd/LoginCheck.do")
 	 public String loginCheck(
 				@RequestParam Map map,//검색용 파라미터 받기
-				Model model//리퀘스트 영역 저장용
+				Model model,HttpSession session //리퀘스트 영역 저장용
 				) throws Exception{
 		 boolean isLogin = loginService.login(map);
 			if(isLogin){//회원
@@ -39,7 +42,7 @@ public class LoginController {
 			}//if
 			else{//비회원
 				model.addAttribute("loginError","회원가입후 이용하세요");
-				
+			
 				//다시 로그인으로 이동
 				return "/WEB-INF/bbs/Login.jsp";
 			}//else

@@ -43,7 +43,7 @@
 						<ul class="clfix">
 
 							<li class="first_child"><a
-								href="/commerce/pamphlet/web/sale_listMainView.htm"
+								href="<c:url value='/ZamongFrontEnd/CashList.do'/>"
 								title="이용권구매" class="menu01 mlog"
 								data="LOG_PRT_CODE=1&amp;MENU_PRT_CODE=0&amp;MENU_ID_LV1=&amp;CLICK_AREA_PRT_CODE=B01&amp;ACTION_AF_CLICK=V1"><span>이용권구매</span></a></li>
 
