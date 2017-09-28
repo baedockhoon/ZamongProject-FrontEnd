@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -504,13 +505,13 @@
 		<li class="first_child"><a href="http://faqs2.melon.com/customer/index.htm" class="link_tab" title="홈 - 페이지 이동">
 			<span class="cntt">홈</span>
 		</a></li>
-		<li ><a href="http://www.melon.com/customer/announce/index.htm" class="link_tab" title="공지사항 - 페이지 이동">
+		<li ><a href="<c:url value='/ZamongFrontEnd/NoticeList.do'/>" class="link_tab" title="공지사항 - 페이지 이동">
 			<span class="cntt">공지사항</span>
 		</a></li>
-		<li ><a href="http://faqs2.melon.com/customer/faq/index.htm" class="link_tab" title="자주하는 질문 - 페이지 이동">
+		<li ><a href="<c:url value='/ZamongFrontEnd/UserQuestionList.do'/>" class="link_tab" title="자주하는 질문 - 페이지 이동">
 			<span class="cntt">자주 하는 질문</span>
 		</a></li>
-		<li class="on"><a href="https://help.melon.com/web/customer/help/index.htm" class="link_tab" title="나의 문의 내역 - 페이지 이동">
+		<li class="on"><a href="<c:url value='/ZamongFrontEnd/ProblemList.do'/>" class="link_tab" title="나의 문의 내역 - 페이지 이동">
 			<span class="cntt">나의 문의 내역</span>
 		</a></li>
 		<li class="last_child"><a href="http://www.melon.com/customer/dcf/index.htm" class="link_tab" title="DCF 지원 기기 - 페이지 이동">
@@ -553,44 +554,47 @@
 					<th scope="col" class="t_center"><div class="wrap">중분류</div></th>
 					<th scope="col"><div class="wrap">제목</div></th>
 					
-					<th scope="col"><div class="wrap">상태</div></th>
+				
 					
 					<th scope="col"><div class="wrap">등록일</div></th>
 				</tr>
 
 			</thead>
 			<tbody>
-
-			
-				
-				
-				
-
-				
-
-				
+			<c:choose>
+			<c:when test="${empty list }">
+				<tr bgcolor="white" align="center">
+					<td colspan="6">등록된 자료가 없어요</td>
+				</tr>
+			</c:when>
+			<c:otherwise>
+				<c:forEach var="item" items="${list}" varStatus="loop">
 				
 					
 					<tr class="first_child">
-						<td class="no"><div class="wrap">1</div></td>
-						<td><div class="wrap f11 right">이벤트</div></td>
-						<td><div class="wrap f11 right">그 외 이벤트</div></td>
-						<td><div class="wrap right"><span class="ellipsis"><a href="javascript:goAnswer('TCKT0000538972','0', 'ANSWEND');" title="sdaf - 페이지 이동">sdaf</a></span></div></td>
+						<td class="no"><div class="wrap">${item.mq_no }</div></td>
+						<td><div class="wrap f11 right">${item.mq_largedivide}</div></td>
+						<td><div class="wrap f11 right">${item.mq_mediumdivide}</div></td>
+					<td><div class="wrap right"><span class="ellipsis"><a
+									href='<c:url value="/ZamongFrontEnd/ProblemView.do?mq_no=${item.mq_no}"/>'>${item.mq_title}</a></span></div></td>
                         <td class="t_center">
 	                       	<div class="wrap">
-	                       	
-	                       		<span class="fc_point04">답변완료</span>
-	                       	
-	                       	
+	     
 	                       	</div>
 	                    </td>
 	                    <td>
 	                    	<div class="wrap">
 	                    		
-	                    		2017.09.12
+	                    		${item.mq_regidate}
 	                    	</div>
 	                    </td>
-					</tr>
+					</tr> 
+					
+				</c:forEach>
+			</c:otherwise>
+		</c:choose>
+
+				
 					
 					
 				

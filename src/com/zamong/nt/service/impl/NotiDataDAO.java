@@ -71,6 +71,14 @@ public class NotiDataDAO implements NotiDataService{
 	@Override
 	public int update(NotiDataDTO dto) throws Exception {
 		
+		return 0;
+	}
+
+
+
+	@Override
+	public int hitcount(NotiDataDTO dto) throws Exception {
+		// TODO Auto-generated method stub
 		return template.update("NotiDateUpdate",dto);
 	}
 

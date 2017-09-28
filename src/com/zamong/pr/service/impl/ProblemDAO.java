@@ -59,8 +59,8 @@ public class ProblemDAO implements ProblemService{
 
 	@Override
 	public ProblemDTO selectOne(ProblemDTO dto) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	
+		return template.selectOne("ProblemOne",dto);
 	}
 
 	

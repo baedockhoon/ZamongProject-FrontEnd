@@ -38,7 +38,8 @@ public class NotiDataController {
 	}//////////////////list()
 	@RequestMapping("/ZamongFrontEnd/NoticeView.do")
 	public String view(NotiDataDTO dto, Model model, HttpServletRequest req)throws Exception {
-		 dto = service.selectOne(dto);
+		 service.hitcount(dto);
+		dto = service.selectOne(dto);
 	
 		//줄바꿈 처리
 		dto.setNt_contents(dto.getNt_contents().replace("\r\n","<br/>"));

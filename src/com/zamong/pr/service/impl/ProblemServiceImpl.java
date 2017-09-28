@@ -64,7 +64,7 @@ public class ProblemServiceImpl implements ProblemService {
 	@Override
 	public ProblemDTO selectOne(ProblemDTO dto) throws Exception {
 
-		return null;
+		return dao.selectOne(dto);
 	}
 
 	

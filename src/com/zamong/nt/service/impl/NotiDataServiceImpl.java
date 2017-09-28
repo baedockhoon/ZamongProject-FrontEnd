@@ -73,6 +73,14 @@ public class NotiDataServiceImpl implements NotiDataService {
 
 
 
+	@Override
+	public int hitcount(NotiDataDTO dto) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.hitcount(dto);
+	}
+
+
+
 
 
 	
