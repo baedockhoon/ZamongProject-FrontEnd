@@ -32,5 +32,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="mybatis/Magazine_mybatis.xml"/>
 		<mapper resource="mybatis/UserQuestion_mybatis.xml"/>
 		<mapper resource="mybatis/Sound_mybatis.xml"/>
+		<mapper resource="mybatis/Login_mybatis.xml"/>
 	</mappers>
 </configuration>

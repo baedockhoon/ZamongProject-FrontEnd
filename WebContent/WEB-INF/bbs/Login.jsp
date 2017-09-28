@@ -69,28 +69,12 @@ if(CP_ID!="" && CP_ID!=null){
 	<div id="member_cont_wrap" class="clfix">
 		<div id="conts_section">
 			<div class="wrap_login_cont">
-			<form id="login_form" name="login_form" action="" method="post" action="/ZamongFrontEnd/LoginCheck.do">
-				<input type="hidden"	id="saveId"			name="saveId"			value="N"/>
-				<input type="hidden"	id="returnPage"		name="returnPage"		value=""/>
-				<input type="hidden"	id="reqProtocol"	name="reqProtocol"		value=""/>
-				<input type="hidden"	id="reqType"		name="reqType"			value=""/>
-				<input type="hidden"	id="memberId"		name="me_id"			value=""/>
-				<input type="hidden"	id="memberPwd"		name="me_pass"		value=""/>
-				<input type="hidden"	id="publicKey"		name="publicKey"		value=""/>
-				<input type="hidden" 	id="reToken"		name="reToken"			value=""/>
-			</form>
+			<form id="login_form" name="login_form"  method="post" action="<c:url value='/ZamongFrontEnd/LoginCheck.do'/>">
 				<div class="login_input_area02 style02">
 					<div class="wrap_login_input">
-						
-							
-														
-							
-							
-							
-						
 						<div class="wrap_insert">
-							<input type="text" name="id" id="id" value="" placeholder="아이디" title="아이디 입력 편집창" class="text51" style="width:366px;" />
-							<input type="password" name="pwd" id="pwd" placeholder="비밀번호" title="비밀번호 입력 편집창" class="text51 text_password01" style="width:366px;" />
+							<input type="text" name="me_id" id="me_id" value="" placeholder="아이디" title="아이디 입력 편집창" class="text51" style="width:366px;" />
+							<input type="password" name="me_pass" id="me_pass" placeholder="비밀번호" title="비밀번호 입력 편집창" class="text51 text_password01" style="width:366px;" />
 							<div class="wrap_save">
 								<div class="box_check02">
 				                    <input type="checkbox" id="inpSaveId" class="input_check" >
@@ -108,15 +92,17 @@ if(CP_ID!="" && CP_ID!=null){
 					</div>
 										
 					<div class="wrap_btn">
-						<button type="button" id="btnLogin" title="로그인 " class="btn_login03"><span>로그인</span></button>
+						<input type="submit" id="login" value="로그인 " class=""/>
 					</div>
 					<div class="wrap_kakao_login">
 						<button type="button" id="btnKakaoLogin" title="카카오계정 로그인" class="btn_kakao_login"><span>카카오계정 로그인</span></button>
 					</div>
 				</div>
+			</form>
 			</div>
 		</div>
 	</div>
+				
 	
 
 

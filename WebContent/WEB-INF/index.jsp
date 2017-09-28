@@ -54,6 +54,14 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/14j3tr44urn.css" type="text/css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/14g2jf0vkd.css" type="text/css" />
 	<script type="text/javascript">
+	function goJoin(){
+		location.href="<c:url value='/ZamongFrontEnd/Member.do'/>";
+	}
+	
+	function menuLogin(){
+		location.href="<c:url value='/ZamongFrontEnd/Login.do'/>";
+	}
+	
 	(function() {
 		WEBPOCIMG = {
 			defaultImg : function(obj, width){
@@ -1569,9 +1577,9 @@
 							if(navigator.userAgent.search("Chrome") >= 0){
 								html = ['<div class="login_wrap" id="gnbLoginDiv">',
 											'<div class="button_login">',
-												'<button type="button" class="btn_login" onclick="MELON.WEBSVC.POC.login.menuLogin();"><span class="odd_span">Melon 로그인</span></button>',
+												'<button type="button" class="btn_login" onclick="javascript:onclick:menuLogin();"><span class="odd_span">Melon 로그인</span></button>',
 												'<div class="top_area">',
-													'<a href="javascript:MELON.WEBSVC.POC.link.goIdSearch();" class="first_child" title="아이디/비밀번호 찾기 - 페이지 이동">아이디/비밀번호 찾기</a><a href="javascript:MELON.WEBSVC.POC.link.goJoin();" title="회원가입 - 페이지 이동">회원가입</a>',
+													'<a href="javascript:MELON.WEBSVC.POC.link.goIdSearch();" class="first_child" title="아이디/비밀번호 찾기 - 페이지 이동">아이디/비밀번호 찾기</a><a href="javascript:onclick:goJoin();" title="회원가입 - 페이지 이동">회원가입</a>',
 												'</div>',
 											'</div>',
 									'</div>'].join('');
@@ -3956,4 +3964,6 @@
 	} catch (e){}
 </script>
 </body>
+
+
 </html>

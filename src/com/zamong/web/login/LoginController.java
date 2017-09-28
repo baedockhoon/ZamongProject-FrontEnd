@@ -26,12 +26,12 @@ public class LoginController {
 			return "/WEB-INF/bbs/Login.jsp";
 		}//////////////////list()
 	 
+	 
 	 @RequestMapping("/ZamongFrontEnd/LoginCheck.do")
 	 public String loginCheck(
 				@RequestParam Map map,//검색용 파라미터 받기
 				Model model//리퀘스트 영역 저장용
 				) throws Exception{
-				
 		 boolean isLogin = loginService.login(map);
 			if(isLogin){//회원
 				//로그인 처리-세션영역에도 저장
@@ -45,7 +45,7 @@ public class LoginController {
 			}//else
 			
 			//뷰정보 반환-목록으로 이동
-			return "/WEB-INF/bbs/index.jsp";
+			return "/WEB-INF/index.jsp";
 		}//////////////////list()
 	 
 	 
