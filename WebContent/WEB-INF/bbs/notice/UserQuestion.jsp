@@ -25,13 +25,13 @@
 	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?2" />
 	
 	
-	<link rel="stylesheet" href="/resource/web/customer/css/melonweb_layout.css?tm=20170626" type="text/css" />
-	<link rel="stylesheet" href="/resource/web/customer/css/melonweb_comm.css" type="text/css" />
-	<link rel="stylesheet" href="/resource/web/customer/css/melonweb_customer.css?tm=20161130" type="text/css" />
-	<script type="text/javascript" src="//www.melon.com/resource/script/web/common/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="//member.melon.com/resource/script/web/member/melonweb_member_external.js?tm=20150722"></script>
-	<script type="text/javascript" src="/resource/web/customer/js/personal_area.js?tm=20170329"></script>
-	<script type="text/javascript" src="//www.melon.com/resource/script/web/common/melonweb_comm.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/Styles/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/Styles/js/melonweb_member_external.js"></script>
+	
+	
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/b0oedst30j.css" type="text/css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/14j3tr44urn.css" type="text/css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/14g2jf0vkd.css" type="text/css" />
 	<script type="text/javascript">
 	MelonPersonal.init();
 

@@ -35,5 +35,18 @@ public class NotiDataController {
 		
 		return "/WEB-INF/bbs/sample/NoticeList.jsp";
 	}//////////////////list()
+	@RequestMapping("/NoticeView.do")
+	public String view(NotiDataDTO dto, Model model, HttpServletRequest req)throws Exception {
+		 dto = service.selectOne(dto);
 	
+		//줄바꿈 처리
+		dto.setNt_contents(dto.getNt_contents().replace("\r\n","<br/>"));
+		
+		
+		//5]필요한 값 리퀘스트 영역에 저장
+	
+		model.addAttribute("dto", dto);
+		
+		return "/WEB-INF/bbs/sample/NoticeView.jsp";
+	}
 }
