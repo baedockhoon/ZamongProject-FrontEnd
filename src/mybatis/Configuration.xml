@@ -13,6 +13,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<typeAliases>
 		<typeAlias alias="NotiData" type="com.zamong.nt.service.NotiDataDTO"/>
 		<typeAlias alias="MusicVideo" type="com.zamong.mv.service.MusicVideoDTO"/>
+		<typeAlias alias="UserData" type="com.zamong.qu.service.UserQuestionDTO"/>
 	</typeAliases>
 			<!-- JNDI-->
 			<!-- 커넥션 풀 사용 -->
@@ -26,5 +27,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<mappers>
 		<mapper resource="mybatis/NotiData_mybatis.xml"/>
 		<mapper resource="mybatis/Musicvideo_mybatis.xml"/>
+		<mapper resource="mybatis/UserQuestion_mybatis.xml"/>
 	</mappers>
 </configuration>

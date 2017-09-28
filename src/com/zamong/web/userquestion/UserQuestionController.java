@@ -1,4 +1,4 @@
-package com.zamong.web.notice;
+package com.zamong.web.userquestion;
 
 import java.util.List;
 import java.util.Map;
@@ -15,13 +15,13 @@ import com.zamong.nt.service.NotiDataDTO;
 import com.zamong.nt.service.impl.NotiDataServiceImpl;
 
 @Controller
-public class NotiDataController {
+public class UserQuestionController {
 	
 	@Resource(name="notiDataServiceImpl")
 	private NotiDataServiceImpl service;
 	
 	
-	@RequestMapping("/ZamongFrontEnd/NoticeList.do")
+	@RequestMapping("/ZamongFrontEnd/UserQuestion.do")
 	public String list(
 			HttpServletRequest req,//페이징용 메소드에 전달
 			@RequestParam Map map,//검색용 파라미터 받기
@@ -33,9 +33,9 @@ public class NotiDataController {
 		//데이타 저장]		
 		model.addAttribute("list", list);
 		
-		return "/WEB-INF/bbs/sample/NoticeList.jsp";
+		return "/WEB-INF/bbs/sample/UserQuestion.jsp";
 	}//////////////////list()
-	@RequestMapping("/NoticeView.do")
+	/*@RequestMapping("/NoticeView.do")
 	public String view(NotiDataDTO dto, Model model, HttpServletRequest req)throws Exception {
 		 dto = service.selectOne(dto);
 	
@@ -46,6 +46,7 @@ public class NotiDataController {
 		//5]필요한 값 리퀘스트 영역에 저장
 	
 		model.addAttribute("dto", dto);
+		
 		return "/WEB-INF/bbs/sample/NoticeView.jsp";
-	}
+	}*/
 }
