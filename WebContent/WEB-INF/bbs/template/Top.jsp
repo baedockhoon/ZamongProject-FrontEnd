@@ -158,7 +158,7 @@
 							class="cur_status none">현재 선택된 메뉴-</span><span
 							class="menu_bg menu05">매거진</span></a></li>
 					<li class="nth6"><a
-						href="http://www.melon.com/artistplus/todayupdate/index.htm"
+						href="<c:url value='/ZamongFrontEnd/MusicAward.do'/>"
 						class="cur_menu mlog"
 						data="LOG_PRT_CODE=1&MENU_PRT_CODE=0&MENU_ID_LV1=&CLICK_AREA_PRT_CODE=S07&ACTION_AF_CLICK=V1"><span
 							class="cur_status none">현재 선택된 메뉴-</span><span
