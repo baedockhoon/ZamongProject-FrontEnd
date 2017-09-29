@@ -44,13 +44,13 @@
 <h2 class="f_tit">내 이용권/결제정보</h2>
 <div class="wrap_tab03 type04">
     <ul>
-        <li class="tab_li03 first_child"><a href="/commerce/mypage/product/web/producthistory_listCurUserProdView.htm" title="멜론 이용권 - 페이지 이동" class="link_tab">
+        <li class="tab_li03 first_child"><a href="<c:url value='/ZamongFrontEnd/StreamingList.do'/>" title="멜론 이용권 - 페이지 이동" class="link_tab">
             <span class="cntt">멜론 이용권</span>
         </a></li>
         <li class="tab_li03"><a href="/commerce/mypage/coupon/web/couponbox_couponBoxView.htm" title="쿠폰함 - 페이지 이동" class="link_tab">
             <span class="cntt">쿠폰함</span>
         </a></li>
-        <li class="tab_li03 on"><a href="/commerce/mypage/cash/web/meloncash_listChargedSpentView.htm" title="멜론 캐쉬 - 페이지 이동" class="link_tab">
+        <li class="tab_li03 on"><a href="<c:url value='/ZamongFrontEnd/PaymentList.do'/>" title="멜론 캐쉬 - 페이지 이동" class="link_tab">
             <span class="cntt">멜론 캐쉬</span>
         </a></li>
         <li class="tab_li03 last_child"><a href="/phone/my/index.htm" title="폰꾸미기 - 페이지 이동" class="link_tab">
@@ -63,13 +63,13 @@
 	<div class="view_tb">
 		<h3 class="title">
 			
-			<strong>dhghdkgk1</strong>님의 멜론 캐쉬 이용내역
+			<strong>${dto.me_id }</strong>님의 멜론 캐쉬 이용내역
 		</h3>
 		<div class="box_reg_cash">
 			<div class="desc">
 				<strong>
-					멜론 캐쉬 잔액:
-					<span class="fc_point f_arial">0</span>
+					멜론 캐쉬 잔액:${dto.ch_havecash }
+					<span class="fc_point f_arial">${dto.ch_havecash }</span>
 					원
 				</strong>
 				<button type="button" title="캐쉬 충전 - 페이지 이동" onclick="goPopup();" class="btn_emphs_small" ><span class="odd_span"><span class="even_span">캐쉬 충전</span></span></button>
@@ -107,7 +107,7 @@
 						<th scope="col"><div class="wrap">내용</div></th>
 						<th scope="col"><div class="wrap">적립금액</div></th>
 					 	<th scope="col"><div class="wrap">차감금액</div></th>
-		
+				
 					</tr>
 					
 					
@@ -127,8 +127,8 @@
 					<tr >
 						<td class="no"align="center"><div class="wrap">${item.ch_no}</div></td>
 						<td><div class="wrap"align="center">${item.ch_regidate}</div></td>
-							<td div class="wrap" align="center">캐쉬</td>
-							<td div class="wrap"align="center">캐쉬결제</td>
+							<td div class="wrap" style="text-align: center;">캐쉬</td>
+							<td div class="wrap"style="text-align: center;">캐쉬결제</td>
 						<td><div class="wrap"align="center">${item.ch_havecash}원</div></td>
 							<td><div class="wrap"></div></td>
 				

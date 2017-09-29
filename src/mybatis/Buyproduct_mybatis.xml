@@ -22,12 +22,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  	<!-- id속성에 지정한 값을 자바코드(DAO계열 클래스)에서 
            식별자로 사용 -->
            
-<!--  <select id="Buylist" parameterType="java.util.Map" resultType="BuyProduct">
-		SELECT * FROM BP_BUYPRODUCT
-	</select> -->
- 	<!-- <select id="NotiDataView" parameterType="BuyproductDTO" resultType="BuyProduct">
-		SELECT * FROM NT_NOTICE WHERE NT_NO=#{nt_no}
-	</select>  --> 
+  <select id="Buylist" parameterType="java.util.Map" resultType="BuyProduct">
+    SELECT M.ME_id,B.*,P.PD_NAME FROM ME_MEMBER M JOIN BP_BUYPRODUCT B ON M.ME_NO = B.ME_NO JOIN PD_PRODUCT P ON P.PD_NO = B.PD_NO WHERE P.PD_NO !=3 AND M.ME_NO=23
+    ORDER BY BP_NO DESC,BP_REGIDATE DESC
+	</select> 
+  <select id="BuyproductView" parameterType="java.util.Map" resultType="BuyProduct">
+ SELECT M.ME_ID FROM ME_MEMBER M JOIN BP_BUYPRODUCT B ON M.ME_NO = B.ME_NO WHERE M.ME_NO=23 AND bp_no=41 
+		
+	</select>   
 	
  	<insert id="insertBuyproduct"  parameterType="BuyProduct">
 		<!-- INSERT INTO BP_BUYPRODUCT VALUES(BP_SEQ.NEXTVAL,SYSDATE,#{pd_no},(select me_no from me_member where me_id = #{me_id}),#{bp_price},1) -->

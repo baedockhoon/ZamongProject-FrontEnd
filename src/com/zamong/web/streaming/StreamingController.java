@@ -1,4 +1,4 @@
-package com.zamong.web.cash;
+package com.zamong.web.streaming;
 
 import java.util.List;
 import java.util.Map;
@@ -25,17 +25,18 @@ import com.zamong.ch.service.impl.CashServiceImpl;
 import com.zamong.nt.service.NotiDataDTO;
 import com.zamong.nt.service.impl.NotiDataServiceImpl;
 import com.zamong.st.service.StreamingDTO;
+import com.zamong.st.service.impl.StreamingServiceImpl;
 
 
 @Controller
-public class CashController {
+public class StreamingController {
 	
-	@Resource(name="cashServiceImpl")
-	private CashServiceImpl service;
+	@Resource(name="streamingServiceImpl")
+	private StreamingServiceImpl service;
 	
 	
 	
-	@RequestMapping("/ZamongFrontEnd/PaymentList.do")
+	@RequestMapping("/ZamongFrontEnd/StreamingList.do")
 	public String list(
 			HttpServletRequest req,//페이징용 메소드에 전달
 			@RequestParam Map map,//검색용 파라미터 받기
@@ -43,15 +44,16 @@ public class CashController {
 			) throws Exception{
 			
 		//서비스 호출]
-		List<CashDTO> list= service.selectList(map);
+		List<StreamingDTO> list= service.selectList(map);
 		//데이타 저장]		
 		model.addAttribute("list", list);
 
 
-		return "/ZamongFrontEnd/PaymentView.do";
+		return "/ZamongFrontEnd/StreamingView.do";
 	}//////////////////list()
-	@RequestMapping("/ZamongFrontEnd/PaymentView.do")
-	public String view(CashDTO dto, Model model, HttpServletRequest req)throws Exception {	
+	@RequestMapping("/ZamongFrontEnd/StreamingView.do")
+	public String view(StreamingDTO dto, Model model, HttpServletRequest req)throws Exception {	
+	
 		dto = service.selectOne(dto);
 	
 		//줄바꿈 처리
@@ -60,7 +62,7 @@ public class CashController {
 		//5]필요한 값 리퀘스트 영역에 저장
 	
 		model.addAttribute("dto", dto);
-		return "/WEB-INF/bbs/cash/PaymentList.jsp";
+		return "/WEB-INF/bbs/streaming/StreamingList.jsp";
 	}
 	
 }

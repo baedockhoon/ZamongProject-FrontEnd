@@ -53,7 +53,7 @@ public class BuyproductDAO implements BuyproductService{
 	@Override
 	public BuyproductDTO selectOne(BuyproductDTO dto) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return template.selectOne("BuyproductView",dto);
 	}
 
 	@Override

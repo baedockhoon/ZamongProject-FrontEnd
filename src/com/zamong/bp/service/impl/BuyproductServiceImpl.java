@@ -60,7 +60,7 @@ public class BuyproductServiceImpl implements BuyproductService {
 	@Override
 	public BuyproductDTO selectOne(BuyproductDTO dto) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.selectOne(dto);
 	}
 	@Override
 	public int insertCash(BuyproductDTO dto) throws Exception {

@@ -63,7 +63,7 @@ public class BpproductController {
 		/*return "/WEB-INF/bbs/cash/PaymentList.jsp";*/
 		return "/ZamongFrontEnd/PaymentList.do";
 	}
-	/*@RequestMapping("/ZamongFrontEnd/PaymentList.do")
+	@RequestMapping("/ZamongFrontEnd/StreamingPay.do")
 	public String list(
 			HttpServletRequest req,//페이징용 메소드에 전달
 			@RequestParam Map map,//검색용 파라미터 받기
@@ -76,8 +76,20 @@ public class BpproductController {
 		model.addAttribute("list", list);
 		
 		
-		return "/WEB-INF/bbs/cash/PaymentList.jsp";
+		return "/ZamongFrontEnd/StreamingView1.do";
 	}//////////////////list()
-*/	
+	@RequestMapping("/ZamongFrontEnd/StreamingView1.do")
+	public String view(BuyproductDTO dto, Model model, HttpServletRequest req)throws Exception {	
+	
+		dto = service.selectOne(dto);
+	
+		//줄바꿈 처리
+		
+		
+		//5]필요한 값 리퀘스트 영역에 저장
+	
+		model.addAttribute("dto", dto);
+		return "/WEB-INF/bbs/streaming/StreamingPay.jsp";
+	}
 	
 }
