@@ -28,6 +28,9 @@
 <link href="https://fonts.googleapis.com/css?family=Nunito:400" rel="stylesheet">
 <!-- <script type="text/javascript" src="/resource/script/web/common/jquery-1.9.1.min.js"></script> -->
 
+<script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js" type="text/javascript"></script>
+
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/Styles/js/jquery-1.9.1.min.js"></script>
 <link rel="stylesheet"
@@ -37,9 +40,151 @@
 	href="${pageContext.request.contextPath}/Styles/css/14g2jf0vkd.css"
 	type="text/css" /> --%>
 
+<style type="text/css">
+.starinput>.input,
+.starinput>.input>label:hover,
+.starinput>.input>input:focus+label,
+.starinput>.input>input:checked+label{
+    display: inline-block;
+    vertical-align: top;
+    background: url(http://localhost:8080/ZamongProject/Images/Assign/star.png) no-repeat;
+}
+.starinput{
+    white-space: nowrap;
+}
+.starinput>.input{
+    display:inline-block;
+    width: 100px;
+    background-size: 100px;
+    height: 19px;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+.starinput>.input>input{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+.starinput>.input.focus{
+    outline: 1px dotted #ddd;
+}
+.starinput>.input>label{
+    width: 10px;
+    height: 0;
+    padding: 19px 0 0 0;
+    overflow: hidden;
+    float: left;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.starinput>.input>label:hover,
+.starinput>.input>input:focus+label,
+.starinput>.input>input:checked+label{
+    background-size: 100px;
+    background-position: 0 bottom;
+}
+.starinput>.input>label:hover~label{
+    background-image: none;
+}
+.starinput>.input>label[for="p1"]{ 
+    width: 10px;
+    z-index: 10;
+}
+.starinput>.input>label[for="p2"]{ 
+    width: 20px;
+    z-index: 9;
+}
+.starinput>.input>label[for="p3"]{ 
+    width: 30px;
+    z-index: 8;
+}
+.starinput>.input>label[for="p4"]{ 
+    width: 40px;
+    z-index: 7;
+}
+.starinput>.input>label[for="p5"]{ 
+    width: 50px;
+    z-index: 6;
+}
+.starinput>.input>label[for="p6"]{ 
+    width: 60px;
+    z-index: 5;
+}
+.starinput>.input>label[for="p7"]{ 
+    width: 70px;
+    z-index: 4;
+}
+.starinput>.input>label[for="p8"]{ 
+    width: 80px;
+    z-index: 3;
+}
+.starinput>.input>label[for="p9"]{ 
+    width: 90px;
+    z-index: 2;
+}
+.starinput>.input>label[for="p10"]{ 
+    width: 100px;
+    z-index: 1;
+}
+.starinput>output{
+    display: inline-block;
+    width: 36px;
+    text-align: right;
+}
+.starinput>output>b{
+    font:bold 18px Helvetica, Arial, sans-serif;
+    vertical-align: middle;
+}
+
+</style>
+<script>
+$(function (){
+	if ($(":input[type='radio']:checked").length > 0){
+		$("output > b").html($(":input[type='radio']:checked").val());
+	}
+	$(":input").click(function (){
+		//alert($(this).val());
+		$("output > b").html($(this).val());
+	});
+})
+</script>
+
+
 <script type="text/javascript">
 	
+	
+	
 	$(function(){
+		$(".btn_song_grad").click(function(){
+			$("aria-haspopup").css("aria-haspopup","true").css("aria-pressed","true")
+			$("#d_starRate").css("display","block")
+		}); 
+		$(".btn_emphs02_small").click(function(){
+			$("aria-haspopup").css("aria-haspopup","false").css("aria-pressed","false")
+			$("#d_starRate").css("display","none")
+		})
+		$(".btn_close").click(function(){
+			$("aria-haspopup").css("aria-haspopup","false").css("aria-pressed","false")
+			$("#d_starRate").css("display","none")
+		})
+		
+		//평점 팝업  Show /hide SEt
+		var checkPopup = true;
+		if( "false" == 'Y') {
+			checkPopup = false;
+		}
+		$('div.stPointLayer').on('beforeshow', function(e) {
+			if( !checkPopup ) { // 만약 드롭다운이 띄워지면 안되는 조건일 때,
+				alert("이미 참여하셨습니다.");
+				e.preventDefault(); // 이 부분을 넣어주면 된다.
+				return false;
+			}
+		});
+		
 		
 		playFormSong = function(menuId,formId,checkBoxName){
 			var songIds=new Array();
@@ -214,94 +359,58 @@ function playSong(ss_no){
 									</dd>
 								</dl>
 								<!-- 다른버전 앨범 [] -->
-
+								
 								<!-- //다른버전앨범 버튼 -->
 							</div>
 							<!-- //class="wrap_album_info" -->
 							<div class="wrap_intst">
 								<!-- 평점 -->
-								<div class="grad_area">
-									<!-- 별점평가 레이어 활성화 시 class="on" -->
-									<dl class="clfix">
-										<dt class="title">
-											<span class="icon"></span>평점
-										</dt>
-										<dd class="wrap_star">
-											<span class="wrap_evalscore01"> <span
-												class="contt_evalscore01"><span
-													id="contt_evalscore01_view" style="width: 62.0%;"></span></span> <span
-												class="text_evalscore01"><span class="none">평점</span><span
-													id="gradPointLayer">3.1</span></span>
-											</span>
-											<div class="wrap_grad">
-												<strong class="none">평점 개수</strong>
-												<div id="gradCountLayer">144명</div>
-												<button type="button" title="병원선 OST Part.5 평점주기"
-													class="btn_song_grad" data-control="dropdown">
-													<span class="odd_span">평점주기</span>
-												</button>
-												<!-- [DP] 별점평가 레이어 -->
-												<div class="l_popup small stPointLayer" id="d_starRate"
-													style="right: 0; top: 28px; width: 259px; display: none;"
-													data-zindex-target="div.grad_area">
-													<div class="l_cntt">
-														<dl class="box_evalscore">
-															<dt>별을 클릭하여 앨범을 평가해 주세요.</dt>
-															<dd>
-																<span class="wrap_evalscore02"> <span
-																	class="contt_evalscore02"> <label for="score01"
-																		class="score01 on"> <span><input
-																				type="radio" id="score01" name="score" /></span> <span>0.5점</span>
-																	</label> <label for="score02" class="score02 on"> <span><input
-																				type="radio" id="score02" name="score" /></span> <span>1점</span>
-																	</label> <label for="score03" class="score03 on"> <span><input
-																				type="radio" id="score03" name="score" /></span> <span>1.5점</span>
-																	</label> <label for="score04" class="score04 on"> <span><input
-																				type="radio" id="score04" name="score" /></span> <span>2점</span>
-																	</label> <label for="score05" class="score05 on"> <span><input
-																				type="radio" id="score05" name="score" /></span> <span>2.5점</span>
-																	</label> <label for="score06" class="score06"> <span><input
-																				type="radio" id="score06" name="score" /></span> <span>3점</span>
-																	</label> <label for="score07" class="score07"> <span><input
-																				type="radio" id="score07" name="score" /></span> <span>3.5점</span>
-																	</label> <label for="score08" class="score08"> <span><input
-																				type="radio" id="score08" name="score" /></span> <span>4점</span>
-																	</label> <label for="score09" class="score09"> <span><input
-																				type="radio" id="score09" name="score" /></span> <span>4.5점</span>
-																	</label> <label for="score10" class="score10"> <span><input
-																				type="radio" id="score10" name="score" /></span> <span>5점</span>
-																	</label>
-																</span> <span class="text_evalscore02"> <span
-																		class="none">선택평점</span> <strong id="d_rate">2.5</strong>
-																		<span class="score">/ <span class="none">총
-																				평점</span>5
-																	</span>
-																</span>
-																</span>
-																<div class="wrap_btn_c mt20">
-																	<button type="button" title="앨범 별점 평가 확인"
-																		class="btn_emphs_small" data-role="ok">
-																		<span class="odd_span"><span class="even_span">확인</span></span>
-																	</button>
-																	<button type="button" title="앨범 별점 평가 취소"
-																		class="btn_emphs02_small d_close">
-																		<span class="odd_span"><span class="even_span">취소</span></span>
-																	</button>
-																</div>
-															</dd>
-														</dl>
+					<div class="grad_area"><!-- 별점평가 레이어 활성화 시 class="on" -->
+						<dl class="clfix">
+							<dt class="title"><span class="icon"></span>평점</dt>
+							<dd class="wrap_star">
+								<span class="wrap_evalscore01">
+									<span class="contt_evalscore01"><span id="contt_evalscore01_view" style="width:80.0%;"></span></span>
+									<span class="text_evalscore01"><span class="none">평점</span><span id="gradPointLayer">4.0</span></span>
+								</span>
+								<div class="wrap_grad">
+									<strong class="none">평점 개수</strong><div id="gradCountLayer">9,248명</div>
+									<button type="button" title="Red Diary Page.1 평점주기" class="btn_song_grad" data-control="dropdown" aria-haspopup="false" aria-pressed="false" aria-expand="false"><span class="odd_span">평점주기</span></button>
+									<!-- [DP] 별점평가 레이어 -->
+									<div class="l_popup small stPointLayer" id="d_starRate" style="right:0; top:28px; width:259px; display:none;" data-zindex-target="div.grad_area">
+										<div class="l_cntt">
+											<dl class="box_evalscore">
+												<dt>별을 클릭하여 앨범을 평가해 주세요.</dt>
+												<dd>
+													<form action="${pageContext.request.contextPath}/ZAMONG/zamongAssign.do" method="post">
+														<span class="starinput">
+														  <span class="input">
+														    <input type="radio" name="starinput" id="p2" value="1"><label for="p2">1</label>
+														    <input type="radio" name="starinput" id="p4" value="2"><label for="p4">2</label>
+														    <input type="radio" name="starinput" id="p6" value="3"><label for="p6">3</label>
+														    <input type="radio" name="starinput" id="p8" value="4"><label for="p8">4</label>
+														    <input type="radio" name="starinput" id="p10" value="5"><label for="p10">5</label>
+														  </span>
+														  <output for="starinput"><b>0</b>점</output>
+														</span>
+													</form>
+													<div class="wrap_btn_c mt20">
+														<button type="button" title="앨범 별점 평가 확인" class="btn_emphs_small" data-role="ok"><span class="odd_span"><span class="even_span">확인</span></span></button>
+														<button type="button" title="앨범 별점 평가 취소" class="btn_emphs02_small d_close"><span class="odd_span"><span class="even_span">취소</span></span></button>
 													</div>
-													<button type="button" class="btn_close">
-														<span class="odd_span">닫기</span>
-													</button>
-													<span class="shadow"></span>
-												</div>
-												<!-- //[DP] 별점평가 레이어 -->
-											</div>
-										</dd>
-									</dl>
+												</dd>
+											</dl>
+										</div>
+										<button type="button" class="btn_close"><span class="odd_span">닫기</span></button>
+										<span class="shadow"></span>
+									</div>
+									<!-- //[DP] 별점평가 레이어 -->
 								</div>
-								<!-- //평점 -->
+							</dd>
+						</dl>
+					</div>
+			<!-- //평점 -->
+
 								<!-- 리뷰 -->
 								<div class="rvew_area">
 									<dl class="clfix">
@@ -844,7 +953,14 @@ function playSong(ss_no){
 			</div>
 		</div>
 
+<script>
+$(function(){
+	
 
+});
+
+	
+</script>
 		<jsp:include page="/WEB-INF/bbs/template/Foot.jsp" />
 
 	<!-- //footer -->

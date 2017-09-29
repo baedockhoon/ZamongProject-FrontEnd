@@ -19,8 +19,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  	<!-- id속성에 지정한 값을 자바코드(DAO계열 클래스)에서 
            식별자로 사용 -->
   
-  <select id="CommentList" parameterType="java.util.Map" resultMap="CommentDTOResult">
-		SELECT MG_CM_NO,MG_CM_REGIDATE,MG_CM_CONTENTS FROM MG_COMMENT ORDER BY MG_NO DESC
+  	<select id="CommentList" parameterType="java.util.Map" resultMap="CommentDTOResult">
+		SELECT MG.*,ME.ME_ID FROM MG_COMMENT MG JOIN ME_MEMBER ME ON MG.ME_NO = ME.ME_NO ORDER BY MG.MG_NO DESC
 	</select>
   
   

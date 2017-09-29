@@ -299,6 +299,60 @@
 		</div>
 		
 
+	
+  <!-- 한줄 코멘트 입력 폼-->
+  <fieldset>
+   <legend>한줄 코멘트 입력 폼</legend>
+
+   <form id="frm" action="<c:url value='/Comment/Write.do'/>"
+    method="post">
+    <input type="hidden" name="no" value="${dto.mg_no}" />
+    <!-- 수정 및 삭제용 파라미터 -->
+    <input type="hidden" name="c_no" />
+    <table width="75%">
+     <tr>
+      <td><input id="c_title" type="text" size="50" name="c_title" />
+       <input id="submit" type="submit" value="등록" /></td>
+     </tr>
+    </table>
+   </form>
+  </fieldset>
+
+
+
+
+ <table width="75%" bgcolor="gray" cellspacing="1">
+   <tr bgcolor="white" align="center">
+    <th width="15%">올린이</th>
+    <th width="50%">코멘트</th>
+    <th width="25%">올린일</th>
+    <th width="10%">삭제</th>
+   </tr>
+   <c:if test="${empty memo }" var="result">
+    <tr bgcolor="white" align="center">
+     <td colspan="4">등록된 코멘트가 없어요</td>
+    </tr>
+   </c:if>
+   <c:if test="${not result}">
+    <c:forEach items="${memo }" var="memo">
+     <tr bgcolor="white" align="center">
+      <td>${memo.id }</td>
+      <td align="left">
+	      <span style="cursor: pointer;"title="${memo.mg_cm_no}">
+	      	${memo.mg_cm_contents }
+	      </span>
+      </td>
+      <td>${memo.mg_cm_regidate }
+      </td>
+      <td>
+        <span title="${memo.mg_cm_no}"style="cursor: pointer; color: green; font-size: 1.4em; font-weight: bold">
+		삭제
+        </span></td>
+     </tr>
+    </c:forEach>
+   </c:if>
+
+  </table>
 
 		
 

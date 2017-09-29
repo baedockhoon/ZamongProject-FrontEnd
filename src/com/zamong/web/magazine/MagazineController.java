@@ -126,6 +126,7 @@ public class MagazineController {
 		Map map = new HashMap();
 		map.put("no", dto.getMg_no());
 		List<CommentDTO> comments = CommentService.selectList(map);
+		
 		//줄바꿈 처리
 		dto.setMg_contents(dto.getMg_contents().replace("\r\n","<br/>"));
 		

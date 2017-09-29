@@ -9,20 +9,11 @@ public class CommentDTO {
 		private int mg_no;//매거진 고유번호(키값)
 		private int me_no;//회원 고유번호(키값)
 		private String mg_cm_contents;//댓글
+		private int no;
 
-		private String name;
+		private String id;
 		
 		public CommentDTO() {}
-
-		public CommentDTO(int mg_cm_no, Date mg_cm_regidate, int mg_no, int me_no, String mg_cm_contents, String name) {
-			super();
-			this.mg_cm_no = mg_cm_no;
-			this.mg_cm_regidate = mg_cm_regidate;
-			this.mg_no = mg_no;
-			this.me_no = me_no;
-			this.mg_cm_contents = mg_cm_contents;
-			this.name = name;
-		}
 
 		public int getMg_cm_no() {
 			return mg_cm_no;
@@ -64,15 +55,21 @@ public class CommentDTO {
 			this.mg_cm_contents = mg_cm_contents;
 		}
 
-		public String getName() {
-			return name;
+		public int getNo() {
+			return no;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setNo(int no) {
+			this.no = no;
+		}
+
+		public String getId() {
+			return id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		
-	
-	
 }
