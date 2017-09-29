@@ -1,27 +1,32 @@
 package com.zamong.me.service.impl;
 
 import java.util.List;
-
 import java.util.Map;
 
 import javax.annotation.Resource;
 
-import org.mybatis.spring.SqlSessionTemplate;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
+import com.zamong.ma.service.impl.MusicAwardDAO;
 import com.zamong.me.service.MemberDTO;
 import com.zamong.me.service.MemberService;
 
-@Repository
-public class MemberDAO implements MemberService{
+@Service
+public class MemberServiceImpl implements MemberService{
 
-	@Resource(name="template")
-	private SqlSessionTemplate template;
+	@Resource(name="memberDAO")
+	private MemberDAO dao;
 	
 	@Override
 	public List<MemberDTO> selectList(Map map) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public int insert(MemberDTO dto) throws Exception {
+		return dao.insert(dto);
+		 
 	}
 
 	@Override
@@ -38,14 +43,8 @@ public class MemberDAO implements MemberService{
 
 	@Override
 	public MemberDTO selectOne(MemberDTO dto) throws Exception {
-		return template.selectOne("memberSelect",dto);
-	}
-	
-	@Override
-	public int insert(MemberDTO dto) throws Exception {
-		return template.insert("memberInsert",dto);
-		
-		
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
@@ -54,9 +53,5 @@ public class MemberDAO implements MemberService{
 		
 	}
 	
-	
-	
-	
-	
-	
+
 }

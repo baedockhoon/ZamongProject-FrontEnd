@@ -80,33 +80,7 @@ if(CP_ID!="" && CP_ID!=null){
 				<div class="box_mem_info">
 					<h2 class="mem_info_title">회원가입</h2>
 					<div class="mem_info_cont d_join_tab_cont">
-						<form name="join_form" method="post">
-							<input type="hidden" id="cpId" name="cpId" value="WP10" /> <input
-								type="hidden" id="joinSeq" name="joinSeq"
-								value="d086kZgutQXI+mrTbNr6qQ==" /> <input type="hidden"
-								name="isAgreeCk" value="N" /> <input type="hidden"
-								name="isAgreeCk" value="N" /> <input type="hidden"
-								name="isAgreeCk" value="N" /> <input type="hidden"
-								id="eventRcvYn" name="eventRcvYn" value="" /> <input
-								type="hidden" id="melTmAgree" name="melTmAgree" value="" /> <input
-								type="hidden" id="certType" name="certType" value="2" /> <input
-								type="hidden" id="isBanWordName" name="isBanWordName" value="" />
-							<input type="hidden" id="isDup" name="isDup" class="auth"
-								value="" /> <input type="hidden" id="isSmsSend" name="isSmsSend"
-								class="auth" value="" /> <input type="hidden" id="smsAuthKey"
-								name="smsAuthKey" class="auth" value="" /> <input type="hidden"
-								id="authPhone" name="authPhone" class="auth" value="" /> <input
-								type="hidden" id="ocLimit" name="ocLimit" class="auth" value="" />
-							<input type="hidden" id="isEmailSend" name="isEmailSend"
-								class="auth" value="" /> <input type="hidden" id="emailAuthKey"
-								name="emailAuthKey" class="auth" value="" /> <input
-								type="hidden" id="authEmail" name="authEmail" class="auth"
-								value="" /> <input type="hidden" id="sendTime" name="sendTime"
-								class="auth" value="" /> <input type="hidden" id="sendError"
-								name="sendError" class="auth" value="" /> <input type="hidden"
-								id="reToken" name="reToken" value="" />
-
-
+						<form name="join_form" method="post" action="<c:url value='/ZamongFrontEnd/MemberRegister.do'/>">
 							<!--휴대폰 인증 가입-->
 							<div id="joinPhone" class="join_phone_certification d_join_cont">
 								<p class="txt_info mt27">입력한 휴대폰번호로 인증 후 회원가입 됩니다.</p>
@@ -128,7 +102,7 @@ if(CP_ID!="" && CP_ID!=null){
 															class="wrap_input_info04 d_input_write"
 															style="width: 310px;">
 															<div class="wrap_input">
-																<input type="text" id="tn" name="tn"
+																<input type="text" id="me_tel" name="me_tel"	
 																	title="휴대폰번호 입력 편집창" placeholder="휴대폰번호 입력"
 																	class="text53" style="width: 255px;" maxlength="11" />
 															</div>
@@ -159,7 +133,7 @@ if(CP_ID!="" && CP_ID!=null){
 															class="wrap_input_info04 d_input_write"
 															style="width: 310px;">
 															<div class="wrap_input">
-																<input id="tnName" name="tnName" type="text"
+																<input id="me_name" name="me_name" type="text"
 																	title="이름 입력 편집창" placeholder="이름 입력 (2자 이상)"
 																	class="text53" style="width: 255px;" />
 															</div>
@@ -180,7 +154,7 @@ if(CP_ID!="" && CP_ID!=null){
 							<!--//휴대폰 인증 가입-->
 
 
-						</form>
+						
 					</div>
 					<div class="mem_info_cont type_border mt34 d_input_all_cont">
 						<div class="box_join_clause box_check_all">
@@ -667,15 +641,15 @@ table.txt_rule th {
 						</div>
 					</div>
 					<div class="wrap_btn_c mt34">
-						<a href="#" onclick="joinStep();" class="btn btn_square_green66">다음
-							단계</a>
+						<input type="submit" id="register" value="다음단계"/>
+							
 					</div>
 
 				</div>
 			</div>
 		</div>
 		<!-- //contents -->
-
+		</form>
 
 
 
@@ -880,7 +854,7 @@ table.txt_rule th {
 				i==3?$("#eventRcvYn").val("N"):$(isAgreeCkObj[i]).val("N");
 			}
 		});
-
+			
 		var arrayValidFunction = new Array();
 		var arrayValidElement = new Array();
 		var afterFunction = new Array();

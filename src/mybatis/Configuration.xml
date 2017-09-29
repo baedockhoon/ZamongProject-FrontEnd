@@ -23,7 +23,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias alias="CashPoint" type="com.zamong.ch.service.CashDTO"/>
 		<typeAlias alias="Assign" type="com.zamong.as.service.AssignDTO"/>
 		<typeAlias alias="Streaming" type="com.zamong.st.service.StreamingDTO"/>
-				
+		<typeAlias alias="Member" type="com.zamong.me.service.MemberDTO"/>
 	</typeAliases>
 			<!-- JNDI-->
 			<!-- 커넥션 풀 사용 -->
@@ -47,5 +47,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="mybatis/CashPoint_mybatis.xml"/>
 		<mapper resource="mybatis/Assign_mybatis.xml"/>
 		<mapper resource="mybatis/Streaming_mybatis.xml"/>	
+		<mapper resource="mybatis/Member_mybatis.xml"/>
 	</mappers>
 </configuration>

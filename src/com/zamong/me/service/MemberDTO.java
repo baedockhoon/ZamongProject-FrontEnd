@@ -12,13 +12,12 @@ public class MemberDTO {
 	private String me_birth;
 	private String me_email;
 	private String me_tel;
-	private String me_addr;
 	private String me_photo;
 	
 	public MemberDTO() {}
-	
+
 	public MemberDTO(String me_no, String me_regidate, String me_id, String me_pass, String me_name, String me_nickname,
-			String me_gender, String me_birth, String me_email, String me_tel, String me_addr, String me_photo) {
+			String me_gender, String me_birth, String me_email, String me_tel, String me_photo) {
 		super();
 		this.me_no = me_no;
 		this.me_regidate = me_regidate;
@@ -30,7 +29,6 @@ public class MemberDTO {
 		this.me_birth = me_birth;
 		this.me_email = me_email;
 		this.me_tel = me_tel;
-		this.me_addr = me_addr;
 		this.me_photo = me_photo;
 	}
 
@@ -114,14 +112,6 @@ public class MemberDTO {
 		this.me_tel = me_tel;
 	}
 
-	public String getMe_addr() {
-		return me_addr;
-	}
-
-	public void setMe_addr(String me_addr) {
-		this.me_addr = me_addr;
-	}
-
 	public String getMe_photo() {
 		return me_photo;
 	}
@@ -129,8 +119,6 @@ public class MemberDTO {
 	public void setMe_photo(String me_photo) {
 		this.me_photo = me_photo;
 	}
-	
-	
 	
 	
 	
