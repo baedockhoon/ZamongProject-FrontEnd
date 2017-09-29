@@ -383,6 +383,10 @@ function playSong(ss_no){
 												<dt>별을 클릭하여 앨범을 평가해 주세요.</dt>
 												<dd>
 													<form action="${pageContext.request.contextPath}/ZAMONG/zamongAssign.do" method="post">
+														<input type="hidden" name="no" value="1"/>
+														<input type="hidden" name="date" value="1"/>
+														<input type="hidden" name="me_no" value="1"/>
+														<input type="hidden" name="al_no" value="1"/>
 														<span class="starinput">
 														  <span class="input">
 														    <input type="radio" name="starinput" id="p2" value="1"><label for="p2">1</label>
@@ -393,11 +397,11 @@ function playSong(ss_no){
 														  </span>
 														  <output for="starinput"><b>0</b>점</output>
 														</span>
-													</form>
 													<div class="wrap_btn_c mt20">
-														<button type="button" title="앨범 별점 평가 확인" class="btn_emphs_small" data-role="ok"><span class="odd_span"><span class="even_span">확인</span></span></button>
+														<button type="submit" title="앨범 별점 평가 확인" class="btn_emphs_small" data-role="ok"><span class="odd_span"><span class="even_span">확인</span></span></button>
 														<button type="button" title="앨범 별점 평가 취소" class="btn_emphs02_small d_close"><span class="odd_span"><span class="even_span">취소</span></span></button>
 													</div>
+													</form>
 												</dd>
 											</dl>
 										</div>
