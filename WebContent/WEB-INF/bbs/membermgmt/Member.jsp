@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="ko">
@@ -80,7 +80,8 @@ if(CP_ID!="" && CP_ID!=null){
 				<div class="box_mem_info">
 					<h2 class="mem_info_title">회원가입</h2>
 					<div class="mem_info_cont d_join_tab_cont">
-						<form name="join_form" method="post" action="<c:url value='/ZamongFrontEnd/MemberRegister.do'/>">
+						<form name="join_form" method="post"
+							action="<c:url value='/ZamongFrontEnd/MemberRegister.do'/>">
 							<!--휴대폰 인증 가입-->
 							<div id="joinPhone" class="join_phone_certification d_join_cont">
 								<p class="txt_info mt27">입력한 휴대폰번호로 인증 후 회원가입 됩니다.</p>
@@ -91,7 +92,7 @@ if(CP_ID!="" && CP_ID!=null){
 											있습니다.</caption>
 										<colgroup>
 											<col style="width: 113px">
-											<col>
+												<col>
 										</colgroup>
 										<tbody>
 											<tr>
@@ -102,7 +103,7 @@ if(CP_ID!="" && CP_ID!=null){
 															class="wrap_input_info04 d_input_write"
 															style="width: 310px;">
 															<div class="wrap_input">
-																<input type="text" id="me_tel" name="me_tel"	
+																<input type="text" id="me_tel" name="me_tel"
 																	title="휴대폰번호 입력 편집창" placeholder="휴대폰번호 입력"
 																	class="text53" style="width: 255px;" maxlength="11" />
 															</div>
@@ -152,23 +153,17 @@ if(CP_ID!="" && CP_ID!=null){
 								</div>
 							</div>
 							<!--//휴대폰 인증 가입-->
-
-
-						
 					</div>
 					<div class="mem_info_cont type_border mt34 d_input_all_cont">
 						<div class="box_join_clause box_check_all">
 							<div class="box_check d_input_check d_input_all">
-								<input type="checkbox" id="clauseAgree" class="input_check">
-								<label for="clauseAgree" class="label_check"><span
-									class="icon"></span>전체동의<em>(선택사항 포함)</em></label>
+								<input type="checkbox" id="check"> <span class="icon"></span>전체동의<em>(선택사항
+									포함)</em></label>
 							</div>
 						</div>
 						<div class="box_join_clause first_child">
 							<div class="box_check d_input_check">
-								<input type="checkbox" id="clauseAgree1" name="agreeCk"
-									class="input_check" /> <label for="clauseAgree1"
-									class="label_check"><span class="icon"></span>이용약관<em
+								<input type="checkbox" /> <span class="icon"></span>이용약관<em
 									class="point">(필수)</em></label> <a href="#" class="btn_more"><span>약관
 										보기</span></a>
 							</div>
@@ -222,8 +217,7 @@ if(CP_ID!="" && CP_ID!=null){
 						<div class="box_join_clause">
 							<div class="box_check d_input_check">
 								<input type="checkbox" id="clauseAgree2" name="agreeCk"
-									class="input_check" /> <label for="clauseAgree2"
-									class="label_check"><span class="icon"></span>유료서비스약관<em
+									/> <span class="icon"></span>유료서비스약관<em
 									class="point">(필수)</em></label> <a href="#" class="btn_more"><span>약관
 										보기</span></a>
 							</div>
@@ -286,11 +280,9 @@ if(CP_ID!="" && CP_ID!=null){
 						</div>
 						<div class="box_join_clause">
 							<div class="box_check d_input_check">
-								<input type="checkbox" id="clauseAgree3" name="agreeCk"
-									class="input_check" /> <label for="clauseAgree3"
-									class="label_check"><span class="icon"></span>개인정보 수집 및
-									이용<em class="point">(필수)</em></label> <a href="#" class="btn_more"><span>약관
-										보기</span></a>
+								<input type="checkbox" id="clauseAgree3" name="agreeCk" />
+								</span>개인정보 수집 및 이용<em class="point">(필수)</em></label> <a href="#"
+									class="btn_more"><span>약관 보기</span></a>
 							</div>
 
 							<div class="box_clause_info">
@@ -353,12 +345,12 @@ table.txt_rule th {
 														암호화된 동일인 식별정보(CI))</td>
 													<td rowspan="2">①회원제서비스 운영 및 관리(가입 의사&middot;나이, 자격
 														확인&middot;제한 준수, 가입 및 탈퇴 처리 등)<br>
-														②이용약관&middot;서비스상품약관&middot;개인정보처리방침의 변경, 서비스
-														변경&middot;중단&middot;장애&middot;침해사고 등 중요사항 고지 등 의사소통 경로<br>
-														③서비스 민원사항&middot;고충 처리, 결과 안내<br> ④저작권법, 정보통신망법,
-														청소년보호법 등 비롯한 서비스 관련 제반 법령 위반 행위, 기타 회사 및 타 회원의 권리를 침해하는
-														서비스 부정이용행위 제재 등<br> ⑤개인정보 보호 관련 법령에 따른 회원의 정보 열람, 정정권
-														이행<br> ⑥정보통신망법 등 관련 법령에 따른 보유 및 보존의무 이행
+															②이용약관&middot;서비스상품약관&middot;개인정보처리방침의 변경, 서비스
+															변경&middot;중단&middot;장애&middot;침해사고 등 중요사항 고지 등 의사소통 경로<br>
+																③서비스 민원사항&middot;고충 처리, 결과 안내<br> ④저작권법, 정보통신망법,
+																	청소년보호법 등 비롯한 서비스 관련 제반 법령 위반 행위, 기타 회사 및 타 회원의 권리를 침해하는
+																	서비스 부정이용행위 제재 등<br> ⑤개인정보 보호 관련 법령에 따른 회원의 정보 열람,
+																		정정권 이행<br> ⑥정보통신망법 등 관련 법령에 따른 보유 및 보존의무 이행 
 													</td>
 												</tr>
 												<tr>
@@ -393,22 +385,21 @@ table.txt_rule th {
 												</tr>
 												<tr>
 													<td>○결제수단별 정보<br>
-														<ul class="txt_rule">
-															<li>- 신용카드, 상품권, 무통장 입금(가상계좌), 실시간계좌이체</li>
-															<li>: 결제승인번호</li>
-															<li>-휴대전화&middot;스마트폰</li>
-															<li>: 휴대전화번호, 가입통신사, 결제승인번호 등</li>
-															<li>-제휴&middot;할인상품 결제시</li>
-															<li>: 카드번호(SKT T멤버쉽카드, 오케이캐쉬백카드(OCB)),
-																휴대전화번호,OCB비밀번호, 성별, 생년월일, 단말정보(모델명, 단말기고유번호, 개통일), 데이터
-																함께쓰기 요금제 사용 여부</li>
-														</ul>
-													</td>
+															<ul class="txt_rule">
+																<li>- 신용카드, 상품권, 무통장 입금(가상계좌), 실시간계좌이체</li>
+																<li>: 결제승인번호</li>
+																<li>-휴대전화&middot;스마트폰</li>
+																<li>: 휴대전화번호, 가입통신사, 결제승인번호 등</li>
+																<li>-제휴&middot;할인상품 결제시</li>
+																<li>: 카드번호(SKT T멤버쉽카드, 오케이캐쉬백카드(OCB)),
+																	휴대전화번호,OCB비밀번호, 성별, 생년월일, 단말정보(모델명, 단말기고유번호, 개통일), 데이터
+																	함께쓰기 요금제 사용 여부</li>
+															</ul></td>
 													<td>①유료서비스 계약의 이행 및 서비스 제공에 따른 요금
 														청구&middot;결제&middot;정산&middot;할인<br> ②관련 법령에 따른 보존 및
-														제공 의무 이행<br> ③유료서비스 계약 이행 업무 위탁<br>
-														(※구매&middot;결제단계에서 회원이 입력하는 신용카드사명, 신용카드 번호, 유효기간, 휴대번호,
-														상품권번호 등의 정보는 회사가 직접 저장하지 않습니다.)
+															제공 의무 이행<br> ③유료서비스 계약 이행 업무 위탁<br>
+																	(※구매&middot;결제단계에서 회원이 입력하는 신용카드사명, 신용카드 번호, 유효기간,
+																	휴대번호, 상품권번호 등의 정보는 회사가 직접 저장하지 않습니다.) 
 													</td>
 												</tr>
 												<tr>
@@ -429,8 +420,7 @@ table.txt_rule th {
 												</tr>
 												<tr>
 													<td>계좌은행, 계좌번호, 예금주명</td>
-													<td>①현금 환불 처리<br> ②관련 법령에 따른 보존 의무 이행
-													</td>
+													<td>①현금 환불 처리<br> ②관련 법령에 따른 보존 의무 이행 </td>
 												</tr>
 												<tr>
 													<td>휴대전화번호, 사업자등록번호</td>
@@ -440,10 +430,9 @@ table.txt_rule th {
 													<td>이름, 아이디, 닉네임, 휴대전화번호, 유선전화번호, 주소, 이메일, 성별, 생년월일,
 														배송지 주소 등</td>
 													<td>①온&middot;오프라인 이벤트&middot;행사 진행, 당첨자 추첨<br>
-														②이벤트 당첨자에 대한 경품 배송 <br> ③위 ①, ②업무의 위탁 또는 제3자 제공<br>
-														(당첨자 추첨 시까지 최소한의 개인정보만을 이용하며, 이벤트 등 안내시 반드시 사전 고지 및 동의를
-														구합니다.)
-													</td>
+															②이벤트 당첨자에 대한 경품 배송 <br> ③위 ①, ②업무의 위탁 또는 제3자 제공<br>
+																	(당첨자 추첨 시까지 최소한의 개인정보만을 이용하며, 이벤트 등 안내시 반드시 사전 고지 및 동의를
+																	구합니다.) </td>
 												</tr>
 											</tbody>
 										</table>
@@ -462,16 +451,14 @@ table.txt_rule th {
 													<td>회원의 기기정보 :사용기기별(PC∙휴대전화∙스마트폰∙Tablet∙MP3 Player)
 														모델명, 단말기고유번호, 휴대전화번호</td>
 													<td>①서비스 부정사용 방지<br> ②저작권법 및 동법 하위 규정 준수<br>
-														③서비스 장애 발생시 신속한 민원 처리
-													</td>
+																③서비스 장애 발생시 신속한 민원 처리 </td>
 												</tr>
 												<tr>
 													<td>서비스이용기록, 사이트방문기록, IP Address, 쿠키 등</td>
 													<td>①서비스 이용 내역 확인<br> ②관련 법령 및 서비스이용약관, 세부 이용가이드
-														등에서 명시적으로 금지하는 불법행위 및 부정이용행위 제재<br> ③관련 법령에 따른 보유 및
-														정보 제공 의무 이행<br> ④접속빈도 분석, 고객 맞춤형 서비스 제공을 위한 통계 활용<br>⑤원활한
-														서비스 제공을 위한 서비스 시스템 인프라 확충
-													</td>
+															등에서 명시적으로 금지하는 불법행위 및 부정이용행위 제재<br> ③관련 법령에 따른 보유 및
+																정보 제공 의무 이행<br> ④접속빈도 분석, 고객 맞춤형 서비스 제공을 위한 통계 활용<br>⑤원활한
+																		서비스 제공을 위한 서비스 시스템 인프라 확충 </td>
 												</tr>
 											</tbody>
 										</table>
@@ -489,8 +476,7 @@ table.txt_rule th {
 											기타 민원 대응</p>
 										<ul class="txt_rule">
 											<li>- 보유기간 : 회원 탈퇴 후 6개월간<br> (단, 미납 요금청구의 경우 완납시,
-												민원 대응의 경우 민원 해결시까지)
-											</li>
+													민원 대응의 경우 민원 해결시까지) </li>
 											<li>- 보유정보 : 아이디, 이메일, 휴대전화번호, 중복가입확인정보(DI), 가입일, 탈퇴일</li>
 										</ul>
 
@@ -570,8 +556,8 @@ table.txt_rule th {
 										<p class="txt_rule">
 											회사는 회원이 일정기간(1년)동안 서비스를 이용한 사실 또는 활동한 기록이 없는 경우, 개인정보의 안전한 보호
 											및 피해 발생을 방지하기 위해 이용자에게 사전통지하고 개인정보를 별도로 분리하여 저장 관리합니다.<br>개인정보유효기간제에
-											의해 별도 분리된 경우라도 회원이 서비스 재이용을 원하실 경우에는, 본인확인 절차를 거쳐 서비스를 재이용하실
-											수 있습니다.
+												의해 별도 분리된 경우라도 회원이 서비스 재이용을 원하실 경우에는, 본인확인 절차를 거쳐 서비스를 재이용하실
+												수 있습니다. 
 										</p>
 									</div>
 								</div>
@@ -583,8 +569,7 @@ table.txt_rule th {
 						<div class="box_join_clause">
 							<div class="box_check d_input_check">
 								<input type="checkbox" id="clauseAgree4" name="agreeCk"
-									class="input_check" /> <label for="clauseAgree4"
-									class="label_check"><span class="icon"></span>이벤트,
+									/> <span class="icon"></span>이벤트,
 									서비스안내 수신<em>(선택)</em></label> <a href="#" class="btn_more"><span>약관
 										보기</span></a>
 							</div>
@@ -628,7 +613,7 @@ table.txt_rule th {
 												<tr>
 													<td>휴대전화번호, 이메일</td>
 													<td>①이벤트&middot;신규/개편 상품&middot;서비스 안내&middot;고지 등
-														홍보&middot;마케팅 활용<br> ②신규서비스 개발 및 고객 서비스 개선 의견 반영
+														홍보&middot;마케팅 활용<br> ②신규서비스 개발 및 고객 서비스 개선 의견 반영 
 													</td>
 												</tr>
 											</tbody>
@@ -641,8 +626,8 @@ table.txt_rule th {
 						</div>
 					</div>
 					<div class="wrap_btn_c mt34">
-						<input type="submit" id="register" value="다음단계"/>
-							
+						<input type="submit" id="register" value="다음단계" onclick="return check()"/>
+
 					</div>
 
 				</div>

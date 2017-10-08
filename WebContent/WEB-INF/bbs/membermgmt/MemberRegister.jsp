@@ -20,9 +20,9 @@
 	
 	
 
-
+	
 <link rel="stylesheet" href="https://cdnimg.melon.co.kr/static/member/resource/style/me1/qy/y/1edydz6hfyj.css" type="text/css" />
-
+	
 <script type="text/javascript" src="/resource/script/web/common/jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
 var httpMemberDomain = "http://member.melon.com";
@@ -65,7 +65,8 @@ if(CP_ID!="" && CP_ID!=null){
 				<h2 class="mem_info_title">회원가입</h2>
 				<form name="join_form" method="post" action="<c:url value='/ZamongFrontEnd/MemberComplete.do'/>">
 					
-					
+					<input type="hidden" name="me_name" value="${me_name }"/>
+					<input type="hidden" name="me_tel" value="${me_tel }"/>
 					<div class="mem_info_cont">
 						<div class="join_certification">
 							<div class="user_name"><span>김찬혁 님</span></div>
@@ -117,9 +118,6 @@ if(CP_ID!="" && CP_ID!=null){
 														<input type="password" id="me_pass" name="me_pass" title="비밀번호 입력 편집창" placeholder="비밀번호 입력" class="text53 d_input_key" style="width:212px;">
 														<label for="memberPwd1" class="pw_label">비밀번호 입력</label>
 													</div>
-													<div class="wrap_input" style="display:none;">
-														<input type="text" id="memberPwd12" title="비밀번호 입력 편집창" placeholder="비밀번호 입력" class="text53 d_input_key" style="width:212px;">
-													</div>
 													<div class="wrap_input_check">
 														<a href="#" class="btn_input_check d_input_del" style="display:none;">삭제</a>
 														<a href="#" class="btn_pw_view d_input_pw" style="display:block;"><span>보기</span></a>
@@ -134,11 +132,8 @@ if(CP_ID!="" && CP_ID!=null){
 												<p id="memberPwd1_msg" class="txt_error03" style="display:none;"></p>
 												<div id="memberPwd2_tr" class="wrap_input_info04 wrap_input_pw d_input_write mt12" style="width:331px;">
 													<div class="wrap_input" style="display: block;">
-														<input type="password" id="me_pass2" name="me_pass2"  title="비밀번호 확인 편집창" placeholder="비밀번호 확인" class="text53 d_input_key" style="width:212px;">
+														<input type="password" id="me_pass" name="me_pass"  title="비밀번호 확인 편집창" placeholder="비밀번호 확인" class="text53 d_input_key" style="width:212px;">
 														<label for="memberPwd2" class="pw_label">비밀번호 확인</label>
-													</div>
-													<div class="wrap_input" style="display: none;">
-														<input type="text" id="memberPwd22" title="비밀번호 입력 편집창" placeholder="비밀번호 확인" class="text53 d_input_key" style="width:212px;">
 													</div>
 													<div class="wrap_input_check">
 														<a href="#" class="btn_input_check d_input_del" style="display:none;">삭제</a>
@@ -156,7 +151,7 @@ if(CP_ID!="" && CP_ID!=null){
 											<div class="wrap">
 												<div id="memberNick_tr" class="wrap_input_info04 d_input_write" style="width:331px;">
 													<div class="wrap_input">
-														<input type="text" id="me_nickname" name=""me_nickname"" title="닉네임 입력 편집창" placeholder="한글, 영문 2~15자" class="text53" style="width:276px;">
+														<input type="text" id="me_nickname" name="me_nickname" title="닉네임 입력 편집창" placeholder="한글, 영문 2~15자" class="text53" style="width:276px;">
 													</div>
 													<div class="wrap_input_check">
 														<a href="#" class="btn_input_check d_input_del" style="display:none;">삭제</a>
@@ -165,7 +160,7 @@ if(CP_ID!="" && CP_ID!=null){
 												<p id="memberNick_msg" class="txt_error03" style="display:none;"></p>
 											</div>
 										</td>
-									</tr>
+									</tr>		
 									<tr class="tr_type01">
 										<th scope="row"><div class="wrap">성별</div></th>
 										<td>
@@ -189,7 +184,7 @@ if(CP_ID!="" && CP_ID!=null){
 												<p id="memberGender_msg" class="txt_error03" style="display:none;"></p>
 											</div>
 										</td>
-									</tr>
+									</tr>		 
 									<tr>
 										<th scope="row"><div class="wrap">생년월일</div></th>
 										<td>
@@ -197,20 +192,20 @@ if(CP_ID!="" && CP_ID!=null){
 												<div class="box_birth_input">
 													<div id="birthYear_tr" class="wrap_input_info05 d_input_write" style="width:129px;">
 														<div class="wrap_input">
-															<input type="text" id="me_birth1" name="me_birth1" title="생년월일 년 입력 편집창" placeholder="" class="text53" style="width:80px;" maxlength="4"><span class="txt">년</span>
+															<input type="text" id="me_birth" name="me_birth1" title="생년월일 년 입력 편집창" placeholder="" class="text53" style="width:80px;" maxlength="4"><span class="txt">년</span>
 														</div>
 													</div>
-
 													<div id="birthMonth_tr" class="wrap_input_info05 d_input_write" style="width:81px;">
 														<div class="wrap_input">
-															<input type="text" id="me_birth2" name="me_birth2" title="생년월일 월 입력 편집창" placeholder="" class="text53" style="width:35px;" maxlength="2"><span class="txt">월</span>
+															<input type="text" id="me_birth" name="me_birth2" title="생년월일 월 입력 편집창" placeholder="" class="text53" style="width:35px;" maxlength="2"><span class="txt">월</span>
 														</div>
 													</div>
 
 													<div id="birthDay_tr" class="wrap_input_info05 d_input_write mr0" style="width:81px;">
 														<div class="wrap_input">
-															<input type="text" id="me_birth3" name="me_birth3" title="생년월일 일 입력 편집창" placeholder="" class="text53" style="width:35px;" maxlength="2"><span class="txt">일</span>
+															<input type="text" id="me_birth" name="me_birth3" title="생년월일 일 입력 편집창" placeholder="" class="text53" style="width:35px;" maxlength="2"><span class="txt">일</span>
 														</div>
+															<input type="hidden" id="me_birth" name="me_birth" value="${me_birth1 }-${me_birth2}-${me_birth3}" />
 													</div>
 												</div>
 												<p id="parentAgree_msg" class="txt_input_info02" style="display:none;">만 14세 미만인 경우 보호자(법정대리인)동의가 필요합니다.</p>
@@ -225,15 +220,15 @@ if(CP_ID!="" && CP_ID!=null){
 												<div class="box_email_input">
 													<div id="email_tr" class="wrap_input_info04 d_input_write" style="width:169px">
 														<div class="wrap_input">
-															<input id="me_email1" name="me_email1" type="text" title="이메일 입력 편집창" placeholder="이메일 입력" class="text53" style="width:116px;">
+															<input type="text" id="me_email" name="me_email" type="text" title="이메일 입력 편집창" placeholder="이메일 입력" class="text53" style="width:116px;">
 														</div>
 														<div class="wrap_input_check">
 															<a href="#" class="btn_input_check d_input_del" style="display:none;">삭제</a>
 														</div>
 													</div>
 													<!--select box-->
-													<div id="mailDomain_tr" class="select_wrap">
-														<select id="me_email2" name="me_email2" title="연락처 정보 선택" style="width: 95px; height: 31px; display: none;" class="d_selectbox2" data-class="select_type04">
+													
+														<select id="me_email" name="me_email" title="연락처 정보 선택" style="width: 95px; height: 31px; display: none;" class="d_selectbox2" data-class="select_type04">
 				                                            <option value="" selected>선택</option>
 															<option value="nate.com"> nate.com</option>
 															<option value="naver.com"> naver.com</option>
@@ -251,7 +246,7 @@ if(CP_ID!="" && CP_ID!=null){
 															<option value="hitel.net"> hitel.net</option>
 															<option value="freechal.com"> freechal.com</option>
 				                                        </select>
-			                                        </div>
+			                                     
 			                                        <!--//select box-->
 												</div>
 												<p class="txt_input_info">중요한 알림이 이메일을 통해 안내됩니다. 본인이 사용하는 이메일을 입력해주세요.</p>

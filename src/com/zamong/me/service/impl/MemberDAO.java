@@ -14,7 +14,7 @@ import com.zamong.me.service.MemberService;
 
 @Repository
 public class MemberDAO implements MemberService{
-
+	
 	@Resource(name="template")
 	private SqlSessionTemplate template;
 	
@@ -38,7 +38,7 @@ public class MemberDAO implements MemberService{
 
 	@Override
 	public MemberDTO selectOne(MemberDTO dto) throws Exception {
-		return template.selectOne("memberSelect",dto);
+		return null;
 	}
 	
 	@Override

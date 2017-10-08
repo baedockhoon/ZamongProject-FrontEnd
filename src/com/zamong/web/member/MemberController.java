@@ -32,7 +32,7 @@ public class MemberController {
 			
 	
 		
-		
+							
 		return "/WEB-INF/bbs/membermgmt/Member.jsp";
 	}//////////////////list()
 	
@@ -42,18 +42,21 @@ public class MemberController {
 			@RequestParam Map map,//검색용 파라미터 받기
 			Model model//리퀘스트 영역 저장용
 			) throws Exception{
-			
+							
 		model.addAllAttributes(map);
-		
+							
 		return "/WEB-INF/bbs/membermgmt/MemberRegister.jsp";
 	}//////////////////list()
-	
+		
 	@RequestMapping("/ZamongFrontEnd/MemberComplete.do")
 	public String complete(
 			HttpServletRequest req,//페이징용 메소드에 전달
-			@RequestParam MemberDTO dto,//검색용 파라미터 받기
+			MemberDTO dto,//검색용 파라미터 받기
 			Model model//리퀘스트 영역 저장용
 			) throws Exception{
+			
+		
+	
 		int isRegister = memberService.insert(dto);
 		if(isRegister == 1){//회원
 			//로그인 처리-세션영역에도 저장
@@ -68,7 +71,7 @@ public class MemberController {
 		
 		return "/WEB-INF/bbs/membermgmt/MemberView.jsp";
 	}//////////////////list()
-	
+		
 	
 	
 	

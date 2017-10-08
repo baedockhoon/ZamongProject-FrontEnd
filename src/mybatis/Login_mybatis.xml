@@ -47,6 +47,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT COUNT(*) FROM ME_MEMBER WHERE me_id=#{me_id} AND me_pass=#{me_pass}	
 	</select>
 	
+	 <insert id="memberInsert" parameterType="Member">
+		INSERT INTO me_member VALUES(ME_SEQUENCE.NEXTVAL,SYSDATE,#{me_id},#{me_pass},#{me_name},#{me_nickname},#{me_gender},#{me_birth},#{me_email},#{me_tel}, '')
+	</insert> 
 	<!-- <select id="ReplyBBStotal" parameterType="java.util.Map" resultType="int">
 		SELECT COUNT(*) FROM REPLYBBS RE JOIN MEMBER M ON RE.ID=M.ID 
 	</select>
