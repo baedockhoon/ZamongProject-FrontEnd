@@ -26,7 +26,7 @@ import com.zamong.nt.service.NotiDataDTO;
 import com.zamong.nt.service.impl.NotiDataServiceImpl;
 import com.zamong.st.service.StreamingDTO;
 
-
+@SessionAttributes("me_id")
 @Controller
 public class CashController {
 	
@@ -48,11 +48,14 @@ public class CashController {
 		model.addAttribute("list", list);
 
 
+	/*	return "/ZamongFrontEnd/PaymentView.do";*/
+	
 		return "/ZamongFrontEnd/PaymentView.do";
 	}//////////////////list()
 	@RequestMapping("/ZamongFrontEnd/PaymentView.do")
-	public String view(CashDTO dto, Model model, HttpServletRequest req)throws Exception {	
+	public String view(CashDTO dto, Model model, HttpServletRequest req)throws Exception {
 		dto = service.selectOne(dto);
+		
 	
 		//줄바꿈 처리
 		

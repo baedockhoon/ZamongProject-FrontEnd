@@ -27,7 +27,7 @@ import com.zamong.nt.service.impl.NotiDataServiceImpl;
 import com.zamong.st.service.StreamingDTO;
 import com.zamong.st.service.impl.StreamingServiceImpl;
 
-
+@SessionAttributes("me_id")
 @Controller
 public class StreamingController {
 	
@@ -40,18 +40,18 @@ public class StreamingController {
 	public String list(
 			HttpServletRequest req,//페이징용 메소드에 전달
 			@RequestParam Map map,//검색용 파라미터 받기
-			Model model//리퀘스트 영역 저장용
+			Model model,
+			StreamingDTO dto//리퀘스트 영역 저장용
 			) throws Exception{
 			
 		//서비스 호출]
 		List<StreamingDTO> list= service.selectList(map);
 		//데이타 저장]		
 		model.addAttribute("list", list);
-
-
-		return "/ZamongFrontEnd/StreamingView.do";
+	
+		return "/WEB-INF/bbs/streaming/StreamingList.jsp";
 	}//////////////////list()
-	@RequestMapping("/ZamongFrontEnd/StreamingView.do")
+	/*@RequestMapping("/ZamongFrontEnd/StreamingView.do")
 	public String view(StreamingDTO dto, Model model, HttpServletRequest req)throws Exception {	
 	
 		dto = service.selectOne(dto);
@@ -63,6 +63,6 @@ public class StreamingController {
 	
 		model.addAttribute("dto", dto);
 		return "/WEB-INF/bbs/streaming/StreamingList.jsp";
-	}
+	}*/
 	
 }

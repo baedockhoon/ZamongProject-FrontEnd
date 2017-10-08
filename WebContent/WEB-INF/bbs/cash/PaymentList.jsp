@@ -70,8 +70,8 @@
 		<div class="box_reg_cash">
 			<div class="desc">
 				<strong>
-					멜론 캐쉬 잔액:${dto.ch_havecash }
-					<span class="fc_point f_arial">${dto.ch_havecash }</span>
+					멜론 캐쉬 잔액:
+					<span class="fc_point f_arial">${dto.ch_havecash}</span>
 					원
 				</strong>
 				<button type="button" title="캐쉬 충전 - 페이지 이동" onclick="goPopup();" class="btn_emphs_small" ><span class="odd_span"><span class="even_span">캐쉬 충전</span></span></button>
@@ -125,23 +125,35 @@
 			<c:otherwise>
 				<c:forEach var="item" items="${list}" varStatus="loop">
 				
-					
-					<tr >
+					<c:if test="${item.pd_no == 3 }">
+					<tr >		
+							
 						<td class="no"align="center"><div class="wrap">${item.ch_no}</div></td>
 						<td><div class="wrap"align="center">${item.ch_regidate}</div></td>
 							<td div class="wrap" style="text-align: center;">캐쉬</td>
-							<td div class="wrap"style="text-align: center;">캐쉬결제</td>
+							<td div class="wrap"style="text-align: center;">캐쉬결제</td>							
 						<td><div class="wrap"align="center">${item.ch_havecash}원</div></td>
-							<td><div class="wrap"></div></td>
+						</tr>
+						</c:if>
+					<c:if test="${item.pd_no != 3 }">	
+					<tr>				
+						 		<td class="no"align="center"><div class="wrap">${item.ch_no}</div></td>
+						<td><div class="wrap"align="center">${item.ch_regidate}</div></td>
+							<td div class="wrap" style="text-align: center;">${item.pd_name }</td>
+							<td div class="wrap"style="text-align: center;">스트리밍결제</td>
+							<td></td>							
+						<td><div class="wrap"align="center">${item.bp_price}원</div></td>
 				
 					</tr>
+						</c:if>
 					
 				</c:forEach>
 			</c:otherwise>
 		</c:choose>		
-			
+						
 	
 
+					
 <script type="text/javascript">
 $(document).ready(function(){
 $('#pageobjNavgation').html("")
@@ -183,22 +195,6 @@ var pageobj = new Pagination('/commerce/mypage/cash/web/meloncash_listChargedSpe
 <script type="text/javascript">
 
 
-	// 소멸예정 캐쉬 팝업
-	$("#d_open").on('click', function(e) {
-		e.preventDefault();
-		var url = "/commerce/mypage/cash/web/meloncash_informExpirMelonCashPopup.htm",
-			options = {
-				scrollbars : 'no',
-				resizable : 'no',
-				location : 'no',
-				menubar : 'no',
-				toolbar : 'no',
-				statusbar : 'no',
-				status : 'no'
-			};
-		MELON.WEBSVC.util.openPopup(url, 560, 350, options);
-	});
-}());
 </script>
 			<!-- //contents -->
 		</div>

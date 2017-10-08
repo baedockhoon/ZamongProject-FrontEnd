@@ -32,9 +32,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				JOIN (SELECT BP_NO, PD_NAME FROM BP_BUYPRODUCT B JOIN PD_PRODUCT P ON B.PD_NO = P.PD_NO) P ON S.BP_NO = P.BP_NO
 				WHERE M.ME_NO=23 ORDER BY ST_NO DESC
 	</select>
- 	  <select id="StreamingView" parameterType="java.util.Map" resultMap="StreamingDTOResult">
+ 	<!--   <select id="StreamingView" parameterType="java.util.Map" resultMap="StreamingDTOResult">
 SELECT M.ME_ID FROM ST_STREAMING S JOIN ME_MEMBER M ON S.ME_NO = M.ME_NO WHERE M.ME_NO=23 
-	</select> 
+	</select>  -->
 	
  	<!-- <update id="NotiDateUpdate"  parameterType="java.util.Map">
 		UPDATE NT_NOTICE SET NT_HITCOUNT=NT_HITCOUNT+1 WHERE NT_NO=#{nt_no}

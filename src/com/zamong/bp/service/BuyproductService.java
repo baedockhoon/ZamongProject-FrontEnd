@@ -27,4 +27,6 @@ public interface BuyproductService {
 
 	int insertCash(BuyproductDTO dto) throws Exception;
 	int insertStreaming(BuyproductDTO dto) throws Exception;
+	
+	int insertMinus(BuyproductDTO dto) throws Exception;
 }

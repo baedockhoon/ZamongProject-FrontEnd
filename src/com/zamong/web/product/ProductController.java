@@ -1,4 +1,4 @@
-package com.zamong.web.bpproduct;
+package com.zamong.web.product;
 
 import java.util.List;
 import java.util.Map;
@@ -24,46 +24,52 @@ import com.zamong.ch.service.CashDTO;
 
 import com.zamong.nt.service.NotiDataDTO;
 import com.zamong.nt.service.impl.NotiDataServiceImpl;
+import com.zamong.pd.service.ProductDTO;
+import com.zamong.pd.service.impl.ProductServiceImpl;
 import com.zamong.st.service.StreamingDTO;
 
 @SessionAttributes("me_id")
 @Controller
-public class BpproductController {
+public class ProductController {
 	
-	@Resource(name="buyproductServiceImpl")
-	private BuyproductServiceImpl service;
+	@Resource(name="productServiceImpl")
+	private ProductServiceImpl service;
 	
 	
-	/*@RequestMapping("/ZamongFrontEnd/CashList.do")
-	public String view(HttpSession session)throws Exception {
+	@RequestMapping("/ZamongFrontEnd/CashList.do")
+	public String list(HttpServletRequest req,//페이징용 메소드에 전달
+			@RequestParam Map map,//검색용 파라미터 받기
+			Model model)throws Exception {
 		
-		
+		List<ProductDTO> list= service.selectList(map);
+		//데이타 저장]		
+		model.addAttribute("list", list);
 		return "/WEB-INF/bbs/cash/CashPoint.jsp";
-	}*/
-	@RequestMapping("/ZamongFrontEnd/Payment.do")
-	public String Payment()throws Exception {
-
-		return "/WEB-INF/bbs/cash/Payment.jsp";
 	}
-	@RequestMapping("/ZamongFrontEnd/PaymentWrite.do")
+	@RequestMapping("/ZamongFrontEnd/CashView.do")
+	public String view(ProductDTO dto, Model model, HttpServletRequest req)throws Exception {
+
+		dto = service.selectOne(dto);
+		model.addAttribute("dto", dto);
+		return "/WEB-INF/bbs/streaming/StreamingCash.jsp";
+	}
+	/*@RequestMapping("/ZamongFrontEnd/PaymentWrite.do")
 	public String PaymentWrite(BuyproductDTO dto, @ModelAttribute("me_id") String me_id )throws Exception {
+		System.out.println(me_id);
 		dto.setMe_id(me_id);
 		service.insertBuyproduct(dto);
 		if(dto.getPd_no().equals("3")) {
 			dto.setCh_havecash(dto.getBp_price());
 			service.insertCash(dto);
-			
+
 		}
 		else {
-			dto.setMm_minus(dto.getBp_price());
-			service.insertMinus(dto);
 			service.insertStreaming(dto);
-			return "/ZamongFrontEnd/StreamingList.do";
 		}
 		
 		
 		
-		/*return "/WEB-INF/bbs/cash/PaymentList.jsp";*/
+		return "/WEB-INF/bbs/cash/PaymentList.jsp";
 		return "/ZamongFrontEnd/PaymentList.do";
 	}
 	@RequestMapping("/ZamongFrontEnd/StreamingPay.do")
@@ -81,7 +87,6 @@ public class BpproductController {
 		
 		return "/ZamongFrontEnd/StreamingView1.do";
 	}//////////////////list()
-	
 	@RequestMapping("/ZamongFrontEnd/StreamingView1.do")
 	public String view(BuyproductDTO dto, Model model, HttpServletRequest req)throws Exception {	
 	
@@ -95,5 +100,5 @@ public class BpproductController {
 		model.addAttribute("dto", dto);
 		return "/WEB-INF/bbs/streaming/StreamingPay.jsp";
 	}
-	
+	*/
 }

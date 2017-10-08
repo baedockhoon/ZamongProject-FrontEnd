@@ -43,6 +43,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO ST_STREAMING VALUES(ST_SEQ.NEXTVAL,SYSDATE,SYSDATE+30 ,BP_SEQ.CURRVAL,(select me_no from me_member where me_id = #{me_id}))
 		<!-- INSERT INTO ST_STREAMING VALUES(ST_SEQ.NEXTVAL,SYSDATE,SYSDATE+30 ,BP_SEQ.CURRVAL,(select me_no from me_member where me_id =#{me_id})) -->
 	</insert>    
+         <insert id="insertMinus"  parameterType="BuyProduct">
+	INSERT INTO MM_MILIAGE VALUES(MM_MINUS_SEQ.NEXTVAL,(select me_no from me_member where me_id = #{me_id}),#{mm_minus})
+	</insert> 
+     
        <!--     
            
  	<select id="ReplyBBSLogin" parameterType="java.util.Map" resultType="int">

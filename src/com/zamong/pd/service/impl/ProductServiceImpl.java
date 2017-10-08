@@ -1,4 +1,4 @@
-package com.zamong.bp.service.impl;
+package com.zamong.pd.service.impl;
 
 import java.util.List;
 import java.util.Map;
@@ -10,8 +10,11 @@ import org.springframework.stereotype.Service;
 import com.zamong.bp.service.BuyproductDTO;
 import com.zamong.bp.service.BuyproductService;
 import com.zamong.ch.service.CashDTO;
+import com.zamong.ch.service.CashService;
 import com.zamong.nt.service.NotiDataDTO;
 import com.zamong.nt.service.NotiDataService;
+import com.zamong.pd.service.ProductDTO;
+import com.zamong.pd.service.ProductService;
 import com.zamong.st.service.StreamingDTO;
 /*
  * 이름 미 지정시 ID값은 소문자로 시작하는 클래스명이됨
@@ -20,27 +23,37 @@ import com.zamong.st.service.StreamingDTO;
  * 지정도 가능 @Service("임의의ID값")
  */
 @Service
-public class BuyproductServiceImpl implements BuyproductService {
+public class ProductServiceImpl implements ProductService {
 	//DAO계열 클래스 주입받기]
-	@Resource(name="buyproductDAO")
-	private BuyproductDAO dao;
+	@Resource(name="productDAO")
+	private ProductDAO dao;
 
 	@Override
-	public List<BuyproductDTO> selectList(Map map) throws Exception {
-	
+	public List<ProductDTO> selectList(Map map) throws Exception {
+		// TODO Auto-generated method stub
 		return dao.selectList(map);
 	}
 
-
-
 	@Override
-	public int update(BuyproductDTO dto) throws Exception {
+	public int hitcount(ProductDTO dto) throws Exception {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int delete(BuyproductDTO dto) throws Exception {
+	public int insert(ProductDTO dto) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int update(ProductDTO dto) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int delete(ProductDTO dto) throws Exception {
 		// TODO Auto-generated method stub
 		return 0;
 	}
@@ -58,36 +71,10 @@ public class BuyproductServiceImpl implements BuyproductService {
 	}
 
 	@Override
-	public BuyproductDTO selectOne(BuyproductDTO dto) throws Exception {
+	public ProductDTO selectOne(ProductDTO dto) throws Exception {
 		// TODO Auto-generated method stub
 		return dao.selectOne(dto);
 	}
-	@Override
-	public int insertCash(BuyproductDTO dto) throws Exception {
-		// TODO Auto-generated method stub
-		return dao.insertCash(dto);
-	}
-
-	@Override
-	public int insertStreaming(BuyproductDTO dto) throws Exception {
-		// TODO Auto-generated method stub
-		return dao.insertStreaming(dto);
-	}
-	@Override
-	public int insertBuyproduct(BuyproductDTO dto) throws Exception {
-		// TODO Auto-generated method stub
-		return dao.insertBuyproduct(dto);
-	}
-
-
-
-	@Override
-	public int insertMinus(BuyproductDTO dto) throws Exception {
-	
-		return dao.insertMinus(dto);
-	}
-
-
 
 	
 
