@@ -147,7 +147,6 @@ if(CP_ID!="" && CP_ID!=null){
 <script type="text/javascript">
 	function goPage(){
 		location.href="<c:url value='/ZamongFrontEnd/Member.do'/>"
-		
 	}
 	
 	

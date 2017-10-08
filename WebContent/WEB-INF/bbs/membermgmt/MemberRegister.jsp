@@ -22,9 +22,26 @@
 
 	
 <link rel="stylesheet" href="https://cdnimg.melon.co.kr/static/member/resource/style/me1/qy/y/1edydz6hfyj.css" type="text/css" />
-	
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>	
 <script type="text/javascript" src="/resource/script/web/common/jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
+function birth() {
+	var birth1 = document.getElementById("me_birth1").value;
+	var birth2 = document.getElementById("me_birth2").value;
+	var birth3 = document.getElementById("me_birth3").value;
+	document.getElementById("me_birth").value = birth1+"-"+birth2+"-"+birth3;
+	
+}
+
+function email() {
+	var email1 = document.getElementById("me_email1").value;
+	var email2 = document.getElementById("me_email2").value;
+	document.getElementById("me_email").value = email1+"@"+email2;
+}
+
+
 var httpMemberDomain = "http://member.melon.com";
 var httpsMemberDomain = "https://member.melon.com";
 var POC_ID = "WP10";
@@ -69,8 +86,8 @@ if(CP_ID!="" && CP_ID!=null){
 					<input type="hidden" name="me_tel" value="${me_tel }"/>
 					<div class="mem_info_cont">
 						<div class="join_certification">
-							<div class="user_name"><span>김찬혁 님</span></div>
-							<p id="p_send" class="txt_info"><span>010-9903-9332</span>로 인증번호를 전송했습니다.</p>
+							<div class="user_name"><span>${me_name }</span></div>
+							<p id="p_send" class="txt_info"><span>${me_tel }</span>로 인증번호를 전송했습니다.</p>
 						</div>
 
 						<div class="tb_list03 mt6">
@@ -192,20 +209,20 @@ if(CP_ID!="" && CP_ID!=null){
 												<div class="box_birth_input">
 													<div id="birthYear_tr" class="wrap_input_info05 d_input_write" style="width:129px;">
 														<div class="wrap_input">
-															<input type="text" id="me_birth" name="me_birth1" title="생년월일 년 입력 편집창" placeholder="" class="text53" style="width:80px;" maxlength="4"><span class="txt">년</span>
+															<input type="text" id="me_birth1" name="me_birth1" title="생년월일 년 입력 편집창" placeholder="" class="text53" style="width:80px;" maxlength="4"><span class="txt" >년</span>
 														</div>
 													</div>
 													<div id="birthMonth_tr" class="wrap_input_info05 d_input_write" style="width:81px;">
 														<div class="wrap_input">
-															<input type="text" id="me_birth" name="me_birth2" title="생년월일 월 입력 편집창" placeholder="" class="text53" style="width:35px;" maxlength="2"><span class="txt">월</span>
+															<input type="text" id="me_birth2" name="me_birth2" title="생년월일 월 입력 편집창" placeholder="" class="text53" style="width:35px;" maxlength="2"><span class="txt" >월</span>
 														</div>
 													</div>
 
 													<div id="birthDay_tr" class="wrap_input_info05 d_input_write mr0" style="width:81px;">
 														<div class="wrap_input">
-															<input type="text" id="me_birth" name="me_birth3" title="생년월일 일 입력 편집창" placeholder="" class="text53" style="width:35px;" maxlength="2"><span class="txt">일</span>
+															<input type="text" id="me_birth3" name="me_birth3" title="생년월일 일 입력 편집창" placeholder="" class="text53" style="width:35px;" maxlength="2" onkeyup="javascript:birth()"><span class="txt" >일</span>
 														</div>
-															<input type="hidden" id="me_birth" name="me_birth" value="${me_birth1 }-${me_birth2}-${me_birth3}" />
+															<input type="hidden" id="me_birth" name="me_birth" />
 													</div>
 												</div>
 												<p id="parentAgree_msg" class="txt_input_info02" style="display:none;">만 14세 미만인 경우 보호자(법정대리인)동의가 필요합니다.</p>
@@ -220,34 +237,39 @@ if(CP_ID!="" && CP_ID!=null){
 												<div class="box_email_input">
 													<div id="email_tr" class="wrap_input_info04 d_input_write" style="width:169px">
 														<div class="wrap_input">
-															<input type="text" id="me_email" name="me_email" type="text" title="이메일 입력 편집창" placeholder="이메일 입력" class="text53" style="width:116px;">
+															<input type="text" id="me_email1" name="me_email1" type="text" title="이메일 입력 편집창" placeholder="이메일 입력" class="text53" style="width:116px;">
 														</div>
 														<div class="wrap_input_check">
 															<a href="#" class="btn_input_check d_input_del" style="display:none;">삭제</a>
 														</div>
 													</div>
 													<!--select box-->
-													
-														<select id="me_email" name="me_email" title="연락처 정보 선택" style="width: 95px; height: 31px; display: none;" class="d_selectbox2" data-class="select_type04">
-				                                            <option value="" selected>선택</option>
-															<option value="nate.com"> nate.com</option>
-															<option value="naver.com"> naver.com</option>
-															<option value="daum.net"> daum.net</option>
-															<option value="gmail.com"> gmail.com</option>
-															<option value="hanmail.net"> hanmail.net</option>
-															<option value="yahoo.com"> yahoo.com</option>
-															<option value="lycos.co.kr"> lycos.co.kr</option>
-															<option value="cyworld.com"> cyworld.com</option>
-															<option value="paran.com"> paran.com</option>
-															<option value="empal.com"> empal.com</option>
-															<option value="dreamwiz.com"> dreamwiz.com</option>
-															<option value="korea.com"> korea.com</option>
-															<option value="hanmir.com"> hanmir.com</option>
-															<option value="hitel.net"> hitel.net</option>
-															<option value="freechal.com"> freechal.com</option>
-				                                        </select>
-			                                     
-			                                        <!--//select box-->
+														<div id="mailDomain_tr" class="select_wrap ">
+															<select id="me_email2" name="me_email2"
+																title="연락처 정보 선택"
+																style="width: 95px; height: 31px; display: none;"
+																class="d_selectbox2" data-class="select_type04"
+																data-type="email" >
+																<option value="" selected="">선택</option>
+																<option value="nate.com"> nate.com</option>
+																<option value="naver.com"> naver.com</option>
+																<option value="daum.net"> daum.net</option>
+																<option value="gmail.com"> gmail.com</option>
+																<option value="hanmail.net"> hanmail.net</option>
+																<option value="yahoo.com"> yahoo.com</option>
+																<option value="lycos.co.kr"> lycos.co.kr</option>
+																<option value="cyworld.com"> cyworld.com</option>
+																<option value="paran.com"> paran.com</option>
+																<option value="empal.com"> empal.com</option>
+																<option value="dreamwiz.com"> dreamwiz.com</option>
+																<option value="korea.com"> korea.com</option>
+																<option value="hanmir.com"> hanmir.com</option>
+																<option value="hitel.net"> hitel.net</option>
+																<option value="freechal.com"> freechal.com</option>
+															</select>
+															<input type="hidden" id="me_email" name="me_email"/>
+														</div>
+														<!--//select box-->
 												</div>
 												<p class="txt_input_info">중요한 알림이 이메일을 통해 안내됩니다. 본인이 사용하는 이메일을 입력해주세요.</p>
 												<p id="email_msg" class="txt_error03" style="display:none;"></p>
@@ -259,7 +281,7 @@ if(CP_ID!="" && CP_ID!=null){
 						</div>
 					</div>
 					<div class="wrap_btn_c mt34">
-						<input type="submit" id="" value="가입 완료"/>
+						<input type="submit" id="" value="가입 완료" onclick="javascript:email()"/>
 					</div>
 				</form>
 			</div>

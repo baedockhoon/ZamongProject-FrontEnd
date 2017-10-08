@@ -30,9 +30,6 @@ public class MemberController {
 			Model model//리퀘스트 영역 저장용
 			) throws Exception{
 			
-	
-		
-							
 		return "/WEB-INF/bbs/membermgmt/Member.jsp";
 	}//////////////////list()
 	
@@ -72,7 +69,17 @@ public class MemberController {
 		return "/WEB-INF/bbs/membermgmt/MemberView.jsp";
 	}//////////////////list()
 		
+	@RequestMapping("/ZamongFrontEnd/MemberDetail.do")
+	public String detail(
+			HttpServletRequest req,//페이징용 메소드에 전달
+			MemberDTO dto,//검색용 파라미터 받기
+			Model model//리퀘스트 영역 저장용
+			) throws Exception{
+			
 	
+		
+		return "/WEB-INF/bbs/membermgmt/MemberDetail.jsp";
+	}//////////////////list()
 	
 	
 	

@@ -51,7 +51,7 @@ public class LoginController {
 			}//else
 			
 			//뷰정보 반환-목록으로 이동
-			return "/WEB-INF/index.jsp";
+			return "/WEB-INF/index2.jsp";
 		}//////////////////list()
 	 
 	 
