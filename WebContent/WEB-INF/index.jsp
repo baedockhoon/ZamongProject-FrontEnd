@@ -216,6 +216,9 @@
 </head>
 <body>
 
+<c:if test="${not empty me_id }">
+	${me_id }
+</c:if>
 
 <jsp:include page="/WEB-INF/bbs/template/Top.jsp" />
 

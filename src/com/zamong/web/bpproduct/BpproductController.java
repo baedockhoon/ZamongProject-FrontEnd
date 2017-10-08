@@ -26,7 +26,7 @@ import com.zamong.nt.service.NotiDataDTO;
 import com.zamong.nt.service.impl.NotiDataServiceImpl;
 import com.zamong.st.service.StreamingDTO;
 
-
+@SessionAttributes("me_id")
 @Controller
 public class BpproductController {
 	
@@ -47,6 +47,7 @@ public class BpproductController {
 	}
 	@RequestMapping("/ZamongFrontEnd/PaymentWrite.do")
 	public String PaymentWrite(BuyproductDTO dto, @ModelAttribute("me_id") String me_id )throws Exception {
+		System.out.println(me_id);
 		dto.setMe_id(me_id);
 		service.insertBuyproduct(dto);
 		if(dto.getPd_no().equals("3")) {

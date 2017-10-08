@@ -54,6 +54,9 @@ dao.close();
 <body>
 	<div class="popup_title cash">
 
+<c:if test="${not empty me_id }">
+	${me_id }
+</c:if>
 
 		<div class="txt_title type01">
 			<h1>자몽캐쉬 충전</h1>

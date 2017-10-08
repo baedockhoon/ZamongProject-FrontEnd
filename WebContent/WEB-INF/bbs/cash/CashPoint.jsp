@@ -582,8 +582,10 @@ function goPopup() {
 	
 	<!-- 전체 이용권 구매 안내 문구 -->
 	<div class="product_purchase_warning style1">
+	
+
 		<strong>잠시만요</strong>
-		
+
 		<ul class="list_bullet03">
 			<li>모든 이용권은 부가가치세(10%)가 별도로 부과됩니다.</li>
 			<li>모바일 기기는 휴대폰 외 태블릿도 포함됩니다.</li>

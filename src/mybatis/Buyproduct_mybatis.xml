@@ -33,14 +33,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
  	<insert id="insertBuyproduct"  parameterType="BuyProduct">
 		<!-- INSERT INTO BP_BUYPRODUCT VALUES(BP_SEQ.NEXTVAL,SYSDATE,#{pd_no},(select me_no from me_member where me_id = #{me_id}),#{bp_price},1) -->
-		INSERT INTO BP_BUYPRODUCT VALUES(BP_SEQ.NEXTVAL,SYSDATE,#{pd_no},23,#{bp_price},1)
+		INSERT INTO BP_BUYPRODUCT VALUES(BP_SEQ.NEXTVAL,SYSDATE,#{pd_no},(select me_no from me_member where me_id = #{me_id}),#{bp_price},1)
 	</insert>
 	 <insert id="insertCash"  parameterType="BuyProduct">
-		INSERT INTO CH_PAYMENT VALUES(CH_SEQ.NEXTVAL,SYSDATE,23,#{ch_havecash})
+		INSERT INTO CH_PAYMENT VALUES(CH_SEQ.NEXTVAL,SYSDATE,(select me_no from me_member where me_id = #{me_id}),#{ch_havecash})
 <!-- 		INSERT INTO CH_PAYMENT VALUES(CH_SEQ.NEXTVAL,SYSDATE,(select me_no from me_member where me_id =#{me_id}),#{ch_havecash}) -->
 	</insert>
         <insert id="insertStreaming"  parameterType="BuyProduct">
-		INSERT INTO ST_STREAMING VALUES(ST_SEQ.NEXTVAL,SYSDATE,SYSDATE+30 ,BP_SEQ.CURRVAL,23)
+		INSERT INTO ST_STREAMING VALUES(ST_SEQ.NEXTVAL,SYSDATE,SYSDATE+30 ,BP_SEQ.CURRVAL,(select me_no from me_member where me_id = #{me_id}))
 		<!-- INSERT INTO ST_STREAMING VALUES(ST_SEQ.NEXTVAL,SYSDATE,SYSDATE+30 ,BP_SEQ.CURRVAL,(select me_no from me_member where me_id =#{me_id})) -->
 	</insert>    
        <!--     
