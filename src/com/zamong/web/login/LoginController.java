@@ -33,12 +33,15 @@ public class LoginController {
 	 @RequestMapping("/ZamongFrontEnd/LoginCheck.do")
 	 public String loginCheck(
 				@RequestParam Map map,//검색용 파라미터 받기
-				Model model,HttpSession session //리퀘스트 영역 저장용
+				Model model,
+				HttpSession session,
+				@ModelAttribute String me_id//리퀘스트 영역 저장용
 				) throws Exception{
 		 boolean isLogin = loginService.login(map);
 			if(isLogin){//회원
 				//로그인 처리-세션영역에도 저장
 				model.addAllAttributes(map);
+				session.setAttribute("me_id", me_id);
 			}//if
 			else{//비회원
 				model.addAttribute("loginError","회원가입후 이용하세요");
@@ -48,7 +51,7 @@ public class LoginController {
 			}//else
 			
 			//뷰정보 반환-목록으로 이동
-			return "/WEB-INF/bbs/membermgmt/Member2.jsp";
+			return "/WEB-INF/index.jsp";
 		}//////////////////list()
 	 
 	 

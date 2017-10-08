@@ -85,7 +85,7 @@ if(CP_ID!="" && CP_ID!=null){
 									<span class="bar">|</span>
 									<a href="javascript:" onclick="MemberEtc.goPage('PWDSEARCH');return false;" title="비밀번호 찾기">비밀번호 찾기</a>
 									<span class="bar">|</span>
-									<a href="javascript:" onclick="MemberEtc.goPage('MEMJOIN');return false;" title="회원가입">회원가입</a>
+									<a href="javascript:" onclick="goPage()" title="회원가입">회원가입</a>
 								</div>
 							</div>
 						</div>
@@ -145,6 +145,13 @@ if(CP_ID!="" && CP_ID!=null){
 
 </div>
 <script type="text/javascript">
+	function goPage(){
+		location.href="<c:url value='/ZamongFrontEnd/Member.do'/>"
+		
+	}
+	
+	
+
 	$(function () {
 		$('.box_check02').on('click','label',function () {
 			if ($(this).siblings('input').prop('checked')) {

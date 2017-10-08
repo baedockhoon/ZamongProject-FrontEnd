@@ -68,7 +68,7 @@ if(CP_ID!="" && CP_ID!=null){
 				
 				
 				
-				<h2 class="mem_info_title02">멜론 회원가입 완료<br> <span class="point">${me_name}</span> 님, 환영합니다.</h2>
+				<h2 class="mem_info_title02">멜론 회원가입 완료<br> <span class="point">${dto.me_name}</span> 님, 환영합니다.</h2>
 
 				<div class="mem_info_cont">
 					<div class="tb_list04 pt24">
@@ -81,25 +81,25 @@ if(CP_ID!="" && CP_ID!=null){
 							<tbody>
 								<tr class="first_child">
 									<th scope="row"><div class="wrap">멜론 아이디</div></th>
-									<td><div class="wrap"><span class="txt_letter0 point">${me_id }</span></div></td>
+									<td><div class="wrap"><span class="txt_letter0 point">${dto.me_id }</span></div></td>
 								</tr>
 								<tr>
 									<th scope="row"><div class="wrap">닉네임</div></th>
-									<td><div class="wrap">${me_nickname }</div></td>
+									<td><div class="wrap">${dto.me_nickname }</div></td>
 								</tr>
 								<tr>
 									<th scope="row"><div class="wrap">이름</div></th>
-									<td><div class="wrap">${me_name}</div></td>
+									<td><div class="wrap">${dto.me_name}</div></td>
 								</tr>
 								
 								<tr>
 									<th scope="row"><div class="wrap">휴대폰 번호</div></th>
-									<td><div class="wrap"><span class="txt_letter0">${me_tel }</span></div></td>
+									<td><div class="wrap"><span class="txt_letter0">${dto.me_tel }</span></div></td>
 								</tr>
 								
 								<tr>
 									<th scope="row"><div class="wrap">이메일</div></th>
-									<td><div class="wrap"><span class="txt_letter0">${me_email }</span></div></td>
+									<td><div class="wrap"><span class="txt_letter0">${dto.me_email }</span></div></td>
 								</tr>
 							</tbody>
 						</table>

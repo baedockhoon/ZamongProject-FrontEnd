@@ -60,7 +60,7 @@ public class MemberController {
 		int isRegister = memberService.insert(dto);
 		if(isRegister == 1){//회원
 			//로그인 처리-세션영역에도 저장
-			//model.addAllAttributes(dto);
+			model.addAttribute("dto",dto);
 		}//if
 		else{//비회원
 			model.addAttribute("loginError","회원가입후 이용하세요");
