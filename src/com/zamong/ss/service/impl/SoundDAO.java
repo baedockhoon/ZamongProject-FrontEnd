@@ -33,19 +33,7 @@ public class SoundDAO implements SoundService {
 		return template.selectList("selectSoundList", dto);
 	}
 	
-	@Override
-	public int insert(SoundDTO dto) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 	
-
-	@Override
-	public int delete(SoundDTO dto) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 	@Override
 	public int getTotalCount(Map map) throws Exception {
@@ -64,11 +52,7 @@ public class SoundDAO implements SoundService {
 		return null;
 	}
 
-	@Override
-	public int update(SoundDTO dto) throws Exception {
-		
-		return template.update("NotiDateUpdate",dto);
-	}
+	
 
 	@Override
 	public SoundDTO selectOne(SoundDTO dto) throws Exception {

@@ -6,22 +6,28 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.zamong.as.service.AssignDTO;
+import com.zamong.as.service.impl.AssignServiceImpl;
 import com.zamong.ss.service.SoundDTO;
 import com.zamong.ss.service.impl.SoundServiceImpl;
 import com.zamong.web.PagingUtil;
 
+/*@SessionAttributes("al_no")*/
 @Controller
 public class SoundController {
 
 	@Resource(name="soundService")
 	private SoundServiceImpl service;
+	@Resource(name="assignServiceImpl")
+	private AssignServiceImpl assign;
 	
 	//리소스 파일(resource.properties)에서 읽어오기
 	@Value("${PAGE_SIZE}")
@@ -114,4 +120,23 @@ public class SoundController {
 		model.addAttribute("dto", dto);
 		return "/WEB-INF/bbs/sample/NoticeView.jsp";
 	}*/
+	
+	
+	@RequestMapping("/ZAMONG/zamongAssign.do")
+	public String Assign(AssignDTO dto,@RequestParam Map map,Model model
+			//,@ModelAttribute("al_no") int al_no
+			)throws Exception {
+		
+		//model.addAllAttributes(map);
+		//dto.setAl_no(al_no);
+		assign.insert(dto);
+		
+		return "/ZamongFrontEnd/album/Detail.do";
+	}
+	
+	
+	
+	
+	
+	
 }

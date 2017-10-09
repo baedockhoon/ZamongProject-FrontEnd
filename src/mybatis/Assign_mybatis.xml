@@ -29,8 +29,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM NT_NOTICE WHERE NT_NO=#{nt_no}
 	</select>  --> 
 	
- 	<insert id="Assigninsert"  parameterType="Assign">
+ 	<!-- <insert id="Assigninsert"  parameterType="Assign">
 		INSERT INTO AS_ASSIGN VALUES(AS_SEQ.NEXTVAL,SYSDATE,#{me_no},#{al_no},#{as_getpoint})
+	</insert> -->
+	<insert id="Assigninsert"  parameterType="Assign">
+		INSERT INTO AS_ASSIGN VALUES(AS_SEQ.NEXTVAL,sysdate,2,#{al_no},#{as_getpoint})
 	</insert>
        <!--     
            
