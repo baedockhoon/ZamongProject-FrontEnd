@@ -15,6 +15,6 @@ public interface MemberService {
 	
 	MemberDTO selectOne(MemberDTO dto) throws Exception;
 	
-		void close() throws Exception;
+	void close() throws Exception;
 	
 }

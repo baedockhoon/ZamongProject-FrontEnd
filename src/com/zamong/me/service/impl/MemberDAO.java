@@ -15,7 +15,7 @@ import com.zamong.me.service.MemberService;
 @Repository
 public class MemberDAO implements MemberService{
 	
-		@Resource(name="template")
+	@Resource(name="template")
 	private SqlSessionTemplate template;
 	
 	@Override

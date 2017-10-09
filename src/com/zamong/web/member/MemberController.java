@@ -23,7 +23,7 @@ public class MemberController {
 	@Resource(name="memberServiceImpl")
 	MemberServiceImpl memberService;
 	
-		@RequestMapping("/ZamongFrontEnd/Member.do")
+	@RequestMapping("/ZamongFrontEnd/Member.do")
 	public String member(
 			HttpServletRequest req,//페이징용 메소드에 전달
 			@RequestParam Map map,//검색용 파라미터 받기

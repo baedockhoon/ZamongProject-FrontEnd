@@ -14,7 +14,7 @@ import com.zamong.me.service.MemberService;
 @Service
 public class MemberServiceImpl implements MemberService{
 
-		@Resource(name="memberDAO")
+	@Resource(name="memberDAO")
 	private MemberDAO dao;
 	
 	@Override
