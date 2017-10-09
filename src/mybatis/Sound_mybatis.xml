@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
            
 	<select id="soundList" parameterType="java.util.Map" resultType="SoundData">
 		SELECT * FROM (SELECT T.*, ROWNUM R FROM 
-			(SELECT S.*, A.AL_ALBUMNAME, A.AL_ALBUMIMAGE, A.AL_ARTIST, A.AL_ARTISTNO FROM SS_SOUNDSOURCE S JOIN AL_ALBUM A 
+			(SELECT S.*, A.AL_ALBUMNAME, A.AL_ALBUMIMAGE, A.AL_ARTIST, A.AL_ARTISTNO, A.AL_DIVIDE FROM SS_SOUNDSOURCE S JOIN AL_ALBUM A 
 			ON S.AL_NO = A.AL_NO ORDER BY SS_REGIDATE DESC) T)
 		WHERE R BETWEEN #{start} AND #{end}
 	</select>
@@ -26,7 +26,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="selectSoundOne" parameterType="java.util.Map" resultType="SoundData">
-		SELECT S.*, L.LY_CONTENTS FROM SS_SOUNDSOURCE S JOIN LY_LYLICS L ON S.SS_NO = L.SS_NO WHERE S.SS_NO = #{ss_no}
+		SELECT S.*, L.LY_CONTENTS, A.AL_ALBUMIMAGE FROM SS_SOUNDSOURCE S JOIN LY_LYLICS L ON S.SS_NO = L.SS_NO JOIN AL_ALBUM A ON S.AL_NO = A.AL_NO WHERE S.SS_NO = #{ss_no}
 	</select>
 	
 	

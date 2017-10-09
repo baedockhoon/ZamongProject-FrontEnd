@@ -20,7 +20,7 @@
 <!-- 댓글 css 파일 네임 변경 -->
 <link rel="stylesheet" href="http://cdnimg.melon.co.kr/static/web/resource/style/w1/qd/e/uolshpokn9.css" type="text/css" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/melonweb_new_4x.css" type="text/css" />
-<link rel="stylesheet" href="http://cdnimg.melon.co.kr/static/web/resource/style/w1/ej/e/up4ryzftkr.css" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/up4ryzftkr.css" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Nunito:400" rel="stylesheet">
 <!-- <script type="text/javascript" src="/resource/script/web/common/jquery-1.9.1.min.js"></script> -->
 
@@ -41,205 +41,22 @@
 	if(!isNaN(this.value)){songIds.push($(this).val())}});
 	if(songIds.length==0){alert("곡을 선택해 주세요")}
 	else{MELON.WEBSVC.POC.play.playSong(menuId,songIds)}} */
-	
-	$(function(){
-		function goAlbumDetail(al_no){
-			location.href = "<c:url value='/ZamongFrontEnd/album/Detail.do?al_no=' />"+al_no;
-		};
-	});
+	function goAlbumDetail(al_no){
+		location.href = "<c:url value='/ZamongFrontEnd/album/Detail.do?al_no=' />"+al_no;
+	};
+	function goArtistDetail(at_no, al_divide){
+		var st =  "<c:url value='/ZamongFrontEnd/artist/Info.do?' />";
+		if (al_divide == "A"){
+			st += "at_no="+at_no;
+		}
+		else {
+			st += "gp_no="+at_no;
+			st += "&al_divide=G";
+		}
+		location.href = st;
+	};
 </script>
 
-
-<!-- <script type="text/javascript">
-		checkWin8Metro();
-		function checkWin8Metro(){
-			var userAgent = navigator.userAgent.toLowerCase();
-			var canRunActiveX = false;
-			try
-			{
-				canRunActiveX = !!new ActiveXObject("htmlfile");
-			}
-			catch (e)
-			{
-				canRunActiveX = false;
-			}
-			if ((userAgent.indexOf("windows nt 6.2") >= 0 || userAgent.indexOf("windows nt 6.3") >= 0 ) && userAgent.indexOf("msie") >= 0)
-			{
-				// windows 8
-				if (canRunActiveX == false)
-				{
-					document.location.href = "http://t.melon.com";
-				}
-			}
-		}
-	</script>
-
-<script type="text/javascript">
-
-
-	MelonPersonal.init();
-
-	(function() {
-		WEBPOCIMG = {
-			defaultImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-				if(width == 0) width = 500;
-				var thumbType = "_500";
-				//가장 큰사이즈로 리사이즈함
-				var thumbType = "_500";
-				var defaultImg = "http://cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + "_160727.jpg/melon/resize/" + width;
-				if(obj.src != defaultImg){
-					obj.src = defaultImg;
-				}
-			},
-
-			defaultAlbumImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-				if(width == 0) width = 500;
-				//가장 큰사이즈로 리사이즈함
-				var thumbType = "_500";
-				var defaultImg = "http://cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + "_160727.jpg/melon/resize/" + width;
-				if(obj.src != defaultImg){
-					obj.src = defaultImg;
-				}
-			},
-
-			defaultArtistImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-				if(width == 0) width = 300;
-				//가장 큰사이즈로 리사이즈함
-				var thumbType = "_300";
-				var defaultImg = "http://cdnimg.melon.co.kr/resource/image/web/default/noArtist" + thumbType + "_160727.jpg/melon/resize/" + width;
-				if(obj.src != defaultImg){
-					obj.src = defaultImg;
-				}
-			},
-			defaultDjImg : function(obj){
-			},
-			defaultMvImg : function(obj, width, height){
-				if(width == null || width == '') width = $(obj).width();
-				if(height == null || height == '') height = $(obj).height();
-
-				var ratio43 = Math.floor((4/3)*10)/10;
-				var ratio169 = Math.floor((16/9)*10)/10;
-				var ratioObj = Math.floor((width/height)*10)/10;
-
-				var ratio = "4x3";
-				if(ratioObj == ratio43){
-					ratio = "4x3"; //contentsType = "mv43";
-				} else if(ratioObj == ratio169){
-					ratio = "16x9"; //contentsType = "mv169";
-				} else {
-					if(ratioObj > 1.5) ratio = "16x9";
-					else ratio = "4x3";
-				}
-
-				if(width == 0) width = 640;
-				if(height == 0) ratio = "16x9";
-
-				//가장 큰사이즈로 리사이즈함
-				var thumbType = "_" + ratio + "_640";
-				var defaultImg = "http://cdnimg.melon.co.kr/resource/image/web/default/noMovie" + thumbType + "_160727.jpg/melon/resize/" + width;
-				if(obj.src != defaultImg){
-					obj.src = defaultImg;
-				}
-			},
-			defaultPlaylistImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-				if(width == 0) width = 500;
-				//가장 큰사이즈로 리사이즈함
-				var thumbType = "_500";
-				var defaultImg = "http://cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + "_160727.jpg/melon/resize/" + width;
-				if(obj.src != defaultImg){
-					obj.src = defaultImg;
-				}
-			},
-			defaultMemberImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-				if(width == 0) width = 300;
-				//가장 큰사이즈로 리사이즈함
-				var thumbType = "_300";
-				var defaultImg = "http://cdnimg.melon.co.kr/resource/image/web/default/noArtist" + thumbType + "_160727.jpg/melon/resize/" + width;
-				if(obj.src != defaultImg){
-					obj.src = defaultImg;
-				}
-			},
-			defaultPhotoImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-				if(width == 0) width = 500;
-				//가장 큰사이즈로 리사이즈함
-				var thumbType = "_500";
-				var defaultImg = "http://cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + "_160727.jpg/melon/resize/" + width;
-				if(obj.src != defaultImg){
-					obj.src = defaultImg;
-				}
-			},
-			defaultShopImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-				if(width == 0) width = 256;
-				//가장 큰사이즈로 리사이즈함
-				var thumbType = "_256";
-				var defaultImg = "http://cdnimg.melon.co.kr/resource/image/web/default/noProduct" + thumbType + "_160727.jpg/melon/resize/" + width;
-				if(obj.src != defaultImg){
-					obj.src = defaultImg;
-				}
-			},
-			defaultShowwingImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-
-				var thumbType = "_256";
-				if(width > 0 && width <= 300){
-					thumbType = "_256";
-				} else {
-					thumbType = "_313";//추후 조절값
-				}
-				var altSrc = "http://cdnimg.melon.co.kr/resource/image/web/default/noShowing" + thumbType + ".jpg";
-				if(obj.src != altSrc){
-					obj.src = altSrc;
-				}
-			},
-			defaultTicketImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-
-				var thumbType = "_256";
-				if(width > 0 && width <= 300){
-					thumbType = "_256";
-				} else {
-					thumbType = "_313";//추후 조절값
-				}
-				var altSrc = "http://cdnimg.melon.co.kr/resource/image/web/default/noTicket" + thumbType + ".png";
-				if(obj.src != altSrc){
-					obj.src = altSrc;
-				}
-			},
-			defaultSmartRadioImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-				var defaultImg = "http://cdnimg.melon.co.kr/resource/image/web/default/noSmartradio_59_160727.jpg/melon/resize/" + width;
-				if(obj.src != defaultImg){
-					obj.src = defaultImg;
-				}
-			},
-			defaultConcertImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-				var defaultImg = "http://cdnimg.melon.co.kr/resource/image/web/default/noAlbum_114_160727.jpg/melon/resize/" + width;
-				if(obj.src != defaultImg){
-					obj.src = defaultImg;
-				}
-			}
-		}
-		,WEBELLIPSIS = {
-			ellipsis : function(ellipsisName,moreClassName,eWidth){
-		        //아티스트 더보기
-		        var arObj = $('.' + ellipsisName);
-		        for(var i = 0; i < arObj.length; i++){
-		            if (arObj.eq(i).width() > eWidth ){
-		                arObj.eq(i).parent().parent().parent().find('.' + moreClassName).show();
-		            }
-		        }
-			}
-		}
-	})();
-	</script> -->
 </head>
 
 <body>
@@ -414,7 +231,7 @@
 													<span class="rank ">${loop.count }</span><span class="none">위</span>
 												</div></td>
 											<td><div class="wrap">
-													<a href="<c:url value='/ZamongFrontEnd/album/Detail.do?al_no=' />${item.al_no }"
+													<a href="javascript:goAlbumDetail(${item.al_no });"
 														title="${item.ss_title }"
 														class="image_typeAll"> <img
 														onerror="WEBPOCIMG.defaultAlbumImg(this);" width="60"
@@ -425,7 +242,7 @@
 													</a>
 												</div></td>
 											<td><div class="wrap">
-													<a href="javascript:goSongDetail('${item.ss_no }');"
+													<a href="javascript:playSong('${item.ss_no }');"
 														title="${item.ss_title }  곡정보" class="btn button_icons type03 song_info"><span
 														class="none">곡정보</span></a>
 												</div></td>
@@ -433,25 +250,24 @@
 													<div class="wrap_song_info">
 														<div class="ellipsis rank01">
 															<span> <a
-																href="javascript:playSong('18030123',${item.ss_no });"
+																href="javascript:playSong(${item.ss_no });"
 																title="${item.ss_title } 재생">${item.ss_title }</a>
 															</span>
 														</div>
 														<br>
 														<div class="ellipsis rank02">
-															<a href="javascript:melon.link.goArtistDetail('${item.al_artistno }');"
+															<a href="javascript:goArtistDetail('${item.al_artistno }', '${item.al_divide }');"
 																title="${item.al_artist } - 페이지 이동">${item.al_artist }</a><span class="checkEllipsis"
-																style="display: none"><a
-																href="javascript:melon.link.goArtistDetail('${item.al_artistno }');"
-																title="${item.al_artist } - 페이지 이동">${item.al_artist }</a></span>
+																style="display: none">
+															<a href="javascript:goArtistDetail('${item.al_artistno }', '${item.al_divide }');"
+															title="${item.al_artist } - 페이지 이동">${item.al_artist }</a></span>
 														</div>
 													</div>
 												</div></td>
 											<td><div class="wrap">
 													<div class="wrap_song_info">
 														<div class="ellipsis rank03">
-															<a
-																href="javascript:goAlbumDetail('${item.al_no }');"
+															<a href="javascript:goAlbumDetail(${item.al_no });"
 																title="${item.al_albumname } - 페이지 이동">${item.al_albumname }</a>
 														</div>
 													</div>
@@ -505,175 +321,10 @@
 								</table>
 							</div>
 						</form>
+						<form name="frm1" id="frm1">
+							<input type="hidden" name="ss_no" value="" />
+						</form>
 
-						<!-- <script type="text/javascript">
-	$(function(){
-		
-		/* 좋아요 셋팅부 */
-		var LIKE_SET = {
-			likeCnt  : "<span class=\"odd_span\">{TXT}</span>\n<span class=\"cnt\">\n<span class=\"none\">총건수</span>\n{CNT}</span>",
-			likeObj  : $('div.d_song_list button.like'),
-			likeAttr : 'data-song-no',
-			likeUrl  : '/commonlike/getSongLike.json'
-		};
-
-		/* 좋아요 공통부 */
-		var contsIdList = LIKE_SET['likeObj'].map(function() { return $(this).attr(LIKE_SET['likeAttr']); }).get().join(',');
-		var tmpl, title;
-		if ( contsIdList === '' || contsIdList === null  ) { return; }
-		$.get(LIKE_SET['likeUrl'], { contsIds : contsIdList }, function(data) {
-			var robj;
-			$.each(data.contsLike, function(i, v) {
-				var SUMMCNT = MELON.WEBSVC.number.addComma(v.SUMMCNT);
-				robj  = LIKE_SET['likeObj'].eq(i);
-				tmpl  = LIKE_SET['likeCnt'];
-				title = robj.attr('title').split(' 좋아요');
-				robj[v.LIKEYN == 'Y' ? 'addClass' : 'removeClass']('on').attr('title', title[0] + (v.LIKEYN == 'Y' ? ' 좋아요 취소' : ' 좋아요'));
-				robj.html(
-					tmpl.replace(/\{TXT\}/g, (v.LIKEYN == 'Y' ? '좋아요 취소' : '좋아요')).replace(/\{CNT\}/g, SUMMCNT)
-				);
-			});
-		}).done(function(){
-			//아티스트 더보기 처리
-			var listType = '';
-			if(listType == 'CHART'){
-				WEBELLIPSIS.ellipsis("checkEllipsis","wrap_atist",210);
-			}else{
-				WEBELLIPSIS.ellipsis("checkEllipsis","wrap_atist",240);
-			}
-
-		});
-	});
-	</script>
-
-						페이지
-						<script type="text/javascript">
-$(document).ready(function(){
-$('#pageObjNavgation').html("\u003Cdiv class=\"paging\"\u003E\u003Cspan class=\"page_num\"\u003E\u003Cstrong\u003E\u003Cspan class=\"none\"\u003E현재페이지\u003C\/span\u003E1\u003C\/strong\u003E\u003Ca href=\"javascript:pageObj.sendPage(\'51\');\"\u003E2\u003C\/a\u003E\u003Ca href=\"javascript:pageObj.sendPage(\'101\');\"\u003E3\u003C\/a\u003E\u003Ca href=\"javascript:pageObj.sendPage(\'151\');\"\u003E4\u003C\/a\u003E\u003Ca href=\"javascript:pageObj.sendPage(\'201\');\"\u003E5\u003C\/a\u003E\u003Ca href=\"javascript:pageObj.sendPage(\'251\');\"\u003E6\u003C\/a\u003E\u003Ca href=\"javascript:pageObj.sendPage(\'301\');\"\u003E7\u003C\/a\u003E\u003Ca href=\"javascript:pageObj.sendPage(\'351\');\"\u003E8\u003C\/a\u003E\u003Ca href=\"javascript:pageObj.sendPage(\'401\');\"\u003E9\u003C\/a\u003E\u003Ca href=\"javascript:pageObj.sendPage(\'451\');\"\u003E10\u003C\/a\u003E\u003C\/span\u003E\u003C\/div\u003E")
-});
-</script>
-
-						페이지
-
-
-
-					</div>
-					페이지
-					<div id='pageObjNavgation' style='display: none;'></div>
-					<script src='/resource/script/common/jquery.ba-bbq.min.js'
-						type='text/javascript'></script>
-					<script src='/resource/script/common/historypager.js'
-						type='text/javascript'></script>
-					<script type="text/javascript">
-var pageObj = new Pagination('/new/listPaging.htm', 'songList', 'pageObjNavgation', '50', 'pageObj', false);
-</script>
-
-					페이지
-					<script language=javascript>
-		pageObj.addParam('areaFlg', 'I');
-	</script>
-				</div>
-				//contents
-
-
-				<script type="text/javascript">
-		var httpWww = "http://www.melon.com";
-		var httpsWww = "https://www.melon.com";
-		var POC_ID = "XXXX";
-	</script>
-
-
-				<script type="text/javascript"
-					src="/resource/script/web/common/melonweb_openlib.js"></script>
-				<script type="text/javascript"
-					src="http://cdnimg.melon.co.kr/static/web/resource/script/w1/cz/p/1ecwy4cyhf1.js"></script>
-				<script type="text/javascript"
-					src="http://cdnimg.melon.co.kr/static/web/resource/script/w1/og/7/kv18j7iqi3.js"></script>
-				<script type="text/javascript"
-					src="http://cdnimg.melon.co.kr/static/web/resource/script/w1/t3/0/1eby4ui4kjv.js"></script>
-				<script type="text/javascript"
-					src="http://cdnimg.melon.co.kr/static/web/resource/script/w1/iq/s/14j83mx2ni3.js"></script>
-
-
-				<script type="text/javascript"
-					src="http://cdnimg.melon.co.kr/static/web/resource/script/w1/si/b/13kf6c2m0z.js"></script>
-				<script type="text/javascript"
-					src="/resource/script/web/chart/json2.js"></script>
-				<script type="text/javascript"
-					src="/resource/script/web/common/melonweb_zam.js?tm=2016042816"></script>
-				<script type="text/javascript"
-					src="http://cdnimg.melon.co.kr/static/web/resource/script/w1/8k/8/1ed5h822hvv.js"></script>
-				<script type="text/javascript" src="http://log.melon.com/mlog.js"></script>
-
-				<script type="text/javascript">
-		var melon = MELON.WEBSVC.POC;
-
-		document.domain="melon.com";
-
-		//pocId 쿠키설정 실행
-		try {
-			melon.setPocId();
-		} catch (e){}
-	</script>
-
-				<script type="text/javascript"
-					src="/resource/script/web/common/socket.io.js"></script>
-
-				<script type="text/javascript"
-					src="http://cdnimg.melon.co.kr/static/web/resource/script/w1/zz/6/1edtfjqaj6t.js"></script>
-				<script type="text/javascript">
-if(typeof pageObj != "undefined"){
-	var _oldShow = pageObj.show;
-	pageObj.show = function(){
-		//콤보설정
-		// 비즈니스에 해당하는 로직을 수행(히스토리 파라메터 값에 해당하는 콤보 선택) 후, 원래 show 함수를 호출 한다.
-		var jsonParam = eval(pageObj.params);
-	
-		//d_song_list n_bdr 클래스 add
-		$('.d_song_list').addClass('n_bdr');
-
-		return _oldShow.apply(this, arguments);
-	}
-}
-</script>
-
-				<script type="text/javascript">
-	$('.d_selectbox').selectbox();
-
-	jQuery(function($) {
-		"use strict";
-		 var WEBSVC = MELON.WEBSVC,
-	         PBPGN = MELON.PBPGN;
-
-		// Banner Info
-		var serverTime = "2017:09:27 03:51:25"; 	// 시간은 서버에서 찍어주세요.(yyyy:MM:dd hh:mm:ss)
-		
-		
-		$(document).on('limitpopup', function( e, cookieId ) {
-			if('' != ''){
-				if ( cookieId === 'linebanner01' ) {
-					$('div.line_ban').show();
-					$('div.line_ban').timeLimitSet({cookieType:'array',timeLocation:'local',timeType:'dayafter',selectors:{closebtn:'>button.d_fadeout', checkbox:''}});
-				}
-			}
-		});
-	 	// 바인드 후에 호출 해야함
-		PBPGN.TimeLimitPopup.init({ cookieType:'array', cookieId:'linebanner01', limitType:'day', serverTime:serverTime });
-		
-		//d_song_list n_bdr 클래스 add
-		$('.d_song_list').addClass('n_bdr');
-		
-		//탭 클릭 이벤트 바인딩
-		$('.link_tab').click(function(){
-			$('.link_tab').parent().removeClass('on');
-			$(this).parent().addClass('on');
-			var areaFlg = $(this).attr('data-area-flg');
-			pageObj.addParam("areaFlg", areaFlg);
-			pageObj.addParam("orderBy", $('.orderBy.on').attr('data-orderBy'));//의미 없으나 로그때문에 유지
-			pageObj.sendFirstPage();
-		});
-	});
-</script> -->
 						<!-- //contents -->
 					</div>
 				</div>
@@ -768,157 +419,10 @@ if(typeof pageObj != "undefined"){
 					</div>
 					
 					<jsp:include page="/WEB-INF/bbs/template/Foot.jsp" />
+					</div>
+					</div>
+					</div>
+					</div>
 
-					<!-- <script type="text/javascript">
-
-			$(function() {
-				//favicon 분기 처리
-				var pocId = MELON.WEBSVC.POC.getPocId();
-				if('AS20' == pocId || 'HT10' == pocId){
-					$('link#favicon').attr('href','http://cdnimg.melon.co.kr/resource/mobile40/cds/common/image/favicon.ico');
-					$('title').text('Melon');
-				}else if('IS20' == pocId || 'IT10' == pocId){
-					$('link#favicon').attr('type','');
-					$('link#favicon').attr('rel','apple-touch-icon-precomposed');
-					$('link#favicon').attr('href','http://cdnimg.melon.co.kr/resource/mobile40/cds/common/image/mobile_apple_120x120.png');
-					$('link#favicon').after('<link rel="apple-touch-icon-precomposed" sizes="180x180" href="http://cdnimg.melon.co.kr/resource/mobile40/cds/common/image/mobile_apple_180x180.png" />');
-					$('title').text('Melon');
-				}
-				
-				
-				// 모바일(t.com)에서 넘어온 경우 - 모바일(t.com) 서비스 종료로 삭제
-/*
-				var fromMobileWeb = getCookie("D");
-
-				if(fromMobileWeb != null && fromMobileWeb.indexOf('T') > -1){
-					$("#btnMobileWeb").css("display", "block");
-				}
-*/
-				// 엣지 브라우저이고 해당 팝업이 뜬 적이 없는 경우 체크하여 팝업을 띄운다.
-				var isEdge = (navigator.userAgent.indexOf("Edge") > 0);
-				var edgeCheckYN = getCookie("EDGE_CHECK") != 'Y';
-				
-				if(isEdge && edgeCheckYN){
-					window.open('http://www.melon.com/error_page/error_edgeTypeA.html','edgeCheck','scrollbars=no, resizable=no, location=no, width=560, height=498');
-				}
-				
-				// 타블렛이고 해당 팝업이 뜬 적이 없는 경우 체크하여 팝업을 띄운다.
-				var tabletCheckYN = getCookie("TABLET_CHECK") != 'Y';
-
-				if(melon.isTablet() && tabletCheckYN){
-					window.open('http://www.melon.com/error_page/error_tabletTypeA.html','tabletPopTypeA','scrollbars=no, resizable=no, location=no, width=560, height=483');
-				}
-				
-				// 해당 쿠키가 존재하면 쿠키 삭제
-				if(getCookie("CHECK_POP") != ''){
-					// 체크 후 해당 쿠키는 제거
-					var expireDate = new Date();
-					expireDate.setDate(expireDate.getDate()-1);
-					document.cookie = "CHECK_POP=;path=/;expires="+expireDate.toGMTString()+";domain=.melon.com";
-				}
-
-				if(isMelonLogin()){
-					var djYn = getMemberDjYn();
-					if(djYn == "" || typeof djYn == "undefined"){
-						try {
-							$.ajax({
-								url: "http://www.melon.com/gnb/check_melondj.json",
-								type : 'GET',
-								dataType: 'jsonp',
-								jsonp: 'jscallback',
-							}).done(function(json) {}).fail(function() {});
-						} catch(e){}
-					}
-				}
-				
-				// 홈탭의 경우 쇼핑/티켓을 새창띄우기로 변경한다.
-				var fromMPS = getCookie("MPS"); // 멜론 플레이어에서 왔는지 확인.
-				var fromHomeTab = !(fromMPS == null || fromMPS.indexOf("MELONPLAYER") < 0);
-				
-				if(fromHomeTab){
-					$("li.d_melon_shopping a").removeClass("mlog");
-					$("li.d_melon_shopping a").addClass("mlog_without_page_change");
-					$("li.d_melon_shopping a").attr("target", "_blank");
-					
-					$("li.d_melon_ticket a").removeClass("mlog");
-					$("li.d_melon_ticket a").addClass("mlog_without_page_change");
-					$("li.d_melon_ticket a").attr("target", "_blank");
-				}
-				
-				//SHA-2 popup
-				function uaChecker() {
-					var r = true;
-					var uav = navigator.userAgent.replace(/ /g,'');
-					var exUA = ['OSX10_1_','OSX10_2_','OSX10_3_','OSX10_4_','OSX10.1.','OSX10.2.','OSX10.3.','OSX10.4.',
-					            'Windows95','Windows98','WindowsNT4.0','WindowsNT5.0','MSIE6'];
-					$.each(exUA, function(i,v) { 
-						if ( uav.indexOf(v) > -1 ) { 
-							r = false; 
-						} 
-					});
-					if ( uav.indexOf("WindowsNT5.1") > -1 && uav.indexOf("SV1") > -1 ) {
-						r = false;
-					}
-					var chp = uav.indexOf("Chrome"); 
-					if(chp > -1){ if ( parseInt(uav.substr(chp + 7, 3)) < 26 ) { r = false; } }
-					if(chp == -1 && uav.indexOf("Safari") > -1) { if ( parseInt(uav.substr(uav.indexOf("Version") + 8, 3)) < 3 ) { r = false; } }
-					if(uav.indexOf("Firefox") > -1) { if ( parseFloat(uav.substr(uav.indexOf("Firefox") + 8, 3)) < 2 ) { r = false; } }
-					if(uav.indexOf("OPR/") > -1 || uav.indexOf("Opera/") > -1) {
-						var fv = 0;
-						if ( uav.indexOf("OPR/") > -1 ) { fv = parseFloat(uav.substr(uav.indexOf("OPR/") + 4, 3)); }
-						else if ( uav.indexOf("Opera/") > -1 ) { fv = parseFloat(uav.substr(uav.indexOf("Opera/") + 6, 3)); }
-						if ( fv < 7 ) { r = false; }
-					}
-					return r;
-				}
-				
-				 //웹 브라우저 보안 암호화 161121
-		        $('.d_check_on').on('click','label',function () {
-		            if ($(this).siblings('input').prop('checked')) {
-		                $(this).parents('.d_check_on').removeClass('on');
-		            } else {
-		                $(this).parents('.d_check_on').addClass('on');
-		            };
-		        });
-		        $(document).on('limitpopup', function( e, cookieId ) {
-					if ( !uaChecker() ) {
-						$('#'+cookieId).modal();
-					}
-				});
-		        setTimeout(function() {
-		            $("#popNotice").timeLimitSet({ cookieId:'popNotice',selectors:{closebtn:'#todayChk', checkbox:''} });
-		        },1);
-		        MELON.PBPGN.TimeLimitPopup.init({ cookieId:"popNotice", serverTime: new Date(), limitType:"day" });
-		        $("#popNotice .d_close").click(function() {  $("#popNotice").modal('hide'); });
-			});
-			
-			function goMelonTPage(){
-				// 쿠키 삭제 후 t.com으로 페이지 이동
-				var expireDate = new Date();
-				expireDate.setDate(expireDate.getDate()-1);
-				document.cookie = "D=;path=/;expires="+expireDate.toGMTString()+";domain=.melon.com";
-
-				location.href= 'http://t.melon.com';
-			}
-			
-			function openEmailCollectionReject(){
-				window.open('http://www.melon.com/emailCollectionReject.html','emailCollect', 'scrollbars=no, resizable=no, location=no, width=384, height=331');
-			}
-			
-			//다음 검색 랜딩 추가
-			if(location.href.indexOf('ref=W106') > -1){
-				$.ajax({
-					url: '/gnb/daumsearch_list.htm',
-				}).done(function(html){
-					$('#footer').before(html);
-				});
-			}
-			
-			
-		</script> -->
-					<!--//140602 추가 lyr-->
-				</div>
-				<!-- //footer -->
-			</div>
 </body>
 </html>

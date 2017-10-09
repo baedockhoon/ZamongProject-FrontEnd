@@ -274,16 +274,19 @@ li.playing:before {
 </script>
 </head>
 <body>
-	<div id="wrapper">
+	<div id="">
 		<div class="player_top">
-			<a href="http://www.melon.com" title="Zamong 메인으로 이동" target="_blank">
-				<img width="61" height="50" src="<c:url value='/Styles/image/zamonglogotitle.png'/>" alt="Zamong 로고">
-			</a>
+			<h1>
+				<a href="http://www.melon.com" title="Zamong 메인으로 이동" target="_blank">
+					<img width="47" height="33" src="<c:url value='/Styles/image/zamonglogotitle.png'/>" alt="Zamong 로고">
+				</a>
+			</h1>
 			<div class="box_music_info">
 				<div class="music_info d_box_marquee">
 					<p class="d_marquee"><span class="span_title">${dto.ss_title }</span></p>
 				</div>
 			</div>
+		</div>
 			<audio preload></audio>
 			<div class="box_player">
 				<div class="controller">
@@ -320,17 +323,14 @@ li.playing:before {
 					<!-- <div class="bar" id="player_volumeslider"></div> -->
 				</div>
 			</div>
-		</div>
 		<div class="thumb">
-			<img
-				src="http://cdnimg.melon.co.kr/resource/image/web/webplayer/thumb_noimg.jpg"
-				alt="앨범 커버 이미지" width="344" height="344" id="albumImg"> <span
-				class="frame"></span>
+			<img src="http://localhost:8080/ZamongProject/Images/Sound/${dto.al_albumimage }"
+				alt="앨범 커버 이미지" width="344" height="344" id="albumImg">
+				<span class="frame"></span>
 		</div>
 		<ol>
 		<%-- <c:forEach items="${dto }"> --%>
-			<li><a href="#"
-				data-src="http://localhost:8080/ZamongProject/Mp3/${dto.ss_path }">${dto.ss_title }</a></li>
+			<li><a href="#" data-src="http://localhost:8080/ZamongProject/Mp3/${dto.ss_path }">${dto.ss_title }</a></li>
 		<%-- </c:forEach> --%>
 		</ol>
 	</div>

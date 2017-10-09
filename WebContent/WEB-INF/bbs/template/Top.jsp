@@ -3,7 +3,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<script src="${pageContext.request.contextPath}/Styles/js/audio/PlayScript.js"></script>
 <div id="wrap">
 	<!-- 이벤트일 경우 event_gnb 추가 -->
 	<div id="skip_nav">

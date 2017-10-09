@@ -204,32 +204,10 @@ $(function (){
 				}
 		};
 			
-		
-		
-
 		function goAlbumDetail(al_no){
 			location.href = "<c:url value='/ZamongFrontEnd/album/Detail.do' />?al_no="+al_no;
 		};
 	});
-</script>
-<script type="text/javascript">
-function playSong(ss_no){
-	var url    ="<c:url value='/ZamongFrontEnd/audio/Play.do' />";
-	  var title  = "testpop";
-	  var status = "toolbar=yes,scrollbars=yes,resizable=no,location=no,top=500,left=500,width=420,height=800"; 
-	  window.open("", title,status); //window.open(url,title,status); window.open 함수에 url을 앞에와 같이
-	                                            //인수로  넣어도 동작에는 지장이 없으나 form.action에서 적용하므로 생략
-	                                            //가능합니다.
-	  frm1.target = title;                    //form.target 이 부분이 빠지면 form값 전송이 되지 않습니다. 
-	  frm1.action = url;                    //form.action 이 부분이 빠지면 action값을 찾지 못해서 제대로 된 팝업이 뜨질 않습니다.
-	  frm1.method = "post";
-	  frm1.ss_no.value = ss_no;
-	  frm1.submit();     
-
-	
-	/* window.open("<c:url value='/ZamongFrontEnd/audio/Play.do?ss_no="+ss_no+"' />", "_blank"
-			, "toolbar=yes,scrollbars=yes,resizable=no,location=no,top=500,left=500,width=400,height=400"); */
-};
 </script>
 </head>
 
@@ -255,7 +233,7 @@ function playSong(ss_no){
 		<!-- //header -->
 
 		<div id="cont_wrap" class="clfix">
-			<div id="conts_section" class="my_fold">
+			<div id="conts_section" class="my_fold fold_on">
 				<!-- contents -->
 
 				<div id="conts" class="clfix ban">
@@ -518,7 +496,7 @@ function playSong(ss_no){
 					<!-- 수록곡 -->
 					<div class="section_contin">
 						<h3 class="title first arr">
-							수록곡 <span class="no">(4)</span>
+							수록곡 <span class="no"></span>
 						</h3>
 
 
@@ -615,9 +593,11 @@ function playSong(ss_no){
 															<a
 																href="javascript:melon.link.goSongDetail('${item.ss_no }');"
 																title="곡정보 보기" class="btn btn_icon_detail"><span
-																class="odd_span">얼룩 상세정보 페이지 이동</span></a> <span
-																class="icon_song title">Title</span> <a
-																href="javascript:melon.play.playSong('28010101', ${item.ss_no });"
+																class="odd_span">얼룩 상세정보 페이지 이동</span></a>
+																<c:if test="${item.ss_albumtitle == 1 }">
+																	<span title="타이틀 곡" class="icon_song title">타이틀 곡</span>
+																</c:if> 
+																<a href="javascript:melon.play.playSong('28010101', ${item.ss_no });"
 																title="${item.ss_title }">${item.ss_title }</a>
 														</div>
 													</div></td>
