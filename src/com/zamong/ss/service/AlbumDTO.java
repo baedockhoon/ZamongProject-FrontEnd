@@ -3,10 +3,10 @@ package com.zamong.ss.service;
 //엘범 DTO 수정 필요할 수 있음
 public class AlbumDTO{
 	private String al_no; //엘범고유번호
-	private String al_regidate; //등록일
+	private java.sql.Date al_regidate; //등록일
 	private String al_albumname; //엘범이름
 	private String al_artist; //엘범아티스트
-	private String al_releasedate; //발매일
+	private java.sql.Date al_releasedate; //발매일
 	private String al_publishcorp; //발매사
 	private String al_entertaincorp; //기획사
 	private String al_albumimage; //엘범사진
@@ -18,7 +18,7 @@ public class AlbumDTO{
 	
 	public AlbumDTO() {}
 	
-	public AlbumDTO(String al_no, String al_regidate, String al_albumname, String al_artist, String al_releasedate,
+	public AlbumDTO(String al_no, java.sql.Date al_regidate, String al_albumname, String al_artist, java.sql.Date al_releasedate,
 			String al_publishcorp, String al_entertaincorp, String al_albumimage, String al_albuminfo, String al_divide,
 			String al_artistno) {
 		super();
@@ -40,10 +40,10 @@ public class AlbumDTO{
 	public void setAl_no(String al_no) {
 		this.al_no = al_no;
 	}
-	public String getAl_regidate() {
+	public java.sql.Date getAl_regidate() {
 		return al_regidate;
 	}
-	public void setAl_regidate(String al_regidate) {
+	public void setAl_regidate(java.sql.Date al_regidate) {
 		this.al_regidate = al_regidate;
 	}
 	public String getAl_albumname() {
@@ -58,10 +58,10 @@ public class AlbumDTO{
 	public void setAl_artist(String al_artist) {
 		this.al_artist = al_artist;
 	}
-	public String getAl_releasedate() {
+	public java.sql.Date getAl_releasedate() {
 		return al_releasedate;
 	}
-	public void setAl_releasedate(String al_releasedate) {
+	public void setAl_releasedate(java.sql.Date al_releasedate) {
 		this.al_releasedate = al_releasedate;
 	}
 	public String getAl_publishcorp() {

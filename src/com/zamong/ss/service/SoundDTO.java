@@ -4,7 +4,7 @@ package com.zamong.ss.service;
 //음원 DTO 수정 필요할 수 있음
 public class SoundDTO extends AlbumDTO {
 	private String ss_no; //음원 고유번호
-	private String ss_regidate; //등록일
+	private java.sql.Date ss_regidate; //등록일
 	private String al_no; //엘범 고유번호(FK)
 	private String ss_title; //음원 이름
 	private String ss_genre; //장르
@@ -22,7 +22,7 @@ public class SoundDTO extends AlbumDTO {
 	}
 	
 
-	public SoundDTO(String ss_no, String ss_regidate, String al_no, String ss_title, String ss_genre,
+	public SoundDTO(String ss_no, java.sql.Date ss_regidate, String al_no, String ss_title, String ss_genre,
 			String ss_duration, String ss_path, String ss_albumtitle, String ly_contents, String al_albumimage) {
 		super();
 		this.ss_no = ss_no;
@@ -43,10 +43,10 @@ public class SoundDTO extends AlbumDTO {
 	public void setSs_no(String ss_no) {
 		this.ss_no = ss_no;
 	}
-	public String getSs_regidate() {
+	public java.sql.Date getSs_regidate() {
 		return ss_regidate;
 	}
-	public void setSs_regidate(String ss_regidate) {
+	public void setSs_regidate(java.sql.Date ss_regidate) {
 		this.ss_regidate = ss_regidate;
 	}
 	public String getAl_no() {

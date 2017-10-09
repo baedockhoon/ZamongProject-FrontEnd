@@ -152,7 +152,20 @@ $(function (){
 	});
 })
 </script>
+<script type="text/javascript">
 
+function goArtistDetail(at_no, al_divide){
+	var st =  "<c:url value='/ZamongFrontEnd/artist/Info.do?' />";
+	if (al_divide == "A"){
+		st += "at_no="+at_no;
+	}
+	else {
+		st += "gp_no="+at_no;
+		st += "&al_divide=G";
+	}
+	location.href = st;
+};
+</script>
 
 <script type="text/javascript">
 	
@@ -290,11 +303,11 @@ $(function (){
 								<dl class="song_info clfix">
 									<dt>아티스트</dt>
 									<dd>
-										<a href="javascript:goArtistDetail('${dto.ss_no }')"
+										<a href="javascript:goArtistDetail('${dto.al_artistno }', '${dto.al_divide }')"
 											title="${dto.al_artist }" class="atistname"><span>${dto.al_artist }</span><span
 											class="thumb_atist"><img
 												onerror="WEBPOCIMG.defaultArtistImg(this);"
-												src="http://cdnimg.melon.co.kr/cm/artistcrop/images/007/58/850/758850.jpg"
+												src="http://localhost:8080/ZamongProject/Images/Artist/${dto.al_divide eq 'G' ? dto.gp_image : dto.at_image }"
 												width="52" height="52" /></span></a>
 									</dd>
 									<dt>발매일</dt>

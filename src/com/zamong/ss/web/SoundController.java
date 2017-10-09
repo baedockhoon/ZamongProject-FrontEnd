@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -69,11 +70,12 @@ public class SoundController {
 	
 	@RequestMapping("/ZamongFrontEnd/album/Detail.do")
 	public String albumDetail(
-			HttpServletRequest req,//페이징용 메소드에 전달
+			//@Param("al_divide") String al_divide,
 			SoundDTO dto,//검색용 파라미터 받기
 			Model model//리퀘스트 영역 저장용
 			) throws Exception{
-		
+		//dto.setAl_divide(al_divide);
+		System.out.println(dto.getAl_divide());
 		dto = service.selectAlbumOne(dto);
 
 		List<SoundDTO> list = service.selectSoundList(dto);

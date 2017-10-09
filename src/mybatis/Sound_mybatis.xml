@@ -21,8 +21,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM SS_SOUNDSOURCE WHERE AL_NO = #{al_no} ORDER BY SS_REGIDATE
 	</select>
 	
-	<select id="selectAlbumOne" parameterType="java.util.Map" resultType="SoundData">
-		SELECT * FROM AL_ALBUM A JOIN SS_SOUNDSOURCE S ON A.AL_NO = S.AL_NO WHERE A.AL_NO = #{al_no} AND ROWNUM = 1
+	<select id="selectAlbumOne" parameterType="java.util.Map" resultType="Artist">
+		SELECT * FROM 
+			(SELECT A.*, S.SS_GENRE FROM AL_ALBUM A JOIN SS_SOUNDSOURCE S ON A.AL_NO = S.AL_NO WHERE A.AL_NO = #{al_no} AND ROWNUM = 1) A JOIN 
+			<choose>
+				<when test="al_divide == null">
+					AT_ARTIST G ON A.AL_ARTISTNO = G.AT_NO
+				</when>
+				<otherwise>
+					GP_ATGROUP G ON A.AL_ARTISTNO = G.GP_NO
+				</otherwise>
+			</choose>
 	</select>
 	
 	<select id="selectSoundOne" parameterType="java.util.Map" resultType="SoundData">

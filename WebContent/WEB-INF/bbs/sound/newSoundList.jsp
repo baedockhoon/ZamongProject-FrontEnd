@@ -41,8 +41,12 @@
 	if(!isNaN(this.value)){songIds.push($(this).val())}});
 	if(songIds.length==0){alert("곡을 선택해 주세요")}
 	else{MELON.WEBSVC.POC.play.playSong(menuId,songIds)}} */
-	function goAlbumDetail(al_no){
-		location.href = "<c:url value='/ZamongFrontEnd/album/Detail.do?al_no=' />"+al_no;
+	function goAlbumDetail(al_no, al_divide){
+		var st = "<c:url value='/ZamongFrontEnd/album/Detail.do?al_no=' />"+al_no;
+		if (al_divide == "G"){
+			st += "&al_divide=G";
+		}
+		location.href = st;
 	};
 	function goArtistDetail(at_no, al_divide){
 		var st =  "<c:url value='/ZamongFrontEnd/artist/Info.do?' />";
@@ -99,8 +103,8 @@
 						<ul>
 							<li class="first_child on"><a href="javascript:;"
 								class="link_tab" data-area-flg="I"><span class="cntt">국내</span></a></li>
-							<li class="last_child "><a href="javascript:;"
-								class="link_tab" data-area-flg="O"><span class="cntt">해외</span></a></li>
+							<!-- <li class="last_child "><a href="javascript:;"
+								class="link_tab" data-area-flg="O"><span class="cntt">해외</span></a></li> -->
 						</ul>
 					</div>
 
@@ -113,7 +117,7 @@
 								<!-- 곡리스트 테이블 -->
 
 
-								<div class="wrap_btn_tb top">
+								<!-- <div class="wrap_btn_tb top">
 
 									<button type="button" title="선택된 곡 듣기" class="button_rbox"
 										onClick="melon.play.playFormSong('18030123','frm');">
@@ -141,7 +145,7 @@
 											class="cnt">선물</span>
 									</button>
 
-								</div>
+								</div> -->
 								<table border="1" style="width: 100%">
 									<caption>이 표는 곡 리스트로 체크박스, 순위, 곡정보, 좋아요, 뮤비, 다운, 폰전송
 										내용을 포함하고 있으며 표 상 하단에 제공하는 전체선택, 듣기, 다운로드, 담기, 선물하기 기능을 이용하실 수
@@ -231,7 +235,7 @@
 													<span class="rank ">${loop.count }</span><span class="none">위</span>
 												</div></td>
 											<td><div class="wrap">
-													<a href="javascript:goAlbumDetail(${item.al_no });"
+													<a href="javascript:goAlbumDetail('${item.al_no }', '${item.al_divide }');"
 														title="${item.ss_title }"
 														class="image_typeAll"> <img
 														onerror="WEBPOCIMG.defaultAlbumImg(this);" width="60"
@@ -283,7 +287,7 @@
 												</div></td>
 											<td><div class="wrap t_center">
 													<button type="button" title="듣기" class="button_icons play "
-														onClick="melon.play.playSong('18030123',30651724);">
+														onClick="playSong(${item.ss_no });">
 														<span class="none">듣기</span>
 													</button>
 												</div></td>

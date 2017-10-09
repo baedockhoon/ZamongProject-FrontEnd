@@ -203,7 +203,7 @@
 			<c:forEach var="item" items="${albumList }">
 				<li class="album11_li">
 					<div class="wrap_album04">
-						<a href="javascript:melon.link.goAlbumDetail('10085546');"
+						<a href="javascript:goAlbumDetail('${item.al_no }');"
 							title="${item.al_albumname } - 페이지 이동"
 							class="thumb"> <span class="thumb_frame"></span> <img
 							onerror="WEBPOCIMG.defaultAlbumImg(this);" width="130"
@@ -218,7 +218,7 @@
 								<dt>
 									<span class="vdo_name"></span> <strong class="none">앨범명</strong>
 									<a
-										href="javascript:melon.link.goAlbumDetail('10085546');"
+										href="javascript:goAlbumDetail('${item.al_no }');"
 										class="ellipsis"
 										title="${item.al_albumname } - 페이지 이동">${item.al_albumname }</a>
 								</dt>
@@ -226,10 +226,10 @@
 									<strong class="none">아티스트명</strong>
 									<div class="ellipsis">
 										<a
-											href="javascript:melon.link.goArtistDetail('228069');"
+											href="javascript:goArtistDetail('228069');"
 											title="${item.al_artist } - 페이지 이동" class="play_artist"><span>${item.al_artist }</span></a><span
 											class="checkEllipsis" style="display: none;"><a
-											href="javascript:melon.link.goArtistDetail('228069');"
+											href="javascript:goArtistDetail('228069');"
 											title="${item.al_artist } - 페이지 이동" class="play_artist"><span>${item.al_artist }</span></a></span>
 									</div>
 									<!-- 아티스트명 공간 초과시 더보기 버튼 노출 -->
