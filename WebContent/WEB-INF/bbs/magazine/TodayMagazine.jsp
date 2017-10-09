@@ -38,16 +38,28 @@
 <h2 class="f_tit mb20" align="center">오늘의 매거진</h2>
 <body>
 <div id="conts" align="center">
-    <div class="wrap_tab03 type05" align="center">
-        <ul>
-            <li style="text-align: center;"><a href="<c:url value='/ZamongFrontEnd/Magazine.do'/>" class="link_tab" title="홈 - 페이지 이동">
+    <div class="wrap_tab03 type02 page_move">
+        <%-- <ul>
+            <li data-gubn="D" class="first_child on">
+            	<a href="<c:url value='/ZamongFrontEnd/Magazine.do'/>" class="link_tab" title="홈 - 페이지 이동">
                 <span class="cntt">자몽매거진</span>
             </a></li>
       		
-            <li><a href="<c:url value='/ZamongFrontEnd/MagazineToday.do'/>" class="link_tab" title="공지사항 - 페이지 이동">
+            <li data-gubn="H" class="last_child ">
+            <a href="<c:url value='/ZamongFrontEnd/MagazineToday.do'/>" class="link_tab" title="공지사항 - 페이지 이동">
             <span class="cntt">오늘의 매거진</span>
             </a></li>
-        </ul>
+        </ul> --%>
+        <ul style="width:100%;">
+			<li data-gubn="D" class="first_child ">
+				<a href="<c:url value='/ZamongFrontEnd/Magazine.do'/>" class="link_tab" title="홈 - 페이지 이동">
+                <span class="cntt">자몽매거진</span>
+            </a></li>
+			<li data-gubn="H" class="last_child on">
+				<a href="<c:url value='/ZamongFrontEnd/MagazineToday.do'/>" class="link_tab" title="공지사항 - 페이지 이동">
+            <span class="cntt">오늘의 매거진</span>
+            </a></li>
+		</ul>
     </div>
  <div class="search_head mt24">
 				<div class="search_head mt24">

@@ -26,23 +26,7 @@ public class SoundServiceImpl implements SoundService {
 		return dao.selectList(map);
 	}
 
-	@Override
-	public int insert(SoundDTO dto) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
-	@Override
-	public int update(SoundDTO dto) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int delete(SoundDTO dto) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 	@Override
 	public int getTotalCount(Map map) throws Exception {
@@ -74,6 +58,12 @@ public class SoundServiceImpl implements SoundService {
 	@Override
 	public SoundDTO selectSoundOne(Map map) throws Exception {
 		return dao.selectSoundOne(map);
+	}
+
+	@Override
+	public List<SoundDTO> selectMainPage() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.selectMainPage();
 	}
 
 }

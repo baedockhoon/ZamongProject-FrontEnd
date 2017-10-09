@@ -374,17 +374,18 @@ function goArtistDetail(at_no, al_divide){
 												<dt>별을 클릭하여 앨범을 평가해 주세요.</dt>
 												<dd>
 													<form action="${pageContext.request.contextPath}/ZAMONG/zamongAssign.do" method="post">
-														<input type="hidden" name="no" value="1"/>
-														<input type="hidden" name="date" value="1"/>
+														<%-- <input type="hidden" name="as_no" value="1"/>
+														<input type="hidden" name="as_regidate" value="1"/>
 														<input type="hidden" name="me_no" value="1"/>
-														<input type="hidden" name="al_no" value="1"/>
+														--%>
+														<input type="hidden" name="al_no" value="${dto.al_no }"/> 
 														<span class="starinput">
 														  <span class="input">
-														    <input type="radio" name="starinput" id="p2" value="1"><label for="p2">1</label>
-														    <input type="radio" name="starinput" id="p4" value="2"><label for="p4">2</label>
-														    <input type="radio" name="starinput" id="p6" value="3"><label for="p6">3</label>
-														    <input type="radio" name="starinput" id="p8" value="4"><label for="p8">4</label>
-														    <input type="radio" name="starinput" id="p10" value="5"><label for="p10">5</label>
+														    <input type="radio" name="as_getpoint" id="p2" value="1"><label for="p2">1</label>
+														    <input type="radio" name="as_getpoint" id="p4" value="2"><label for="p4">2</label>
+														    <input type="radio" name="as_getpoint" id="p6" value="3"><label for="p6">3</label>
+														    <input type="radio" name="as_getpoint" id="p8" value="4"><label for="p8">4</label>
+														    <input type="radio" name="as_getpoint" id="p10" value="5"><label for="p10">5</label>
 														  </span>
 														  <output for="starinput"><b>0</b>점</output>
 														</span>

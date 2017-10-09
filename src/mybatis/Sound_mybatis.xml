@@ -38,6 +38,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT S.*, L.LY_CONTENTS, A.AL_ALBUMIMAGE FROM SS_SOUNDSOURCE S JOIN LY_LYLICS L ON S.SS_NO = L.SS_NO JOIN AL_ALBUM A ON S.AL_NO = A.AL_NO WHERE S.SS_NO = #{ss_no}
 	</select>
 	
+	<select id="selectMainPage" parameterType="java.util.Map" resultType="SoundData">
+		SELECT * FROM (SELECT T.*, ROWNUM R FROM 
+			(SELECT * FROM AL_ALBUM ORDER BY AL_REGIDATE DESC) T)
+		WHERE R BETWEEN 1 AND 6
+	</select>
+	
 	
 	
  <!-- 	<update id="NotiDateUpdate"  parameterType="java.util.Map">
