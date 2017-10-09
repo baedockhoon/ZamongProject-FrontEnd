@@ -17,6 +17,7 @@ public class ChartDTO {
 	String lk_flag;
 	int lk_targetno;
 	
+	
 	private ChartDTO() {}
 	
 	public int getSs_no() {

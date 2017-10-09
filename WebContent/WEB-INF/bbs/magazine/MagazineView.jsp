@@ -297,64 +297,36 @@
 				data-sqwidget='templateType:pc-summary-type;textareaType:medium-size;pageType:generic-page'
 				data-sqwidget-settings='cmtPocType:pc.web;pocId:XXXX;menuId:1234;chnlSeq:501;contsRefValue:5566;listPageUrl:http://www.melon.com//musicstory/inform.htm?mstorySeq=5566'></div>
 		</div>
-		
 
-	
-  <!-- 한줄 코멘트 입력 폼-->
-  <fieldset>
-   <legend>한줄 코멘트 입력 폼</legend>
+		<div id="d_cmtpgn_cmt_write_box"
+			class="re_notice type02 d_cmtpgn_cmt_edit_box" data-cmt-id="-1">
+			<div class="thumb_wrap">
+				<a class="thumb d_cmtpgn_user" data-member-key="38002898"
+					id="commentWriteBoxImage"><span class="thumb_frame"></span></a>
+			</div>
+			<div class="re_textarea_wrap">
+				<div title="리뷰 입력 창 (1000자 이내 입력 가능)" class="textarea"
+					style="min-height: 60px; overflow: hidden;">
+					<div class="ancm d_cmtpgn_cmt_guide" style="min-height: 54px;">
+						<p>* 게시물의 저작권 등 분쟁, 개인정보 노출로 인한 책임은 작성자 또는 게시자에게 있음을 유의해 주세요.</p>
+					</div>
+					<div class="scroll d_cmtpgn_cmt_edit_area"
+						style="display: none; max-height: 144px;"></div>
+					<span class="num_board d_cmtpgn_char_count"> <span
+						class="none">현재 입력 글자수</span> <strong class="d_cmtpgn_char_cnt">0</strong>
+						/ <span class="none">총 입력 가능 글자수</span> 1000자
+					</span>
+				</div>
+				
+				<div class="wrap_btn02">
+					<button type="button" title="글 등록"
+						class="btn_reg d_cmtpgn_cmt_reg_btn">
+						<span class="odd_span"><span class="even_span">등록</span></span>
+					</button>
+				</div>
+			</div>
+		</div>
 
-   <form id="frm" action="<c:url value='/Comment/Write.do'/>"
-    method="post">
-    <input type="hidden" name="no" value="${dto.mg_no}" />
-    <!-- 수정 및 삭제용 파라미터 -->
-    <input type="hidden" name="c_no" />
-    <table width="75%">
-     <tr>
-      <td><input id="c_title" type="text" size="50" name="c_title" />
-       <input id="submit" type="submit" value="등록" /></td>
-     </tr>
-    </table>
-   </form>
-  </fieldset>
-
-
-
-
- <table width="75%" bgcolor="gray" cellspacing="1">
-   <tr bgcolor="white" align="center">
-    <th width="15%">올린이</th>
-    <th width="50%">코멘트</th>
-    <th width="25%">올린일</th>
-    <th width="10%">삭제</th>
-   </tr>
-   <c:if test="${empty memo }" var="result">
-    <tr bgcolor="white" align="center">
-     <td colspan="4">등록된 코멘트가 없어요</td>
-    </tr>
-   </c:if>
-   <c:if test="${not result}">
-    <c:forEach items="${memo }" var="memo">
-     <tr bgcolor="white" align="center">
-      <td>${memo.id }</td>
-      <td align="left">
-	      <span style="cursor: pointer;"title="${memo.mg_cm_no}">
-	      	${memo.mg_cm_contents }
-	      </span>
-      </td>
-      <td>${memo.mg_cm_regidate }
-      </td>
-      <td>
-        <span title="${memo.mg_cm_no}"style="cursor: pointer; color: green; font-size: 1.4em; font-weight: bold">
-		삭제
-        </span></td>
-     </tr>
-    </c:forEach>
-   </c:if>
-
-  </table>
-
-		
 
 
 
