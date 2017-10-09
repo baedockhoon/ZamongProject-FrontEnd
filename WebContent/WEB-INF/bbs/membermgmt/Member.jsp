@@ -31,6 +31,45 @@
 <script type="text/javascript"
 	src="/resource/script/web/common/jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
+function checkForm(){
+	var chk1=document.join_form.check[1].checked;
+    var chk2=document.join_form.check[2].checked;
+    var chk3=document.join_form.check[3].checked;
+    
+    if(!chk1){
+        alert('이용 약관에 동의해 주세요');
+        return false;
+    } 
+    if(!chk2) {
+        alert('유료서비스 약관에 동의해 주세요');
+        return false;
+    }
+    if(!chk3) {
+        alert('개인정보 수집 및 이용 약관에 동의해 주세요');
+        return false;
+    }
+
+}
+
+
+function agree(){
+	var isChecked = false;
+	var check = document.getElementsByName("check");
+	if(check[0].checked == true){
+		document.join_form.check[1].checked = true;
+		document.join_form.check[2].checked = true;
+		document.join_form.check[3].checked = true;
+		document.join_form.check[4].checked = true;
+	}
+	else{
+		document.join_form.check[1].checked = false;
+		document.join_form.check[2].checked = false;
+		document.join_form.check[3].checked = false;
+		document.join_form.check[4].checked = false;
+	}
+	
+}
+
 var httpMemberDomain = "http://member.melon.com";
 var httpsMemberDomain = "https://member.melon.com";
 var POC_ID = "WP10";
@@ -157,13 +196,13 @@ if(CP_ID!="" && CP_ID!=null){
 					<div class="mem_info_cont type_border mt34 d_input_all_cont">
 						<div class="box_join_clause box_check_all">
 							<div class="box_check d_input_check d_input_all">
-								<input type="checkbox" id="check"> <span class="icon"></span>전체동의<em>(선택사항
+								<input type="checkbox" id="check1" onclick="javascript:agree()" name="check" > <span class="icon"></span>전체동의<em>(선택사항
 									포함)</em></label>
 							</div>
 						</div>
 						<div class="box_join_clause first_child">
 							<div class="box_check d_input_check">
-								<input type="checkbox" /> <span class="icon"></span>이용약관<em
+								<input type="checkbox" id="check2" name="check"/> <span class="icon"></span>이용약관<em
 									class="point">(필수)</em></label> <a href="#" class="btn_more"><span>약관
 										보기</span></a>
 							</div>
@@ -216,7 +255,7 @@ if(CP_ID!="" && CP_ID!=null){
 						</div>
 						<div class="box_join_clause">
 							<div class="box_check d_input_check">
-								<input type="checkbox" id="clauseAgree2" name="agreeCk"
+								<input type="checkbox" id="check3" name="check"
 									/> <span class="icon"></span>유료서비스약관<em
 									class="point">(필수)</em></label> <a href="#" class="btn_more"><span>약관
 										보기</span></a>
@@ -280,7 +319,7 @@ if(CP_ID!="" && CP_ID!=null){
 						</div>
 						<div class="box_join_clause">
 							<div class="box_check d_input_check">
-								<input type="checkbox" id="clauseAgree3" name="agreeCk" />
+								<input type="checkbox" id="check4" name="check" />
 								</span>개인정보 수집 및 이용<em class="point">(필수)</em></label> <a href="#"
 									class="btn_more"><span>약관 보기</span></a>
 							</div>
@@ -568,7 +607,7 @@ table.txt_rule th {
 						</div>
 						<div class="box_join_clause">
 							<div class="box_check d_input_check">
-								<input type="checkbox" id="clauseAgree4" name="agreeCk"
+								<input type="checkbox" id="check5" name="check"
 									/> <span class="icon"></span>이벤트,
 									서비스안내 수신<em>(선택)</em></label> <a href="#" class="btn_more"><span>약관
 										보기</span></a>
@@ -626,7 +665,7 @@ table.txt_rule th {
 						</div>
 					</div>
 					<div class="wrap_btn_c mt34">
-						<input type="submit" id="register" value="다음단계" onclick="return check()"/>
+						<input type="submit" id="register" value="다음단계" onclick="return checkForm()"/>
 
 					</div>
 

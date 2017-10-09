@@ -54,6 +54,11 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/14j3tr44urn.css" type="text/css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/14g2jf0vkd.css" type="text/css" />
 	<script type="text/javascript">
+	
+	function logOut(){
+		location.href="<c:url value='/ZamongFrontEnd/LogOut.do'/>";
+	}
+	
 	function goJoin(){
 		location.href="<c:url value='/ZamongFrontEnd/Member.do'/>";
 	}
@@ -1520,7 +1525,7 @@
 										'<a href="https://www.melon.com/muid/web/help/myinfointro_inform.htm" title="내정보" class="bg_none" ><span>내정보</span></a>',
 										'<div class="mem_btn" id="d_facebook_mem_btn">',
 										'</div>',
-										fromMPSYn ? '<a href="javascript:MELON.WEBSVC.POC.login.gnbLogout();" onclick="MELON.WEBSVC.POC.login.gnbLogout();" title="로그아웃" class="btn_logout"><span>로그아웃</span></a>' : '',
+										fromMPSYn ? '<a href="javascript:logOut();" title="로그아웃" class="btn_logout"><span>로그아웃</span></a>' : '',
 									'</div>',
 									<!-- //140603_수정 -->
 									getProdName() == "" ? '<span class="btn_buy"><a href="javascript:melon.menu.cm.goPamphlet();" title="이용권구매" >이용권구매</a></span>' : '',

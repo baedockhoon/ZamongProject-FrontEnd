@@ -14,7 +14,7 @@ public class MemberDTO {
 	private String me_tel;
 	private String me_photo;
 	
-	public MemberDTO() {}
+		public MemberDTO() {}
 
 	public MemberDTO(String me_no, String me_regidate, String me_id, String me_pass, String me_name, String me_nickname,
 			String me_gender, String me_birth, String me_email, String me_tel, String me_photo) {

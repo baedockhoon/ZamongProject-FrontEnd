@@ -49,8 +49,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="mybatis/CashPoint_mybatis.xml"/>
 		<mapper resource="mybatis/Assign_mybatis.xml"/>
 		<mapper resource="mybatis/Streaming_mybatis.xml"/>	
-		<mapper resource="mybatis/Streaming_mybatis.xml"/>	
-		<mapper resource="mybatis/Product_mybatis.xml"/>	
 		<mapper resource="mybatis/Minus_mybatis.xml"/>	
 	</mappers>
 </configuration>
