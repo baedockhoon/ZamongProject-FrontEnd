@@ -35,6 +35,14 @@
 
 			
 		}
+		function goPopup1() {
+			// 주소검색을 수행할 팝업 페이지를 호출합니다.
+			// 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
+			var pop = window.open("<c:url value='/ZamongFrontEnd/CashList1.do'/>", "pop",
+					"width=700,height=600, scrollbars=yes, resizable=yes");
+
+			
+		}
 	</script>
 
 	<div id="cont_wrap" class="clfix">
@@ -75,25 +83,17 @@
 					원
 				</strong>
 				<button type="button" title="캐쉬 충전 - 페이지 이동" onclick="goPopup();" class="btn_emphs_small" ><span class="odd_span"><span class="even_span">캐쉬 충전</span></span></button>
-				
+
 			</div>
 			<ul class="list_bullet03">
 				<li>멜론 캐쉬는 멜론 이용권, 곡, 뮤직비디오 등 구매 시 사용 하실 수 있습니다</li>
 				<li>결제금액은 멜론 캐쉬 충전금액에 부가가치세 10%가 포함된 실제 결제된 금액입니다.</li>
 				<li>곡/영상/앨범 재 다운로드는 <span class="fc_strong">마이뮤직 &gt; 구매목록</span>에서 가능합니다.</li>
 			</ul>
-		</div>
+		</div>		
 		<div class="wrab_list_info mt30">
-			<div class="list_totcnt ml0">총 <span class="no">0</span>개</div>
-			<!-- 신규 개발 건 주석처리 -->
-			<!-- <div class="fl_left">
-				<input type="radio" id="sort01" checked="checked" class="input_radio" />
-				<label for="sort01"><strong class="fc_gray">전체</strong></label>
-				<input type="radio" id="sort02" class="input_radio" />
-				<label for="sort02">차감</label>
-				<input type="radio" id="sort03" class="input_radio" />
-				<label for="sort03">적립</label>
-			</div> -->
+		<button type="button" title="사용자 차감내역 - 페이지 이동" onclick="goPopup1();" class="btn_emphs_small" ><span class="odd_span"><span class="even_span">사용자 차감내역</span></span></button>
+			<hr/>
 			<!--// 신규 개발 건 주석처리 -->
 		</div>
 		<div class="tb_list02">
@@ -107,8 +107,7 @@
 						<th scope="col"><div class="wrap">날짜</div></th>
 						<th scope="col"><div class="wrap">유형</div></th>
 						<th scope="col"><div class="wrap">내용</div></th>
-						<th scope="col"><div class="wrap">적립금액</div></th>
-					 	<th scope="col"><div class="wrap">차감금액</div></th>
+						<th scope="col"><div class="wrap">적립금액</div></th>				 
 				
 					</tr>
 					
@@ -125,7 +124,7 @@
 			<c:otherwise>
 				<c:forEach var="item" items="${list}" varStatus="loop">
 				
-					<c:if test="${item.pd_no == 3 }">
+				
 					<tr >		
 							
 						<td class="no"align="center"><div class="wrap">${item.ch_no}</div></td>
@@ -133,19 +132,12 @@
 							<td div class="wrap" style="text-align: center;">캐쉬</td>
 							<td div class="wrap"style="text-align: center;">캐쉬결제</td>							
 						<td><div class="wrap"align="center">${item.ch_havecash}원</div></td>
+					
 						</tr>
-						</c:if>
-					<c:if test="${item.pd_no != 3 }">	
-					<tr>				
-						 		<td class="no"align="center"><div class="wrap">${item.ch_no}</div></td>
-						<td><div class="wrap"align="center">${item.ch_regidate}</div></td>
-							<td div class="wrap" style="text-align: center;">${item.pd_name }</td>
-							<td div class="wrap"style="text-align: center;">스트리밍결제</td>
-							<td></td>							
-						<td><div class="wrap"align="center">${item.bp_price}원</div></td>
+					
 				
-					</tr>
-						</c:if>
+					
+					
 					
 				</c:forEach>
 			</c:otherwise>

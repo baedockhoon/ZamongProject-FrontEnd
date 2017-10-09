@@ -47,13 +47,30 @@ public class CashController {
 		//데이타 저장]		
 		model.addAttribute("list", list);
 
-
-	/*	return "/ZamongFrontEnd/PaymentView.do";*/
+			
+		
 	
 		return "/ZamongFrontEnd/PaymentView.do";
 	}//////////////////list()
 	@RequestMapping("/ZamongFrontEnd/PaymentView.do")
 	public String view(CashDTO dto, Model model, HttpServletRequest req)throws Exception {
+		
+		
+		
+		dto = service.selectOne(dto);
+		
+		
+		//줄바꿈 처리
+		
+		
+		//5]필요한 값 리퀘스트 영역에 저장
+	
+		model.addAttribute("dto", dto);
+		return "/WEB-INF/bbs/cash/PaymentList.jsp";
+	}
+	
+	@RequestMapping("/ZamongFrontEnd/PaymentView1.do")
+	public String view1(CashDTO dto, Model model, HttpServletRequest req)throws Exception {
 		dto = service.selectOne(dto);
 		
 	
@@ -63,7 +80,7 @@ public class CashController {
 		//5]필요한 값 리퀘스트 영역에 저장
 	
 		model.addAttribute("dto", dto);
-		return "/WEB-INF/bbs/cash/PaymentList.jsp";
+		return "/WEB-INF/index2.jsp";
 	}
 	
 }

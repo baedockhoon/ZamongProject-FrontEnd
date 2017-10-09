@@ -37,29 +37,60 @@
 
 		<!-- 실제내용의 제목표시 -->
 	
-			<!-- 실제 내용의 제목 표시 -->
-			<div class="page-header">
-				<h1>${dto.me_id }회원님의 결제정보</h1>
-			</div>
-			<div class="tableBox">
-						
-				<table class="table table-striped">
-					<caption>총 포인트</caption>
-					<colgroup>
-						<col style="width: 25%;" />
-						<col style="width: 75%;" />
-					</colgroup>
-					<tr>
-						<th scope="row"><span class="star"></span><span
-							class="txt dB lh30 alignLeft pL10 fl">${dto.me_id }님의 총금액</span></th>
-						<td class="end">
-						<span style="color: red; font-size: 1.8em;">${dto.ch_havecash }원 입니다.</span>
-						</td>
-				</table>
+			<div class="tb_list02">
+			<table border="1" style="width:100%;">
+				<caption>이 표는 dhghdkgk1</span>님의 멜론 캐쉬 이용내역 전체 리스트로 번호, 날짜, 유형, 내용, 적립금액, 차감금액, 유효기간 내용을 포함하고 있습니다. </caption>
+				<colgroup><col style="width:40px" /><col style="width:108px" /><col style="width:108px;" /><col /><col style="width:100px" /><col style="width:100px" /><col style="width:110px" /></colgroup>
+				<thead>
 				
-			</div>
-			
+					<tr>
+						<th scope="col"><div class="wrap pd_none">NO</div></th>
+						<th scope="col"><div class="wrap">날짜</div></th>
+						<th scope="col"><div class="wrap">유형</div></th>
+						<th scope="col"><div class="wrap">내용</div></th>
+						<th scope="col"><div class="wrap">차감금액</div></th>				 
+				
+					</tr>
+					
+					
+				
+					
+				</thead>
+	<c:choose>
+			<c:when test="${empty list }">
+				<tr bgcolor="white" align="center">
+					<td colspan="6">등록된 자료가 없어요</td>
+				</tr>
+			</c:when>
+			<c:otherwise>
+				<c:forEach var="item" items="${list}" varStatus="loop">
+				
+				
+					<tr >		
+							
+						<td class="no"align="center"><div class="wrap">${item.bp_no}</div></td>
+						<td><div class="wrap"align="center">${item.bp_regidate}</div></td>
+							<td div class="wrap" style="text-align: center;">${item.pd_name }</td>
+							<td div class="wrap"style="text-align: center;">스트리밍 결제</td>							
+						<td><div class="wrap"align="center">${item.bp_price}원</div></td>
+					
+						</tr>
+					
+				
+					
+					
+					
+				</c:forEach>
+			</c:otherwise>
+		</c:choose>		
+						
+	</table>
+</div>
+					
+
 	</div>
+	<!-- //테이블 작성 -->
+
 	
 
 	

@@ -52,5 +52,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="mybatis/Streaming_mybatis.xml"/>	
 		<mapper resource="mybatis/Minus_mybatis.xml"/>	
 		<mapper resource="mybatis/Artist_mybatis.xml"/>
+			<mapper resource="mybatis/Product_mybatis.xml"/>
 	</mappers>
 </configuration>

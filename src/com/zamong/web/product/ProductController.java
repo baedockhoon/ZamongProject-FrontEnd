@@ -46,6 +46,16 @@ public class ProductController {
 		model.addAttribute("list", list);
 		return "/WEB-INF/bbs/cash/CashPoint.jsp";
 	}
+	/*@RequestMapping("/ZamongFrontEnd/CashList1.do")
+	public String list1(HttpServletRequest req,//페이징용 메소드에 전달
+			@RequestParam Map map,//검색용 파라미터 받기
+			Model model)throws Exception {
+		
+		List<ProductDTO> list= service.selectList(map);
+		//데이타 저장]		
+		model.addAttribute("list", list);
+		return "/WEB-INF/bbs/cash/MemberPointView.jsp";
+	}*/
 	@RequestMapping("/ZamongFrontEnd/CashView.do")
 	public String view(ProductDTO dto, Model model, HttpServletRequest req)throws Exception {
 

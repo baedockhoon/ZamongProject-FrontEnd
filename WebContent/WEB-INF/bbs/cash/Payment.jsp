@@ -54,9 +54,7 @@ dao.close();
 <body>
 	<div class="popup_title cash">
 
-<c:if test="${not empty me_id }">
-	${me_id }
-</c:if>
+
 
 		<div class="txt_title type01">
 			<h1>자몽캐쉬 충전</h1>
@@ -130,7 +128,7 @@ dao.close();
 						
 			
 			<div class="popup_cntt box_scroll" style="text-align: center;">
-			 	 <input type="button" onclick="goSubmit()" value="결제하기"  class="btn btn-sm btn-primary"/> 
+			 	 <input type="button" onclick="goSubmit(${pd_no})" value="결제하기"  class="btn btn-sm btn-primary"/> 
 			 	 <a id="list"
 								class="btn btn-sm btn-primary">취소</a>
 <!-- 		 <input type="submit" value="확인"/>    --> 

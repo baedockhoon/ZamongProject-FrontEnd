@@ -27,7 +27,7 @@
 		function goPopup() {
 			// 주소검색을 수행할 팝업 페이지를 호출합니다.
 			// 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
-			var pop = window.open("<c:url value='/ZamongFrontEnd/Payment.do'/>", "pop",
+			var pop = window.open("<c:url value='/ZamongFrontEnd/CashList.do'/>", "pop",
 					"width=700,height=600, scrollbars=yes, resizable=yes");
 
 			
@@ -52,8 +52,8 @@
         <li class="tab_li03"><a href="<c:url value='/ZamongFrontEnd/PaymentList.do'/>" title="멜론 캐쉬 - 페이지 이동" class="link_tab">
             <span class="cntt">멜론 캐쉬</span>
         </a></li>
-        <li class="tab_li03 last_child"><a href="/phone/my/index.htm" title="폰꾸미기 - 페이지 이동" class="link_tab">
-            <span class="cntt">폰꾸미기</span>
+        <li class="tab_li03 last_child"><a href="<c:url value='/ZamongFrontEnd/CashList.do'/>" title="전체이용권- 페이지 이동" class="link_tab">
+            <span class="cntt">전체이용권</span>
         </a></li>
     </ul>
 </div>
@@ -94,9 +94,9 @@
 						
 							
 						</div>
+								이 표는 ${dto.me_id }님의 멜론 이용권 보유현황 리스트로 번호, 멜론이용권, 이용 가능 서비스, 다음 결제 안내 내용을 포함하고 있습니다.
 						<div class="tb_list02">
 							<table border="1" style="width:100%">
-								<caption>이 표는 sgh01101@naver.com님의 멜론 이용권 보유현황 리스트로 번호, 멜론이용권, 이용 가능 서비스, 다음 결제 안내 내용을 포함하고 있습니다.</caption>
 								<colgroup><col style="width:40px" /><col /><col style="width:323px" /><col style="width:322px" /></colgroup>
 								<thead>
 									<tr>

@@ -49,9 +49,9 @@ public class StreamingController {
 		//데이타 저장]		
 		model.addAttribute("list", list);
 	
-		return "/WEB-INF/bbs/streaming/StreamingList.jsp";
+		return "/ZamongFrontEnd/StreamingView.do";
 	}//////////////////list()
-	/*@RequestMapping("/ZamongFrontEnd/StreamingView.do")
+	@RequestMapping("/ZamongFrontEnd/StreamingView.do")
 	public String view(StreamingDTO dto, Model model, HttpServletRequest req)throws Exception {	
 	
 		dto = service.selectOne(dto);
@@ -63,6 +63,6 @@ public class StreamingController {
 	
 		model.addAttribute("dto", dto);
 		return "/WEB-INF/bbs/streaming/StreamingList.jsp";
-	}*/
+	}
 	
 }

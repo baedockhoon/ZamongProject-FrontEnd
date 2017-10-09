@@ -69,17 +69,36 @@ public class BpproductController {
 	@RequestMapping("/ZamongFrontEnd/StreamingPay.do")
 	public String list(
 			HttpServletRequest req,//페이징용 메소드에 전달
-			@RequestParam Map map,//검색용 파라미터 받기
+			@RequestParam Map map,@ModelAttribute("me_id") String me_id,//검색용 파라미터 받기
 			Model model//리퀘스트 영역 저장용
 			) throws Exception{
-			
+	
 		//서비스 호출]
 		List<BuyproductDTO> list= service.selectList(map);
+		
+	
 		//데이타 저장]		
 		model.addAttribute("list", list);
 		
 		
 		return "/ZamongFrontEnd/StreamingView1.do";
+	}//////////////////list()
+	@RequestMapping("/ZamongFrontEnd/CashList1.do")
+	public String list1(
+			HttpServletRequest req,//페이징용 메소드에 전달
+			@RequestParam Map map,@ModelAttribute("me_id") String me_id,//검색용 파라미터 받기
+			Model model//리퀘스트 영역 저장용
+			) throws Exception{
+	
+		//서비스 호출]
+		List<BuyproductDTO> list= service.selectList(map);
+		
+	
+		//데이타 저장]		
+		model.addAttribute("list", list);
+		
+		
+		return "/WEB-INF/bbs/cash/MemberPointView.jsp";
 	}//////////////////list()
 	
 	@RequestMapping("/ZamongFrontEnd/StreamingView1.do")
@@ -90,8 +109,7 @@ public class BpproductController {
 		//줄바꿈 처리
 		
 		
-		//5]필요한 값 리퀘스트 영역에 저장
-	
+		//5]필요한 값 리퀘스트 영역에 저장	
 		model.addAttribute("dto", dto);
 		return "/WEB-INF/bbs/streaming/StreamingPay.jsp";
 	}
