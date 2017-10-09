@@ -81,7 +81,6 @@ public class SoundController {
 			Model model//리퀘스트 영역 저장용
 			) throws Exception{
 		//dto.setAl_divide(al_divide);
-		System.out.println(dto.getAl_divide());
 		dto = service.selectAlbumOne(dto);
 
 		List<SoundDTO> list = service.selectSoundList(dto);

@@ -7,6 +7,7 @@ public interface SoundService {
 	//목록
 	List<SoundDTO> selectList(Map map) throws Exception;
 	List<SoundDTO> selectSoundList(SoundDTO dto) throws Exception;
+	List<SoundDTO> selectMainPage() throws Exception;
 	//상세보기
 
 	

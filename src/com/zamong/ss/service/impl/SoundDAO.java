@@ -65,7 +65,11 @@ public class SoundDAO implements SoundService {
 		return template.selectOne("selectSoundOne", map);
 	}
 
-
+	@Override
+	public List<SoundDTO> selectMainPage() throws Exception {
+		// TODO Auto-generated method stub
+		return template.selectList("selectMainPage");
+	}
 
 	
 	

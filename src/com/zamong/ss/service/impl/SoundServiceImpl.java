@@ -60,4 +60,10 @@ public class SoundServiceImpl implements SoundService {
 		return dao.selectSoundOne(map);
 	}
 
+	@Override
+	public List<SoundDTO> selectMainPage() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.selectMainPage();
+	}
+
 }
