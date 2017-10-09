@@ -46,12 +46,13 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="mybatis/Sound_mybatis.xml"/>
 		<mapper resource="mybatis/Login_mybatis.xml"/>
 		<mapper resource="mybatis/Comment_mybatis.xml"/>
+		<mapper resource="mybatis/MusicAward_mybatis.xml"/>
 		<mapper resource="mybatis/Buyproduct_mybatis.xml"/>
 		<mapper resource="mybatis/CashPoint_mybatis.xml"/>
 		<mapper resource="mybatis/Assign_mybatis.xml"/>
 		<mapper resource="mybatis/Streaming_mybatis.xml"/>	
 		<mapper resource="mybatis/Minus_mybatis.xml"/>	
 		<mapper resource="mybatis/Artist_mybatis.xml"/>
-			<mapper resource="mybatis/Product_mybatis.xml"/>
+		<mapper resource="mybatis/Product_mybatis.xml"/>
 	</mappers>
 </configuration>
