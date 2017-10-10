@@ -73,6 +73,7 @@ public class BpproductController {
 			Model model//리퀘스트 영역 저장용
 			) throws Exception{
 	
+			map.put("me_id",me_id);
 		//서비스 호출]
 		List<BuyproductDTO> list= service.selectList(map);
 		
@@ -90,6 +91,7 @@ public class BpproductController {
 			Model model//리퀘스트 영역 저장용
 			) throws Exception{
 	
+		map.put("me_id",me_id);
 		//서비스 호출]
 		List<BuyproductDTO> list= service.selectList(map);
 		
@@ -102,8 +104,9 @@ public class BpproductController {
 	}//////////////////list()
 	
 	@RequestMapping("/ZamongFrontEnd/StreamingView1.do")
-	public String view(BuyproductDTO dto, Model model, HttpServletRequest req)throws Exception {	
-	
+	public String view(BuyproductDTO dto, Model model, HttpServletRequest req,@ModelAttribute("me_id") String me_id)throws Exception {	
+	System.out.println(me_id);
+		dto.setMe_id(me_id);
 		dto = service.selectOne(dto);
 	
 		//줄바꿈 처리

@@ -12,7 +12,7 @@
 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title>멜론 이용권 구매>전체 이용권 보기>멜론</title>
+	<title>자몽 이용권 구매>전체 이용권 보기>자몽</title>
 	<meta name="keywords" content="음악서비스, 멜론차트, 멜론TOP100, 최신음악, 인기가요, 뮤직비디오, 앨범, 플레이어, 스트리밍, 다운로드, 아티스트플러스, 아티스트채널" />
 	<meta name="description" content="국내 최대 1,000만곡 확보 No.1 음악사이트, 멜론! 최신음악과 실시간 차트는 기본, 내 취향을 아는 똑똑한 추천 라디오, 내가 좋아하는 아티스트의 새로운 소식까지 함께 즐겨보세요." />
 	<meta name="naver-site-verification" content="f13fc46b807bef984aa341efeb1adec8de12264c"/>
@@ -257,34 +257,27 @@
 					<span class="cntt">추천 이용권</span>
 				</a>
 			</li>
-			<li class="submenu">
-				<a href= "#" title="3개월 할인 특가" class="link_tab" data-url="/commerce/pamphlet/web/sale_listPromo1View.htm">
-					<span class="cntt">3개월 할인 특가</span>
-				</a>
-			</li>
 			<li class="submenu on">
 				<a href= "#" title="전체 이용권 보기" class="link_tab" data-url="/commerce/pamphlet/web/sale_listAllView.htm">
 					<span class="cntt">전체 이용권</span>
 				</a>
 			</li>
-			<li class="submenu">
-				<a href= "#" title="제휴 이용권" class="link_tab" data-url="/commerce/pamphlet/web/sale_productsSpecialView.htm">
-					<span class="cntt">제휴 이용권<x/span>
-				</a>
-			</li>
+			
 			<li class="submenu">
 				<a href="#" title="혜택 안내" class="link_tab" data-url="/commerce/pamphlet/web/sale_vipView.htm">
 					<span class="cntt">혜택 안내</span>
 				</a>
 			</li>
-			<li class="submenu">
-				<a href= "#" title="쿠폰 등록" class="link_tab" data-url="/commerce/pamphlet/web/coupon_storeCupnView.htm">
-					<span class="cntt">쿠폰 등록</span>
+			
+			<li class="submenu last_child">			
+				<a href="" onclick="goPopup();" title="자몽캐쉬 충전" class="link_tab" id="goMelonCash">
+					<span class="cntt">자몽캐쉬 충전</span>
+			
 				</a>
 			</li>
 			<li class="submenu last_child">			
-				<a href="" onclick="goPopup();" title="멜론캐쉬 충전" class="link_tab" id="goMelonCash">
-					<span class="cntt">멜론캐쉬 충전</span>
+				<a href="<c:url value='/ZamongFrontEnd/Memberfor3.do'/>"  title="이벤트 응모 보기 " class="link_tab" id="goMelonCash">
+					<span class="cntt">이벤트 응모내역 보기</span>
 			
 				</a>
 			</li>

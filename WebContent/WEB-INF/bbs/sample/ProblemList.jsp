@@ -216,6 +216,7 @@
 </head>
 <jsp:include page="/WEB-INF/bbs/template/Top.jsp" />
 <body>
+
 <div id="wrap">
 	<nav id="skip_nav">skip navigation
 		<ul>

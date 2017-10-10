@@ -30,43 +30,5 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		
 	</select>   
 	
- 	<!-- <insert id="insertBuyproduct"  parameterType="BuyProduct">
-		INSERT INTO BP_BUYPRODUCT VALUES(BP_SEQ.NEXTVAL,SYSDATE,#{pd_no},(select me_no from me_member where me_id = #{me_id}),#{bp_price},1)
-		INSERT INTO BP_BUYPRODUCT VALUES(BP_SEQ.NEXTVAL,SYSDATE,#{pd_no},(select me_no from me_member where me_id = #{me_id}),#{bp_price},1)
-	</insert>
-	 <insert id="insertCash"  parameterType="BuyProduct">
-		INSERT INTO CH_PAYMENT VALUES(CH_SEQ.NEXTVAL,SYSDATE,(select me_no from me_member where me_id = #{me_id}),#{ch_havecash})
-		INSERT INTO CH_PAYMENT VALUES(CH_SEQ.NEXTVAL,SYSDATE,(select me_no from me_member where me_id =#{me_id}),#{ch_havecash})
-	</insert>
-        <insert id="insertStreaming"  parameterType="BuyProduct">
-		INSERT INTO ST_STREAMING VALUES(ST_SEQ.NEXTVAL,SYSDATE,SYSDATE+30 ,BP_SEQ.CURRVAL,(select me_no from me_member where me_id = #{me_id}))
-		INSERT INTO ST_STREAMING VALUES(ST_SEQ.NEXTVAL,SYSDATE,SYSDATE+30 ,BP_SEQ.CURRVAL,(select me_no from me_member where me_id =#{me_id}))
-	</insert>     --> 
-       <!--     
-           
- 	<select id="ReplyBBSLogin" parameterType="java.util.Map" resultType="int">
-		SELECT COUNT(*) FROM MEMBER WHERE ID=#{id} AND PWD=#{pwd}	
-	</select>
-	
-	<select id="ReplyBBStotal" parameterType="java.util.Map" resultType="int">
-		SELECT COUNT(*) FROM REPLYBBS RE JOIN MEMBER M ON RE.ID=M.ID 
-	</select>
-	<insert id="ReplyBBSinsert" parameterType="ReplyBBSDto">
-		INSERT INTO REPLYBBS(NO,ID,TITLE,CONTENT,REFER) VALUES(SEQ_REPLYBBS.NEXTVAL,#{id},#{title},#{content},SEQ_REPLYBBS.CURRVAL)
-	</insert>
-	<select id="ReplyBBSone" parameterType="java.util.Map" resultType="ReplyBBSDto">
-		SELECT RE.*,NAME FROM MEMBER M JOIN REPLYBBS RE ON M.ID=RE.ID WHERE NO=#{no}
-	</select>
-	<update id="ReplyBBSupdate" parameterType="ReplyBBSDto">
-		UPDATE REPLYBBS SET TITLE=#{title},CONTENT=#{content} WHERE NO=#{no}
-	</update>
-	<delete id="ReplyBBSdelete" parameterType="ReplyBBSDto">
-		DELETE REPLYBBS WHERE NO=#{no}
-	</delete>
-	<update id="ReplyBBSreply_update" parameterType="java.util.Map">
-		UPDATE REPLYBBS SET STEP=STEP+1 WHERE REFER=#{refer} AND STEP &gt; #{step}
-	</update>
-	<insert id="ReplyBBSreply_insert" parameterType="java.util.Map">
-		INSERT INTO REPLYBBS VALUES(SEQ_REPLYBBS.NEXTVAL,#{id},#{title},#{content},SYSDATE,#{refer},#{step}+1,#{depth}+1)
-	</insert> -->
+ 	
 </mapper>

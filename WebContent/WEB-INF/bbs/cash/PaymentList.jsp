@@ -22,11 +22,9 @@
 
 
 <div id="wrap" class="mp_wrap">
-	
+	<jsp:include page="/WEB-INF/bbs/template/hi.jsp" />
 	<script type="text/javascript">
-		var pocId = getCookie("POC");
-		memberMyinfoGnb('PRODUCTCENTER',pocId);
-		
+
 		function goPopup() {
 			// 주소검색을 수행할 팝업 페이지를 호출합니다.
 			// 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
@@ -55,17 +53,18 @@
 <div class="wrap_tab03 type04">
     <ul>
         <li class="tab_li03 first_child"><a href="<c:url value='/ZamongFrontEnd/StreamingList.do'/>" title="멜론 이용권 - 페이지 이동" class="link_tab">
-            <span class="cntt">멜론 이용권</span>
+            <span class="cntt">자몽 이용권</span>
         </a></li>
-        <li class="tab_li03"><a href="/commerce/mypage/coupon/web/couponbox_couponBoxView.htm" title="쿠폰함 - 페이지 이동" class="link_tab">
+         <li class="tab_li03"><a href="<c:url value='/ZamongFrontEnd/Cupon.do'/>" title="쿠폰함 - 페이지 이동" class="link_tab">
             <span class="cntt">쿠폰함</span>
         </a></li>
         <li class="tab_li03 on"><a href="<c:url value='/ZamongFrontEnd/PaymentList.do'/>" title="멜론 캐쉬 - 페이지 이동" class="link_tab">
-            <span class="cntt">멜론 캐쉬</span>
+            <span class="cntt">자몽 캐쉬</span>
         </a></li>
-        <li class="tab_li03 last_child"><a href="/phone/my/index.htm" title="폰꾸미기 - 페이지 이동" class="link_tab">
-            <span class="cntt">폰꾸미기</span>
+       <li class="tab_li03 last_child"><a href="<c:url value='/ZamongFrontEnd/CashList.do'/>" title="전체이용권- 페이지 이동" class="link_tab">
+            <span class="cntt">전체이용권</span>
         </a></li>
+        
     </ul>
 </div>
 
@@ -73,12 +72,12 @@
 	<div class="view_tb">
 		<h3 class="title">
 			
-			<strong>${dto.me_id }</strong>님의 멜론 캐쉬 이용내역
+			<strong>${dto.me_id }</strong>님의 자몽 캐쉬 이용내역
 		</h3>
 		<div class="box_reg_cash">
 			<div class="desc">
 				<strong>
-					멜론 캐쉬 잔액:
+					자몽 캐쉬 잔액:
 					<span class="fc_point f_arial">${dto.ch_havecash}</span>
 					원
 				</strong>
@@ -86,8 +85,8 @@
 
 			</div>
 			<ul class="list_bullet03">
-				<li>멜론 캐쉬는 멜론 이용권, 곡, 뮤직비디오 등 구매 시 사용 하실 수 있습니다</li>
-				<li>결제금액은 멜론 캐쉬 충전금액에 부가가치세 10%가 포함된 실제 결제된 금액입니다.</li>
+				<li>자몽 캐쉬는 자몽 이용권, 곡, 뮤직비디오 등 구매 시 사용 하실 수 있습니다</li>
+				<li>결제금액은 자몽 캐쉬 충전금액에 부가가치세 10%가 포함된 실제 결제된 금액입니다.</li>
 				<li>곡/영상/앨범 재 다운로드는 <span class="fc_strong">마이뮤직 &gt; 구매목록</span>에서 가능합니다.</li>
 			</ul>
 		</div>		
@@ -98,7 +97,7 @@
 		</div>
 		<div class="tb_list02">
 			<table border="1" style="width:100%;">
-				<caption>이 표는 dhghdkgk1</span>님의 멜론 캐쉬 이용내역 전체 리스트로 번호, 날짜, 유형, 내용, 적립금액, 차감금액, 유효기간 내용을 포함하고 있습니다. </caption>
+				<caption>이 표는 dhghdkgk1</span>님의 자몽 캐쉬 이용내역 전체 리스트로 번호, 날짜, 유형, 내용, 적립금액, 차감금액, 유효기간 내용을 포함하고 있습니다. </caption>
 				<colgroup><col style="width:40px" /><col style="width:108px" /><col style="width:108px;" /><col /><col style="width:100px" /><col style="width:100px" /><col style="width:110px" /></colgroup>
 				<thead>
 				

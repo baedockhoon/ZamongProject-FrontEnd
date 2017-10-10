@@ -53,7 +53,7 @@ public class LoginController {
 			}//else
 						
 			//뷰정보 반환-목록으로 이동
-			return "/WEB-INF/index2.jsp";
+			return "/ZamongFrontEnd/PaymentList1.do";
 		}//////////////////list()
 	 
 	 @RequestMapping("/ZamongFrontEnd/LogOut.do")

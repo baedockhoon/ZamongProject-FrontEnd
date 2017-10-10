@@ -91,7 +91,7 @@
 		<div class="tbl_style">
             <form name="myForm" id="myForm">
 			<table border="1" style="width:100%" class="board_style02">
-				<caption>이 표는 멜론 이용권 결제 리스트로 특가 할인, 결제방법에 관한 내용을 포함하고 있습니다.</caption>
+				<caption>이 표는 자몽 이용권 결제 리스트로 특가 할인, 결제방법에 관한 내용을 포함하고 있습니다.</caption>
 				<colgroup>
 					<col style="width:119px;" />
 					<col />
@@ -167,7 +167,7 @@
 
 		<div class="tbl_style mt24">
 			<table border="1" style="width:100%" class="board_style02">
-				<caption>이 표는 멜론 이용권 결제에 관한 유의사항 내용을 포함하고 있습니다.</caption>
+				<caption>이 표는 자몽 이용권 결제에 관한 유의사항 내용을 포함하고 있습니다.</caption>
 				<colgroup>
 					<col style="width:119px;" />
 					<col />
@@ -189,7 +189,7 @@
 			
 			<td>
 				<ul class="list_bullet">
-				<li><span class="fc_point02">원음곡은 PC 및 안드로이드 멜론 앱 4.0 이상 버전에서만 이용 가능</span>합니다.</li>
+				<li><span class="fc_point02">원음곡은 PC 및 안드로이드 자몽 앱 4.0 이상 버전에서만 이용 가능</span>합니다.</li>
 <li>일반곡은 PC, 안드로이드폰, 아이폰, 태블릿 등에서 이용 가능합니다.</li>
 <li>결제취소는 결제 후 7일 내 미사용 시 가능하며, 고객센터(1566-7727)나 1:1문의로 신청하세요.</li>
 <li>결제 후 7일 경과 또는 서비스 이용 시에는 중도 해지 및 이에 따른 환불이 가능합니다.</li>

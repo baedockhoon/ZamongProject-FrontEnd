@@ -20,10 +20,9 @@
 </head>
 <body>
 <div id="wrap" class="mp_wrap">
-	
+	<jsp:include page="/WEB-INF/bbs/template/hi.jsp" />
 	<script type="text/javascript">
-		var pocId = getCookie("POC");
-		memberMyinfoGnb('PRODUCTCENTER',pocId);
+		
 		function goPopup() {
 			// 주소검색을 수행할 팝업 페이지를 호출합니다.
 			// 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
@@ -44,13 +43,13 @@
 <div class="wrap_tab03 type04">
     <ul>
         <li class="tab_li03 first_child on"><a href="<c:url value='/ZamongFrontEnd/StreamingList.do'/>" title="멜론 이용권 - 페이지 이동" class="link_tab">
-            <span class="cntt">멜론 이용권</span>
+            <span class="cntt">자몽 이용권</span>
         </a></li>
         <li class="tab_li03"><a href="/commerce/mypage/coupon/web/couponbox_couponBoxView.htm" title="쿠폰함 - 페이지 이동" class="link_tab">
             <span class="cntt">쿠폰함</span>
         </a></li>
         <li class="tab_li03"><a href="<c:url value='/ZamongFrontEnd/PaymentList.do'/>" title="멜론 캐쉬 - 페이지 이동" class="link_tab">
-            <span class="cntt">멜론 캐쉬</span>
+            <span class="cntt">자몽 캐쉬</span>
         </a></li>
         <li class="tab_li03 last_child"><a href="<c:url value='/ZamongFrontEnd/CashList.do'/>" title="전체이용권- 페이지 이동" class="link_tab">
             <span class="cntt">전체이용권</span>
@@ -88,20 +87,20 @@
 							
 								<span class="icon_kakao"><img src=http://cdnimg.melon.co.kr/resource/image/web/common/icon_kakao03.png width="18" height="18" alt="kakao"></span>
 							
-							<strong>${dto.me_id }</strong>님의 멜론 이용권 보유현황
+							<strong>${dto.me_id }</strong>님의 자몽 이용권 보유현황
 						</h3>
 						<div class="wrab_list_info">
 						
 							
 						</div>
-								이 표는 ${dto.me_id }님의 멜론 이용권 보유현황 리스트로 번호, 멜론이용권, 이용 가능 서비스, 다음 결제 안내 내용을 포함하고 있습니다.
+								이 표는 ${dto.me_id }님의 자몽 이용권 보유현황 리스트로 번호, 자몽이용권, 이용 가능 서비스, 다음 결제 안내 내용을 포함하고 있습니다.
 						<div class="tb_list02">
 							<table border="1" style="width:100%">
 								<colgroup><col style="width:40px" /><col /><col style="width:323px" /><col style="width:322px" /></colgroup>
 								<thead>
 									<tr>
 										<th scope="col"><div class="wrap pd_none">NO</div></th>
-										<th scope="col"><div class="wrap">멜론 이용권</div></th>
+										<th scope="col"><div class="wrap">자몽 이용권</div></th>
 										<th scope="col"><div class="wrap">결제일</div></th>
 										<th scope="col"><div class="wrap">결제금액</div></th>
 											<th scope="col"><div class="wrap">결제방법</div></th>
@@ -114,10 +113,10 @@
 			<td colspan="4"><div class="wrap search_wrong">
 				
 					
-					<span id="d_search_wrong_msg">멜론 이용권 결제 내역이 없습니다. </span>
+					<span id="d_search_wrong_msg">자몽 이용권 결제 내역이 없습니다. </span>
 				
 				<div class="wrap_btn_c">
-					<button title="멜론 이용권 구매하기 - 페이지 이동" class="btn_green_h30" id="d_search_wrong_btn" onclick="goPopup();" return false;"><span class="odd_span"><span class="even_span">멜론 이용권 구매하기</span></span></button>
+					<button title="자몽 이용권 구매하기 - 페이지 이동" class="btn_green_h30" id="d_search_wrong_btn" onclick="goPopup();" return false;"><span class="odd_span"><span class="even_span">자몽 이용권 구매하기</span></span></button>
 				</div>
 			</div></td>
 		</tr>

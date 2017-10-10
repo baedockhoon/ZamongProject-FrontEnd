@@ -41,7 +41,8 @@ public class CashController {
 			@RequestParam Map map,//검색용 파라미터 받기
 			Model model//리퀘스트 영역 저장용
 			) throws Exception{
-			
+		
+		
 		//서비스 호출]
 		List<CashDTO> list= service.selectList(map);
 		//데이타 저장]		
@@ -52,11 +53,29 @@ public class CashController {
 	
 		return "/ZamongFrontEnd/PaymentView.do";
 	}//////////////////list()
+	@RequestMapping("/ZamongFrontEnd/PaymentList1.do")
+	public String list1(
+			HttpServletRequest req,//페이징용 메소드에 전달
+			@RequestParam Map map,//검색용 파라미터 받기
+			Model model//리퀘스트 영역 저장용
+			) throws Exception{
+		
+		
+		//서비스 호출]
+		List<CashDTO> list= service.selectList(map);
+		//데이타 저장]		
+		model.addAttribute("list", list);
+
+			
+		
+	
+		return "/ZamongFrontEnd/PaymentView1.do";
+	}//////////////////list()
 	@RequestMapping("/ZamongFrontEnd/PaymentView.do")
-	public String view(CashDTO dto, Model model, HttpServletRequest req)throws Exception {
+	public String view(CashDTO dto, Model model, HttpServletRequest req,@ModelAttribute("me_id") String me_id)throws Exception {
 		
 		
-		
+		dto.setMe_id(me_id);
 		dto = service.selectOne(dto);
 		
 		
@@ -70,7 +89,8 @@ public class CashController {
 	}
 	
 	@RequestMapping("/ZamongFrontEnd/PaymentView1.do")
-	public String view1(CashDTO dto, Model model, HttpServletRequest req)throws Exception {
+	public String view1(CashDTO dto, Model model, HttpServletRequest req,@ModelAttribute("me_id") String me_id)throws Exception {
+		dto.setMe_id(me_id);
 		dto = service.selectOne(dto);
 		
 	
