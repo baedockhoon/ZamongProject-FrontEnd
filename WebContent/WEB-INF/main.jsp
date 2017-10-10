@@ -88,13 +88,16 @@
 													<dd class="img"><span class="none">앨범이미지:</span>
 														<!-- 140423_수정 -->
 														<span class="thum">
-															<img onerror="WEBPOCIMG.defaultAlbumImg(this);" width="156" height="156" src="http://localhost:8080/ZamongProject/Images/Sound/${item.al_albumimage }" alt=""/>
-															<span class="bg_album_frame"></span>
-															<!--140703 추가 lyr-->
-															
-															<!--//140703 추가 lyr-->
-														</span>
-														<!-- //140423_수정 -->
+															<a
+														href="javascript:goAlbumDetail('${item.al_no }', '${item.al_divide }');"
+														title="${item.al_albumname } - 페이지 이동"
+														class="play_artist mlog">
+															<img onerror="WEBPOCIMG.defaultAlbumImg(this);"
+															width="156" height="156"
+															src="http://localhost:8080/ZamongProject/Images/Sound/${item.al_albumimage }"
+															alt="" /> <span class="bg_album_frame"></span> <!--140703 추가 lyr-->
+														</a>
+															<!--//140703 추가 lyr--> </span> <!-- //140423_수정 -->
 													</dd>
 													<dd class="singer">
 														<span class="none">가수명:</span>

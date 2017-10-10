@@ -13,7 +13,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="soundList" parameterType="java.util.Map" resultType="SoundData">
 		SELECT * FROM (SELECT T.*, ROWNUM R FROM 
 			(SELECT S.*, A.AL_ALBUMNAME, A.AL_ALBUMIMAGE, A.AL_ARTIST, A.AL_ARTISTNO, A.AL_DIVIDE FROM SS_SOUNDSOURCE S JOIN AL_ALBUM A 
-			ON S.AL_NO = A.AL_NO ORDER BY SS_REGIDATE DESC) T)
+			ON S.AL_NO = A.AL_NO
+			<choose>
+				<when test='ss_genre eq "B"'> WHERE SS_GENRE = '발라드'</when>
+				<when test='ss_genre eq "D"'> WHERE SS_GENRE = '댄스'</when>
+				<when test='ss_genre eq "H"'> WHERE SS_GENRE = '힙합/랩'</when>
+			</choose>
+			ORDER BY SS_REGIDATE DESC) T)
 		WHERE R BETWEEN #{start} AND #{end}
 	</select>
 	

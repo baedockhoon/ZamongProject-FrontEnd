@@ -165,6 +165,7 @@ li.playing:before {
 <Script src="//code.jquery.com/jquery-1.9.1.js"></script>
 <Script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <script src="${pageContext.request.contextPath}/Styles/js/audio/audio.min.js"></script>
+<link rel="icon" href="<c:url value='/Styles/image/zamongicon.gif'/>"/>
 <script>
 	$(function() {
 		// Setup the player to autoplay the next track
@@ -206,17 +207,28 @@ li.playing:before {
 			}
 		});
 
+		$(".d_btn_lyrics").click(
+			function() {
+				if ($(this).is(".btn_lyrics_off")) {
+					$(this).parent("div").removeClass("on");
+					$(".container").removeClass("on");
+				} else {
+					$(this).parent("div").addClass("on");
+					$(".container").addClass("on");
+				}
+		});
+		
 		$(".d_btn_volume").click(
-				function() {
-					if ($(this).is(".btn_volume_off")) {
-						$(this).parent("div").removeClass("on");
-						var ss = parseInt($("#player_volumeslider").children( "div").css("width")) / 100;
-						audio.setVolume(ss);
-					} else {
-						$(this).parent("div").addClass("on");
-						audio.setVolume(0);
-					}
-				});
+			function() {
+				if ($(this).is(".btn_volume_off")) {
+					$(this).parent("div").removeClass("on");
+					var ss = parseInt($("#player_volumeslider").children( "div").css("width")) / 100;
+					audio.setVolume(ss);
+				} else {
+					$(this).parent("div").addClass("on");
+					audio.setVolume(0);
+				}
+		});
 		// Load in the first track
 		var audio = a[0];
 		first = $('ol a').attr('data-src');
@@ -277,7 +289,7 @@ li.playing:before {
 	<div id="">
 		<div class="player_top">
 			<h1>
-				<a href="http://www.melon.com" title="Zamong 메인으로 이동" target="_blank">
+				<a href="<c:url value='/ZamongFrontEnd/main.do' />" title="Zamong 메인으로 이동" target="_blank">
 					<img width="47" height="33" src="<c:url value='/Styles/image/zamonglogotitle.png'/>" alt="Zamong 로고">
 				</a>
 			</h1>
@@ -323,11 +335,19 @@ li.playing:before {
 					<!-- <div class="bar" id="player_volumeslider"></div> -->
 				</div>
 			</div>
-		<div class="thumb">
-			<img src="http://localhost:8080/ZamongProject/Images/Sound/${dto.al_albumimage }"
-				alt="앨범 커버 이미지" width="344" height="344" id="albumImg">
-				<span class="frame"></span>
-		</div>
+			<div class="container">
+				<div class="thumb">
+					<img src="http://localhost:8080/ZamongProject/Images/Sound/${dto.al_albumimage }"
+						alt="앨범 커버 이미지" width="344" height="344" id="albumImg">
+						<span class="frame"></span>
+				</div>
+				<div class="box_lyrics">
+					<div class="txt_area">
+						<p class="on" id="1">${dto.ss_title }</p>
+						<p>${dto.ly_contents }</p>
+					</div>
+				</div>
+			</div>
 		<ol>
 		<%-- <c:forEach items="${dto }"> --%>
 			<li><a href="#" data-src="http://localhost:8080/ZamongProject/Mp3/${dto.ss_path }">${dto.ss_title }</a></li>

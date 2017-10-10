@@ -1,7 +1,7 @@
 function playSong(ss_no){
 	var url    ="../../ZamongFrontEnd/audio/Play.do";
 	var title  = "testpop";
-	var status = "toolbar=yes,scrollbars=yes,resizable=no,location=no,top=500,left=500,width=420,height=800"; 
+	var status = "toolbar=yes,scrollbars=yes,resizable=no,location=no,top=150,left=600,width=420,height=650"; 
 	window.open("", title,status); //window.open(url,title,status); window.open 함수에 url을 앞에와 같이
 	                                            //인수로  넣어도 동작에는 지장이 없으나 form.action에서 적용하므로 생략
 	                                            //가능합니다.

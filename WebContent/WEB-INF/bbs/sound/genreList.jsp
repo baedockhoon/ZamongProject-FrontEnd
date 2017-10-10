@@ -59,8 +59,29 @@
 		}
 		location.href = st;
 	};
-</script>
+	
 
+	function goGenreSelect(genre){
+		var st =  "<c:url value='/ZamongFrontEnd/Sound/Genre.do'/>?ss_genre="+genre;
+		location.href = st;
+	};
+	
+	
+</script>
+<script type="text/javascript">
+
+	$(function(){
+		if($(location).attr('href').indexOf("B") > 0){
+			$(".wrap_tabmenu01 > ul > li:eq(1)").addClass("on");
+		} else if($(location).attr('href').indexOf("H") > 0){
+			$(".wrap_tabmenu01 > ul > li:eq(2)").addClass("on");
+		} else if($(location).attr('href').indexOf("D") > 0){
+			$(".wrap_tabmenu01 > ul > li:eq(3)").addClass("on");
+		} else {
+			$(".wrap_tabmenu01 > ul > li:eq(0)").addClass("on");
+		}
+	});
+</script>
 </head>
 
 <body>
@@ -92,7 +113,7 @@
 				<div id="conts">
 
 					<div class="page_header">
-						<h2 class="title">최신곡</h2>
+						<h2 class="title">한국대중음악</h2>
 					</div>
 
 					<!-- 띠배너 -->
@@ -101,8 +122,26 @@
 
 					<div class="wrap_tabmenu01 type02">
 						<ul>
-							<li class="first_child on"><a href="javascript:;"
-								class="link_tab" data-area-flg="I"><span class="cntt">국내</span></a></li>
+							<li class="first_child">
+								<a href="javascript:goGenreSelect();" class="link_tab">
+									<span class="cntt">전체</span>
+								</a>
+							</li>
+							<li class="">
+								<a href="javascript:goGenreSelect('B');" class="link_tab">
+									<span class="cntt">발라드</span>
+								</a>
+							</li>
+							<li class="">
+								<a href="javascript:goGenreSelect('H');" class="link_tab">
+									<span class="cntt">힙합/랩</span>
+								</a>
+							</li>
+							<li class="">
+								<a href="javascript:goGenreSelect('D');" class="link_tab">
+									<span class="cntt">댄스</span>
+								</a>
+							</li>
 							<!-- <li class="last_child "><a href="javascript:;"
 								class="link_tab" data-area-flg="O"><span class="cntt">해외</span></a></li> -->
 						</ul>
@@ -114,43 +153,10 @@
 						<form id="frm" name="frm">
 							<div class="service_list_song  d_song_list">
 								<h3 class="none"></h3>
-								<!-- 곡리스트 테이블 -->
-
-
-								<!-- <div class="wrap_btn_tb top">
-
-									<button type="button" title="선택된 곡 듣기" class="button_rbox"
-										onClick="melon.play.playFormSong('18030123','frm');">
-										<span class="button_icons type02 play"></span><span
-											class="cnt">듣기</span>
-									</button>
-									<button type="button" title="선택된 곡 담기" class="button_rbox"
-										onClick="melon.play.addFormPlayList('frm');">
-										<span class="button_icons type02 scrap"></span><span
-											class="cnt">담기</span>
-									</button>
-									<button type="button" title="선택된 곡 다운로드" class="button_rbox"
-										onClick="melon.buy.goBuyProduct('frm','','3C0001','input_check','0','');">
-										<span class="button_icons type02 download"></span><span
-											class="cnt">다운</span>
-									</button>
-									<button type="button" title="선택된 곡 원음다운로드" class="button_rbox"
-										onClick="melon.buy.goBuyProduct('frm','','3C0001','input_check','110','18030123');">
-										<span class="button_icons type02 download"></span><span
-											class="cnt"><span class="eng">FLAC</span></span>
-									</button>
-									<button type="button" title="선택된 곡 선물하기" class="button_rbox"
-										onClick="melon.buy.goPresent('song', 'frm', '18030123');">
-										<span class="button_icons type02 gift"></span><span
-											class="cnt">선물</span>
-									</button>
-
-								</div> -->
 								<table border="1" style="width: 100%">
 									<caption>이 표는 곡 리스트로 체크박스, 순위, 곡정보, 좋아요, 뮤비, 다운, 폰전송
 										내용을 포함하고 있으며 표 상 하단에 제공하는 전체선택, 듣기, 다운로드, 담기, 선물하기 기능을 이용하실 수
 										있습니다.</caption>
-
 									<colgroup>
 										<col style="width: 15px">
 										<!-- checkbox -->
@@ -183,8 +189,7 @@
 										<tr>
 											<th scope="col">
 												<div class="wrap t_right">
-													<input type="checkbox" title="곡 목록 전체 선택"
-														class="input_check d_checkall">
+													<input type="checkbox" title="곡 목록 전체 선택" class="input_check d_checkall">
 												</div>
 											</th>
 											<th scope="col">
@@ -226,106 +231,101 @@
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach var="item" items="${list }" varStatus="loop">
-											<tr>
-												<td><div class="wrap t_right">
-														<input type="checkbox" title="${item.ss_title }  곡 선택"
-															class="input_check " name="input_check"
-															value="${item.ss_no }">
-													</div></td>
-												<td><div class="wrap t_center">
-														<span class="rank ">${loop.count }</span><span
-															class="none">위</span>
-													</div></td>
-												<td><div class="wrap">
-														<a
-															href="javascript:goAlbumDetail('${item.al_no }', '${item.al_divide }');"
-															title="${item.ss_title }" class="image_typeAll"> <img
-															onerror="WEBPOCIMG.defaultAlbumImg(this);" width="60"
-															height="60"
-															src="http://localhost:8080/ZamongProject/Images/Sound/${item.al_albumimage }"
-															alt="${item.al_albumname } - 페이지 이동" /> <span
-															class="bg_album_frame"></span>
-														</a>
-													</div></td>
-												<td><div class="wrap">
-														<a href="javascript:playSong('${item.ss_no }');"
-															title="${item.ss_title }  곡정보"
-															class="btn button_icons type03 song_info"><span
-															class="none">곡정보</span></a>
-													</div></td>
-												<td><div class="wrap">
-														<div class="wrap_song_info">
-															<div class="ellipsis rank01">
-																<span> <a
-																	href="javascript:playSong(${item.ss_no });"
-																	title="${item.ss_title } 재생">${item.ss_title }</a>
-																</span>
-															</div>
-															<br>
-															<div class="ellipsis rank02">
-																<a
-																	href="javascript:goArtistDetail('${item.al_artistno }', '${item.al_divide }');"
-																	title="${item.al_artist } - 페이지 이동">${item.al_artist }</a><span
-																	class="checkEllipsis" style="display: none"> <a
-																	href="javascript:goArtistDetail('${item.al_artistno }', '${item.al_divide }');"
-																	title="${item.al_artist } - 페이지 이동">${item.al_artist }</a></span>
-															</div>
-														</div>
-													</div></td>
-												<td><div class="wrap">
-														<div class="wrap_song_info">
-															<div class="ellipsis rank03">
-																<a href="javascript:goAlbumDetail(${item.al_no });"
-																	title="${item.al_albumname } - 페이지 이동">${item.al_albumname }</a>
-															</div>
-														</div>
-													</div></td>
-												<td><div class="wrap">
-														<button type="button" class="button_etc like"
-															title="${item.ss_title }  좋아요" data-song-no="30651724"
-															data-song-menuid="18030123">
-															<span class="odd_span">좋아요</span> <span class="cnt">
-																<span class="none">총건수</span> 0
+									<c:forEach var="item" items="${list }" varStatus="loop">
+										<tr>
+											<td><div class="wrap t_right">
+													<input type="checkbox" title="${item.ss_title }  곡 선택" class="input_check "
+														name="input_check" value="${item.ss_no }">
+												</div></td>
+											<td><div class="wrap t_center">
+													<span class="rank ">${loop.count }</span><span class="none">위</span>
+												</div></td>
+											<td><div class="wrap">
+													<a href="javascript:goAlbumDetail('${item.al_no }', '${item.al_divide }');"
+														title="${item.ss_title }"
+														class="image_typeAll"> <img
+														onerror="WEBPOCIMG.defaultAlbumImg(this);" width="60"
+														height="60"
+														src="http://localhost:8080/ZamongProject/Images/Sound/${item.al_albumimage }"
+														alt="${item.al_albumname } - 페이지 이동" /> <span
+														class="bg_album_frame"></span>
+													</a>
+												</div></td>
+											<td><div class="wrap">
+													<a href="javascript:playSong('${item.ss_no }');"
+														title="${item.ss_title }  곡정보" class="btn button_icons type03 song_info"><span
+														class="none">곡정보</span></a>
+												</div></td>
+											<td><div class="wrap">
+													<div class="wrap_song_info">
+														<div class="ellipsis rank01">
+															<span> <a
+																href="javascript:playSong(${item.ss_no });"
+																title="${item.ss_title } 재생">${item.ss_title }</a>
 															</span>
-														</button>
-													</div></td>
-												<td><div class="wrap t_center">
-														<button type="button" title="듣기"
-															class="button_icons play "
-															onClick="playSong(${item.ss_no });">
-															<span class="none">듣기</span>
-														</button>
-													</div></td>
-												<td><div class="wrap t_center">
-														<button type="button" title="담기"
-															class="button_icons scrap "
-															onClick="melon.play.addPlayList('30651724');">
-															<span class="none">담기</span>
-														</button>
-													</div></td>
-												<td><div class="wrap t_center">
-														<button type="button" title="다운로드"
-															class="button_icons download "
-															onClick="melon.buy.goBuyProduct('frm', '30651724', '3C0001', '','0', '18030123');">
-															<span class="none">다운로드</span>
-														</button>
-													</div></td>
-												<td><div class="wrap t_center">
-														<button type="button" title="뮤직비디오"
-															class="button_icons video "
-															onClick="melon.link.goMvDetail('18030123', '30651724','song');">
-															<span class="none">뮤직비디오</span>
-														</button>
-													</div></td>
-												<td><div class="wrap t_center">
-														<button type="button" title="링/벨"
-															class="button_icons bell disabled" disabled="disabled"
-															onClick="melon.buy.popPhoneDecorate('0010000000000000','30651724')">
-															<span class="none">링/벨</span>
-														</button>
-													</div></td>
-											</tr>
+														</div>
+														<br>
+														<div class="ellipsis rank02">
+															<a href="javascript:goArtistDetail('${item.al_artistno }', '${item.al_divide }');"
+																title="${item.al_artist } - 페이지 이동">${item.al_artist }</a><span class="checkEllipsis"
+																style="display: none">
+															<a href="javascript:goArtistDetail('${item.al_artistno }', '${item.al_divide }');"
+															title="${item.al_artist } - 페이지 이동">${item.al_artist }</a></span>
+														</div>
+													</div>
+												</div></td>
+											<td><div class="wrap">
+													<div class="wrap_song_info">
+														<div class="ellipsis rank03">
+															<a href="javascript:goAlbumDetail(${item.al_no });"
+																title="${item.al_albumname } - 페이지 이동">${item.al_albumname }</a>
+														</div>
+													</div>
+												</div></td>
+											<td><div class="wrap">
+													<button type="button" class="button_etc like"
+														title="${item.ss_title }  좋아요" data-song-no="30651724"
+														data-song-menuid="18030123">
+														<span class="odd_span">좋아요</span> <span class="cnt">
+															<span class="none">총건수</span> 0
+														</span>
+													</button>
+												</div></td>
+											<td><div class="wrap t_center">
+													<button type="button" title="듣기" class="button_icons play "
+														onClick="playSong(${item.ss_no });">
+														<span class="none">듣기</span>
+													</button>
+												</div></td>
+											<td><div class="wrap t_center">
+													<button type="button" title="담기"
+														class="button_icons scrap "
+														onClick="melon.play.addPlayList('30651724');">
+														<span class="none">담기</span>
+													</button>
+												</div></td>
+											<td><div class="wrap t_center">
+													<button type="button" title="다운로드"
+														class="button_icons download "
+														onClick="melon.buy.goBuyProduct('frm', '30651724', '3C0001', '','0', '18030123');">
+														<span class="none">다운로드</span>
+													</button>
+												</div></td>
+											<td><div class="wrap t_center">
+													<button type="button" title="뮤직비디오"
+														class="button_icons video "
+														onClick="melon.link.goMvDetail('18030123', '30651724','song');">
+														<span class="none">뮤직비디오</span>
+													</button>
+												</div></td>
+											<td><div class="wrap t_center">
+													<button type="button" title="링/벨"
+														class="button_icons bell disabled" disabled="disabled"
+														onClick="melon.buy.popPhoneDecorate('0010000000000000','30651724')">
+														<span class="none">링/벨</span>
+													</button>
+												</div></td>
+										</tr>
 										</c:forEach>
 									</tbody>
 								</table>
@@ -427,12 +427,12 @@
 						</div>
 						<span class="shadow"></span>
 					</div>
-
+					
 					<jsp:include page="/WEB-INF/bbs/template/Foot.jsp" />
-				</div>
-			</div>
-		</div>
-	</div>
+					</div>
+					</div>
+					</div>
+					</div>
 
 </body>
 </html>

@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,7 +39,7 @@ public class SoundController {
 	private int blockPage;
 	
 	
-	@RequestMapping("/ZamongFrontEnd/Sound/List.do")
+	@RequestMapping({"/ZamongFrontEnd/Sound/List.do", "/ZamongFrontEnd/Sound/Genre.do"})
 	public String list(
 			HttpServletRequest req,//페이징용 메소드에 전달
 			@RequestParam Map map,//검색용 파라미터 받기
@@ -72,8 +73,12 @@ public class SoundController {
 		//데이터 저장
 		model.addAttribute("list",list);
 		model.addAttribute("pagingString",pagingString);
-		
-		return "/WEB-INF/bbs/sound/newSoundList.jsp";
+		if(req.getRequestURL().lastIndexOf("List.do") > 0) {
+			return "/WEB-INF/bbs/sound/newSoundList.jsp";
+		}
+		else {
+			return "/WEB-INF/bbs/sound/genreList.jsp";
+		}
 	}//////////////////list()
 	
 	@RequestMapping("/ZamongFrontEnd/album/Detail.do")
@@ -118,11 +123,11 @@ public class SoundController {
 	
 	@RequestMapping("/ZamongFrontEnd/audio/Play.do")
 	public String audioPlay(
-			HttpServletRequest req,//페이징용 메소드에 전달
+			@Param("ss_no") String ss_no,
 			Map map,//검색용 파라미터 받기
 			Model model//리퀘스트 영역 저장용
 			) throws Exception{
-		map.put("ss_no", req.getParameter("ss_no"));
+		map.put("ss_no", ss_no);
 		SoundDTO dto = service.selectSoundOne(map);
 		
 		model.addAttribute("dto",dto);
