@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -28,19 +29,30 @@ public class DownloadController {
 	
 	@Resource(name="downServiceImpl")
 	private DownServiceImpl service;
+	@Resource(name="cashServiceImpl")
+	private CashServiceImpl cashService;
 	
 	
 	
 	@RequestMapping("/ZamongFrontEnd/Download.do")
 	public void download(
+			CashDTO dto,
 			HttpServletRequest req,//페이징용 메소드에 전달
-			@RequestParam Map map,HttpServletResponse resp,//검색용 파라미터 받기
-			Model model//리퀘스트 영역 저장용
+			@RequestParam Map map, HttpServletResponse resp,//검색용 파라미터 받기
+			Model model, @ModelAttribute("me_id") String me_id//리퀘스트 영역 저장용
 			) throws Exception{
 		//회원 보유캐쉬 > 500
+
+		dto.setMe_id(me_id);
+		dto = cashService.selectOne(dto);
+		
+		if (Integer.parseInt(dto.getCh_havecash()) >= 500) {
+			FileUtils.download(req,resp,"/Upload",map.get("ss_path").toString());
+		} else {
+			
+		}
 		//다운로드 -> 캐쉬차감 -> 다운로드 테이블 insert
 		
-			FileUtils.download(req,resp,"/Upload",map.get("ss_path").toString());
 		//회원 보유캐쉬 < 500
 		//캐쉬가 부족합니다 캐쉬를 충해주세요 -> 캐쉬 적립페이지
 		
