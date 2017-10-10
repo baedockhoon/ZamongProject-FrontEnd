@@ -10,7 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
 import com.zamong.ul.service.impl.LoginServiceImpl;
 @SessionAttributes("me_id")
@@ -35,7 +37,7 @@ public class LoginController {
 				@RequestParam Map map,//검색용 파라미터 받기
 				Model model,
 				HttpSession session,
-				@ModelAttribute String me_id,String me_pass
+				@ModelAttribute String me_id
 				) throws Exception{
 		 
 		 boolean isLogin = loginService.login(map);
@@ -43,7 +45,7 @@ public class LoginController {
 				//로그인 처리-세션영역에도 저장
 				model.addAllAttributes(map);
 				session.setAttribute("me_id", me_id);
-				session.setAttribute("me_pass", me_pass);
+				return "/WEB-INF/index.jsp";
 			}//if
 			else{//비회원
 				model.addAttribute("loginError","회원가입후 이용하세요");
@@ -53,18 +55,14 @@ public class LoginController {
 			}//else
 						
 			//뷰정보 반환-목록으로 이동
-			return "/ZamongFrontEnd/PaymentList1.do";
 		}//////////////////list()
 	 
 	 @RequestMapping("/ZamongFrontEnd/LogOut.do")
 	 public String logOut(
-				@RequestParam Map map,//검색용 파라미터 받기
-				Model model,
-				HttpSession session,
-				@ModelAttribute String me_id//리퀘스트 영역 저장용
+				SessionStatus session
 				) throws Exception{
 		
-				session.removeAttribute("me_id");
+				session.setComplete();
 			
 				
 			return "/WEB-INF/index.jsp";

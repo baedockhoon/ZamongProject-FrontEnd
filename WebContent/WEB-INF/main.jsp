@@ -38,6 +38,12 @@
 			}
 			location.href = st;
 		};
+		
+		function Logout(){
+			
+			location.href="<c:url value='/ZamongFrontEnd/LogOut.do'/>";
+		}
+		
 		/* function goArtistDetail(at_no, al_divide){
 			var st =  "<c:url value='/ZamongFrontEnd/artist/Info.do?' />";
 			if (al_divide == "A"){
@@ -59,7 +65,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/14g2jf0vkd.css" type="text/css" />
 </head>
 <body>
-
+${sessionScope.me_id }
 <jsp:include page="/WEB-INF/bbs/template/Top.jsp" />
 
 	<div id="cont_wrap" class="clfix">
@@ -147,7 +153,16 @@
 					<div class="id_wrap mt24">
 						<script type="text/javascript">
 						var html = '';
-/* 						
+						var me_id = "${me_id}";
+						function isMelonLogin(){
+							if (me_id == ""){
+								return false;
+							}
+							else {
+								return true;
+							}
+						}
+/*
 						var isLogin = false;
 						try {
 							isLogin = isMelonLogin();
@@ -158,8 +173,8 @@
 
 						if (isMelonLogin()) {
 							var prodName;
-							if (getProdName() != ""){
-								var prodNames = getProdName().replace(/,/g, "</span>, <span>");
+							if (getProdName() != "" && getProdName() != null ){
+								var prodNames = getProdName();
 								prodName = '<a href="javascript:melon.menu.goMyPage();" title="이용권보유현황">'
 								 		 + 		'<span class="box_name"><strong><span>'+ prodNames +'</span></strong> 사용중</span>'
 										 + '</a>';
@@ -169,24 +184,21 @@
 							}
 
 							//var memId = getMemberId();
-							var memId = getDisplayId();
-							if(memId.indexOf("@") != -1 && getMemberType() != '1'){//카카오계정이 아닌경우에만 @도메인 영역 삭제처리 
-								memId = memId.split("@")[0];
-							}
+							var memId = me_id;
 
 							var fromMPS = getCookie("MPS"); // 멜론 플레이어에서 왔는지 확인.
-							var fromMPSYn = fromMPS == null || fromMPS.indexOf("MELONPLAYER") < 0;
+							var fromMPSYn = true;
 
 							var gradeImg = "";
 							var gradeName = "";
 							var gradeImageUrl = "";
-							
+
 							//alert("gradeName : " + getGrade() + " & gradeImageUrl :" + getGradeImageUrl());
-							
+
 							try {
 								gradeName = getGrade();
 								gradeImageUrl = getGradeImageUrl();
-								
+
 								if(gradeImageUrl != ''){
 									gradeImg = "<span class=\"icon_grade\"><img src=\""+gradeImageUrl+"\" width=\"18\" height=\"18\" alt=\""+gradeName+"\" /></span>";
 								}
@@ -195,7 +207,7 @@
 									gradeImg += '<span class="icon_grade"><img src="http://cdnimg.melon.co.kr/resource/image/web/common/icon_kakao.png" width="18" height="18" alt="kakao"></span>';
 								}
 							} catch (e) {}
-							
+
 							html = ['<div class="logout_wrap">',
 									<!-- 140603_수정 -->
 									'<div class="mem_info">',
@@ -203,36 +215,26 @@
 										'<a href="https://www.melon.com/muid/web/help/myinfointro_inform.htm" title="내정보" class="bg_none" ><span>내정보</span></a>',
 										'<div class="mem_btn" id="d_facebook_mem_btn">',
 										'</div>',
-										fromMPSYn ? '<a href="javascript:MELON.WEBSVC.POC.login.gnbLogout();" onclick="MELON.WEBSVC.POC.login.gnbLogout();" title="로그아웃" class="btn_logout"><span>로그아웃</span></a>' : '',
+										fromMPSYn ? '<a href="javascript:Logout();" onclick="Logout();" title="로그아웃" class="btn_logout"><span>로그아웃</span></a>' : '',
 									'</div>',
 									<!-- //140603_수정 -->
-									getProdName() == "" ? '<span class="btn_buy"><a href="javascript:melon.menu.cm.goPamphlet();" title="이용권구매" >이용권구매</a></span>' : '',
+									getProdName() == "" || getProdName() == null ? '<span class="btn_buy"><a href="javascript:melon.menu.cm.goPamphlet();" title="이용권구매" >이용권구매</a></span>' : '',
 									'<div class="mem_used">',
 										'<strong class="product_name">'+prodName+'</strong>',
 										'<ul>',
-											'<li class="nth1">',
-												'<a href="javascript:melon.link.goMyCupon();">',
-													'<span><span class="label">쿠폰</span><span class="nm">'+getCouponCnt()+'</span></span>',
-												'</a>',
-											'</li>',
 											'<li class="nth2">',
 												'<a href="javascript:melon.link.goMelonCash();">',
-													'<span><span class="label">캐쉬</span><span class="nm">'+getMelonCash().replace(/(\d)(?=(?:\d{3})+$)/g, "$1,")+'</span></span>',
-												'</a>',
-											'</li>',
-											'<li class="nth3">',
-												'<a href="javascript:melon.link.goPresentSong();">',
-													'<span><span class="label">선물</span><span class="nm">'+getMemberGiftCnt()+'</span></span>',
+													'<span><span class="label">캐쉬</span><span class="nm">'+getMelonCash()+'</span></span>',
 												'</a>',
 											'</li>',
 										'</ul>',
 									'</div>',
 								'</div>'].join('');
-							
+
 							document.write(html);
 
 							var facebookConnectYn = getFacebookConnectYn();
-							
+
 							// Cookie에 페이스북 연동 관련 값이 있으면 아래 ajax는 호출하지 않는다.
 							if(facebookConnectYn == "" || typeof facebookConnectYn == "undefined"){
 								try {
@@ -241,7 +243,7 @@
 										type : 'GET',
 									}).done(function(json) {
 										facebookConnectYn = json.facebookConnectYn;
-										
+
 										var facebookConnection = "Y" != facebookConnectYn;
 										printFacebookBtn(facebookConnection);
 									}).fail(function() {
@@ -253,15 +255,15 @@
 							} else {
 								var facebookConnection = "Y" != facebookConnectYn;
 								printFacebookBtn(facebookConnection);
-							}						
+							}
 						} else {
 							//remove chrome login box
 							if(navigator.userAgent.search("Chrome") >= 0){
 								html = ['<div class="login_wrap" id="gnbLoginDiv">',
 											'<div class="button_login">',
-												'<button type="button" class="btn_login" onclick="javascript:onclick:menuLogin();"><span class="odd_span">Melon 로그인</span></button>',
+												'<button type="button" class="btn_login" onclick="menuLogin();"><span class="odd_span">Melon 로그인</span></button>',
 												'<div class="top_area">',
-													'<a href="javascript:MELON.WEBSVC.POC.link.goIdSearch();" class="first_child" title="아이디/비밀번호 찾기 - 페이지 이동">아이디/비밀번호 찾기</a><a href="javascript:onclick:goJoin();" title="회원가입 - 페이지 이동">회원가입</a>',
+													'<a href="javascript:MELON.WEBSVC.POC.link.goIdSearch();" class="first_child" title="아이디/비밀번호 찾기 - 페이지 이동">아이디/비밀번호 찾기</a><a href="javascript:goJoin();" title="회원가입 - 페이지 이동">회원가입</a>',
 												'</div>',
 											'</div>',
 									'</div>'].join('');
@@ -284,7 +286,7 @@
 										'</div>',
 									'</div>'].join('');
 							}
-							
+
 							document.write(html);
 						}
 
@@ -292,21 +294,41 @@
 							var btnHtml = facebookConnection ? '<button type="button" class="btn_info sns_facebook" title="페이스북 연동하기" onclick="goConnectSns();"><span>페이스북 연동하기</span></button>' : '<button type="button" class="btn_info sns_facebook" title="페이스북 해제하기" onclick="goConnectSns();"><span class="cancel">페이스북 해제하기</span></button>';
 							$('#d_facebook_mem_btn').html(btnHtml);
 						}
-						
+
 						</script>
-						
 						<div class="promotion_wrap">
 							<!--140701 추가 lyr-->
-							<div class="promotion_default">
-								<a href="http://tktapi.melon.com/gate/landing.json?type=perf&contId=200830" title="[티켓] 진짜음악EP.6">
-									<img width="280" height="188" src="http://cdnimg.melon.co.kr/svc/images/main/imgUrl20170801112350.png/melon/quality/80" alt=""/>
+							<div class="promotion_default" style="display: none;">
+								<a href="http://tktapi.melon.com/gate/landing.json?type=perf&amp;contId=200979" title="[티켓] 포디콰">
+									<img width="280" height="188" src="http://cdnimg.melon.co.kr/svc/images/main/imgUrl20170929053327.png/melon/quality/80" alt="">
 									<span class="bg_album_frame"></span>
 								</a>
 							</div>
 							<!--//140701 추가 lyr-->
+						
+							<ul style="width: 280px;">
+								
+								<li class="d_item">
+									
+									<a href="http://tktapi.melon.com/gate/landing.json?type=perf&amp;contId=200979" title="[티켓] 포디콰" class="mlog" data="LOG_PRT_CODE=1&amp;MENU_PRT_CODE=2&amp;MENU_ID_LV1=10010101&amp;CLICK_AREA_PRT_CODE=Z11&amp;ACTION_AF_CLICK=V1&amp;CLICK_CONTS_TYPE_CODE=&amp;CLICK_CONTS_ID=&amp;PROMO_CONTS_TYPE_CODE=&amp;PROMO_CONTS_ID=&amp;PROMO_SEQ=88021&amp;PROMO_DTL_SEQ=1">
+										<img width="280" height="188" src="http://cdnimg.melon.co.kr/svc/images/main/imgUrl20170929053327.png/melon/quality/80" alt="">
+										
+										<span class="bg_album_frame"></span>
+									</a>
+								</li>
+								
+							</ul>
+							
+							<div class="play_control" style="display: none;">
+								<!-- <a href="#" class="d_btn_ctrl pause btn_pause"><span><span class="none">일시정지</span></span></a> -->
+								<div class="move">
+									
+									<a href="#" class="d_indicator on mlog" title="1번째 이벤트 보기" data="LOG_PRT_CODE=1&amp;MENU_PRT_CODE=2&amp;MENU_ID_LV1=10010101&amp;CLICK_AREA_PRT_CODE=Z11&amp;ACTION_AF_CLICK=S2">1번째 이벤트</a>
+								</div>
+							</div>
+							
 						</div>
 					</div>
-					<!-- //로그인 -->
 
 					<!-- 많이 봤어요 -->
 					<div class="hot_issue">

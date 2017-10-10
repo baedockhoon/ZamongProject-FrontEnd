@@ -4,6 +4,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div id="header" class="main">
+
+		 		   <c:if test="${empty sessionScope.me_id }" var="isNotMember">
+					<li><a href="<c:url value='/ZamongFrontEnd/Login.do'/>">로그인</a></li>
+        		   </c:if>
+				   <c:if test="${not isNotMember }">
+				   		<li><a href="<c:url value='/ZamongFrontEnd/LogOut.do'/>">로그아웃</a></li>
+       			   </c:if>
 		<div id="header_wrap" class="pr_none">  <!-- 메인 컨텐츠 가운데 정렬을 위한 pr_none 클래스 추가 -->
 			<div id="gnb" class="clfix">
 						<div id="util_menu">
@@ -14,7 +21,7 @@
 							
 					</div>
 					<!-- //140603_수정 -->
-
+				
 				<!-- 140603_수정 -->
 				<h1><a href="http://www.melon.com/index.htm" title="MelOn 로고 - 홈으로 이동" class="mlog" data="LOG_PRT_CODE=1&MENU_PRT_CODE=0&MENU_ID_LV1=&CLICK_AREA_PRT_CODE=M01&ACTION_AF_CLICK=V1"><img width="142" height="99" src="http://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png" alt="MelOn 로고 이미지"/></a></h1>
 				

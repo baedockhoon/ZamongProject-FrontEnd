@@ -21,7 +21,6 @@
 	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?2" id="favicon"/>
 	<link rel="icon" href="<c:url value='/Styles/image/zamongicon.gif'/>"/>
 	
-	
 	<script type="text/javascript">
 		checkWin8Metro();
 		function checkWin8Metro(){
@@ -66,6 +65,7 @@
 	function menuLogin(){
 		location.href="<c:url value='/ZamongFrontEnd/Login.do'/>";
 	}
+	
 	
 	(function() {
 		WEBPOCIMG = {

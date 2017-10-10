@@ -90,7 +90,6 @@ if(CP_ID!="" && CP_ID!=null){
 							</div>
 						</div>
 					</div>
-										
 					<div class="wrap_btn">
 						<input type="submit" id="login" value="로그인 " class=""/>
 					</div>
