@@ -142,7 +142,8 @@ if(CP_ID!="" && CP_ID!=null){
 						
 						
 						<div class="container_menu">
-							<h1><a href="javascript:MemberEtc.goPage('MAIN');" title="Melon 메인"><img src="https://cdnimg.melon.co.kr/resource/image/web/member/img_logo95x25.png" width="95" height="25" alt="Melon" /></a></h1>
+							<h1><a href="<c:url value="/ZamongFrontEnd/main.do"/>" title="Zamong 메인"><img src="<c:url value="/Styles/image/zamonglogotitle.png"/>" width="142" height="99" alt="Zamong" /></a></h1>
+						</div>
 							<div class="wrap_menu ">
 								<ul>
 									<li class="first_child "><a href="javascript:MemberEtc.goPage('BASIC_INFO_CHANGE');" title="회원정보"><span class="m_menu m1">회원정보</span></a></li>

@@ -24,9 +24,7 @@
 
 
 
-<link rel="stylesheet"
-	href="https://cdnimg.melon.co.kr/static/member/resource/style/me1/qy/y/1edydz6hfyj.css"
-	type="text/css" />
+<link rel="stylesheet" href="https://cdnimg.melon.co.kr/static/member/resource/style/me1/qy/y/1edydz6hfyj.css" type="text/css" />
 
 <script type="text/javascript"
 	src="/resource/script/web/common/jquery-1.9.1.min.js"></script>
@@ -102,13 +100,9 @@ if(CP_ID!="" && CP_ID!=null){
 		<!-- header -->
 		<div id="member_header">
 			<!-- GNB -->
+			
 			<div id="gnb">
-				<h1>
-					<a href="#" title="Melon 메인"
-						onclick="javascript:MemberEtc.goPage('MAIN');"><img
-						src="https://cdnimg.melon.co.kr/resource/image/web/member/img_logo206x56.png"
-						width="206" height="56" alt="Melon" /></a>
-				</h1>
+			<h1><a href="<c:url value="/ZamongFrontEnd/main.do"/>" title="Zamong 메인"><img src="<c:url value="/Styles/image/zamonglogotitle.png"/>" width="142" height="99" alt="Zamong" /></a></h1>
 			</div>
 			<!-- //GNB -->
 		</div>
@@ -665,8 +659,7 @@ table.txt_rule th {
 						</div>
 					</div>
 					<div class="wrap_btn_c mt34">
-						<input type="submit" id="register" value="다음단계" onclick="return checkForm()"/>
-
+						<input type="submit" class="btn btn_square_green66" id="register" value="다음단계" onclick="return checkForm()"/>
 					</div>
 
 				</div>

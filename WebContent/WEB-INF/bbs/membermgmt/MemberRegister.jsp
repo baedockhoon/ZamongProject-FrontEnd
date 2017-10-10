@@ -69,8 +69,7 @@ if(CP_ID!="" && CP_ID!=null){
 	<!-- header -->
 	<div id="member_header">
 		<!-- GNB -->
-		<div id="gnb">
-			<h1><a href="#" title="Melon 메인" onclick="javascript:MemberEtc.goPage('MAIN'); return false;"><img src="https://cdnimg.melon.co.kr/resource/image/web/member/img_logo206x56.png" width="206" height="56" alt="Melon" /></a></h1>
+		<div id="gnb"><h1><a href="<c:url value="/ZamongFrontEnd/main.do"/>" title="Zamong 메인"><img src="<c:url value="/Styles/image/zamonglogotitle.png"/>" width="142" height="99" alt="Zamong" /></a></h1>
 		</div>
 		<!-- //GNB -->
 	</div>
@@ -281,7 +280,7 @@ if(CP_ID!="" && CP_ID!=null){
 						</div>
 					</div>
 					<div class="wrap_btn_c mt34">
-						<input type="submit" id="" value="가입 완료" onclick="javascript:email()"/>
+						<input type="submit" class="btn btn_square_green66" id="" value="가입 완료" onclick="javascript:email()"/>
 					</div>
 				</form>
 			</div>

@@ -55,7 +55,7 @@ if(CP_ID!="" && CP_ID!=null){
 	<div id="member_header">
 		<!-- GNB -->
 		<div id="gnb">
-			<h1><a href="#" title="Melon 메인" onclick="javascript:MemberEtc.goPage('MAIN');"><img src="https://cdnimg.melon.co.kr/resource/image/web/member/img_logo206x56.png" width="206" height="56" alt="Melon" /></a></h1>
+			<h1><a href="<c:url value="/ZamongFrontEnd/main.do"/>" title="Zamong 메인"><img src="<c:url value="/Styles/image/zamonglogotitle.png"/>" width="142" height="99" alt="Zamong" /></a></h1>
 		</div>
 		<!-- //GNB -->
 	</div>
