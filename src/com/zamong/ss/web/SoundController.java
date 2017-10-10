@@ -21,6 +21,7 @@ import com.zamong.ss.service.impl.SoundServiceImpl;
 import com.zamong.web.PagingUtil;
 
 /*@SessionAttributes("al_no")*/
+/*@SessionAttributes("me_id")*/
 @Controller
 public class SoundController {
 	int count;
@@ -147,11 +148,13 @@ public class SoundController {
 	
 	@RequestMapping("/ZAMONG/zamongAssign.do")
 	public String Assign(AssignDTO dto,@RequestParam Map map,Model model
+			//,@ModelAttribute("me_id") String me_id
 			//,@ModelAttribute("al_no") int al_no
 			)throws Exception {
 		
 		//model.addAllAttributes(map);
 		//dto.setAl_no(al_no);
+		/*map.put("me_id",me_id);*/
 		assign.insert(dto);
 		
 		return "/ZamongFrontEnd/album/Detail.do";
