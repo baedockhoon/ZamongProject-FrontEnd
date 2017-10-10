@@ -73,7 +73,6 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/14g2jf0vkd.css" type="text/css" />
 </head>
 <body>
-${sessionScope.me_id }
 <jsp:include page="/WEB-INF/bbs/template/Top.jsp" />
 
 	<div id="cont_wrap" class="clfix">
