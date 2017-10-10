@@ -23,7 +23,14 @@
 	
 	
 	<script type="text/javascript">
-
+		function goJoin(){
+			location.href="<c:url value='/ZamongFrontEnd/Member.do'/>";
+		}
+		
+		function menuLogin(){
+			location.href="<c:url value='/ZamongFrontEnd/Login.do'/>";
+		}
+	
 		function goAlbumDetail(al_no, al_divide){
 			var st = "<c:url value='/ZamongFrontEnd/album/Detail.do?al_no=' />"+al_no;
 			if (al_divide == "G"){
