@@ -90,6 +90,16 @@
 		<div id="header" class="gnb2_expn">
 			<jsp:include page="/WEB-INF/bbs/template/Top.jsp" />
 		</div>
+		<script>
+			$(function(){
+				var st = "${fail}";
+				if (st == "fail"){
+					alert("금액이 부족합니다");
+					alert("결제정보 페이지로 넘어갑니다");
+					location.href ="<c:url value='/ZamongFrontEnd/PaymentList.do'/>";
+				}
+			});
+		</script>
 		<!-- //header -->
 
 		<div id="cont_wrap" class="clfix">

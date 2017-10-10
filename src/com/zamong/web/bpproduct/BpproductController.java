@@ -50,6 +50,7 @@ public class BpproductController {
 			service.insertCash(dto);
 		}
 			else if(dto.getPd_no().equals("100")) {
+				dto.setMe_id(me_id);
 				dto.setMm_minus(dto.getBp_price());
 				service.insertMinus1(dto);
 				return "/ZamongFrontEnd/PaymentList.do";
