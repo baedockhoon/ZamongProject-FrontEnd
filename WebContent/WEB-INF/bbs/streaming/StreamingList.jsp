@@ -83,7 +83,7 @@
 						<h3 class="title">
 							
 								<span class="icon_kakao"><img src=http://cdnimg.melon.co.kr/resource/image/web/common/icon_kakao03.png width="18" height="18" alt="kakao"></span>
-							${me_id }
+							
 							<strong>${dto.me_id }</strong>님의 자몽 이용권 보유현황
 						</h3>
 						<div class="wrab_list_info">
@@ -154,7 +154,7 @@
 			<a href="<c:url value='/ZamongFrontEnd/StreamingPay.do'/>" title="결제내역 보기" class="tab02 link_tab05">결제내역</a>
 			</li>
 			<li class="tab_li05 tab05_3">
-				<a href="/history/suspend.htm" title="정기결제 일시정지/해제내역 보기" class="tab02 link_tab05">정기결제 일시정지/해제내역</a>
+				<a href="#" title="정기결제 일시정지/해제내역 보기" class="tab02 link_tab05">정기결제 일시정지/해제내역</a>
 			</li>
 		</ul>
 	</div>

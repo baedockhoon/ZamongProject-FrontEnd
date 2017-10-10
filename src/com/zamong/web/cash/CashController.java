@@ -69,37 +69,8 @@ public class CashController {
 		model.addAttribute("dto", dto);
 		return "/WEB-INF/bbs/cash/PaymentList.jsp";
 	}
-	/*@RequestMapping("/ZamongFrontEnd/PaymentView2.do")
-	public String view2(CashDTO dto, Model model, HttpServletRequest req,@ModelAttribute("me_id") String me_id)throws Exception {
-		
-		
-		dto.setMe_id(me_id);
-		dto = service.selectOne1(dto);
-		
-		
-		//줄바꿈 처리
-		
-		
-		//5]필요한 값 리퀘스트 영역에 저장
-		
-		model.addAttribute("dto", dto);
-		return "/ZamongFrontEnd/PaymentList.do";
-	}*/
 	
-	
-	
-	/*@RequestMapping("/ZamongFrontEnd/PaymentView2.do")
-	public String view2(CashDTO dto, Model model, HttpServletRequest req,@ModelAttribute("me_id") String me_id)throws Exception {
-		
-		
-		dto.setMe_id(me_id);
-		dto = service.selectOne1(dto);
-	
-		
-		model.addAttribute("dto", dto);
-		return "/WEB-INF/bbs/streaming/StreamingList.jsp";
-	}*/
-	@RequestMapping("/ZamongFrontEnd/PaymentList1.do")
+/*	@RequestMapping("/ZamongFrontEnd/PaymentList1.do")
 	public String list1(
 			HttpServletRequest req,//페이징용 메소드에 전달
 			@RequestParam Map map,//검색용 파라미터 받기
@@ -117,7 +88,7 @@ public class CashController {
 	
 		return "/ZamongFrontEnd/PaymentView1.do";
 	}//////////////////list()
-	
+*/	
 	@RequestMapping("/ZamongFrontEnd/PaymentView1.do")
 	public String view1(CashDTO dto, Model model, HttpServletRequest req,@ModelAttribute("me_id") String me_id)throws Exception {
 		dto.setMe_id(me_id);
@@ -130,7 +101,8 @@ public class CashController {
 		//5]필요한 값 리퀘스트 영역에 저장
 	
 		model.addAttribute("dto", dto);
-		return "/WEB-INF/index.jsp";
+		/*return "/WEB-INF/index.jsp";*/
+		return "/ZamongFrontEnd/main.do";
 	}
 	
 }

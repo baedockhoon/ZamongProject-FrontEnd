@@ -232,7 +232,7 @@
 										'<ul>',
 											'<li class="nth2">',
 												'<a href="javascript:goMelonCash();">',
-													'<span><span class="label">캐쉬</span><span class="nm">'+getMelonCash()+'</span></span>',
+													'<span><span class="label">캐쉬</span><span class="nm">'+"${dto.ch_havecash}"+"원"+'</span></span>',
 												'</a>',
 											'</li>',
 										'</ul>',

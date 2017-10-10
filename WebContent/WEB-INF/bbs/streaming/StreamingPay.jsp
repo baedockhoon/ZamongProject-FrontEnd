@@ -42,7 +42,7 @@
         <li class="tab_li03 first_child on"><a href="<c:url value='/ZamongFrontEnd/StreamingList.do'/>" title="멜론 이용권 - 페이지 이동" class="link_tab">
             <span class="cntt">자몽 이용권</span>
         </a></li>
-        <li class="tab_li03"><a href="/commerce/mypage/coupon/web/couponbox_couponBoxView.htm" title="쿠폰함 - 페이지 이동" class="link_tab">
+        <li class="tab_li03"><a href="<c:url value='/ZamongFrontEnd/Cupon.do'/>" title="쿠폰함 - 페이지 이동" class="link_tab">
             <span class="cntt">쿠폰함</span>
         </a></li>
         <li class="tab_li03"><a href="<c:url value='/ZamongFrontEnd/PaymentList.do'/>" title="멜론 캐쉬 - 페이지 이동" class="link_tab">
@@ -140,103 +140,8 @@
 		
 	
 
-<script type="text/javascript">
-// 콜라보 플랫폼 정보 제거.
-try{$.each($('.wrap_srvc_info'),function(i,o){if($.trim($(o).text()).length<1){$(o).parent('li').remove();}});}catch(e){}
 
-$(function() {
-	"use strict";
 
-	$(document).ready(function() {
-		var methd = "listUsedProdView"
-	    ,	$this = ($("#d_search_wrong_msg")&&$("#d_search_wrong_btn"));
-		// 보유현황 멜론이용권 없을 시,
-		if (methd === "listUsedProdView" && $this && isMelonLogin()) {
-			// 페이지이동 적용
-			MELON.WEBSVC.CM.searchWrongView = function($msg, $btn, $txt) {
-				// 멜론쿠폰
-				if (getCouponCnt() > 0) {
-					$msg.text("이용 가능한 쿠폰이 있습니다.");
-					$btn.attr("title", "멜론쿠폰 이용하기 - 페이지 이동");
-					$txt.text("멜론쿠폰 이용하기");
-					$btn.off().on('click', function(e) {
-						e.preventDefault();
-						melon.link.goMyCupon();
-					});
-				// 멜론선물
-				} else if (getMemberGiftCnt() > 0) {
-					$msg.text("이용 가능한 선물이 있습니다.");
-					$btn.attr("title", "멜론선물 이용하기 - 페이지 이동");
-					$txt.text("멜론선물 이용하기");
-					$btn.off().on('click', function(e) {
-						e.preventDefault();
-						melon.link.goPresentSong();
-					});
-				}
-			};
-
-			var $msg = $("#d_search_wrong_msg")
-			,	$btn = $("#d_search_wrong_btn")
-			,	$txt = $btn.find('span.even_span');
-			MELON.WEBSVC.CM.searchWrongView($msg, $btn, $txt);
-		}
-	});
-
-	// 해지신청 불가 안내
-	$(".d_btn[data-expday]").on('click', function(e) {
-		e.preventDefault();
-		var expDay = $(this).attr('data-expday')
-		,   pridCode = $(this).attr('data-pridcode')
-		,   title = $(this).text() + " 불가 안내"
-        ,   contMsg = expDay + ( ("3M0001"== pridCode) ? "일" : "개월" )
-        ,   html;
-
-       	html = "<div class=\"box_default\">";
-       	html += "\t<p>해당 이용권은 구매 시 안내해 드린 대로<br /><span class=\"fc_point02\">" + contMsg +"</span>간 해지할 수 없는 프로모션 이용권입니다.";
-       	html += "</div>";
-
-       	MELON.WEBSVC.alert(html, {
-       		title: title
-       	});
-	});
-
-	// 해지 신청 취소 불가 안내
-	$(".d_btn[data-value='false']").on('click', function(e) {
-		e.preventDefault();
-		var html;
-		html = "<div class=\"box_default\">";
-		html += "\t<p class=\"txt_emphs\">당일 해지 예약 이용권은<br /><span class=\"fc_point02\">해지 신청 취소가 불가</span>합니다.</p><p>궁금하신 사항은 고객센터(1566-7727)로 문의하시기 바랍니다.</p>";
-		html += "</div>";
-
-		MELON.WEBSVC.alert(html, {
-			title: '해지 신청 취소 불가 안내'
-		});
-	});
-
-	// 자동결제 금액 확인 팝업
-	$(".d_autobill_btn[data-billno]").on('click', function(e) {
-		e.preventDefault();
-		var $this = $(this)
-		,   offerId = $this.attr('data-offerid')
-		,   prodId = $this.attr('data-prodid')
-		,   buyNo = $this.attr('data-buyno')
-		,   billNo = $this.attr('data-billno')
-		,   url = httpWww+$this.attr('href')
-		,   params = "?offerId="+offerId+"&prodId="+prodId+"&buyPaymtMethCode=&buyNo="+buyNo+"&billNo="+billNo;
-
-		MELON.WEBSVC.util.openPopup(url+params, 564, 440, {
-			name : 'autoBillPriceCheckPopup',
-			scrollbars : 'yes',
-			resizable : 'no',
-			location : 'no',
-			menubar : 'no',
-			toolbar : 'no',
-			statusbar : 'no',
-			status : 'no'
-		});
-	});
-});
-</script>
 								</tbody>
 							</table>
 						</div>
@@ -248,7 +153,7 @@ $(function() {
 			<a href="<c:url value='/ZamongFrontEnd/StreamingPay.do'/>" title="결제내역 보기" class="tab02 link_tab05">결제내역</a>
 			</li>
 			<li class="tab_li05 tab05_3">
-				<a href="/history/suspend.htm" title="정기결제 일시정지/해제내역 보기" class="tab02 link_tab05">정기결제 일시정지/해제내역</a>
+				<a href="#" title="정기결제 일시정지/해제내역 보기" class="tab02 link_tab05">정기결제 일시정지/해제내역</a>
 			</li>
 		</ul>
 	</div>

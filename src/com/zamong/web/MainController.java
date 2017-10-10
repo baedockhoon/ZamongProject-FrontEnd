@@ -36,6 +36,8 @@ public class MainController {
 		model.addAttribute("list",list);
 		
 		return "/WEB-INF/main.jsp";
+		/*return "/ZamongFrontEnd/PaymentView1.do";*/
+		
 	}//////////////////albumDetail()
 	
 	

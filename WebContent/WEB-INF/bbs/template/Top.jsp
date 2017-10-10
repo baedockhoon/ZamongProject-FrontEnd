@@ -61,7 +61,7 @@
 
 				<!-- 140603_수정 -->
 				<h1>
-					<a href="<c:url value='/'/>" title="Zamong 로고 - 홈으로 이동"
+					<a href="<c:url value='//ZamongFrontEnd/main.do'/>" title="Zamong 로고 - 홈으로 이동"
 						class="mlog"
 						data="LOG_PRT_CODE=1&MENU_PRT_CODE=0&MENU_ID_LV1=&CLICK_AREA_PRT_CODE=M01&ACTION_AF_CLICK=V1"><img
 						width="142" height="99"
