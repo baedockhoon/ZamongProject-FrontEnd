@@ -172,10 +172,14 @@ li.playing:before {
 		var a = audiojs.createAll({
 			trackEnded : function() {
 				var next = $('ol li.playing').next();
-				if (!next.length)
+				if (!next.length){
 					next = $('ol li').first();
+				}
 				next.addClass('playing').siblings().removeClass('playing');
 				audio.load($('a', next).attr('data-src'));
+				$(".span_title").html() = next.children("input[name=title]").val();
+				$(".thumb > img").attr("src") = next.children("input[name=image]").val();
+				$(".txt_area").html() = "<p class='on' id='1'>"+next.children("input[name=title]").val()+"</p><p>"+next.children("input[name=title]").val()+"</p>";
 				audio.play();
 			}
 		});
@@ -218,6 +222,10 @@ li.playing:before {
 				}
 		});
 		
+		$("#song").click(function(){
+			$(this).children("span").html();
+		});
+		
 		$(".d_btn_volume").click(
 			function() {
 				if ($(this).is(".btn_volume_off")) {
@@ -242,6 +250,11 @@ li.playing:before {
 			e.preventDefault();
 			$(this).addClass('playing').siblings().removeClass('playing');
 			audio.load($('a', this).attr('data-src'));
+
+			$(".span_title").html($(this).children("input[name=title]").val());
+			$(".thumb > img").attr("src", $(this).children("input[name=image]").val());
+			$(".txt_area").html("<p class='on' id='1'>"+$(this).children("input[name=title]").val()+"</p><p>"+$(this).children("input[name=content]").val()+"</p>");
+			
 			audio.play();
 		});
 
@@ -249,12 +262,22 @@ li.playing:before {
 			var next = $('li.playing').next();
 			if (!next.length)
 				next = $('ol li').first();
+			$(".span_title").html() = next.children("input[name=title]").val();
+			$(".thumb > img").attr("src") = next.children("input[name=image]").val();
+			$(".txt_area").html() = "<p class='on' id='1'>"+next.children("input[name=title]").val()+"</p><p>"+next.children("input[name=title]").val()+"</p>";
+
 			next.click();
+			
 		});
 		$(".btn_prev").click(function() {
 			var prev = $('li.playing').prev();
 			if (!prev.length)
 				prev = $('ol li').last();
+			
+			$(".span_title").html() = prev.children("input[name=title]").val();
+			$(".thumb > img").attr("src") = prev.children("input[name=image]").val();
+			$(".txt_area").html() = "<p class='on' id='1'>"+prev.children("input[name=title]").val()+"</p><p>"+prev.children("input[name=title]").val()+"</p>";
+
 			prev.click();
 		});
 
@@ -295,7 +318,9 @@ li.playing:before {
 			</h1>
 			<div class="box_music_info">
 				<div class="music_info d_box_marquee">
-					<p class="d_marquee"><span class="span_title">${dto.ss_title }</span></p>
+					<p class="d_marquee"><span class="span_title">
+						${list[0].ss_title }
+					</span></p>
 				</div>
 			</div>
 		</div>
@@ -337,24 +362,29 @@ li.playing:before {
 			</div>
 			<div class="container">
 				<div class="thumb">
-					<img src="http://localhost:8080/ZamongProject/Images/Sound/${dto.al_albumimage }"
+					<img src="http://localhost:8080/ZamongProject/Images/Sound/${list[0].al_albumimage }"
 						alt="앨범 커버 이미지" width="344" height="344" id="albumImg">
 						<span class="frame"></span>
 				</div>
 				<div class="box_lyrics">
 					<div class="txt_area">
-						<p class="on" id="1">${dto.ss_title }</p>
-						<p>${dto.ly_contents }</p>
+						<p class="on" id="1">${list[0].ss_title }</p>
+						<p>${list[0].ly_contents }</p>
 					</div>
 				</div>
 			</div>
 		<ol>
-		<%-- <c:forEach items="${dto }"> --%>
-			<li><a href="#" data-src="http://localhost:8080/ZamongProject/Mp3/${dto.ss_path }">${dto.ss_title }</a></li>
-		<%-- </c:forEach> --%>
+			<c:forEach var="item" items="${list }" varStatus="loop">
+				<li><a href="#" data-src="http://localhost:8080/ZamongProject/Mp3/${item.ss_path }">${item.ss_title }</a>
+					<input type="hidden" name="title" value="${item.ss_title }">
+					<input type="hidden" name="image" value="http://localhost:8080/ZamongProject/Images/Sound/${item.al_albumimage }">
+					<input type="hidden" name="content" value="${item.ly_contents }">
+				</li>
+			</c:forEach>
 		</ol>
 	</div>
 	<div id="shortcuts">
+		
 		<!-- <div>
         <h1>Keyboard shortcuts:</h1>
         <p><em>&rarr;</em> Next track</p>

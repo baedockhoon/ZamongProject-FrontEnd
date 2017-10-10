@@ -2,6 +2,7 @@ package com.zamong.ss.web;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Vector;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -123,14 +124,19 @@ public class SoundController {
 	
 	@RequestMapping("/ZamongFrontEnd/audio/Play.do")
 	public String audioPlay(
-			@Param("ss_no") String ss_no,
+			@Param("ss_no") String[] ss_no,
 			Map map,//검색용 파라미터 받기
 			Model model//리퀘스트 영역 저장용
 			) throws Exception{
-		map.put("ss_no", ss_no);
-		SoundDTO dto = service.selectSoundOne(map);
-		
-		model.addAttribute("dto",dto);
+		SoundDTO dto = null;
+		List<SoundDTO> list = new Vector<SoundDTO>();
+		for(int i = 0; i < ss_no.length; i++) {
+			map.put("ss_no", ss_no[i]);
+			dto = service.selectSoundOne(map);
+			list.add(dto);
+		}
+
+		model.addAttribute("list",list);
 		
 		return "/WEB-INF/bbs/audio/audio.jsp";
 	}//////////////////audioPlay()
