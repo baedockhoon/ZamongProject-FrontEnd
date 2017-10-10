@@ -92,7 +92,7 @@
 				<div id="conts">
 
 					<div class="page_header">
-						<h2 class="title">최신곡</h2>
+						<h2 class="title">TOP100</h2>
 					</div>
 
 					<!-- 띠배너 -->
@@ -103,8 +103,8 @@
 						<ul>
 							<li class="first_child on"><a href="javascript:;"
 								class="link_tab" data-area-flg="I"><span class="cntt">국내</span></a></li>
-							<!-- <li class="last_child "><a href="javascript:;"
-								class="link_tab" data-area-flg="O"><span class="cntt">해외</span></a></li> -->
+							<li class="last_child "><a href="javascript:;"
+								class="link_tab" data-area-flg="O"><span class="cntt">해외</span></a></li>
 						</ul>
 					</div>
 
