@@ -95,6 +95,7 @@ public class SoundController {
 		List<SoundDTO> list = service.selectSoundList(dto);
 		
 		count = assign.count(assdto);
+		
 		avg = assign.avg(assdto);
 		
 		if(count == 0) {

@@ -362,7 +362,7 @@ function goArtistDetail(at_no, al_divide){
 							<dd class="wrap_star">
 								<span class="wrap_evalscore01">
 									<span class="contt_evalscore01"><span id="contt_evalscore01_view" style="width:80.0%;"></span></span>
-									<span class="text_evalscore01"><span class="none">평점</span><span id="gradPointLayer">${assdtod }</span></span>
+									<span class="text_evalscore01"><span class="none">평점</span><span id="gradPointLayer">${assdtod}</span></span>
 								</span>
 								<div class="wrap_grad">
 									<strong class="none">평점 개수</strong><div id="gradCountLayer">${assdto}</div>
