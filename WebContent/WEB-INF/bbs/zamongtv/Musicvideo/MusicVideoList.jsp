@@ -57,7 +57,7 @@
 <jsp:include page="/WEB-INF/bbs/template/Top.jsp" />
 <!-- contents -->
 <div id="cont_wrap" class="clfix">
-		<div id="conts_section" class="my_fold">
+		<div id="conts_section" class="my_fold fold_on">
 			<!-- contents -->
 			
 			
