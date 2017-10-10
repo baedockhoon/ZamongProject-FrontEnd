@@ -177,9 +177,11 @@ li.playing:before {
 				}
 				next.addClass('playing').siblings().removeClass('playing');
 				audio.load($('a', next).attr('data-src'));
-				$(".span_title").html() = next.children("input[name=title]").val();
-				$(".thumb > img").attr("src") = next.children("input[name=image]").val();
-				$(".txt_area").html() = "<p class='on' id='1'>"+next.children("input[name=title]").val()+"</p><p>"+next.children("input[name=title]").val()+"</p>";
+
+				$(".span_title").html(next.children("input[name=title]").val());
+				$(".thumb > img").attr("src", next.children("input[name=image]").val());
+				$(".txt_area").html("<p class='on' id='1'>"+next.children("input[name=title]").val()+"</p><p>"+next.children("input[name=content]").val()+"</p>");
+				
 				audio.play();
 			}
 		});
@@ -262,10 +264,11 @@ li.playing:before {
 			var next = $('li.playing').next();
 			if (!next.length)
 				next = $('ol li').first();
-			$(".span_title").html() = next.children("input[name=title]").val();
-			$(".thumb > img").attr("src") = next.children("input[name=image]").val();
-			$(".txt_area").html() = "<p class='on' id='1'>"+next.children("input[name=title]").val()+"</p><p>"+next.children("input[name=title]").val()+"</p>";
-
+			$(".span_title").html(next.children("input[name=title]").val());
+			$(".thumb > img").attr("src", next.children("input[name=image]").val());
+			$(".txt_area").html("<p class='on' id='1'>"+next.children("input[name=title]").val()+"</p><p>"+next.children("input[name=content]").val()+"</p>");
+			
+			
 			next.click();
 			
 		});
@@ -273,11 +276,11 @@ li.playing:before {
 			var prev = $('li.playing').prev();
 			if (!prev.length)
 				prev = $('ol li').last();
-			
-			$(".span_title").html() = prev.children("input[name=title]").val();
-			$(".thumb > img").attr("src") = prev.children("input[name=image]").val();
-			$(".txt_area").html() = "<p class='on' id='1'>"+prev.children("input[name=title]").val()+"</p><p>"+prev.children("input[name=title]").val()+"</p>";
 
+			$(".span_title").html(prev.children("input[name=title]").val());
+			$(".thumb > img").attr("src", prev.children("input[name=image]").val());
+			$(".txt_area").html("<p class='on' id='1'>"+prev.children("input[name=title]").val()+"</p><p>"+prev.children("input[name=content]").val()+"</p>");
+			
 			prev.click();
 		});
 

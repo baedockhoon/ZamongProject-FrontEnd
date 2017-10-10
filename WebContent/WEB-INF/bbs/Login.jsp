@@ -24,21 +24,6 @@
 <link rel="stylesheet" href="https://cdnimg.melon.co.kr/static/member/resource/style/me1/qy/y/1edydz6hfyj.css" type="text/css" />
 
 <script type="text/javascript" src="/resource/script/web/common/jquery-1.9.1.min.js"></script>
-<script type="text/javascript">
-var httpMemberDomain = "http://member.melon.com";
-var httpsMemberDomain = "https://member.melon.com";
-var POC_ID = "WP10";
-var httpWwwDomain = "http://www.melon.com";
-var httpsWwwDomain = "https://www.melon.com";
-var httpStoreDomain = "http://store.melon.com";
-var httpsStoreDomain = "https://store.melon.com";
-var httpTicketDomain = "http://ticket.melon.com";
-var httpsTicketDomain = "https://member.melon.com";
-var CP_ID = "WP10";
-if(CP_ID!="" && CP_ID!=null){
-	POC_ID = CP_ID;
-}
-</script>
 <script type="text/javascript" src="https://cdnimg.melon.co.kr/static/member/resource/script/me1/s9/e/1eeifwqd5cb.js"></script>
 <script type="text/javascript" src="https://cdnimg.melon.co.kr/static/member/resource/script/me1/zu/w/14h9ostnaor.js"></script>
 <script type="text/javascript" src="https://cdnimg.melon.co.kr/static/member/resource/script/me1/f9/t/1y2ecxy8gp7.js"></script>
@@ -91,7 +76,7 @@ if(CP_ID!="" && CP_ID!=null){
 						</div>
 					</div>
 					<div class="wrap_btn">
-						<input type="submit" id="login" value="로그인 " class=""/>
+						<button id="btnLogin" title="로그인 " class="btn_login03"><span>로그인</span></button>
 					</div>
 					<div class="wrap_kakao_login">
 						<button type="button" id="btnKakaoLogin" title="카카오계정 로그인" class="btn_kakao_login"><span>카카오계정 로그인</span></button>

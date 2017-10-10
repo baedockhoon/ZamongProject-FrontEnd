@@ -4,69 +4,31 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-		
-	
-	
-	
-	
-	
-	
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>Zamong::음악이 필요한 지금, 자몽</title>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title>멜론 이용권 구매>전체 이용권 보기>멜론</title>
-	<meta name="keywords" content="음악서비스, 멜론차트, 멜론TOP100, 최신음악, 인기가요, 뮤직비디오, 앨범, 플레이어, 스트리밍, 다운로드, 아티스트플러스, 아티스트채널" />
-	<meta name="description" content="국내 최대 1,000만곡 확보 No.1 음악사이트, 멜론! 최신음악과 실시간 차트는 기본, 내 취향을 아는 똑똑한 추천 라디오, 내가 좋아하는 아티스트의 새로운 소식까지 함께 즐겨보세요." />
-	<meta name="naver-site-verification" content="f13fc46b807bef984aa341efeb1adec8de12264c"/>
-	<meta property="fb:app_id" content="357952407588971"/>
-	<meta property="og:title" content="Melon"/>
-	<meta property="og:image" content="http://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png"/>
-	<meta property="og:description" content="음악이 필요한 순간, 멜론"/>
-	<meta property="og:url" content="http://www.melon.com/commerce/pamphlet/web/sale_listAllView.htm"/>
-	<meta property="og:type" content="website"/>
-	<meta name="viewport" content="width=device-width"/>
-	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?2" id="favicon"/>
-	
-		
-		
-		
-		
-		
-	
-	<script type="text/javascript">
-		checkWin8Metro();
-		function checkWin8Metro(){
-			var userAgent = navigator.userAgent.toLowerCase();
-			var canRunActiveX = false;
-			try
-			{
-				canRunActiveX = !!new ActiveXObject("htmlfile");
-			}
-			catch (e)
-			{
-				canRunActiveX = false;
-			}
-			if ((userAgent.indexOf("windows nt 6.2") >= 0 || userAgent.indexOf("windows nt 6.3") >= 0 ) && userAgent.indexOf("msie") >= 0)
-			{
-				// windows 8
-				if (canRunActiveX == false)
-				{
-					document.location.href = "http://t.melon.com";
-				}
-			}
-		}
-	</script>
-	<script type="text/javascript" src="/resource/script/web/common/jquery-1.9.1.min.js"></script>
-	
-	<script type="text/javascript" src="//member.melon.com/resource/script/web/member/melonweb_member_external.js?tm=20170424"></script>
-	<link rel="stylesheet" href="http://www.melon.com/resource/style/web/common/melonweb_layout.css" type="text/css" />
-	<link rel="stylesheet" href="/resource/style/web/common/melonweb_comm.css" type="text/css" />
-    <link rel="stylesheet" href="http://www.melon.com/resource/style/web/cm/melonweb_cm.css" type="text/css" />
-	
-	<script type="text/javascript" src="/resource/script/web/common/personal_area.js"></script>
-	<script type="text/javascript">
-	
-	</script>
+<link rel="icon" href="<c:url value='/Styles/image/zamongicon.gif'/>"/>
+
+<meta name="keywords" content="음악서비스, 멜론차트, 멜론TOP100, 최신음악, 인기가요, 뮤직비디오, 앨범, 플레이어, 스트리밍, 다운로드, 아티스트플러스, 아티스트채널" />
+<meta name="description" content="국내 최대 1,000만곡 확보 No.1 음악사이트, 멜론! 최신음악과 실시간 차트는 기본, 내 취향을 아는 똑똑한 추천 라디오, 내가 좋아하는 아티스트의 새로운 소식까지 함께 즐겨보세요." />
+<meta name="naver-site-verification" content="f13fc46b807bef984aa341efeb1adec8de12264c" />
+<meta name="viewport" content="width=device-width" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?2" id="favicon" />
+
+<!-- <link rel="stylesheet" href="http://cdnimg.melon.co.kr/static/web/resource/style/w1/66/g/140q53fiwr.css" type="text/css" /> -->
+<!-- 댓글 css 파일 네임 변경 -->
+<link rel="stylesheet" href="http://cdnimg.melon.co.kr/static/web/resource/style/w1/qd/e/uolshpokn9.css" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/melonweb_new_4x.css" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/up4ryzftkr.css" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Nunito:400" rel="stylesheet">
+<!-- <script type="text/javascript" src="/resource/script/web/common/jquery-1.9.1.min.js"></script> -->
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/Styles/js/jquery-1.9.1.min.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/b0oedst30j.css" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/14j3tr44urn.css" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/14g2jf0vkd.css" type="text/css" />
+<link rel="stylesheet" href="http://www.melon.com/resource/style/web/cm/melonweb_cm.css" type="text/css" />
 </head>
 
 <body>
@@ -94,7 +56,7 @@
 	<!-- //header -->
 
 	<div id="cont_wrap" class="clfix">
-		<div id="conts_section" class="my_fold">
+		<div id="conts_section" class="my_fold fold_on">
 			<!-- contents -->
 			
 <div id="conts" data-buyPhase="1P0" data-salePrtCode="1S2" data-clickAreaPrtCode="1C1">
@@ -102,22 +64,22 @@
 	
 	<div class="wrap_tab03 type07">
 		<ul>
-			<li class="submenu first_child">
+			<%-- <li class="submenu first_child">
 				<a href= "<c:url value='/ZamongFrontEnd/Music.do'/>" title="추천 이용권" class="link_tab" data-url="/commerce/pamphlet/web/sale_recommendView.htm">
 					<span class="cntt">음원 이용권</span>
 				</a>
-			</li>
+			</li> --%>
 			<li class="submenu on">
 				<a href= "<c:url value='/ZamongFrontEnd/CashList.do'/>" title="전체 이용권 보기" class="link_tab" data-url="/commerce/pamphlet/web/sale_listAllView.htm">
 					<span class="cntt">전체 이용권</span>
 				</a>
 			</li>
 			
-			<li class="submenu">
+			<!-- <li class="submenu">
 				<a href="#" title="혜택 안내" class="link_tab" data-url="/commerce/pamphlet/web/sale_vipView.htm">
 					<span class="cntt">혜택 안내</span>
 				</a>
-			</li>
+			</li> -->
 			
 			<li class="submenu last_child">			
 				<a href="" onclick="goPopup();" title="자몽캐쉬 충전" class="link_tab" id="goMelonCash">
@@ -125,12 +87,12 @@
 			
 				</a>
 			</li>
-			<li class="submenu last_child">			
+			<%-- <li class="submenu last_child">			
 				<a href="<c:url value='/ZamongFrontEnd/Memberfor3.do'/>"  title="이벤트 응모 보기 " class="link_tab" id="goMelonCash">
 					<span class="cntt">이벤트 응모내역 보기</span>
 			
 				</a>
-			</li>
+			</li> --%>
 		</ul>
 	</div>
 	
@@ -214,43 +176,42 @@
 					<c:otherwise>
 						<c:forEach var="item" items="${list}" varStatus="loop">
 							    <tr style="text-align:left; height:90px">						
-						<c:if test="${item.pd_no != 3 and item.pd_no != 100}">
-						<div class="product_purchase">
-			
-				<ul class="product_icon pt54">
-					<li><span class="icon"></span><span class="txt" style="color:black;">${item.pd_name }</span></li>
-				</ul>
-				<div class="product_info">
-					<div class="regular_payment">
-			
-								<dl>
-									<dt>정기결제</dt>
-									<dd><strong class="num">${item.pd_price }</strong><span class="text">원</span></dd>
-								</dl>
-								<div class="btn_area">
-									<button type="button" class="btn_xxl" onclick="goPopup1(${item.pd_no});" title="Hi-Fi 스트리밍 클럽 매월 구매 - 새 창" data-send="prod" data-prodid="300142">
-										<span class="odd_span"><span class="even_span">구매</span></span>
-									</button>
-								</div>
-							
+									<c:if test="${item.pd_no != 3 and item.pd_no != 100}">
+									<div class="product_purchase">
 						
-					</div>
-				</div>
-			</div>
-                		 <div class="product_warning">
-				<div>
-					<strong><span>잠깐만요</span></strong>
-					<ul class="list_bullet03">
-						<li>FLAC(Free Loseless Audio Codec)은 디지털 음원 제작 시, 원음 그대로 손실 없이 압축하여 제작한 파일입니다.</li>
-						<li>멜론Hi-Fi는 PC Web, 멜론 플레이어, 멜론 안드로이드 앱에서 이용 가능합니다. <P>(Mac전용플레이어, 아이폰/아이패드 앱 이용 제공 예정)</P> </li>
-					</ul>
-				</div>
-			</div>
-		</div>
-						</c:if>		
+										<ul class="product_icon pt54">
+											<li><span class="icon"></span><span class="txt" style="color:black;">${item.pd_name }</span></li>
+										</ul>
+										<div class="product_info">
+											<div class="regular_payment">
+									
+														<dl>
+															<dt>정기결제</dt>
+															<dd><strong class="num">${item.pd_price }</strong><span class="text">원</span></dd>
+														</dl>
+														<div class="btn_area">
+															<button type="button" class="btn_xxl" onclick="goPopup1(${item.pd_no});" title="Hi-Fi 스트리밍 클럽 매월 구매 - 새 창" data-send="prod" data-prodid="300142">
+																<span class="odd_span"><span class="even_span">구매</span></span>
+															</button>
+														</div>
+													
+												
+											</div>
+										</div>
+									</div>
+			                		 <div class="product_warning">
+										<div>
+											<strong><span>잠깐만요</span></strong>
+											<ul class="list_bullet03">
+												<li>FLAC(Free Loseless Audio Codec)은 디지털 음원 제작 시, 원음 그대로 손실 없이 압축하여 제작한 파일입니다.</li>
+												<li>멜론Hi-Fi는 PC Web, 멜론 플레이어, 멜론 안드로이드 앱에서 이용 가능합니다. <P>(Mac전용플레이어, 아이폰/아이패드 앱 이용 제공 예정)</P> </li>
+											</ul>
+										</div>
+									</div>
+								</c:if>		
 							</tr>
 						</c:forEach>
-				</c:otherwise>
+					</c:otherwise>
 				</c:choose>
 			
 			<!-- Hi-Fi 스트리밍 클럽 -->
@@ -267,6 +228,11 @@
 
 	<!-- //footer -->
 
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </body>
 </html>
