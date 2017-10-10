@@ -153,13 +153,14 @@ public class SoundController {
 	
 	@RequestMapping("/ZAMONG/zamongAssign.do")
 	public String Assign(AssignDTO dto,@RequestParam Map map,Model model
-			//,@ModelAttribute("me_id") String me_id
-			//,@ModelAttribute("al_no") int al_no
+			,@ModelAttribute("me_id") String me_no
+			,@ModelAttribute("al_no") int al_no
 			)throws Exception {
 		
 		//model.addAllAttributes(map);
 		//dto.setAl_no(al_no);
-		/*map.put("me_id",me_id);*/
+		map.put("me_no",me_no);
+		map.put("al_no", al_no);
 		assign.insert(dto);
 		
 		return "/ZamongFrontEnd/album/Detail.do";

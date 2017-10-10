@@ -46,10 +46,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO AS_ASSIGN VALUES(AS_SEQ.NEXTVAL,sysdate,2,#{al_no},#{as_getpoint})
 	</insert>
 	<select id="AssignCount" resultType="int">
-		SELECT COUNT(AS_GETPOINT) FROM AS_ASSIGN
+		<!-- SELECT COUNT(AS_GETPOINT) FROM AS_ASSIGN -->
+		SELECT COUNT(AS_GETPOINT) FROM AS_ASSIGN WHERE AL_NO = #{al_no}
 	</select>
 	<select id="AssignAvg" resultType="float">
-		SELECT ROUND(AVG(AS_GETPOINT),2) FROM AS_ASSIGN
+		<!-- SELECT ROUND(AVG(AS_GETPOINT),2) FROM AS_ASSIGN -->
+		SELECT ROUND(AVG(AS_GETPOINT),2) FROM AS_ASSIGN WHERE AL_NO = #{al_no}
 	</select>
 	
 	
