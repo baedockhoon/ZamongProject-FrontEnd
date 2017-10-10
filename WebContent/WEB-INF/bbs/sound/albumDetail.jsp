@@ -362,10 +362,10 @@ function goArtistDetail(at_no, al_divide){
 							<dd class="wrap_star">
 								<span class="wrap_evalscore01">
 									<span class="contt_evalscore01"><span id="contt_evalscore01_view" style="width:80.0%;"></span></span>
-									<span class="text_evalscore01"><span class="none">평점</span><span id="gradPointLayer">4.0</span></span>
+									<span class="text_evalscore01"><span class="none">평점</span><span id="gradPointLayer">${assdtod }</span></span>
 								</span>
 								<div class="wrap_grad">
-									<strong class="none">평점 개수</strong><div id="gradCountLayer">9,248명</div>
+									<strong class="none">평점 개수</strong><div id="gradCountLayer">${assdto}</div>
 									<button type="button" title="Red Diary Page.1 평점주기" class="btn_song_grad" data-control="dropdown" aria-haspopup="false" aria-pressed="false" aria-expand="false"><span class="odd_span">평점주기</span></button>
 									<!-- [DP] 별점평가 레이어 -->
 									<div class="l_popup small stPointLayer" id="d_starRate" style="right:0; top:28px; width:259px; display:none;" data-zindex-target="div.grad_area">

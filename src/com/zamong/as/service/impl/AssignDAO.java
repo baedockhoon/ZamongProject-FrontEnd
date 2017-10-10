@@ -18,6 +18,16 @@ public class AssignDAO implements AssignService {
 	public int insert(AssignDTO dto) throws Exception {
 		return template.insert("Assigninsert",dto);
 	}
+
+	@Override
+	public int count(AssignDTO dto) throws Exception {
+		return template.selectOne("AssignCount", dto);
+	}
+
+	@Override
+	public float avg(AssignDTO dto) throws Exception {
+		return template.selectOne("AssignAvg", dto);
+	}
 	
 	
 	

@@ -23,7 +23,8 @@ import com.zamong.web.PagingUtil;
 /*@SessionAttributes("al_no")*/
 @Controller
 public class SoundController {
-
+	int count;
+	float avg;
 	@Resource(name="soundService")
 	private SoundServiceImpl service;
 	@Resource(name="assignServiceImpl")
@@ -78,15 +79,38 @@ public class SoundController {
 	public String albumDetail(
 			//@Param("al_divide") String al_divide,
 			SoundDTO dto,//검색용 파라미터 받기
-			Model model//리퀘스트 영역 저장용
+			Model model,//리퀘스트 영역 저장용
+			AssignDTO assdto
 			) throws Exception{
 		//dto.setAl_divide(al_divide);
 		dto = service.selectAlbumOne(dto);
 
 		List<SoundDTO> list = service.selectSoundList(dto);
 		
+		count = assign.count(assdto);
+		avg = assign.avg(assdto);
+		
+		if(count == 0) {
+			count =0;
+			model.addAttribute("assdto",count);
+		}
+		else {
+			count = assign.count(assdto);
+			model.addAttribute("assdto",count);
+		}
+		
+		if(avg == 0) {
+			avg =0;
+			model.addAttribute("assdtod",avg);
+		}
+		else {
+			avg = assign.avg(assdto);
+			model.addAttribute("assdtod",avg);
+		}
+		
 		model.addAttribute("list",list);
 		model.addAttribute("dto",dto);
+		
 		
 		return "/WEB-INF/bbs/sound/albumDetail.jsp";
 	}//////////////////albumDetail()

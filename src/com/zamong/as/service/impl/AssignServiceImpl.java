@@ -18,6 +18,16 @@ public class AssignServiceImpl implements AssignService {
 	public int insert(AssignDTO dto) throws Exception {
 		return dao.insert(dto);
 	}
+
+	@Override
+	public int count(AssignDTO dto) throws Exception {
+		return dao.count(dto);
+	}
+
+	@Override
+	public float avg(AssignDTO dto) throws Exception {
+		return dao.avg(dto);
+	}
 	
 	
 	

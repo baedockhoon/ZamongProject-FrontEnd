@@ -7,6 +7,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="mybatis.Buyproduct_mybatis.xml">
 	<!--resultMap사용시 column속성 필수  -->
 	
+	<resultMap id="AssignDTOResult" type="Assign">
+	    <result property="as_no" column="as_no"/>
+	    <result property="as_regidate" column="as_regidate"/>
+	    <result property="me_no" column="me_no"/>
+	    <result property="al_no" column="al_no"/>
+	    <result property="as_getpoint" column="as_getpoint"/>
+	    <result property="me_id" column="me_id"/>
+	    <result property="avg" column="avg"/>
+	    <result property="count" column="count"/>
+ 	</resultMap>
  
  	
 	<!-- private String nt_no;//키값
@@ -35,6 +45,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="Assigninsert"  parameterType="Assign">
 		INSERT INTO AS_ASSIGN VALUES(AS_SEQ.NEXTVAL,sysdate,2,#{al_no},#{as_getpoint})
 	</insert>
+	<select id="AssignCount" resultType="int">
+		SELECT COUNT(AS_GETPOINT) FROM AS_ASSIGN
+	</select>
+	<select id="AssignAvg" resultType="float">
+		SELECT ROUND(AVG(AS_GETPOINT),1) FROM AS_ASSIGN
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
        <!--     
            
  	<select id="ReplyBBSLogin" parameterType="java.util.Map" resultType="int">

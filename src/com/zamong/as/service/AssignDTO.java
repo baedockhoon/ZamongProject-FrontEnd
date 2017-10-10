@@ -7,10 +7,13 @@ public class AssignDTO {
 	private int al_no;
 	private String as_getpoint;
 	private String me_id;
+	private String avg;
+	private String count;
 	
 	public AssignDTO() {}
 
-	public AssignDTO(int as_no, String as_regidate, int me_no, int al_no, String as_getpoint, String me_id) {
+	public AssignDTO(int as_no, String as_regidate, int me_no, int al_no, String as_getpoint, String me_id, String avg,
+			String count) {
 		super();
 		this.as_no = as_no;
 		this.as_regidate = as_regidate;
@@ -18,6 +21,8 @@ public class AssignDTO {
 		this.al_no = al_no;
 		this.as_getpoint = as_getpoint;
 		this.me_id = me_id;
+		this.avg = avg;
+		this.count = count;
 	}
 
 	public int getAs_no() {
@@ -66,6 +71,22 @@ public class AssignDTO {
 
 	public void setMe_id(String me_id) {
 		this.me_id = me_id;
+	}
+
+	public String getAvg() {
+		return avg;
+	}
+
+	public void setAvg(String avg) {
+		this.avg = avg;
+	}
+
+	public String getCount() {
+		return count;
+	}
+
+	public void setCount(String count) {
+		this.count = count;
 	}
 
 	
