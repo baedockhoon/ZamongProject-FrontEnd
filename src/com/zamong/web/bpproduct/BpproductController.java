@@ -40,11 +40,7 @@ public class BpproductController {
 		
 		return "/WEB-INF/bbs/cash/CashPoint.jsp";
 	}*/
-	@RequestMapping("/ZamongFrontEnd/Payment.do")
-	public String Payment()throws Exception {
-
-		return "/WEB-INF/bbs/cash/Payment.jsp";
-	}
+	
 	@RequestMapping("/ZamongFrontEnd/PaymentWrite.do")
 	public String PaymentWrite(BuyproductDTO dto, @ModelAttribute("me_id") String me_id )throws Exception {
 		dto.setMe_id(me_id);
@@ -52,8 +48,13 @@ public class BpproductController {
 		if(dto.getPd_no().equals("3")) {
 			dto.setCh_havecash(dto.getBp_price());
 			service.insertCash(dto);
-			
 		}
+			else if(dto.getPd_no().equals("100")) {
+				dto.setMm_minus(dto.getBp_price());
+				service.insertMinus1(dto);
+				return "/ZamongFrontEnd/PaymentList.do";
+				
+			}		
 		else {
 			dto.setMm_minus(dto.getBp_price());
 			service.insertMinus(dto);
@@ -105,7 +106,7 @@ public class BpproductController {
 	
 	@RequestMapping("/ZamongFrontEnd/StreamingView1.do")
 	public String view(BuyproductDTO dto, Model model, HttpServletRequest req,@ModelAttribute("me_id") String me_id)throws Exception {	
-	System.out.println(me_id);
+
 		dto.setMe_id(me_id);
 		dto = service.selectOne(dto);
 	

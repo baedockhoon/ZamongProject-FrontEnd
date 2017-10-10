@@ -45,7 +45,9 @@ public class LoginController {
 				//로그인 처리-세션영역에도 저장
 				model.addAllAttributes(map);
 				session.setAttribute("me_id", me_id);
-				return "/WEB-INF/index.jsp";
+				return "/ZamongFrontEnd/PaymentList1.do";
+			
+					
 			}//if
 			else{//비회원
 				model.addAttribute("loginError","회원가입후 이용하세요");

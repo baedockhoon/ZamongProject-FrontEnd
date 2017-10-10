@@ -43,6 +43,14 @@
 			
 			location.href="<c:url value='/ZamongFrontEnd/LogOut.do'/>";
 		}
+		function goPamphlet() {
+			location.href ="<c:url value='/ZamongFrontEnd/CashList.do'/>";
+		}
+		
+		
+		function goMelonCash() {
+			location.href ="<c:url value='/ZamongFrontEnd/PaymentList.do'/>";
+		}
 		
 		/* function goArtistDetail(at_no, al_divide){
 			var st =  "<c:url value='/ZamongFrontEnd/artist/Info.do?' />";
@@ -180,7 +188,8 @@ ${sessionScope.me_id }
 										 + '</a>';
 
 							} else {
-								prodName = "보유중인 이용권이 없습니다.";
+								prodName = "보유중인 이용권 클릭";
+								
 							}
 
 							//var memId = getMemberId();
@@ -218,12 +227,12 @@ ${sessionScope.me_id }
 										fromMPSYn ? '<a href="javascript:Logout();" onclick="Logout();" title="로그아웃" class="btn_logout"><span>로그아웃</span></a>' : '',
 									'</div>',
 									<!-- //140603_수정 -->
-									getProdName() == "" || getProdName() == null ? '<span class="btn_buy"><a href="javascript:melon.menu.cm.goPamphlet();" title="이용권구매" >이용권구매</a></span>' : '',
+									getProdName() == "" || getProdName() == null ? '<span class="btn_buy"><a href="javascript:goPamphlet();" title="이용권구매" >이용권구매</a></span>' : '',
 									'<div class="mem_used">',
-										'<strong class="product_name">'+prodName+'</strong>',
+										'<strong class="product_name">'+"<a href='<c:url value='/ZamongFrontEnd/StreamingList.do'/>'>"+prodName+"</a>"+'</strong>',
 										'<ul>',
 											'<li class="nth2">',
-												'<a href="javascript:melon.link.goMelonCash();">',
+												'<a href="javascript:goMelonCash();">',
 													'<span><span class="label">캐쉬</span><span class="nm">'+getMelonCash()+'</span></span>',
 												'</a>',
 											'</li>',

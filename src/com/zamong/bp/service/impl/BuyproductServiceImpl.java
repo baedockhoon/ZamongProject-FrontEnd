@@ -89,6 +89,14 @@ public class BuyproductServiceImpl implements BuyproductService {
 
 
 
+	@Override
+	public int insertMinus1(BuyproductDTO dto) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.insertMinus1(dto);
+	}
+
+
+
 	
 
 

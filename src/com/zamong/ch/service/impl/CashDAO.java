@@ -57,6 +57,12 @@ public class CashDAO implements CashService{
 		return template.selectOne("CashView",dto);
 	}
 
+	@Override
+	public CashDTO selectOne1(CashDTO dto) throws Exception {
+		// TODO Auto-generated method stub
+		return template.selectOne("PaymentView", dto);
+	}
+
 
 	
 

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="UTF-8">
 <head>
@@ -48,6 +49,7 @@
 		}
 		location.href = st;
 	};
+	
 	function goArtistDetail(at_no, al_divide){
 		var st =  "<c:url value='/ZamongFrontEnd/artist/Info.do?' />";
 		if (al_divide == "A"){
@@ -58,6 +60,12 @@
 			st += "&al_divide=G";
 		}
 		location.href = st;
+	};
+	
+	function Download(ss_no, ss_path){
+		if(confirm("정말로 음원을 구매 하시겠습니까?")){
+			location.href = "<c:url value='/ZamongFrontEnd/Download.do'/>?ss_no="+ss_no+"&ss_path="+ss_path;
+		}
 	};
 </script>
 
@@ -307,10 +315,10 @@
 												<td><div class="wrap t_center">
 														<button type="button" title="다운로드"
 															class="button_icons download "
-															onClick="melon.buy.goBuyProduct('frm', '30651724', '3C0001', '','0', '18030123');">
+															onClick="Download('${item.ss_no }', '${item.ss_path }');">>
 															<span class="none">다운로드</span>
 														</button>
-													</div></td>
+z													</div></td>
 												<td><div class="wrap t_center">
 														<button type="button" title="뮤직비디오"
 															class="button_icons video "

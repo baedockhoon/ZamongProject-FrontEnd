@@ -61,9 +61,13 @@ public class CashServiceImpl implements CashService {
 		// TODO Auto-generated method stub
 		return dao.selectOne(dto);
 	}
-
+	@Override
+	public CashDTO selectOne1(CashDTO dto) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.selectOne1(dto);
+	}
 	
-
+	
 
 	
 

@@ -216,7 +216,7 @@
     			    document.myForm.target = "parentPage"; // 타켓을 부모창으로 설정  
     			  document.myForm.action = "<c:url value='/ZamongFrontEnd/PaymentWrite.do'/>";
     			   document.myForm.submit();
-    			   alert("충전성공");
+    			   alert("구매성공");
     			   self.close();
     			   
     				

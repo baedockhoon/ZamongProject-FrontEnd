@@ -21,5 +21,5 @@ public interface CashService {
 	//자원반납및 커넥션 풀 반납용]
 	void close() throws Exception;
 	CashDTO selectOne(CashDTO dto) throws Exception;
-
+	CashDTO selectOne1(CashDTO dto) throws Exception;
 }

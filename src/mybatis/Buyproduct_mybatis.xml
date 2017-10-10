@@ -46,7 +46,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
          <insert id="insertMinus"  parameterType="BuyProduct">
 	INSERT INTO MM_MILIAGE VALUES(MM_MINUS_SEQ.NEXTVAL,(select me_no from me_member where me_id = #{me_id}),#{mm_minus})
 	</insert> 
-     
+	  <insert id="insertMinus1"  parameterType="BuyProduct">
+	INSERT INTO MM_MILIAGE VALUES(MM_MINUS_SEQ.NEXTVAL,(select me_no from me_member where me_id = #{me_id}),#{mm_minus})
+	</insert> 
+    
        <!--     
            
  	<select id="ReplyBBSLogin" parameterType="java.util.Map" resultType="int">

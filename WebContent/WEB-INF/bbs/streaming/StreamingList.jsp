@@ -23,11 +23,8 @@
 <div id="wrap" class="mp_wrap">
 	<jsp:include page="/WEB-INF/bbs/template/hi.jsp" />
 	<script type="text/javascript">
-		function goPopup() {
-			// 주소검색을 수행할 팝업 페이지를 호출합니다.
-			// 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
-			var pop = window.open("<c:url value='/ZamongFrontEnd/CashList.do'/>", "pop",
-					"width=700,height=600, scrollbars=yes, resizable=yes");
+		function iscash() {
+			location.href = "<c:url value='/ZamongFrontEnd/CashList.do'/>";
 
 			
 		}
@@ -117,7 +114,7 @@
 					<span id="d_search_wrong_msg">사용중인 자몽 이용권이 없습니다.<br />자몽 이용권을 구매해 주세요.</span>
 				
 				<div class="wrap_btn_c">
-					<button title="멜론 이용권 구매하기 - 페이지 이동" class="btn_green_h30"  onclick="goPopup();" return false;"><span class="odd_span"><span class="even_span">자몽 이용권 구매하기</span></span></button>
+					<button title="멜론 이용권 구매하기 - 페이지 이동" class="btn_green_h30"  onclick="javascript:iscash()" return false;"><span class="odd_span"><span class="even_span">자몽 이용권 구매하기</span></span></button>
 				</div>
 			</div></td>
 		</tr>

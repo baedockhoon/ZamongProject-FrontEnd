@@ -210,7 +210,7 @@
 <div id="conts" align="center">
     <div class="wrap_tab03 type05" align="center">
         <ul>
-            <li style="text-align: center;" class="first_child"><a href="http://faqs2.melon.com/customer/index.htm" class="link_tab" title="홈 - 페이지 이동">
+            <li style="text-align: center;" class="first_child"><a href="<c:url value='/ZamongFrontEnd/main.do'/>" class="link_tab" title="홈 - 페이지 이동">
                 <span class="cntt">홈</span>
             </a></li>
       

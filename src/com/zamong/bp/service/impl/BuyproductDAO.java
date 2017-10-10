@@ -80,6 +80,13 @@ public class BuyproductDAO implements BuyproductService{
 		return template.insert("insertMinus",dto);
 	}
 
+
+	@Override
+	public int insertMinus1(BuyproductDTO dto) throws Exception {
+		// TODO Auto-generated method stub
+		return template.insert("insertMinus1",dto);
+	}
+
 	
 
 	

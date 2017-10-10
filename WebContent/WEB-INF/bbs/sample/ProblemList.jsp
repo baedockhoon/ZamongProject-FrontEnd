@@ -503,7 +503,7 @@
 	<ul>
 		
 		
-		<li class="first_child"><a href="http://faqs2.melon.com/customer/index.htm" class="link_tab" title="홈 - 페이지 이동">
+		<li class="first_child"><a href="<c:url value='/ZamongFrontEnd/main.do'/>" class="link_tab" title="홈 - 페이지 이동">
 			<span class="cntt">홈</span>
 		</a></li>
 		<li ><a href="<c:url value='/ZamongFrontEnd/NoticeList.do'/>" class="link_tab" title="공지사항 - 페이지 이동">

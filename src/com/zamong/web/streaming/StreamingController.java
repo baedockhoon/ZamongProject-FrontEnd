@@ -89,6 +89,7 @@ public class StreamingController {
 		//5]필요한 값 리퀘스트 영역에 저장
 	
 		model.addAttribute("dto", dto);
+	/*	return "/ZamongFrontEnd/PaymentView2.do";*/
 		return "/WEB-INF/bbs/streaming/StreamingList.jsp";
 	}
 	

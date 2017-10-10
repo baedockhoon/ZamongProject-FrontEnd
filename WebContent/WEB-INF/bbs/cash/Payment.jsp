@@ -52,6 +52,7 @@ dao.close();
 </head>
 
 <body>
+
 	<div class="popup_title cash">
 
 
@@ -128,7 +129,7 @@ dao.close();
 						
 			
 			<div class="popup_cntt box_scroll" style="text-align: center;">
-			 	 <input type="button" onclick="goSubmit(${pd_no})" value="결제하기"  class="btn btn-sm btn-primary"/> 
+			 	 <input type="button" onclick="goSubmit(${dto.pd_no})" value="결제하기"  class="btn btn-sm btn-primary"/> 
 			 	 <a id="list"
 								class="btn btn-sm btn-primary">취소</a>
 <!-- 		 <input type="submit" value="확인"/>    --> 
