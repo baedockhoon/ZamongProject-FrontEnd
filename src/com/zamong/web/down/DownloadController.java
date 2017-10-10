@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -35,7 +36,7 @@ public class DownloadController {
 	
 	
 	@RequestMapping("/ZamongFrontEnd/Download.do")
-	public void download(
+	public String download(
 			CashDTO dto,
 			HttpServletRequest req,//페이징용 메소드에 전달
 			@RequestParam Map map, HttpServletResponse resp,//검색용 파라미터 받기
@@ -48,9 +49,11 @@ public class DownloadController {
 		
 		if (Integer.parseInt(dto.getCh_havecash()) >= 500) {
 			FileUtils.download(req,resp,"/Upload",map.get("ss_path").toString());
-		} else {
+		} else if (Integer.parseInt(dto.getCh_havecash()) < 500) {
+			return "/ZamongFrontEnd/Payment.do";
 			
 		}
+		return "";
 		//다운로드 -> 캐쉬차감 -> 다운로드 테이블 insert
 		
 		//회원 보유캐쉬 < 500
