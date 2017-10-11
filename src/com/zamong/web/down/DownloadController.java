@@ -48,7 +48,7 @@ public class DownloadController {
 		//회원 보유캐쉬 > 500
 
 		dto.setMe_id(me_id);
-		System.out.println(me_id);
+	
 		dto = cashService.selectOne(dto);
 	
 		if (dto != null && Integer.parseInt(dto.getCh_havecash()) >= 500) {

@@ -595,7 +595,7 @@
 			</c:otherwise>
 		</c:choose>
 
-				
+			
 					
 					
 				
@@ -607,6 +607,25 @@
 			</tbody>
 
 		</table>
+			<div id="pageObjNavgation" style="">
+							<div class="paginate">
+								<a href="javascript:;" class="btn_first disabled"><span>맨처음</span></a>
+								<a href="javascript:;" class="btn_pre disabled"><span>이전</span></a>
+								<span class="page_num"><strong><span
+										class="none">현재페이지</span>1</strong><a
+									href="javascript:pageObj.sendPage('21');">2</a><a
+									href="javascript:pageObj.sendPage('41');">3</a><a
+									href="javascript:pageObj.sendPage('61');">4</a><a
+									href="javascript:pageObj.sendPage('81');">5</a><a
+									href="javascript:pageObj.sendPage('101');">6</a><a
+									href="javascript:pageObj.sendPage('121');">7</a><a
+									href="javascript:pageObj.sendPage('141');">8</a><a
+									href="javascript:pageObj.sendPage('161');">9</a><a
+									href="javascript:pageObj.sendPage('181');">10</a></span> <a
+									href="javascript:pageObj.sendPage('201');" class="btn_next"><span>다음</span></a>
+								<a href="javascript:pageObj.sendPage('321');" class="btn_last"><span>맨끝</span></a>
+							</div>
+						</div>
 	<form name="ForAnswer" method="get" action="">
 		<input type="hidden" name="rawticket_id" value="">
 		<input type="hidden" name="error_id" value="">

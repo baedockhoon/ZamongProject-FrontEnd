@@ -295,7 +295,7 @@
 								<c:choose>
 									<c:when test="${empty list }">
 										<tr bgcolor="white" align="center">
-											<td colspan="6">등록된 자료가 없어요</td>
+											<td colspan="6">등록된 글이 없습니다.</td>
 										</tr>
 									</c:when>
 									<c:otherwise>

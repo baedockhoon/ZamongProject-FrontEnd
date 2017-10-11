@@ -154,6 +154,34 @@ $('#pageobjNavgation').html("")
 				</tbody>
 			</table>
 		</div>
+		<div id="pageObjNavgation" style="">
+                     <div class="paginate">
+                        <a href="javascript:;" class="btn_first disabled"><span>맨처음</span></a>
+                        <a href="javascript:;" class="btn_pre disabled"><span>이전</span></a>
+                        <span class="page_num"><strong><span
+                              class="none">현재페이지</span>1</strong><a
+                           href="javascript:pageObj.sendPage('21');">2</a><a
+                           href="javascript:pageObj.sendPage('41');">3</a><a
+                           href="javascript:pageObj.sendPage('61');">4</a><a
+                           href="javascript:pageObj.sendPage('81');">5</a><a
+                           href="javascript:pageObj.sendPage('101');">6</a><a
+                           href="javascript:pageObj.sendPage('121');">7</a><a
+                           href="javascript:pageObj.sendPage('141');">8</a><a
+                           href="javascript:pageObj.sendPage('161');">9</a><a
+                           href="javascript:pageObj.sendPage('181');">10</a></span> <a
+                           href="javascript:pageObj.sendPage('201');" class="btn_next"><span>다음</span></a>
+                        <a href="javascript:pageObj.sendPage('321');" class="btn_last"><span>맨끝</span></a>
+                     </div>
+                  </div>
+                  <div class="wrap_search">
+                  <input type="text" id="schText" title="공지사항 검색 입력 편집창" value=""
+                     placeholder="검색어를 입력해 주세요" class="input_text"
+                     style="width: 184px;"
+                     onKeypress="if(event.keyCode==13) {javascript:jsSearch(); return false;}" />
+                  <button type="button" id="schBtn" title="글 검색" class="btn_base02">
+                     <span class="odd_span"><span class="even_span">검색</span></span>
+                  </button>
+               </div>
 		<div class="paginate">
 			<script src='/resource/script/common/pager.js' type='text/javascript'></script>
 <script type="text/javascript">
