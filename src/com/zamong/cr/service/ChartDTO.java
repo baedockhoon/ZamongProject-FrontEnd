@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class ChartDTO {
 	int ss_no;
-	String ss_regidate;
+	java.sql.Date ss_regidate;
 	int al_no;
 	String ss_title;
 	String ss_genre;
@@ -12,10 +12,10 @@ public class ChartDTO {
 	String ss_path;
 	String ss_albumtitle;
 	int dn_no;
-	String dn_regidate;
+	java.sql.Date dn_regidate;
 	int me_no;
 	int lk_no;
-	String lk_regidate;
+	java.sql.Date lk_regidate;
 	String lk_flag;
 	int lk_targetno;
 	Date al_regidate;
@@ -31,10 +31,10 @@ public class ChartDTO {
 	
 	private ChartDTO() {}
 
-	public ChartDTO(int ss_no, String ss_regidate, int al_no, String ss_title, String ss_genre, String ss_duration,
-			String ss_path, String ss_albumtitle, int dn_no, String dn_regidate, int me_no, int lk_no,
-			String lk_regidate, String lk_flag, int lk_targetno, Date al_regidate, String al_albumname,
-			String al_artist, Date al_releasedate, String al_publishcorp, String al_entertaincorp, String al_albumimage,
+	public ChartDTO(int ss_no, Date ss_regidate, int al_no, String ss_title, String ss_genre, String ss_duration,
+			String ss_path, String ss_albumtitle, int dn_no, Date dn_regidate, int me_no, int lk_no, Date lk_regidate,
+			String lk_flag, int lk_targetno, Date al_regidate, String al_albumname, String al_artist,
+			Date al_releasedate, String al_publishcorp, String al_entertaincorp, String al_albumimage,
 			String al_albuminfo, String al_divide, int al_artistno) {
 		super();
 		this.ss_no = ss_no;
@@ -72,11 +72,11 @@ public class ChartDTO {
 		this.ss_no = ss_no;
 	}
 
-	public String getSs_regidate() {
+	public java.sql.Date getSs_regidate() {
 		return ss_regidate;
 	}
 
-	public void setSs_regidate(String ss_regidate) {
+	public void setSs_regidate(java.sql.Date ss_regidate) {
 		this.ss_regidate = ss_regidate;
 	}
 
@@ -136,11 +136,11 @@ public class ChartDTO {
 		this.dn_no = dn_no;
 	}
 
-	public String getDn_regidate() {
+	public java.sql.Date getDn_regidate() {
 		return dn_regidate;
 	}
 
-	public void setDn_regidate(String dn_regidate) {
+	public void setDn_regidate(java.sql.Date dn_regidate) {
 		this.dn_regidate = dn_regidate;
 	}
 
@@ -160,11 +160,11 @@ public class ChartDTO {
 		this.lk_no = lk_no;
 	}
 
-	public String getLk_regidate() {
+	public java.sql.Date getLk_regidate() {
 		return lk_regidate;
 	}
 
-	public void setLk_regidate(String lk_regidate) {
+	public void setLk_regidate(java.sql.Date lk_regidate) {
 		this.lk_regidate = lk_regidate;
 	}
 
@@ -263,7 +263,6 @@ public class ChartDTO {
 	public void setAl_artistno(int al_artistno) {
 		this.al_artistno = al_artistno;
 	}
-	
-	
+
 	
 }

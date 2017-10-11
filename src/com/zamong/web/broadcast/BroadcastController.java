@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.zamong.br.service.BroadcastDTO;
 import com.zamong.br.service.impl.BroadcastServiceImpl;
 
+
 @Controller
 public class BroadcastController {
 	
@@ -29,6 +30,7 @@ public class BroadcastController {
 			) throws Exception{
 		//서비스 호출]
 		List<BroadcastDTO> list= service.selectList(map);
+		
 		//데이타 저장]		
 		model.addAttribute("list", list);
 		

@@ -1,8 +1,10 @@
 package com.zamong.as.service;
 
+import java.sql.Date;
+
 public class AssignDTO {
 	private int as_no;
-	private String as_regidate;
+	private java.sql.Date as_regidate;
 	private int me_no;
 	private int al_no;
 	private String as_getpoint;
@@ -12,7 +14,7 @@ public class AssignDTO {
 	
 	public AssignDTO() {}
 
-	public AssignDTO(int as_no, String as_regidate, int me_no, int al_no, String as_getpoint, String me_id, String avg,
+	public AssignDTO(int as_no, Date as_regidate, int me_no, int al_no, String as_getpoint, String me_id, String avg,
 			String count) {
 		super();
 		this.as_no = as_no;
@@ -33,11 +35,11 @@ public class AssignDTO {
 		this.as_no = as_no;
 	}
 
-	public String getAs_regidate() {
+	public java.sql.Date getAs_regidate() {
 		return as_regidate;
 	}
 
-	public void setAs_regidate(String as_regidate) {
+	public void setAs_regidate(java.sql.Date as_regidate) {
 		this.as_regidate = as_regidate;
 	}
 
@@ -89,5 +91,6 @@ public class AssignDTO {
 		this.count = count;
 	}
 
+	
 	
 }
