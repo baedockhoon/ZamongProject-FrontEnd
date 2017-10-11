@@ -220,7 +220,7 @@
 									<!-- 140603_수정 -->
 									'<div class="mem_info">',
 										'<strong><a href="https://www.melon.com/muid/web/help/myinfointro_inform.htm" class="id_area">' + gradeImg + memId + '</a>님</strong>',
-										'<a href="https://www.melon.com/muid/web/help/myinfointro_inform.htm" title="내정보" class="bg_none" ><span>내정보</span></a>',
+										'<a href="javascript:myimfor()" title="내정보" class="bg_none" ><span>내정보</span></a>',
 										'<div class="mem_btn" id="d_facebook_mem_btn">',
 										'</div>',
 										fromMPSYn ? '<a href="javascript:Logout();" onclick="Logout();" title="로그아웃" class="btn_logout"><span>로그아웃</span></a>' : '',
@@ -2675,6 +2675,10 @@
 	try {
 		melon.setPocId();
 	} catch (e){}
+	
+	function myimfor() {
+		location.href ="<c:url value='/ZamongFrontEnd/Memberfor.do'/>";
+	}
 </script>
 </body>
 

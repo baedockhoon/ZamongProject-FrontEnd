@@ -219,7 +219,7 @@
 									class="cntt">나의 문의 내역</span>
 							</a></li>
 							<li class="last_child"><a
-								href="http://www.melon.com/customer/dcf/index.htm"
+								href="#"
 								class="link_tab" title="DCF 지원 기기 - 페이지 이동"> <span
 									class="cntt">DCF 지원 기기</span>
 							</a></li>
