@@ -86,7 +86,17 @@
 		}
 	};
 </script>
-
+<script type="text/javascript">
+	$(function(){
+		$(".d_checkall").click(function(){
+			if($(this).is(":checked")){
+		        $("input[name=input_check]").prop("checked", true);
+		      }else{
+		        $("input[name=input_check]").prop("checked", false);
+		      }
+		});
+	})
+</script>
 </head>
 
 <body>

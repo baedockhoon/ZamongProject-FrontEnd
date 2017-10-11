@@ -1,11 +1,11 @@
 package com.zamong.mg.service;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class MagazineDTO {
 	//매거진 MG_MAGAZINE
 	private String mg_no;//매거진 고유번호(키값)
-	private java.util.Date mg_regidate;//등록날짜
+	private java.sql.Date mg_regidate;//등록날짜
 	private String mg_title;//제목
 	private String mg_contents;//내용
 	private String mg_division;//분류
@@ -29,10 +29,10 @@ public class MagazineDTO {
 	public void setMg_no(String mg_no) {
 		this.mg_no = mg_no;
 	}
-	public java.util.Date getMg_regidate() {
+	public java.sql.Date getMg_regidate() {
 		return mg_regidate;
 	}
-	public void setMg_regidate(java.util.Date mg_regidate) {
+	public void setMg_regidate(java.sql.Date mg_regidate) {
 		this.mg_regidate = mg_regidate;
 	}
 	public String getMg_title() {
