@@ -4,15 +4,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace속성:매퍼파일의 완전한경로 .xml는 생략 -->
 <!-- ※ibatis와는 다르게 id값에 .(dot)를 사용 못한다. -->
-<mapper namespace="mybatis.Musicvideo_mybatis">
+<mapper namespace="mybatis.MusicAward_mybatis">
 	<!--resultMap사용시 column속성 필수  -->
-	<resultMap id="MusicAwardDTOResult" type="MusicVideo">
+	<!-- <resultMap id="MusicAwardDTOResult" type="MusicAward">
 	    <result property="ma_no" column="ma_no"/>
-	    <result property="ma_regidate" column="ma_regidate" />
+	    <result property="ma_regidate" column="ma_regidate"/>
 	    <result property="ma_title" column="ma_title"/>
 	    <result property="ma_contents" column="ma_contents"/>
 	    <result property="ma_endofday" column="ma_endofday"/>
- 	</resultMap>
+	    <result property="ss_title" column="ss_title"/>
+	    <result property="at_name" column="at_name"/>
+	    <result property="vt_vote" column="vt_vote"/>
+ 	</resultMap> -->
  	
 	<!-- 	MA_NO
 MA_REGIDATE
@@ -25,9 +28,27 @@ MA_ENDOFDAY; -->
  	<!-- id속성에 지정한 값을 자바코드(DAO계열 클래스)에서 
            식별자로 사용 -->
            
-	<select id="MusicAwardlist" parameterType="java.util.Map" resultMap="MusicAwardDTOResult">
-		SELECT * FROM MA_MUSICAWARD ORDER BY MA_REGIDATE DESC
+    <select id="MusicAwardlist" parameterType="java.util.Map" resultType="MusicAward">
+		<!-- SELECT * FROM MA_MUSICAWARD ORDER BY MA_REGIDATE DESC -->
+		select * from MA_MUSICAWARD order by ma_no desc
 	</select>
+           
+	<select id="MusicAwardArtistlist" parameterType="java.util.Map" resultType="MusicAward">
+		<!-- SELECT * FROM MA_MUSICAWARD ORDER BY MA_REGIDATE DESC -->
+		select c.ca_no,t.ma_no,t.ma_regidate,t.ma_title,t.ma_endofday,s.ss_title,a.at_name,m.at_image, nvl(v.votecount,0) vt_vote
+		from ca_candidates c 
+		join ss_soundsource s on c.ss_no=s.ss_no 
+		join at_artist a on c.at_no=a.at_no 
+		join ma_musicaward t on c.ma_no=t.ma_no
+    	join AT_ARTIST m on c.at_no=m.at_no
+		FULL OUTER join (select count(*) votecount, CA_NO from vt_vote group by ca_no) v on c.ca_no = v.ca_no
+    	where t.ma_no between '1' and '100' order by t.ma_no desc
+	</select>
+	
+	<insert id="MusicAwardVote" parameterType="java.util.Map">
+		<!-- SELECT * FROM MA_MUSICAWARD ORDER BY MA_REGIDATE DESC -->
+		insert into vt_vote values(vt_vote_seq.nextval,sysdate,44,#{ca_no})
+	</insert>
 	
 <!-- 	<select id="MusicVideolist_pop" parameterType="java.util.Map" resultMap="MusicVideoDTOResult">
 		SELECT * FROM MV_MUSICVIDEO ORDER BY mv_hitcount desc

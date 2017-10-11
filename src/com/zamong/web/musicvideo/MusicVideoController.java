@@ -67,4 +67,5 @@ public class MusicVideoController {
 		model.addAttribute("dto", dto);
 		return "/WEB-INF/bbs/zamongtv/Musicvideo/MusicVideoView.jsp";
 	}
+
 }

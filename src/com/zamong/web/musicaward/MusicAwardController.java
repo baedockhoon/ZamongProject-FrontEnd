@@ -22,9 +22,6 @@ public class MusicAwardController {
 	@Resource(name="musicAwardServiceImpl")
 	private MusicAwardServiceImpl service;
 	
-	@Resource(name="candidatesServiceImpl")
-	private CandidatesServiceImpl service2;
-	
 	//기본List
 		@RequestMapping("/ZamongFrontEnd/MusicAward.do")
 		public String list(HttpServletRequest req,//페이징용 메소드에 전달
@@ -33,13 +30,26 @@ public class MusicAwardController {
 				) throws Exception{
 			//서비스 호출]
 			List<MusicAwardDTO> list= service.selectList(map);
+			List<MusicAwardDTO> list2= service.selectArtistList(map);
 			
-			List<CandidatesDTO> calist= service2.selectList(map);
+			//List<CandidatesDTO> calist= service2.selectList(map);
 			
 			//데이타 저장]		
 			model.addAttribute("list", list);
-			model.addAttribute("calist", calist);
+			model.addAttribute("list2", list2);
+			
+			//System.out.println(list2.get(0).getVt_vote());
+			//model.addAttribute("calist", calist);
 			
 			return "/WEB-INF/bbs/musicAward/MusicAwardMain.jsp";
 		}
+		
+		
+	//후보에 투표하기
+		@RequestMapping("/ZamongFrontEnd/MusicAwardVote.do")
+		public String vote(MusicAwardDTO dto,HttpServletRequest req) throws Exception{
+			service.vote(dto);
+			return "/ZamongFrontEnd/MusicAward.do";
+		}
+		
 }

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.zamong.ma.service.MusicAwardDTO;
 import com.zamong.ma.service.MusicAwardService;
-import com.zamong.mv.service.impl.MusicVideoDAO;
 
 @Service
 public class MusicAwardServiceImpl implements MusicAwardService{
@@ -43,6 +42,18 @@ public class MusicAwardServiceImpl implements MusicAwardService{
 	@Override
 	public void close() throws Exception {
 		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<MusicAwardDTO> selectArtistList(Map map) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.selectArtistList(map);
+	}
+
+	@Override
+	public void vote(MusicAwardDTO dto) throws Exception {
+		dao.vote(dto);
 		
 	}
 

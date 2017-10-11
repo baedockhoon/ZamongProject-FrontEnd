@@ -48,5 +48,16 @@ public class MusicAwardDAO implements MusicAwardService{
 		
 	}
 
+	@Override
+	public List<MusicAwardDTO> selectArtistList(Map map) throws Exception {
+		return template.selectList("MusicAwardArtistlist",map);
+	}
+
+	@Override
+	public void vote(MusicAwardDTO dto) throws Exception {
+		template.insert("MusicAwardVote", dto);
+		
+	}
+
 
 }

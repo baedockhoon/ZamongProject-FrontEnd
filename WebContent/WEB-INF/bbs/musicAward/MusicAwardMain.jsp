@@ -49,7 +49,7 @@
 
 	<script language="JavaScript">
 		var SetTime = 547205;		// 최초 설정 시간(기본 : 초)
-		function msg_time() {	// 1초씩 카운트
+		/* function msg_time() {	// 1초씩 카운트
 			m = Math.floor(SetTime / 60 / 60 / 24) + "일 " + Math.floor(SetTime / 60 / 60 % 24) + ":" + Math.floor(SetTime / 60 % 60) + ":" + (SetTime % 60);	// 남은 시간 계산
 			var msg = "현재 남은 시간은 <font color='red'>" + m + "</font> 입니다.";
 			document.all.ViewTimer.innerHTML = msg;		// div 영역에 보여줌 
@@ -58,8 +58,8 @@
 				clearInterval(tid);		// 타이머 해제
 				alert("종료");
 			}
-		}
-		window.onload = function TimerStart(){ tid=setInterval('msg_time()',1000) };
+		} */
+		/* window.onload = function TimerStart(){ tid=setInterval('msg_time()',1000) }; */
 	</script>
 	
 </head>
@@ -97,26 +97,21 @@
 <!-- #1.투표 진행 영역 -->
 <!-- ------------------------------------------------------------------- -->
 				<!-- 투표중 2016 -->
-				
+			<c:forEach var="item" items="${list }">
 				<div class="month-timeline first">
-				<c:forEach var="item" items="${list }">
+				
                     <div class="sec-week-wrap first">
+                
                         <div class="fix-timeline">
     
                             <div class="green-box">
-                                
-	
-	
 								<strong> ${item.ma_regidate}</strong>
                             </div>
                         </div>
 						<div class="area">
 							<div class="sec-title">
 								<h2>
-									<span class="num-term num-term01 n9" "=">9</span>
-									<span class="txt-term month">월</span>
-									<span class="num-term num-term02 n4" "=">4</span>
-									<span class="txt-term week">주차</span>
+									<strong> ${item.ma_regidate}</strong>
 								</h2>
 								${item.ma_title }
 							</div>
@@ -144,162 +139,13 @@
 							</div>
 						</div>
 						<!-- //남은시간, 투표수 -->
-
-						<!-- battle -->
-<!-- 						<div class="area-type2">
-							<div class="sec-battle">
-
-
-								<div class="rank1">
-																	
-									<div class="pic-area">
-	
-	
-										<div class="pic-item">
-											<a href="javascript:melon.link.goArtistDetail('672375');">
-												<img onerror="WEBPOCIMG.defaultArtistImgMMA(this);" width="452" src="http://cdnimg.melon.co.kr/cm/artistcrop/images/006/72/375/672375_500.jpg" alt="방탄소년단">
-											</a>
-										</div>
-	
-									</div>								
-									<div class="artist-info-area">
-										<div class="vote-info">
-											<div class="rank-area">
-												<span class="rank n01">순위</span>
-											</div>
-	
-											<div class="artist-name">
-												<a href="javascript:melon.link.goArtistDetail('672375');" title="방탄소년단 - 페이지 이동"><strong class="author">방탄소년단</strong></a>
-											</div>
-	
-										
-											<div class="song-tit"><a href="javascript:melon.play.playSong('57170101',30637982);" title="DNA - 재생">DNA</a></div>
-											<div class="total-num">
-												<div class="perc">
-													<strong>
-														
-			
-		
-			
-				
-								
-					
-					
-															<span class="n5">5</span>
-						
-															<span class="n2 mal">2</span>
-						
-															<span class="per">%</span>
-						
-				
-			
-			
-		
-			
-													</strong>										
-												</div>
-												<div class="vote-cnt"><span class="txt">169,302 득표</span></div>
-											</div>
-										</div>
-										<div class="btn-vote">
-											<button type="button" class="d_vote" data-vote-id="30637982" data-vote-nm="DNA"><span>투표하기</span></button>
-										</div>
-									</div>
-								</div>
-
-
-								<span class="txt-vs">VS</span>
-
-								<div class="rank2">
-																	
-									<div class="pic-area">
-	
-	
-										<div class="pic-item">
-											<a href="javascript:melon.link.goArtistDetail('1865973');">
-												<img onerror="WEBPOCIMG.defaultArtistImgMMA(this);" width="452" src="http://cdnimg.melon.co.kr/cm/artistcrop/images/018/65/973/1865973_500.jpg" alt="Wanna One (워너원)">
-											</a>
-										</div>
-	
-									</div>								
-									<div class="artist-info-area">
-										<div class="vote-info">
-											<div class="rank-area">
-												<span class="rank n02">순위</span>
-											</div>
-	
-											<div class="artist-name">
-												<a href="javascript:melon.link.goArtistDetail('1865973');" title="Wanna One (워너원) - 페이지 이동"><strong class="author">Wanna One (워너원)</strong></a>
-											</div>
-	
-										
-											<div class="song-tit"><a href="javascript:melon.play.playSong('57170101',30568338);" title="에너제틱 (Energetic) - 재생">에너제틱 (Energetic)</a></div>
-											<div class="total-num">
-												<div class="perc">
-													<strong>
-														
-			
-		
-			
-				
-								
-					
-					
-															<span class="n3">3</span>
-						
-															<span class="n4 mal">4</span>
-						
-															<span class="per">%</span>
-						
-				
-			
-			
-		
-			
-													</strong>										
-												</div>
-												<div class="vote-cnt"><span class="txt">110,871 득표</span></div>
-											</div>
-										</div>
-										<div class="btn-vote">
-											<button type="button" class="d_vote" data-vote-id="30568338" data-vote-nm="에너제틱 (Energetic)"><span>투표하기</span></button>
-										</div>
-									</div>
-								</div>
-
-							</div>
-						</div>
-						 -->
-						<!-- vs 모드 끝 -->
-						
-						<c:forEach var="caitem" items="${calist }">
-							${caitem.ca_no } <br/>
-							${caitem.ca_regidate } <br/>
-							${caitem.ss_title } <br/>
-							${caitem.at_name } <br/>
-							${caitem.ma_no } <br/>
-						
-						</c:forEach>
-						
-						
-						
-						<div class="area">
-							<div class="voteinfo-box">
-								<div class="wrap-vote-chee">
-									<div class="vote-chee">
-										<span class="comment-chee">응원 댓글</span>
-										<span class="commnet-num">1,503</span>
-									</div>
-									<a href="#voteCheer">아티스트 응원하기</a>
-								</div>
-							</div>
-						</div>
 						<div class="area">
 							<div class="vote-list d_artist_list d_type_cookie">
 								<div id="card" class="item-list type1">
 									<ul class="vote-start">
 
-
+									<c:forEach var="item2" items="${list2 }">
+									<c:if test="${item.ma_no eq item2.ma_no }">
 										<li>
 											<div class="item">
 												<div class="cont">
@@ -308,7 +154,7 @@
 	
 	
 														<div class="pic-item">
-															<a href="javascript:melon.link.goArtistDetail('672375');" title="방탄소년단 - 페이지 이동"><img onerror="WEBPOCIMG.defaultArtistImgMMA(this);" width="292" src="http://cdnimg.melon.co.kr/cm/artistcrop/images/006/72/375/672375_500.jpg" alt=""></a>
+															<a href="javascript:melon.link.goArtistDetail('672375');" title="${item2.at_name} - 페이지 이동"><img onerror="WEBPOCIMG.defaultArtistImgMMA(this);" width="292" src="http://localhost:8080/ZamongProject/Images/Artist/${item2.at_image}" alt=""></a>
 														</div>
 			
 													</div>
@@ -319,9 +165,9 @@
 														</div>
 
 	
-														<a href="javascript:melon.link.goArtistDetail('672375');" title="방탄소년단 - 페이지 이동"><strong class="author">방탄소년단</strong></a>
+														<a href="javascript:melon.link.goArtistDetail('672375');" title="${item2.at_name} - 페이지 이동"><strong class="author">${item2.at_name}</strong></a>
 														<span class="btn-fan">
-															<button class="btn_fan_b " title="방탄소년단 팬맺기" data-artist-menuid="57170701" data-artist-no="672375">
+															<button class="btn_fan_b " title="${item2.at_name} 팬맺기" data-artist-menuid="57170701" data-artist-no="672375">
 																<span class="odd_span">팬</span>
 															</button>
 														</span>
@@ -331,9 +177,7 @@
 														<div class="artist-title">
 															<a href="javascript:melon.play.playSong('57170101',30637982);" title="DNA - 재생">
 																<span class="view-icon play">재생</span>
-																
-																
-																<span class="song-name">DNA</span>										
+																<span class="song-name">${item2.ss_title}</span>										
 															</a>
 														</div>
 	
@@ -348,130 +192,73 @@
 													<div class="count-vote">
 														<dl>
 															<dt>득표수</dt>
-															<dd class="txt">169,302<span class="sum_txt">득표</span>
-																
+															<dd class="txt">${item2.vt_vote}<span class="sum_txt">득표</span>
 															</dd>
 															<dd class="graph">
-																<div class="liner"><p style="width:     50.0%"></p></div>
-																<span class="txt">     52%</span>
+																<div class="liner"><p style="width:     1.5%"></p></div>
+																<span class="txt">1.5%</span>
 															</dd>
 														</dl>
 													</div>
 													<div class="btn-vote">
-														<button type="button" class="d_vote" data-vote-id="30637982" data-vote-nm="DNA"><span>투표하기</span></button>
+														<a href="<c:url value='/ZamongFrontEnd/MusicAwardVote.do?ca_no=${item2.ca_no}'/>"><button type="button" class="d_vote" data-vote-id="30637982" data-vote-nm="DNA"><span>투표하기</span></button></a>
 													</div>
 												</div>
 											</div>
 										</li>
-
-
-
-	
-
-										<li>
-											<div class="item">
-												<div class="cont">
-							                    	<div class="pic-area">
-	
-	
-	
-														<div class="pic-item">
-															<a href="javascript:melon.link.goArtistDetail('1865973');" title="Wanna One (워너원) - 페이지 이동"><img onerror="WEBPOCIMG.defaultArtistImgMMA(this);" width="292" src="http://cdnimg.melon.co.kr/cm/artistcrop/images/018/65/973/1865973_500.jpg" alt=""></a>
-														</div>
-			
-													</div>
-													
-													<div class="title">
-														<div class="rank-area">
-															<span class="rank n02">"순위</span>
-														</div>
-
-	
-														<a href="javascript:melon.link.goArtistDetail('1865973');" title="Wanna One (워너원) - 페이지 이동"><strong class="author">Wanna One (워너원)</strong></a>
-														<span class="btn-fan">
-															<button class="btn_fan_b " title="Wanna One (워너원) 팬맺기" data-artist-menuid="57170701" data-artist-no="1865973">
-																<span class="odd_span">팬</span>
-															</button>
-														</span>
-	
-	
-													
-														<div class="artist-title">
-															<a href="javascript:melon.play.playSong('57170101',30568338);" title="에너제틱 (Energetic) - 재생">
-																<span class="view-icon play">재생</span>
-																
-																
-																<span class="song-name">에너제틱 (Energetic)</span>										
-															</a>
-														</div>
-	
-	
-														<span class="btn-fan">
-															<button class="btn_fan_b" title="Wanna One (워너원) 팬맺기" data-artist-menuid="57170701" data-artist-no="1865973">
-																<span class="odd_span">팬</span>
-															</button>
-														</span>
-	
-													</div>
-													<div class="count-vote">
-														<dl>
-															<dt>득표수</dt>
-															<dd class="txt">110,871<span class="sum_txt">득표</span>
-																
-																	<span class="info">(1위와 58,431표차)</span>
-																
-															</dd>
-															<dd class="graph">
-																<div class="liner"><p style="width:     32.7%"></p></div>
-																<span class="txt">     34%</span>
-															</dd>
-														</dl>
-													</div>
-													<div class="btn-vote">
-														<button type="button" class="d_vote" data-vote-id="30568338" data-vote-nm="에너제틱 (Energetic)"><span>투표하기</span></button>
-													</div>
-												</div>
-											</div>
-										</li>
-
-
-
-	
-
-	
 										
+									</c:if>
+									
+									</c:forEach>
 
 							
 									</ul>
 								</div>
 							</div>
+							
 						</div>
-					</div>
-					<div class="sec-week-wrap">
-						<div class="fix-timeline"></div>
-						<div class="area-type3">
-							<div class="top-dot"></div>
-							<div class="comment-area comment-area05">
-								<h2 id="voteCheer"><img src="http://cdnimg.melon.co.kr/resource/image/MMA2014/web/award/txt_weekly_commnet.png" width="235" height="28" alt="응원 메시지 남기기!"></h2>
-								<!-- 댓글 영역 -->
-								
-								
-								
-								</c:forEach>
-								
-								<!-- <div class="d_cmtpgn " id="d_cmtpgn" data-sqwidget="templateType:pc-summary-type;textareaType:medium-size;pageType:generic-page" data-sqwidget-settings="cmtPocType:pc.web;pocId:XXXX;menuId:57170101;chnlSeq:901;contsRefValue:2017092518;listPageUrl:http://www.melon.com//melonaward/timeline.htm">				<div id="d_cmtpgn_cmt_write_box" class="re_notice type02 d_cmtpgn_cmt_edit_box" data-cmt-id="-1">		<div class="thumb_wrap">		<a class="thumb d_cmtpgn_user" data-member-key="null" id="commentWriteBoxImage">			<img onerror="this.src='http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120'" src="http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120" width="54" height="54" alt="">			<span class="thumb_frame"></span>		</a>	</div>		<div class="re_textarea_wrap">			<div title="응원 한마디 입력 창 (1000자 이내 입력 가능)" class="textarea" style="min-height: 60px; overflow: hidden;">				<div class="ancm d_cmtpgn_cmt_guide" style="min-height: 54px;"><p>* 게시물의 저작권 등 분쟁, 개인정보 노출로 인한 책임은 작성자 또는 게시자에게 있음을 유의해 주세요.</p></div>				<div class="scroll d_cmtpgn_cmt_edit_area" style="display: none; max-height: 144px;"></div>				<span class="num_board d_cmtpgn_char_count">					<span class="none">현재 입력 글자수</span>					<strong class="d_cmtpgn_char_cnt">0</strong>					/					<span class="none">총 입력 가능 글자수</span>					1000자				</span>			</div>			<div class="wrap_btn">		<div class="wrap_btn_atach_cmt d_cmtpgn_atach_btn_wrapper">			<div class="wrap_btn_attach first_child">		<button type="button" title="음악 첨부" class="btn_atach_cmt sound" aria-haspopup="true" data-control="dropdown"><span class="odd_span">음원</span></button>		<div style="position:absolute; left:0; bottom:-8px; *bottom:-5px; display:none;" class="mt8 d_dropdown d_notpos d_cmtpgn_atach_music_layer"><div class="l_popup_cmt" style="width:456px;">		<div class="cntt">			<h1>음악 첨부</h1>			<div class="wrap_search d_cmtpgn_atach_srch_box">				<input type="text" class="d_cmtpgn_atach_music_srch_hidden" style="display: none;">				<input type="text" title="검색 입력 창 (검색어를 입력해 주세요)" placeholder="검색어를 입력해 주세요" class="text31 d_cmtpgn_atach_music_srch_input" style="width:344px;">				<button type="button" title="검색" class="btn_b31 d_cmtpgn_atach_music_srch_btn"><span class="odd_span"><span class="even_span">검색</span></span></button>			</div>			<div class="search_loading d_cmtpgn_loading" style="display: none;">				<img src="http://image.melon.co.kr/resource/image/cmt/web/common/img_loading.gif" width="40" height="40" alt="">				<p>잠시 기다려 주세요.</p>			</div>			<p class="search_wrong d_cmtpgn_noresult" style="display: none;">검색 된 내용이 없습니다.</p>			<p class="search_wrong d_cmtpgn_fallback" style="display: none;">접속이 지연되고 있습니다.<br>잠시 후 다시 이용해 주시기 바랍니다.<br>이용에 불편을 드려 대단히 죄송합니다.</p>		</div>		<button type="button" title="음악 첨부 닫기" class="btn_close d_cmtpgn_layer_close_btn"><span class="odd_span">닫기</span></button>		<span class="shadow"></span>		<span class="bullet" style="left:9px;"></span>	</div></div>	</div>			<div class="wrap_btn_attach">		<button type="button" title="사진 첨부" class="btn_atach_cmt photo" aria-haspopup="true" data-control="dropdown"><span class="odd_span">사진</span></button>		<div style="position:absolute; left:-29px; bottom:-8px; *bottom:-5px; display:none;" class="mt8 d_dropdown d_notpos d_cmtpgn_atach_image_layer"><div class="l_popup_cmt" style="width:456px;">	<form name="imageUploadForm" method="post" enctype="multipart/form-data" encoding="multipart/form-data" action="http://cmtimgup.melon.com/hs_upload_jsonp_html.php?callback=parent._imageAtachUploadHandler" target="d_cmtpgn_atach_image_frame">		<div class="cntt">			<h1>사진 첨부</h1>			<div class="wrap_search">				<input type="file" title="첨부 이미지 찾아보기" placeholder="파일을 선택해 주세요" class="text31 d_cmtpgn_atach_image_input" style="width:408px;padding:0">			</div>			<div class="wrap_btn_c">				<button type="button" title="사진 첨부 등록 완료" class="btn_emphs_small d_cmtpgn_atach_image_btn"><span class="odd_span"><span class="even_span">등록</span></span></button>				<button type="button" title="사진 첨부 취소" class="btn_emphs02_small d_close"><span class="odd_span"><span class="even_span">취소</span></span></button>			</div>		</div>		<button type="button" title="사진 첨부 닫기" class="btn_close d_cmtpgn_layer_close_btn"><span class="odd_span">닫기</span></button>		<span class="shadow"></span>		<span class="bullet" style="left:38px;"></span>	</form>	</div></div>	</div>			<div class="wrap_btn_attach">		<button type="button" title="영상 첨부" class="btn_atach_cmt video" aria-haspopup="true" data-control="dropdown"><span class="odd_span">영상</span></button>		<div style="position:absolute; left:-59px; bottom:-8px; *bottom:-5px; display:none;" class="mt8 d_dropdown d_notpos d_cmtpgn_atach_video_layer"><div class="l_popup_cmt" style="width:456px;">		<div class="cntt">			<h1>영상 첨부</h1>			<div class="wrap_search d_cmtpgn_atach_srch_box">				<input type="text" class="d_cmtpgn_atach_video_srch_hidden" style="display: none;">				<input type="text" title="검색 입력 창 (검색어를 입력해 주세요)" placeholder="검색어를 입력해 주세요" class="text31 d_cmtpgn_atach_video_srch_input" style="width:344px;">				<button type="button" title="검색" class="btn_b31 d_cmtpgn_atach_video_srch_btn"><span class="odd_span"><span class="even_span">검색</span></span></button>			</div>			<div class="search_loading d_cmtpgn_loading" style="display: none;">				<img src="http://image.melon.co.kr/resource/image/cmt/web/common/img_loading.gif" width="40" height="40" alt="">				<p>잠시 기다려 주세요.</p>			</div>			<p class="search_wrong d_cmtpgn_noresult" style="display: none;">검색 된 내용이 없습니다.</p>			<p class="search_wrong d_cmtpgn_fallback" style="display: none;">접속이 지연되고 있습니다.<br>잠시 후 다시 이용해 주시기 바랍니다.<br>이용에 불편을 드려 대단히 죄송합니다.</p>		</div>		<button type="button" title="영상 첨부 닫기" class="btn_close d_cmtpgn_layer_close_btn"><span class="odd_span">닫기</span></button>		<span class="shadow"></span>		<span class="bullet" style="left:68px;"></span>	</div></div>	</div>			<div class="wrap_btn_attach">		<button type="button" title="링크 첨부" class="btn_atach_cmt link" aria-haspopup="true" data-control="dropdown"><span class="odd_span">링크</span></button>		<div style="position:absolute; left:-89px; bottom:-8px; *bottom:-5px; display:none;" class="mt8 d_dropdown d_notpos d_cmtpgn_atach_link_layer"><div class="l_popup_cmt" style="width:456px;">		<div class="cntt">			<h1>링크 첨부</h1>			<div class="wrap_search type02">				<div class="select_wrap d_cmtpgn_atach_link_option_wrapper" style="display: none;">					<select title="링크 종류 선택" class="d_selectbox" style="width: 60px; display: none;">						<option value="link_video">영상링크</option>											</select><div class="select_type01"><span class="select_box" tabindex="0" title="링크 종류 선택"><span class="sel_r" style="width: 60px;">영상링크</span></span><div class="select_open" style="position: absolute; display: none;" tabindex="0"><ul><li class="on"><a href="#" data-value="link_video" data-text="영상링크">영상링크</a></li></ul></div></div>				</div>				<input type="text" title="링크 첨부 입력 창 (첨부 URL을 입력해 주세요)" placeholder="http://" class="text31 d_cmtpgn_atach_link_input" style="width:408px;">			</div>			<p class="bul_info02 d_atach_video_link_guide">영상링크 첨부는 유튜브 영상 링크만 가능합니다.</p>			<div class="wrap_btn_c">				<button type="button" title="링크 첨부 등록 완료" class="btn_emphs_small d_cmtpgn_atach_link_btn"><span class="odd_span"><span class="even_span">등록</span></span></button>				<button type="button" title="링크 첨부 취소" class="btn_emphs02_small d_close"><span class="odd_span"><span class="even_span">취소</span></span></button>			</div>		</div>		<button type="button" title="링크 첨부 닫기" class="btn_close d_cmtpgn_layer_close_btn"><span class="odd_span">닫기</span></button>		<span class="shadow"></span>		<span class="bullet" style="left:97px;"></span>	</div></div>	</div>		</div>		<span class="wrap_btn_sns d_cmtpgn_sns_btn_wrapper">																	</span>	</div>			<div class="wrap_btn02">		<button type="button" title="글 등록" class="btn_reg d_cmtpgn_cmt_reg_btn"><span class="odd_span"><span class="even_span">등록</span></span></button>	</div>		</div>	</div><div class="clfix mb8" id="d_cmtpgn_cmt_count_wrapper" style=""><div class="fl_left">		<strong class="fc_strong">총 <span class="fc_point d_cmtpgn_srch_cnt">1,503</span>개</strong>	</div>	<ul class="list_sort fl_right d_cmtpgn_sort_option_wrapper" style="">		<li class="on first_child"><strong title="최신순으로 보기">최신순</strong></li>		<li><a href="#cmtpgn=&amp;pageNo=1&amp;sortType=1&amp;srchType=2&amp;srchWord=" title="추천순으로 보기">추천순</a></li>		<li><a href="#cmtpgn=&amp;pageNo=1&amp;sortType=2&amp;srchType=2&amp;srchWord=" title="답글순으로 보기">답글순</a></li>	</ul></div>		<div class="list_cmt list_type_small" id="d_cmtpgn_cmt_list_wrapper" style="">			<div class="search_loading d_cmtpgn_loading" style="display: none;">				<img src="http://image.melon.co.kr/resource/image/cmt/web/common/img_loading.gif" width="40" height="40" alt="">				<p>잠시 기다려 주세요.</p>			</div>			<ul style=""><li data-cmt-id="67009027" data-cmt-owner="off" class="first_child">		<div class="wrap_cmt_cntt d_cmtpgn_cmt_wrapper">			<div class="wrap_nicnmname d_cmtpgn_cmt_member_wrapper">				<span class="none">작성자</span>		<span class="thumb_wrap">			<a class="thumb d_cmtpgn_user" data-member-key="40053026" style="cursor:pointer;text-decoration:none;">				<img onerror="this.src='http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120'" src="http://cdnimg.melon.co.kr/svc/user_images/user/401/54/40053026_194.jpg?tm=20170927160303/melon/quality/80/optimize" width="54" height="54" alt="">				<span class="thumb_frame"></span>			</a>		</span>					<span class="none">작성자</span>					<span class="thumb_wrap">						<a class="thumb d_cmtpgn_user" data-member-key="40053026" style="cursor:pointer;text-decoration:none;">							<img onerror="this.src='http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120'" src="http://cdnimg.melon.co.kr/svc/user_images/user/401/54/40053026_194.jpg?tm=20170927160303/melon/quality/80/optimize" width="54" height="54" alt="" />							<span class="thumb_frame"></span>						</a>					</span>				</span>				<div class="ellipsis" style="max-width: 102px;">															<a class="thumb d_cmtpgn_user" data-member-key="40053026" style="cursor:pointer;text-decoration:none;"><span class="d_cmtpgn_member_nickname" title="블리블리_bin">블리블리_bin</span></a>				</div>				<span class="icon_reg_mobile d_cmtpgn_icon"><span class="none">모바일에서 작성된 글</span></span>			</div>			<div class="wrap_cntt d_cmtpgn_cmt_cont_wrapper">				<div class="cntt">										<div class="cmt_text d_cmtpgn_cmt_full_contents" style="-ms-word-break: break-all; word-break: break-all; word-break: break-word; word-wrap:break-word; -webkit-hyphens: auto; -ms-hyphens: auto; hyphens: auto; display:block">		<div class="cmt_cont">		<span class="none">내용</span>		</div>						<span title="새 글" class="icon_new d_cmtpgn_icon"><span class="none">NEW</span></span>				워너원 600점만 채우자❤❤❤<br>워너블 파이팅!!!!	</div>				</div>				<div>					<span class="none">작성일자</span>					<span class="date">						<span>6분 전</span>						<span class="time"></span>					</span>				</div>						<div class="wrap_btn d_cmtpgn_cmt_info_wrapper">			<button type="button" title="답글 더보기" class="btn_text arrow_d02 d_cmtpgn_adcmt_expand_btn" data-expand-target="#cmt_adcmt_67009027" data-control="expand" role="button"><span class="odd_span">		<span class="text">답글 <strong class="d_cmtpgn_adcmt_cnt">0</strong>개</span>		<span class="icon"></span>	</span></button>			<div class="wrap_btn_right">								<span class="wrap_btn_recm d_cmtpgn_recm_box">			<button type="button" title="글 추천" class="btn_recm positive d_cmtpgn_cmt_recm_btn"><span class="odd_span">				<span class="icon">추천</span>				<span class="none">총건수</span>0			</span></button>			<button type="button" title="글 비추천" class="btn_recm negative d_cmtpgn_cmt_non_recm_btn"><span class="odd_span">				<span class="icon">비추천</span>				<span class="none">총건수</span>0			</span></button>		</span>						<span class="wrap_btn_report d_cmtpgn_cmt_btn_wrapper">		<button type="button" title="글 신고하기" class="btn_reprt d_cmtpgn_cmt_reprt_btn"><span class="odd_span">신고</span></button>	</span>											</div>				</div>			</div>		</div>		<ul class="lower_cmt d_cmtpgn_adcmt_list" id="cmt_adcmt_67009027" style=""></ul>	</li><li data-cmt-id="67008894" data-cmt-owner="off" class="">		<div class="wrap_cmt_cntt d_cmtpgn_cmt_wrapper">			<div class="wrap_nicnmname d_cmtpgn_cmt_member_wrapper">				<span class="none">작성자</span>		<span class="thumb_wrap">			<a class="thumb d_cmtpgn_user" data-member-key="41893344" style="cursor:pointer;text-decoration:none;">				<img onerror="this.src='http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120'" src="http://cdnimg.melon.co.kr/svc/user_images/user/419/94/41893344_194.jpg?tm=20170903063657/melon/quality/80/optimize" width="54" height="54" alt="">				<span class="thumb_frame"></span>			</a>		</span>					<span class="none">작성자</span>					<span class="thumb_wrap">						<a class="thumb d_cmtpgn_user" data-member-key="41893344" style="cursor:pointer;text-decoration:none;">							<img onerror="this.src='http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120'" src="http://cdnimg.melon.co.kr/svc/user_images/user/419/94/41893344_194.jpg?tm=20170903063657/melon/quality/80/optimize" width="54" height="54" alt="" />							<span class="thumb_frame"></span>						</a>					</span>				</span>				<div class="ellipsis" style="max-width: 102px;">															<a class="thumb d_cmtpgn_user" data-member-key="41893344" style="cursor:pointer;text-decoration:none;"><span class="d_cmtpgn_member_nickname" title="지성마음속">지성마음속</span></a>				</div>				<span class="icon_reg_mobile d_cmtpgn_icon"><span class="none">모바일에서 작성된 글</span></span>			</div>			<div class="wrap_cntt d_cmtpgn_cmt_cont_wrapper">				<div class="cntt">										<div class="cmt_text d_cmtpgn_cmt_full_contents" style="-ms-word-break: break-all; word-break: break-all; word-break: break-word; word-wrap:break-word; -webkit-hyphens: auto; -ms-hyphens: auto; hyphens: auto; display:block">		<div class="cmt_cont">		<span class="none">내용</span>		</div>						<span title="새 글" class="icon_new d_cmtpgn_icon"><span class="none">NEW</span></span>				워너원 꽃길만걷자	</div>				</div>				<div>					<span class="none">작성일자</span>					<span class="date">						<span>10분 전</span>						<span class="time"></span>					</span>				</div>						<div class="wrap_btn d_cmtpgn_cmt_info_wrapper">			<button type="button" title="답글 더보기" class="btn_text arrow_d02 d_cmtpgn_adcmt_expand_btn" data-expand-target="#cmt_adcmt_67008894" data-control="expand" role="button"><span class="odd_span">		<span class="text">답글 <strong class="d_cmtpgn_adcmt_cnt">0</strong>개</span>		<span class="icon"></span>	</span></button>			<div class="wrap_btn_right">								<span class="wrap_btn_recm d_cmtpgn_recm_box">			<button type="button" title="글 추천" class="btn_recm positive d_cmtpgn_cmt_recm_btn"><span class="odd_span">				<span class="icon">추천</span>				<span class="none">총건수</span>0			</span></button>			<button type="button" title="글 비추천" class="btn_recm negative d_cmtpgn_cmt_non_recm_btn"><span class="odd_span">				<span class="icon">비추천</span>				<span class="none">총건수</span>0			</span></button>		</span>						<span class="wrap_btn_report d_cmtpgn_cmt_btn_wrapper">		<button type="button" title="글 신고하기" class="btn_reprt d_cmtpgn_cmt_reprt_btn"><span class="odd_span">신고</span></button>	</span>											</div>				</div>			</div>		</div>		<ul class="lower_cmt d_cmtpgn_adcmt_list" id="cmt_adcmt_67008894" style=""></ul>	</li><li data-cmt-id="67008877" data-cmt-owner="off" class="">		<div class="wrap_cmt_cntt d_cmtpgn_cmt_wrapper">			<div class="wrap_nicnmname d_cmtpgn_cmt_member_wrapper">				<span class="none">작성자</span>		<span class="thumb_wrap">			<a class="thumb d_cmtpgn_user" data-member-key="41633060" style="cursor:pointer;text-decoration:none;">				<img onerror="this.src='http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120'" src="http://cdnimg.melon.co.kr/svc/user_images/user/417/34/41633060_194.jpg?tm=20170908205150/melon/quality/80/optimize" width="54" height="54" alt="">				<span class="thumb_frame"></span>			</a>		</span>					<span class="none">작성자</span>					<span class="thumb_wrap">						<a class="thumb d_cmtpgn_user" data-member-key="41633060" style="cursor:pointer;text-decoration:none;">							<img onerror="this.src='http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120'" src="http://cdnimg.melon.co.kr/svc/user_images/user/417/34/41633060_194.jpg?tm=20170908205150/melon/quality/80/optimize" width="54" height="54" alt="" />							<span class="thumb_frame"></span>						</a>					</span>				</span>				<div class="ellipsis" style="max-width: 102px;">															<a class="thumb d_cmtpgn_user" data-member-key="41633060" style="cursor:pointer;text-decoration:none;"><span class="d_cmtpgn_member_nickname" title="purinjihun">purinjihun</span></a>				</div>				<span class="icon_reg_mobile d_cmtpgn_icon"><span class="none">모바일에서 작성된 글</span></span>			</div>			<div class="wrap_cntt d_cmtpgn_cmt_cont_wrapper">				<div class="cntt">										<div class="cmt_text d_cmtpgn_cmt_full_contents" style="-ms-word-break: break-all; word-break: break-all; word-break: break-word; word-wrap:break-word; -webkit-hyphens: auto; -ms-hyphens: auto; hyphens: auto; display:block">		<div class="cmt_cont">		<span class="none">내용</span>		</div>						<span title="새 글" class="icon_new d_cmtpgn_icon"><span class="none">NEW</span></span>				워너블 투표열심히합시당❤️<br>워너원 응원해 사랑해❣️❣️	</div>				</div>				<div>					<span class="none">작성일자</span>					<span class="date">						<span>11분 전</span>						<span class="time"></span>					</span>				</div>						<div class="wrap_btn d_cmtpgn_cmt_info_wrapper">			<button type="button" title="답글 더보기" class="btn_text arrow_d02 d_cmtpgn_adcmt_expand_btn" data-expand-target="#cmt_adcmt_67008877" data-control="expand" role="button"><span class="odd_span">		<span class="text">답글 <strong class="d_cmtpgn_adcmt_cnt">0</strong>개</span>		<span class="icon"></span>	</span></button>			<div class="wrap_btn_right">								<span class="wrap_btn_recm d_cmtpgn_recm_box">			<button type="button" title="글 추천" class="btn_recm positive d_cmtpgn_cmt_recm_btn"><span class="odd_span">				<span class="icon">추천</span>				<span class="none">총건수</span>0			</span></button>			<button type="button" title="글 비추천" class="btn_recm negative d_cmtpgn_cmt_non_recm_btn"><span class="odd_span">				<span class="icon">비추천</span>				<span class="none">총건수</span>0			</span></button>		</span>						<span class="wrap_btn_report d_cmtpgn_cmt_btn_wrapper">		<button type="button" title="글 신고하기" class="btn_reprt d_cmtpgn_cmt_reprt_btn"><span class="odd_span">신고</span></button>	</span>											</div>				</div>			</div>		</div>		<ul class="lower_cmt d_cmtpgn_adcmt_list" id="cmt_adcmt_67008877" style=""></ul>	</li><li data-cmt-id="67008849" data-cmt-owner="off" class="">		<div class="wrap_cmt_cntt d_cmtpgn_cmt_wrapper">			<div class="wrap_nicnmname d_cmtpgn_cmt_member_wrapper">				<span class="none">작성자</span>		<span class="thumb_wrap">			<a class="thumb d_cmtpgn_user" data-member-key="42634081" style="cursor:pointer;text-decoration:none;">				<img onerror="this.src='http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120'" src="http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120" width="54" height="54" alt="">				<span class="thumb_frame"></span>			</a>		</span>					<span class="none">작성자</span>					<span class="thumb_wrap">						<a class="thumb d_cmtpgn_user" data-member-key="42634081" style="cursor:pointer;text-decoration:none;">							<img onerror="this.src='http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120'" src="http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120" width="54" height="54" alt="" />							<span class="thumb_frame"></span>						</a>					</span>				</span>				<div class="ellipsis" style="max-width: 102px;">															<a class="thumb d_cmtpgn_user" data-member-key="42634081" style="cursor:pointer;text-decoration:none;"><span class="d_cmtpgn_member_nickname" title="다은공주님이다">다은공주님이다</span></a>				</div>				<span class="icon_reg_mobile d_cmtpgn_icon"><span class="none">모바일에서 작성된 글</span></span>			</div>			<div class="wrap_cntt d_cmtpgn_cmt_cont_wrapper">				<div class="cntt">										<div class="cmt_text d_cmtpgn_cmt_full_contents" style="-ms-word-break: break-all; word-break: break-all; word-break: break-word; word-wrap:break-word; -webkit-hyphens: auto; -ms-hyphens: auto; hyphens: auto; display:block">		<div class="cmt_cont">		<span class="none">내용</span>		</div>						<span title="새 글" class="icon_new d_cmtpgn_icon"><span class="none">NEW</span></span>				워너원 화이팅 항상 꽃 길만 걷길 ❤	</div>				</div>				<div>					<span class="none">작성일자</span>					<span class="date">						<span>11분 전</span>						<span class="time"></span>					</span>				</div>						<div class="wrap_btn d_cmtpgn_cmt_info_wrapper">			<button type="button" title="답글 더보기" class="btn_text arrow_d02 d_cmtpgn_adcmt_expand_btn" data-expand-target="#cmt_adcmt_67008849" data-control="expand" role="button"><span class="odd_span">		<span class="text">답글 <strong class="d_cmtpgn_adcmt_cnt">0</strong>개</span>		<span class="icon"></span>	</span></button>			<div class="wrap_btn_right">								<span class="wrap_btn_recm d_cmtpgn_recm_box">			<button type="button" title="글 추천" class="btn_recm positive d_cmtpgn_cmt_recm_btn"><span class="odd_span">				<span class="icon">추천</span>				<span class="none">총건수</span>1			</span></button>			<button type="button" title="글 비추천" class="btn_recm negative d_cmtpgn_cmt_non_recm_btn"><span class="odd_span">				<span class="icon">비추천</span>				<span class="none">총건수</span>1			</span></button>		</span>						<span class="wrap_btn_report d_cmtpgn_cmt_btn_wrapper">		<button type="button" title="글 신고하기" class="btn_reprt d_cmtpgn_cmt_reprt_btn"><span class="odd_span">신고</span></button>	</span>											</div>				</div>			</div>		</div>		<ul class="lower_cmt d_cmtpgn_adcmt_list" id="cmt_adcmt_67008849" style=""></ul>	</li><li data-cmt-id="67008828" data-cmt-owner="off" class="">		<div class="wrap_cmt_cntt d_cmtpgn_cmt_wrapper">			<div class="wrap_nicnmname d_cmtpgn_cmt_member_wrapper">				<span class="none">작성자</span>		<span class="thumb_wrap">			<a class="thumb d_cmtpgn_user" data-member-key="39751298" style="cursor:pointer;text-decoration:none;">				<img onerror="this.src='http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120'" src="http://cdnimg.melon.co.kr/svc/user_images/user/398/52/39751298_194.jpg?tm=20170628013203/melon/quality/80/optimize" width="54" height="54" alt="">				<span class="thumb_frame"></span>			</a>		</span>					<span class="none">작성자</span>					<span class="thumb_wrap">						<a class="thumb d_cmtpgn_user" data-member-key="39751298" style="cursor:pointer;text-decoration:none;">							<img onerror="this.src='http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120'" src="http://cdnimg.melon.co.kr/svc/user_images/user/398/52/39751298_194.jpg?tm=20170628013203/melon/quality/80/optimize" width="54" height="54" alt="" />							<span class="thumb_frame"></span>						</a>					</span>				</span>				<div class="ellipsis" style="max-width: 102px;">															<a class="thumb d_cmtpgn_user" data-member-key="39751298" style="cursor:pointer;text-decoration:none;"><span class="d_cmtpgn_member_nickname" title="김지혜">김지혜</span></a>				</div>				<span class="icon_reg_mobile d_cmtpgn_icon"><span class="none">모바일에서 작성된 글</span></span>			</div>			<div class="wrap_cntt d_cmtpgn_cmt_cont_wrapper">				<div class="cntt">										<div class="cmt_text d_cmtpgn_cmt_full_contents" style="-ms-word-break: break-all; word-break: break-all; word-break: break-word; word-wrap:break-word; -webkit-hyphens: auto; -ms-hyphens: auto; hyphens: auto; display:block">		<div class="cmt_cont">		<span class="none">내용</span>		</div>						<span title="새 글" class="icon_new d_cmtpgn_icon"><span class="none">NEW</span></span>				방탄소년단 화이팅~~~~!!!	</div>				</div>				<div>					<span class="none">작성일자</span>					<span class="date">						<span>12분 전</span>						<span class="time"></span>					</span>				</div>						<div class="wrap_btn d_cmtpgn_cmt_info_wrapper">			<button type="button" title="답글 더보기" class="btn_text arrow_d02 d_cmtpgn_adcmt_expand_btn" data-expand-target="#cmt_adcmt_67008828" data-control="expand" role="button"><span class="odd_span">		<span class="text">답글 <strong class="d_cmtpgn_adcmt_cnt">0</strong>개</span>		<span class="icon"></span>	</span></button>			<div class="wrap_btn_right">								<span class="wrap_btn_recm d_cmtpgn_recm_box">			<button type="button" title="글 추천" class="btn_recm positive d_cmtpgn_cmt_recm_btn"><span class="odd_span">				<span class="icon">추천</span>				<span class="none">총건수</span>0			</span></button>			<button type="button" title="글 비추천" class="btn_recm negative d_cmtpgn_cmt_non_recm_btn"><span class="odd_span">				<span class="icon">비추천</span>				<span class="none">총건수</span>1			</span></button>		</span>						<span class="wrap_btn_report d_cmtpgn_cmt_btn_wrapper">		<button type="button" title="글 신고하기" class="btn_reprt d_cmtpgn_cmt_reprt_btn"><span class="odd_span">신고</span></button>	</span>											</div>				</div>			</div>		</div>		<ul class="lower_cmt d_cmtpgn_adcmt_list" id="cmt_adcmt_67008828" style=""></ul>	</li><li data-cmt-id="67008718" data-cmt-owner="off" class="">		<div class="wrap_cmt_cntt d_cmtpgn_cmt_wrapper">			<div class="wrap_nicnmname d_cmtpgn_cmt_member_wrapper">				<span class="none">작성자</span>		<span class="thumb_wrap">			<a class="thumb d_cmtpgn_user" data-member-key="40936304" style="cursor:pointer;text-decoration:none;">				<img onerror="this.src='http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120'" src="http://cdnimg.melon.co.kr/svc/user_images/user/410/37/40936304_194.jpg?tm=20170927155356/melon/quality/80/optimize" width="54" height="54" alt="">				<span class="thumb_frame"></span>			</a>		</span>					<span class="none">작성자</span>					<span class="thumb_wrap">						<a class="thumb d_cmtpgn_user" data-member-key="40936304" style="cursor:pointer;text-decoration:none;">							<img onerror="this.src='http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120'" src="http://cdnimg.melon.co.kr/svc/user_images/user/410/37/40936304_194.jpg?tm=20170927155356/melon/quality/80/optimize" width="54" height="54" alt="" />							<span class="thumb_frame"></span>						</a>					</span>				</span>				<div class="ellipsis" style="max-width: 102px;">															<a class="thumb d_cmtpgn_user" data-member-key="40936304" style="cursor:pointer;text-decoration:none;"><span class="d_cmtpgn_member_nickname" title="꾹이눈에별">꾹이눈에별</span></a>				</div>				<span class="icon_reg_mobile d_cmtpgn_icon"><span class="none">모바일에서 작성된 글</span></span>			</div>			<div class="wrap_cntt d_cmtpgn_cmt_cont_wrapper">				<div class="cntt">										<div class="cmt_text d_cmtpgn_cmt_full_contents" style="-ms-word-break: break-all; word-break: break-all; word-break: break-word; word-wrap:break-word; -webkit-hyphens: auto; -ms-hyphens: auto; hyphens: auto; display:block">		<div class="cmt_cont">		<span class="none">내용</span>		</div>						<span title="새 글" class="icon_new d_cmtpgn_icon"><span class="none">NEW</span></span>				BTS 하고싶은거 다해!	</div>				</div>				<div>					<span class="none">작성일자</span>					<span class="date">						<span>15분 전</span>						<span class="time"></span>					</span>				</div>						<div class="wrap_btn d_cmtpgn_cmt_info_wrapper">			<button type="button" title="답글 더보기" class="btn_text arrow_d02 d_cmtpgn_adcmt_expand_btn" data-expand-target="#cmt_adcmt_67008718" data-control="expand" role="button"><span class="odd_span">		<span class="text">답글 <strong class="d_cmtpgn_adcmt_cnt">0</strong>개</span>		<span class="icon"></span>	</span></button>			<div class="wrap_btn_right">								<span class="wrap_btn_recm d_cmtpgn_recm_box">			<button type="button" title="글 추천" class="btn_recm positive d_cmtpgn_cmt_recm_btn"><span class="odd_span">				<span class="icon">추천</span>				<span class="none">총건수</span>2			</span></button>			<button type="button" title="글 비추천" class="btn_recm negative d_cmtpgn_cmt_non_recm_btn"><span class="odd_span">				<span class="icon">비추천</span>				<span class="none">총건수</span>1			</span></button>		</span>						<span class="wrap_btn_report d_cmtpgn_cmt_btn_wrapper">		<button type="button" title="글 신고하기" class="btn_reprt d_cmtpgn_cmt_reprt_btn"><span class="odd_span">신고</span></button>	</span>											</div>				</div>			</div>		</div>		<ul class="lower_cmt d_cmtpgn_adcmt_list" id="cmt_adcmt_67008718" style=""></ul>	</li><li data-cmt-id="67008320" data-cmt-owner="off" class="">		<div class="wrap_cmt_cntt d_cmtpgn_cmt_wrapper">			<div class="wrap_nicnmname d_cmtpgn_cmt_member_wrapper">				<span class="none">작성자</span>		<span class="thumb_wrap">			<a class="thumb d_cmtpgn_user" data-member-key="37963587" style="cursor:pointer;text-decoration:none;">				<img onerror="this.src='http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120'" src="http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist01_300.jpg/melon/resize/120" width="54" height="54" alt="">				<span class="thumb_frame"></span>			</a>		</span>					<span class="none">작성자</span>					<span class="thumb_wrap">						<a class="thumb d_cmtpgn_user" data-member-key="37963587" style="cursor:pointer;text-decoration:none;">							<img onerror="this.src='http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120'" src="http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist01_300.jpg/melon/resize/120" width="54" height="54" alt="" />							<span class="thumb_frame"></span>						</a>					</span>				</span>				<div class="ellipsis" style="max-width: 102px;">															<a class="thumb d_cmtpgn_user" data-member-key="37963587" style="cursor:pointer;text-decoration:none;"><span class="d_cmtpgn_member_nickname" title="Bts09">Bts09</span></a>				</div>				<span class="icon_reg_mobile d_cmtpgn_icon"><span class="none">모바일에서 작성된 글</span></span>			</div>			<div class="wrap_cntt d_cmtpgn_cmt_cont_wrapper">				<div class="cntt">										<div class="cmt_text d_cmtpgn_cmt_full_contents" style="-ms-word-break: break-all; word-break: break-all; word-break: break-word; word-wrap:break-word; -webkit-hyphens: auto; -ms-hyphens: auto; hyphens: auto; display:block">		<div class="cmt_cont">		<span class="none">내용</span>		</div>						<span title="새 글" class="icon_new d_cmtpgn_icon"><span class="none">NEW</span></span>				소년단 보라해♡	</div>				</div>				<div>					<span class="none">작성일자</span>					<span class="date">						<span>26분 전</span>						<span class="time"></span>					</span>				</div>						<div class="wrap_btn d_cmtpgn_cmt_info_wrapper">			<button type="button" title="답글 더보기" class="btn_text arrow_d02 d_cmtpgn_adcmt_expand_btn" data-expand-target="#cmt_adcmt_67008320" data-control="expand" role="button"><span class="odd_span">		<span class="text">답글 <strong class="d_cmtpgn_adcmt_cnt">0</strong>개</span>		<span class="icon"></span>	</span></button>			<div class="wrap_btn_right">								<span class="wrap_btn_recm d_cmtpgn_recm_box">			<button type="button" title="글 추천" class="btn_recm positive d_cmtpgn_cmt_recm_btn"><span class="odd_span">				<span class="icon">추천</span>				<span class="none">총건수</span>1			</span></button>			<button type="button" title="글 비추천" class="btn_recm negative d_cmtpgn_cmt_non_recm_btn"><span class="odd_span">				<span class="icon">비추천</span>				<span class="none">총건수</span>1			</span></button>		</span>						<span class="wrap_btn_report d_cmtpgn_cmt_btn_wrapper">		<button type="button" title="글 신고하기" class="btn_reprt d_cmtpgn_cmt_reprt_btn"><span class="odd_span">신고</span></button>	</span>											</div>				</div>			</div>		</div>		<ul class="lower_cmt d_cmtpgn_adcmt_list" id="cmt_adcmt_67008320" style=""></ul>	</li><li data-cmt-id="67008194" data-cmt-owner="off" class="">		<div class="wrap_cmt_cntt d_cmtpgn_cmt_wrapper">			<div class="wrap_nicnmname d_cmtpgn_cmt_member_wrapper">				<span class="none">작성자</span>		<span class="thumb_wrap">			<a class="thumb d_cmtpgn_user" data-member-key="28584806" style="cursor:pointer;text-decoration:none;">				<img onerror="this.src='http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120'" src="http://cdnimg.melon.co.kr/svc/user_images/user/286/85/28584806_194.jpg?tm=20170921200723/melon/quality/80/optimize" width="54" height="54" alt="">				<span class="thumb_frame"></span>			</a>		</span>					<span class="none">작성자</span>					<span class="thumb_wrap">						<a class="thumb d_cmtpgn_user" data-member-key="28584806" style="cursor:pointer;text-decoration:none;">							<img onerror="this.src='http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120'" src="http://cdnimg.melon.co.kr/svc/user_images/user/286/85/28584806_194.jpg?tm=20170921200723/melon/quality/80/optimize" width="54" height="54" alt="" />							<span class="thumb_frame"></span>						</a>					</span>				</span>				<div class="ellipsis" style="max-width: 102px;">															<a class="thumb d_cmtpgn_user" data-member-key="28584806" style="cursor:pointer;text-decoration:none;"><span class="d_cmtpgn_member_nickname" title="수달대휘">수달대휘</span></a>				</div>				<span class="icon_reg_mobile d_cmtpgn_icon"><span class="none">모바일에서 작성된 글</span></span>			</div>			<div class="wrap_cntt d_cmtpgn_cmt_cont_wrapper">				<div class="cntt">										<div class="cmt_text d_cmtpgn_cmt_full_contents" style="-ms-word-break: break-all; word-break: break-all; word-break: break-word; word-wrap:break-word; -webkit-hyphens: auto; -ms-hyphens: auto; hyphens: auto; display:block">		<div class="cmt_cont">		<span class="none">내용</span>		</div>						<span title="새 글" class="icon_new d_cmtpgn_icon"><span class="none">NEW</span></span>				워너원❤	</div>				</div>				<div>					<span class="none">작성일자</span>					<span class="date">						<span>30분 전</span>						<span class="time"></span>					</span>				</div>						<div class="wrap_btn d_cmtpgn_cmt_info_wrapper">			<button type="button" title="답글 더보기" class="btn_text arrow_d02 d_cmtpgn_adcmt_expand_btn" data-expand-target="#cmt_adcmt_67008194" data-control="expand" role="button"><span class="odd_span">		<span class="text">답글 <strong class="d_cmtpgn_adcmt_cnt">0</strong>개</span>		<span class="icon"></span>	</span></button>			<div class="wrap_btn_right">								<span class="wrap_btn_recm d_cmtpgn_recm_box">			<button type="button" title="글 추천" class="btn_recm positive d_cmtpgn_cmt_recm_btn"><span class="odd_span">				<span class="icon">추천</span>				<span class="none">총건수</span>1			</span></button>			<button type="button" title="글 비추천" class="btn_recm negative d_cmtpgn_cmt_non_recm_btn"><span class="odd_span">				<span class="icon">비추천</span>				<span class="none">총건수</span>0			</span></button>		</span>						<span class="wrap_btn_report d_cmtpgn_cmt_btn_wrapper">		<button type="button" title="글 신고하기" class="btn_reprt d_cmtpgn_cmt_reprt_btn"><span class="odd_span">신고</span></button>	</span>											</div>				</div>			</div>		</div>		<ul class="lower_cmt d_cmtpgn_adcmt_list" id="cmt_adcmt_67008194" style=""></ul>	</li><li data-cmt-id="67007870" data-cmt-owner="off" class="">		<div class="wrap_cmt_cntt d_cmtpgn_cmt_wrapper">			<div class="wrap_nicnmname d_cmtpgn_cmt_member_wrapper">				<span class="none">작성자</span>		<span class="thumb_wrap">			<a class="thumb d_cmtpgn_user" data-member-key="7016698" style="cursor:pointer;text-decoration:none;">				<img onerror="this.src='http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120'" src="http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120" width="54" height="54" alt="">				<span class="thumb_frame"></span>			</a>		</span>					<span class="none">작성자</span>					<span class="thumb_wrap">						<a class="thumb d_cmtpgn_user" data-member-key="7016698" style="cursor:pointer;text-decoration:none;">							<img onerror="this.src='http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120'" src="http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120" width="54" height="54" alt="" />							<span class="thumb_frame"></span>						</a>					</span>				</span>				<div class="ellipsis" style="max-width: 102px;">															<a class="thumb d_cmtpgn_user" data-member-key="7016698" style="cursor:pointer;text-decoration:none;"><span class="d_cmtpgn_member_nickname" title="인더호석">인더호석</span></a>				</div>							</div>			<div class="wrap_cntt d_cmtpgn_cmt_cont_wrapper">				<div class="cntt">										<div class="cmt_text d_cmtpgn_cmt_full_contents" style="-ms-word-break: break-all; word-break: break-all; word-break: break-word; word-wrap:break-word; -webkit-hyphens: auto; -ms-hyphens: auto; hyphens: auto; display:block">		<div class="cmt_cont">		<span class="none">내용</span>		</div>										믿고 듣는 방탄!!!!!! 방탄해서 행복하다 ㅠㅠㅠㅠㅠㅠㅠㅠ<div class="wrap_cmt_box_thum d_cmtpgn_atach_box" data-atach-type="music_song" data-atach-id="30637982" data-song-album-id="10097112" data-song-adult-flag="0" data-song-avail-flag="0" data-st-avail-flag="true" data-dl-avail-flag="true" data-album-only-flag="0">		<div class="cmt_box_thum song">			<div class="image">				<a href="http://www.melon.com/song/detail.htm?songId=30637982" title="DNA" class="d_cmtpgn_atach_content d_cmtpgn_atach_content_melon_song">					<img onerror="WEBPOCIMG.defaultAlbumImg(this,48);" src="http://cdnimg.melon.co.kr/cm/album/images/100/97/112/10097112_th120.jpg" width="48" height="48" alt="">					<span class="thumb_frame"></span>				</a>			</div>			<div class="cntt">				<div class="wrap_btn">					<button type="button" title="DNA 재생" class="btn_icon play d_cmtpgn_atach_content d_cmtpgn_atach_content_melon_play"><span class="odd_span">재생</span></button>					<button type="button" title="DNA 다운로드" class="btn_icon_cmt dl d_cmtpgn_atach_content d_cmtpgn_atach_content_melon_download"><span class="odd_span">다운로드</span></button>				</div>				<dl>					<dt class="title">						<span class="none">곡명</span>																								<a href="http://www.melon.com/song/detail.htm?songId=30637982" title="DNA" class="d_cmtpgn_atach_content d_cmtpgn_atach_content_melon_song d_cmtpgn_multiline_ellipsis">DNA</a>					</dt>					<dd class="artist_name">						<div class="ellipsis" style="width: auto; max-width: 140px; word-break: normal; word-wrap: normal; white-space:nowrap;">							<span class="none">아티스트명</span>							<span>								<a href="http://www.melon.com/artist/timeline.htm?artistId=672375" title="방탄소년단" class="d_cmtpgn_atach_content d_cmtpgn_atach_content_melon_artist">방탄소년단</a>								<span class="d_cmtpgn_multiartist_ellipsis_tester" style="display: none;"><a href="http://www.melon.com/artist/timeline.htm?artistId=672375" title="방탄소년단" class="d_cmtpgn_atach_content d_cmtpgn_atach_content_melon_artist">방탄소년단</a></span>							</span>						</div>											</dd>					<dd class="info">						<span class="none">앨범명</span>						<span class="ellipsis">LOVE YOURSELF 承 `Her`</span>					</dd>				</dl>			</div>		</div>	</div>	</div>				</div>				<div>					<span class="none">작성일자</span>					<span class="date">						<span>39분 전</span>						<span class="time"></span>					</span>				</div>						<div class="wrap_btn d_cmtpgn_cmt_info_wrapper">			<button type="button" title="답글 더보기" class="btn_text arrow_d02 d_cmtpgn_adcmt_expand_btn" data-expand-target="#cmt_adcmt_67007870" data-control="expand" role="button"><span class="odd_span">		<span class="text">답글 <strong class="d_cmtpgn_adcmt_cnt">0</strong>개</span>		<span class="icon"></span>	</span></button>			<div class="wrap_btn_right">								<span class="wrap_btn_recm d_cmtpgn_recm_box">			<button type="button" title="글 추천" class="btn_recm positive d_cmtpgn_cmt_recm_btn"><span class="odd_span">				<span class="icon">추천</span>				<span class="none">총건수</span>6			</span></button>			<button type="button" title="글 비추천" class="btn_recm negative d_cmtpgn_cmt_non_recm_btn"><span class="odd_span">				<span class="icon">비추천</span>				<span class="none">총건수</span>2			</span></button>		</span>						<span class="wrap_btn_report d_cmtpgn_cmt_btn_wrapper">		<button type="button" title="글 신고하기" class="btn_reprt d_cmtpgn_cmt_reprt_btn"><span class="odd_span">신고</span></button>	</span>											</div>				</div>			</div>		</div>		<ul class="lower_cmt d_cmtpgn_adcmt_list" id="cmt_adcmt_67007870" style=""></ul>	</li><li data-cmt-id="67007812" data-cmt-owner="off" class="">		<div class="wrap_cmt_cntt d_cmtpgn_cmt_wrapper">			<div class="wrap_nicnmname d_cmtpgn_cmt_member_wrapper">				<span class="none">작성자</span>		<span class="thumb_wrap">			<a class="thumb d_cmtpgn_user" data-member-key="37211973" style="cursor:pointer;text-decoration:none;">				<img onerror="this.src='http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120'" src="http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist01_300.jpg/melon/resize/120" width="54" height="54" alt="">				<span class="thumb_frame"></span>			</a>		</span>					<span class="none">작성자</span>					<span class="thumb_wrap">						<a class="thumb d_cmtpgn_user" data-member-key="37211973" style="cursor:pointer;text-decoration:none;">							<img onerror="this.src='http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist02_300.jpg/melon/resize/120'" src="http://cdnimg.melon.co.kr/resource/image/cmt/web/common/noArtist01_300.jpg/melon/resize/120" width="54" height="54" alt="" />							<span class="thumb_frame"></span>						</a>					</span>				</span>				<div class="ellipsis" style="max-width: 102px;">															<a class="thumb d_cmtpgn_user" data-member-key="37211973" style="cursor:pointer;text-decoration:none;"><span class="d_cmtpgn_member_nickname" title="준모매님">준모매님</span></a>				</div>							</div>			<div class="wrap_cntt d_cmtpgn_cmt_cont_wrapper">				<div class="cntt">										<div class="cmt_text d_cmtpgn_cmt_full_contents" style="-ms-word-break: break-all; word-break: break-all; word-break: break-word; word-wrap:break-word; -webkit-hyphens: auto; -ms-hyphens: auto; hyphens: auto; display:block">		<div class="cmt_cont">		<span class="none">내용</span>		</div>										방탄소년단 화이팅	</div>				</div>				<div>					<span class="none">작성일자</span>					<span class="date">						<span>41분 전</span>						<span class="time"></span>					</span>				</div>						<div class="wrap_btn d_cmtpgn_cmt_info_wrapper">			<button type="button" title="답글 더보기" class="btn_text arrow_d02 d_cmtpgn_adcmt_expand_btn" data-expand-target="#cmt_adcmt_67007812" data-control="expand" role="button"><span class="odd_span">		<span class="text">답글 <strong class="d_cmtpgn_adcmt_cnt">0</strong>개</span>		<span class="icon"></span>	</span></button>			<div class="wrap_btn_right">								<span class="wrap_btn_recm d_cmtpgn_recm_box">			<button type="button" title="글 추천" class="btn_recm positive d_cmtpgn_cmt_recm_btn"><span class="odd_span">				<span class="icon">추천</span>				<span class="none">총건수</span>2			</span></button>			<button type="button" title="글 비추천" class="btn_recm negative d_cmtpgn_cmt_non_recm_btn"><span class="odd_span">				<span class="icon">비추천</span>				<span class="none">총건수</span>1			</span></button>		</span>						<span class="wrap_btn_report d_cmtpgn_cmt_btn_wrapper">		<button type="button" title="글 신고하기" class="btn_reprt d_cmtpgn_cmt_reprt_btn"><span class="odd_span">신고</span></button>	</span>											</div>				</div>			</div>		</div>		<ul class="lower_cmt d_cmtpgn_adcmt_list" id="cmt_adcmt_67007812" style=""></ul>	</li></ul><p class="search_wrong d_cmtpgn_nodata" style="display: none;">등록된 글이 없습니다.</p><div class="wrap_check_sys d_cmtpgn_fallback" style="display: none; margin-top: 40px; margin-bottom: 40px;">		<div>			<div class="img_check_sys" style="width:320px"></div>			<div class="msge">				<h3>접속이 지연되고 있습니다.</h3>				<p>잠시 후 다시 이용해 주시기 바랍니다.<br>이용에 불편을 드려 대단히 죄송합니다.</p>			</div>		</div>	</div>		</div>			<div class="paginate" id="d_cmtpgn_paginate_wrapper" style=""><a class="btn_first disabled d_cmtpgn_navigator" title="맨 처음"><span>맨 처음</span></a>	<a class="btn_pre disabled d_cmtpgn_navigator" title="이전"><span>이전</span></a>	<span class="page_num"><strong><span class="none">현재페이지</span>1</strong><a href="#cmtpgn=&amp;pageNo=2&amp;sortType=0&amp;srchType=2&amp;srchWord=" class="d_cmtpgn_navigator">2</a><a href="#cmtpgn=&amp;pageNo=3&amp;sortType=0&amp;srchType=2&amp;srchWord=" class="d_cmtpgn_navigator">3</a><a href="#cmtpgn=&amp;pageNo=4&amp;sortType=0&amp;srchType=2&amp;srchWord=" class="d_cmtpgn_navigator">4</a><a href="#cmtpgn=&amp;pageNo=5&amp;sortType=0&amp;srchType=2&amp;srchWord=" class="d_cmtpgn_navigator">5</a><a href="#cmtpgn=&amp;pageNo=6&amp;sortType=0&amp;srchType=2&amp;srchWord=" class="d_cmtpgn_navigator">6</a><a href="#cmtpgn=&amp;pageNo=7&amp;sortType=0&amp;srchType=2&amp;srchWord=" class="d_cmtpgn_navigator">7</a><a href="#cmtpgn=&amp;pageNo=8&amp;sortType=0&amp;srchType=2&amp;srchWord=" class="d_cmtpgn_navigator">8</a><a href="#cmtpgn=&amp;pageNo=9&amp;sortType=0&amp;srchType=2&amp;srchWord=" class="d_cmtpgn_navigator">9</a><a href="#cmtpgn=&amp;pageNo=10&amp;sortType=0&amp;srchType=2&amp;srchWord=" class="d_cmtpgn_navigator">10</a></span>	<a href="#cmtpgn=&amp;pageNo=11&amp;sortType=0&amp;srchType=2&amp;srchWord=" class="btn_next d_cmtpgn_navigator" title="다음"><span>다음</span></a>	<a href="#cmtpgn=&amp;pageNo=151&amp;sortType=0&amp;srchType=2&amp;srchWord=" class="btn_last d_cmtpgn_navigator" title="맨 끝"><span>맨 끝</span></a></div>		<div class="wrap_search" id="d_cmtpgn_srch_wrapper" style=""><div class="select_wrap d_cmtpgn_srch_option_wrapper">		<select title="검색 방법 선택" class="d_selectbox" style="width: 55px; display: none;" data-class="select_type02">			<option value="2" selected="selected">내용</option>			<option value="1">작성자</option>		</select><div class="select_type02"><span class="select_box" tabindex="0" title="검색 방법 선택"><span class="sel_r" style="width: 55px;">내용</span></span><div class="select_open" style="position: absolute; display: none;" tabindex="0"><ul><li class="on"><a href="#" data-value="2" data-text="내용">내용</a></li><li><a href="#" data-value="1" data-text="작성자">작성자</a></li></ul></div></div>	</div>	<input type="text" title="검색 입력 창 (검색어를 입력해 주세요)" placeholder="검색어를 입력해 주세요" class="input_text d_cmtpgn_srch_input" style="width:184px;">	<button type="button" title="검색" class="btn_base02 d_cmtpgn_cmt_srch_btn"><span class="odd_span"><span class="even_span">검색</span></span></button></div><textarea id="d_cmtpgn_dummy_textarea" cols="30" rows="20" style="display:block; width:449px; height:0px; margin:0; padding:0; border:0;"></textarea><form id="d_cmtpgn_dummy_form" name="d_cmtpgn_dummy_form"></form></div> -->
-								<!-- //댓글 영역 -->
-							</div>
 						</div>
-					</div>					
+				</div>
+				
+</c:forEach>
 				</div>
 
 
-					
+
+<div id="pageObjNavgation" style="">
+                     <div class="paginate">
+                        <a href="javascript:;" class="btn_first disabled"><span>맨처음</span></a>
+                        <a href="javascript:;" class="btn_pre disabled"><span>이전</span></a>
+                        <span class="page_num"><strong><span
+                              class="none">현재페이지</span>1</strong><a
+                           href="javascript:pageObj.sendPage('21');">2</a><a
+                           href="javascript:pageObj.sendPage('41');">3</a><a
+                           href="javascript:pageObj.sendPage('61');">4</a><a
+                           href="javascript:pageObj.sendPage('81');">5</a><a
+                           href="javascript:pageObj.sendPage('101');">6</a><a
+                           href="javascript:pageObj.sendPage('121');">7</a><a
+                           href="javascript:pageObj.sendPage('141');">8</a><a
+                           href="javascript:pageObj.sendPage('161');">9</a><a
+                           href="javascript:pageObj.sendPage('181');">10</a></span> <a
+                           href="javascript:pageObj.sendPage('201');" class="btn_next"><span>다음</span></a>
+                        <a href="javascript:pageObj.sendPage('321');" class="btn_last"><span>맨끝</span></a>
+                     </div>
+                  </div>
 
 
-
-
+<div class="wrap_search">
+                  <input type="text" id="schText" title="공지사항 검색 입력 편집창" value=""
+                     placeholder="검색어를 입력해 주세요" class="input_text"
+                     style="width: 184px;"
+                     onKeypress="if(event.keyCode==13) {javascript:jsSearch(); return false;}" />
+                  <button type="button" id="schBtn" title="글 검색" class="btn_base02">
+                     <span class="odd_span"><span class="even_span">검색</span></span>
+                  </button>
+               </div>
+               
+               
+<p></p>
+<p></p>
 
 <!-- ------------------------------------------------------------------- -->
 <!-- #3.투표 결과 영역 -->
