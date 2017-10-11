@@ -3544,7 +3544,7 @@ a.play_artist:hover span{text-decoration:underline;}
 .sec-title .weekly-vote .n12 {width:44px;background-position:0 -494px;}
 
 .sec-week-wrap .fix-timeline .green-box{background:url(http://cdnimg.melon.co.kr/resource/image/MMA2014/web/award/bg_big_dot.png) no-repeat; color:#fff; text-align:center;}/* 161110 수정 */
-.sec-week-wrap .fix-timeline .green-box {padding-top:24px;}/* 161110 수정 */
+.sec-week-wrap .fix-timeline .green-box {padding-top:10px;}/* 161110 수정 */
 .sec-week-wrap .fix-timeline .green-box strong {color:#fff;font-size:22px;font-family:"맑은 고딕", "Malgun Gothic",arial,"돋움","dotum",sans-serif, "Apple Gothic", sans-serif;letter-spacing:-1px;}/* 161110 수정 */
 .sec-week-wrap .fix-timeline .green-box.line2 {height:100px; padding-top:20px; line-height:1.3; font-size:28px; font-weight:300;}
 .sec-week-wrap .row-voteinfo-area dl.col-closing-time {width:288px; }/* 161110 수정 */

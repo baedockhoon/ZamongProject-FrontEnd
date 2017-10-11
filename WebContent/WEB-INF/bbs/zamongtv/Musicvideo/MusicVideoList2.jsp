@@ -52,25 +52,28 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/14g2jf0vkd.css" type="text/css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/melonweb_tv.css" type="text/css" />
 
+
+
+
 </head>
 <body>
 <jsp:include page="/WEB-INF/bbs/template/Top.jsp" />
 <!-- contents -->
 <div id="cont_wrap" class="clfix">
-		<div id="conts_section" class="my_fold fold_on">
+		<div id="conts_section" class="my_fold">
 			<!-- contents -->
 			
-	
-				<div class="wrap_tab03 type02 page_move">
+			
+			<div class="wrap_tab03 type02 page_move">
 				<ul style="width:100%;">
 					<li data-gubn="D" class="first_child on">
-						<a href="<c:url value='/ZamongFrontEnd/MusicVideoList.do'/>" title="뮤직비디오 영상 - 페이지 이동" class="link_tab"><span class="cntt"><img src="${pageContext.request.contextPath}/Styles/image/musicvideo.png"/></span></a></li>
+						<a href="<c:url value='/ZamongFrontEnd/MusicVideoList.do'/>" title="최신 영상 - 페이지 이동" class="link_tab"><span class="cntt"><img src="${pageContext.request.contextPath}/Styles/image/musicvideo.jpg"/></span></a></li>
 					<li data-gubn="H" class="last_child ">
-						<a href="<c:url value='/ZamongFrontEnd/BroadcastList.do'/>" title="방송 영상 - 페이지 이동" class="link_tab"><span class="cntt"><img src="${pageContext.request.contextPath}/Styles/image/broadcasting.png"/></span></a></li>
+						<a href="<c:url value='/ZamongFrontEnd/MusicVideoList_popular.do'/>" title="인기 영상 - 페이지 이동" class="link_tab"><span class="cntt"><img src="${pageContext.request.contextPath}/Styles/image/broadcasting.jpg"/></span></a></li>
 				</ul>
 			</div>
-					
-
+			
+						
 <!-- contents -->
 				<div id="conts" class="cont_type">
 					<div class="f_tit f_tit_wrap line">
@@ -126,7 +129,7 @@
 					
 					<span class="playtime">
 						<strong class="none">재생시간</strong>
-						<span class="time"></span>
+						<span class="time">03:50</span>
 					</span>
 					
 				</a>

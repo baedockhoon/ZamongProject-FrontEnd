@@ -12,7 +12,7 @@
 
 	<meta name="viewport" content="width=device-width" />
 	<script type="text/javascript" src="/resource/script/web/common/jquery-1.9.1.min.js"></script>
-	<link rel="stylesheet" href="//member.melon.com/resource/style/web/member/melonweb_member.css?tm=20170424" type="text/css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/melonweb_member.css?tm=20170424" type="text/css" />
 	<link rel="stylesheet" href="/resource/style/web/cm/melonweb_cm.css" type="text/css" />
 	<script type="text/javascript" src="//member.melon.com/resource/script/web/member/melonweb_member_external.js?tm=20170424"></script>
 	<script type="text/javascript" src="//member.melon.com/resource/script/muid/web/memberAlertMsg.js?tm=20170424"></script>
