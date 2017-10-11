@@ -4,50 +4,48 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace속성:매퍼파일의 완전한경로 .xml는 생략 -->
 <!-- ※ibatis와는 다르게 id값에 .(dot)를 사용 못한다. -->
-<mapper namespace="mybatis.Musicvideo_mybatis">
+<mapper namespace="mybatis.Candidates_mybatis">
 	<!--resultMap사용시 column속성 필수  -->
-	<resultMap id="MusicVideoDTOResult" type="MusicVideo">
-	    <result property="mv_no" column="mv_no"/>
-	    <result property="mv_regidate" column="mv_regidate" />
-	    <result property="at_no" column="at_no"/>
+	<resultMap id="CandidatesDTOResult" type="Candidates">
+	    <result property="ca_no" column="ca_no"/>
+	    <result property="ca_regidate" column="ca_regidate"/>
 	    <result property="ss_no" column="ss_no"/>
-	    <result property="mv_title" column="mv_title"/>
-	    <result property="mv_contents" column="mv_contents"/>
-	    <result property="mv_link" column="mv_link"/>
-	    <result property="mv_hitcount" column="mv_hitcount"/>
-	    <result property="mv_image" column="mv_image"/>
+	    <result property="at_no" column="at_no"/>
+	    <result property="ma_no" column="ma_no"/>
  	</resultMap>
  	
-	<!-- 	private String mv_no;
-	private java.sql.Date mv_regidate;
-	private String at_no;
-	private String ss_no;
-	private String mv_title;
-	private String mv_contents;
-	private String mv_link;
-	private String mv_hitcount; -->
+	<!--CA_NO
+	CA_REGIDATE
+	SS_NO
+	AT_NO
+	MA_NO -->
 	
 	
 	
  	<!-- id속성에 지정한 값을 자바코드(DAO계열 클래스)에서 
            식별자로 사용 -->
            
-	<select id="MusicVideolist" parameterType="java.util.Map" resultMap="MusicVideoDTOResult">
-		SELECT * FROM MV_MUSICVIDEO ORDER BY MV_NO DESC
+	<select id="Candidateslist" parameterType="java.util.Map" resultMap="CandidatesDTOResult">
+		<!-- SELECT * FROM ca_candidates ORDER BY cA_REGIDATE DESC -->
+		select c.ca_no,c.ca_regidate,s.ss_title,a.at_name 
+		from ca_candidates c join ss_soundsource s on c.ss_no=s.ss_no join at_artist a on c.at_no=a.at_no 
+		join ma_musicaward t on c.ma_no=t.ma_no
+		where t.ma_no=22
+		
+	</select>
+	
+<!-- 	<select id="MusicVideolist_pop" parameterType="java.util.Map" resultMap="MusicVideoDTOResult">
+		SELECT * FROM MV_MUSICVIDEO ORDER BY mv_hitcount desc
 	</select>
 	
 	<select id="MusicVideoView" parameterType="java.util.Map" resultMap="MusicVideoDTOResult">
-		<!-- UPDATE MV_MUSICVIDEO SET MV_HITCOUNT=MV_HITCOUNT+1 WHERE MV_NO=#{mv_no} -->
+		UPDATE MV_MUSICVIDEO SET MV_HITCOUNT=MV_HITCOUNT+1 WHERE MV_NO=#{mv_no}
 		SELECT * FROM MV_MUSICVIDEO WHERE MV_NO=#{mv_no}
 	</select> 
            
-    <select id="MusicVideolist_pop" parameterType="java.util.Map" resultMap="MusicVideoDTOResult">
-	SELECT * FROM MV_MUSICVIDEO ORDER BY mv_hitcount desc
-	</select>
-	
-	 <select id="MusicVideoHitcount" parameterType="java.util.Map" resultMap="MusicVideoDTOResult">
+    <select id="MusicVideoHitcount" parameterType="java.util.Map" resultMap="MusicVideoDTOResult">
 		UPDATE MV_MUSICVIDEO SET MV_HITCOUNT=MV_HITCOUNT+1 WHERE MV_NO=#{mv_no}
-	</select> 
+	</select>  -->
 	
        <!--     
            

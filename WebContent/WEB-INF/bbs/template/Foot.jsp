@@ -84,7 +84,7 @@
 			</div>
 			<!--160531 수정 lyr-->
 			<p>
-				<span class="first">서울시 강남구 테헤란로 103길 17 정석빌딩</span><span>대표이사 : 신원수, 박성훈</span><span>사업자등록번호 : 138-81-05876</span><span>통신판매업 신고번호 : 제2011-서울강남-02008호</span><br /><span class="first">문의전화(평일 09:00~18:00) : 1566-7727 (유료)</span><span>이메일 : <a href="https://help.melon.com/web/customer/help/helpForm.htm?type=" class="btn_footer_mail" target="_blank">meloninformation@iloen.com</a></span><span>© 2016. LOEN Entertainment, Inc. ALL RIGHTS RESERVED.</span>
+				<span class="first">서울시 금천구 가산동 월드메르디앙 2차 4F</span><span>팀원 : 배덕훈,김찬혁,이수범,고동희,임지훈</span><span>사업자등록번호 : 아직 등록 전</span><span>통신판매업 신고번호 : 아직 신고 전</span><br /><span class="first">문의전화(평일 09:30~18:30) : 1111-1111 (유료)</span><span>이메일 : <a href="https://help.melon.com/web/customer/help/helpForm.htm?type=" class="btn_footer_mail" target="_blank">zamonginformation@kosmo.com</a></span><span>© 2016. 2030Team Entertainment, Inc. ALL RIGHTS RESERVED.</span>
 			</p>
 			<!--//160531 수정 lyr-->
 			

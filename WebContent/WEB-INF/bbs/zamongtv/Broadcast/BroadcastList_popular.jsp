@@ -60,20 +60,23 @@
 		<div id="conts_section" class="my_fold fold_on">
 			<!-- contents -->
 			
-							<div class="wrap_tab03 type02 page_move">
+	
+				<div class="wrap_tab03 type02 page_move">
 				<ul style="width:100%;">
-					<li data-gubn="D" class="first_child on">
+					<li data-gubn="D" class="first_child">
 						<a href="<c:url value='/ZamongFrontEnd/MusicVideoList.do'/>" title="뮤직비디오 영상 - 페이지 이동" class="link_tab"><span class="cntt"><img src="${pageContext.request.contextPath}/Styles/image/musicvideo.jpg"/></span></a></li>
-					<li data-gubn="H" class="last_child ">
+					<li data-gubn="H" class="last_child on ">
 						<a href="<c:url value='/ZamongFrontEnd/BroadcastList.do'/>" title="방송 영상 - 페이지 이동" class="link_tab"><span class="cntt"><img src="${pageContext.request.contextPath}/Styles/image/broadcasting.jpg"/></span></a></li>
 				</ul>
 			</div>
+					
 
 <!-- contents -->
 				<div id="conts" class="cont_type">
 					<div class="f_tit f_tit_wrap line">
-						<h2 class="music_vdo"><span class="none">뮤직비디오</span></h2>
-						<p class="info_txt music_vdo"><span class="none">음악의 감동을 두배로! 영상으로 즐기는 음악! 뮤직비디오를 감상해보세요.</span></p>
+						<h2 class="program"><span class="none">방송</span></h2>
+						<p class="info_txt program"><span class="none">놓친 음악방송, 멜론TV에서 보고 싶은 순간만 골라 보세요.</span></p>
+
 					</div>
 	<div class="cont_area">
 		<div class="ltcont">
@@ -84,10 +87,10 @@
 			<!-- Tab Area -->
 			<div class="wrap_tab03 type02 page_move">
 				<ul style="width:100%;">
-					<li data-gubn="D" class="first_child ">
-						<a href="<c:url value='/ZamongFrontEnd/MusicVideoList.do'/>" title="최신 영상 - 페이지 이동" class="link_tab"><span class="cntt">최신 영상</span></a></li>
-					<li data-gubn="H" class="last_child on">
-						<a href="<c:url value='/ZamongFrontEnd/MusicVideoList_popular.do'/>" title="인기 영상 - 페이지 이동" class="link_tab"><span class="cntt">인기 영상</span></a></li>
+					<li data-gubn="D" class="first_child">
+						<a href="<c:url value='/ZamongFrontEnd/BroadcastList.do'/>" title="최신 영상 - 페이지 이동" class="link_tab"><span class="cntt">최신 영상</span></a></li>
+					<li data-gubn="H" class="last_child on ">
+						<a href="<c:url value='/ZamongFrontEnd/BroadcastList_popular.do'/>" title="인기 영상 - 페이지 이동" class="link_tab"><span class="cntt">인기 영상</span></a></li>
 				</ul>
 			</div>
 			<!-- //Tab Area -->
@@ -114,17 +117,17 @@
 	               
 	<li class="vdo_li04 " >
 			<div class="wrap_video04">
-				<a href='<c:url value="/ZamongFrontEnd/MusicVideoView.do?mv_no=${item.mv_no}"/>' class="thumb">
+				<a href='<c:url value="/ZamongFrontEnd/MusicVideoView.do?mv_no=${item.br_no}"/>' class="thumb">
 				
 					<span class="thumb_frame"></span><!-- 이미지 상단 반투명 Border -->
 					
 					
 
-					<img onerror="WEBPOCIMG.defaultMvImg(this);" width="172" height="97" src="${item.mv_image }" alt=""/>
+					<img onerror="WEBPOCIMG.defaultMvImg(this);" width="172" height="97" src="${item.br_image }" alt=""/>
 					
 					<span class="playtime">
 						<strong class="none">재생시간</strong>
-						<span class="time">03:50</span>
+						<span class="time"></span>
 					</span>
 					
 				</a>
@@ -143,7 +146,7 @@
 								<span class="icon_agellevel age_12" title="12세 이상 이용가능">12세 이상 이용가능</span>
 								
 								<strong class="none">영상명</strong>
-								<a href='<c:url value="/ZamongFrontEnd/MusicVideoView.do?mv_no=${item.mv_no}"/>' title="${item.mv_title} - 페이지 이동">${item.mv_title}</a>
+								<a href='<c:url value="/ZamongFrontEnd/MusicVideoView.do?mv_no=${item.br_no}"/>' title="${item.br_title} - 페이지 이동">${item.br_title}</a>
 								
 							</span>
 						</span>
@@ -151,7 +154,7 @@
 					<dd class="atistname">
 						<strong class="none">아티스트명</strong>
 						<div class="ellipsis">
-							<a href='<c:url value="/ZamongFrontEnd/MusicVideoView.do?mv_no=${item.mv_no}"/>' title="${item.at_no} - 페이지 이동">${item.at_no}</a><span class="checkEllipsisTypeFourRight" style="display:none"><a href="javascript:melon.link.goArtistDetail('1956612');" title="${item.at_no} - 페이지 이동">${item.at_no}</a></span>
+							<a href='<c:url value="/ZamongFrontEnd/MusicVideoView.do?mv_no=${item.br_no}"/>' title="${item.at_no} - 페이지 이동">${item.at_no}</a><span class="checkEllipsisTypeFourRight" style="display:none"><a href="javascript:melon.link.goArtistDetail('1956612');" title="${item.at_no} - 페이지 이동">${item.at_no}</a></span>
 						</div>
 						
 					</dd>
@@ -161,7 +164,7 @@
 							<strong class="none">총건수</strong>0
 						</a>
 						<em class="bar">|</em>
-						<span class="cnt_view"><span>조회</span> ${item.mv_hitcount}</span>
+						<span class="cnt_view"><span>조회</span> ${item.br_hitcount}</span>
 					</dd>
 				</dl>
 			</div>
