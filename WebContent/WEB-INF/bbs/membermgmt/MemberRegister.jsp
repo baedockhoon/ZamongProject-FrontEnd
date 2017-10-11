@@ -27,6 +27,29 @@
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>	
 <script type="text/javascript" src="/resource/script/web/common/jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
+$(function() {
+	$("#testDatepicker").datepicker(
+			{
+				numberOfMonths : [ 1, 1 ],
+				changeYear : true,
+				changeMonth : true,
+				yearRange : "-100:+0",
+				dayNames : [ '월요일', '화요일', '수요일', '목요일', '금요일', '토요일',
+						'일요일' ],
+				dayNamesMin : [ '월', '화', '수', '목', '금', '토', '일' ],
+				monthNamesShort : [ '1', '2', '3', '4', '5', '6', '7',
+						'8', '9', '10', '11', '12' ],
+				monthNames : [ '1월', '2월', '3월', '4월', '5월', '6월',
+						'7월', '8월', '9월', '10월', '11월', '12월' ],
+				showButtonPanel : true,
+				currentText : '오늘 날짜',
+				closeText : '닫기',
+				dateFormat : "yy-mm-dd",
+
+			});
+});
+
+
 function birth() {
 	var birth1 = document.getElementById("me_birth1").value;
 	var birth2 = document.getElementById("me_birth2").value;
@@ -207,22 +230,9 @@ if(CP_ID!="" && CP_ID!=null){
 											<div class="wrap">
 												<div class="box_birth_input">
 													<div id="birthYear_tr" class="wrap_input_info05 d_input_write" style="width:129px;">
-														<div class="wrap_input">
-															<input type="text" id="me_birth1" name="me_birth1" title="생년월일 년 입력 편집창" placeholder="" class="text53" style="width:80px;" maxlength="4"><span class="txt" >년</span>
-														</div>
+														<input type="text" name="me_birth" id="testDatepicker" required="required">
 													</div>
-													<div id="birthMonth_tr" class="wrap_input_info05 d_input_write" style="width:81px;">
-														<div class="wrap_input">
-															<input type="text" id="me_birth2" name="me_birth2" title="생년월일 월 입력 편집창" placeholder="" class="text53" style="width:35px;" maxlength="2"><span class="txt" >월</span>
-														</div>
-													</div>
-
-													<div id="birthDay_tr" class="wrap_input_info05 d_input_write mr0" style="width:81px;">
-														<div class="wrap_input">
-															<input type="text" id="me_birth3" name="me_birth3" title="생년월일 일 입력 편집창" placeholder="" class="text53" style="width:35px;" maxlength="2" onkeyup="javascript:birth()"><span class="txt" >일</span>
-														</div>
-															<input type="hidden" id="me_birth" name="me_birth" />
-													</div>
+													
 												</div>
 												<p id="parentAgree_msg" class="txt_input_info02" style="display:none;">만 14세 미만인 경우 보호자(법정대리인)동의가 필요합니다.</p>
 												<p id="birth_msg" class="txt_error03" style="display:none;"></p>
