@@ -1,6 +1,6 @@
 package com.zamong.qu.service;
 
-import java.util.Date;
+import java.sql.Date;
 
 /*
  *  QU_NO                                     NOT NULL NUMBER
@@ -15,24 +15,24 @@ import java.util.Date;
  */
 public class UserQuestionDTO {
 private String qu_no;
-private java.util.Date qu_regidate;
+private java.sql.Date qu_regidate;
 private String ad_no;
 private String qu_largedivide;
 private String qu_mediumdivide;
 private String qu_title;
 private String qu_contents;
 private String qu_hitcount;
-private java.util.Date qu_lastdate;
+private java.sql.Date qu_lastdate;
 public String getQu_no() {
 	return qu_no;
 }
 public void setQu_no(String qu_no) {
 	this.qu_no = qu_no;
 }
-public java.util.Date getQu_regidate() {
+public java.sql.Date getQu_regidate() {
 	return qu_regidate;
 }
-public void setQu_regidate(java.util.Date qu_regidate) {
+public void setQu_regidate(java.sql.Date qu_regidate) {
 	this.qu_regidate = qu_regidate;
 }
 public String getAd_no() {
@@ -71,10 +71,10 @@ public String getQu_hitcount() {
 public void setQu_hitcount(String qu_hitcount) {
 	this.qu_hitcount = qu_hitcount;
 }
-public java.util.Date getQu_lastdate() {
+public java.sql.Date getQu_lastdate() {
 	return qu_lastdate;
 }
-public void setQu_lastdate(java.util.Date qu_lastdate) {
+public void setQu_lastdate(java.sql.Date qu_lastdate) {
 	this.qu_lastdate = qu_lastdate;
 }
 public UserQuestionDTO(String qu_no, Date qu_regidate, String ad_no, String qu_largedivide, String qu_mediumdivide,

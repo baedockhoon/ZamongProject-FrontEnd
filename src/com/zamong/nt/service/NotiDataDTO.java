@@ -1,6 +1,6 @@
 package com.zamong.nt.service;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class NotiDataDTO {
 
@@ -15,7 +15,7 @@ public class NotiDataDTO {
 	 */
 	//공지사항
 	private String nt_no;//키값
-	private java.util.Date nt_regidate;//날짜
+	private java.sql.Date nt_regidate;//날짜
 	private String ad_no;//관리자 키값
 	private String nt_classification;//분류(서비스소식,종료,오픈등등)
 	private String nt_title;//제목
@@ -44,11 +44,11 @@ public class NotiDataDTO {
 		this.nt_no = nt_no;
 	}
 
-	public java.util.Date getNt_regidate() {
+	public java.sql.Date getNt_regidate() {
 		return nt_regidate;
 	}
 
-	public void setNt_regidate(java.util.Date nt_regidate) {
+	public void setNt_regidate(java.sql.Date nt_regidate) {
 		this.nt_regidate = nt_regidate;
 	}
 

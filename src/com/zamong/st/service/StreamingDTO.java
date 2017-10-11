@@ -1,6 +1,6 @@
 package com.zamong.st.service;
 
-import java.util.Date;
+import java.sql.Date;
 
 import com.zamong.ch.service.CashDTO;
 
@@ -14,8 +14,8 @@ public class StreamingDTO extends CashDTO{
 	
 	private String me_id;
 	private  String st_no;
-	private java.util.Date st_start_date;
-	private java.util.Date st_end_date;
+	private java.sql.Date st_start_date;
+	private java.sql.Date st_end_date;
 	private String bp_no;
 	private String me_no;
 	private String pd_name;
@@ -31,16 +31,16 @@ public class StreamingDTO extends CashDTO{
 	public void setSt_no(String st_no) {
 		this.st_no = st_no;
 	}
-	public java.util.Date getSt_start_date() {
+	public java.sql.Date getSt_start_date() {
 		return st_start_date;
 	}
-	public void setSt_start_date(java.util.Date st_start_date) {
+	public void setSt_start_date(java.sql.Date st_start_date) {
 		this.st_start_date = st_start_date;
 	}
-	public java.util.Date getSt_end_date() {
+	public java.sql.Date getSt_end_date() {
 		return st_end_date;
 	}
-	public void setSt_end_date(java.util.Date st_end_date) {
+	public void setSt_end_date(java.sql.Date st_end_date) {
 		this.st_end_date = st_end_date;
 	}
 	public String getBp_no() {

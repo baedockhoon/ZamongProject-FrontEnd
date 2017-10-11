@@ -5,6 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <script src="${pageContext.request.contextPath}/Styles/js/audio/PlayScript.js"></script>
 <div id="wrap">
+<jsp:include page="/WEB-INF/bbs/template/autocomplete.jsp" />
 	<!-- 이벤트일 경우 event_gnb 추가 -->
 	<div id="skip_nav">
 		skip navigation
@@ -74,9 +75,9 @@
 				<fieldset>
 					<legend>통합검색영역</legend>
 					<input type="text" title="검색 입력 편집창" placeholder="" name=""
-						id="top_search" style="width: 249px"
+						id="tags" style="width: 249px"
 						onkeypress="if(event.keyCode == 13){goSearch();}" /><input
-						type="hidden" name="keywordLink" id="keywordLink" value="" />
+						type="hidden" name="keywordLink" id="tags" value="" />
 					<button type="button" style="display: none;"
 						id="top_search_autocomplete_toggle"
 						class="btn_icon btn_auto close" title="자동검색 펼침">

@@ -1,6 +1,6 @@
 package com.zamong.pr.service;
 
-import java.util.Date;
+import java.sql.Date;
 
 /*
  MQ_NO                                     NOT NULL NUMBER
@@ -18,7 +18,7 @@ import java.util.Date;
  */
 public class ProblemDTO {
 private String mq_no;
-private java.util.Date mq_regidate;
+private java.sql.Date mq_regidate;
 private String me_no;
 private String mq_useenv;
 private String mq_os;
@@ -50,14 +50,14 @@ public void setMq_no(String mq_no) {
 
 
 
-public java.util.Date getMq_regidate() {
+public java.sql.Date getMq_regidate() {
 	return mq_regidate;
 }
 
 
 
 
-public void setMq_regidate(java.util.Date mq_regidate) {
+public void setMq_regidate(java.sql.Date mq_regidate) {
 	this.mq_regidate = mq_regidate;
 }
 

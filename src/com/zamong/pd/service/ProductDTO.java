@@ -1,13 +1,13 @@
 package com.zamong.pd.service;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class ProductDTO {
 
 	private String pd_no;
 	private String pd_name;
 	private String pd_price;
-	private java.util.Date pd_regidate;
+	private java.sql.Date pd_regidate;
 	public String getPd_no() {
 		return pd_no;
 	}
@@ -27,10 +27,10 @@ public class ProductDTO {
 		this.pd_price = pd_price;
 	}
 	
-	public java.util.Date getPd_regidate() {
+	public java.sql.Date getPd_regidate() {
 		return pd_regidate;
 	}
-	public void setPd_regidate(java.util.Date pd_regidate) {
+	public void setPd_regidate(java.sql.Date pd_regidate) {
 		this.pd_regidate = pd_regidate;
 	}
 	public ProductDTO() {}

@@ -1,6 +1,6 @@
 package com.zamong.bp.service;
 
-import java.util.Date;
+import java.sql.Date;
 
 import com.zamong.st.service.StreamingDTO;
 
@@ -18,7 +18,7 @@ public class BuyproductDTO extends StreamingDTO{
 
 	private String me_id;
 	private String bp_no;
-	private java.util.Date bp_regidate;
+	private java.sql.Date bp_regidate;
 	private String pd_no;
 	private String me_no;
 	private String bp_price;
@@ -83,7 +83,7 @@ public class BuyproductDTO extends StreamingDTO{
 
 
 
-	public java.util.Date getBp_regidate() {
+	public java.sql.Date getBp_regidate() {
 		return bp_regidate;
 	}
 
@@ -92,7 +92,7 @@ public class BuyproductDTO extends StreamingDTO{
 
 
 
-	public void setBp_regidate(java.util.Date bp_regidate) {
+	public void setBp_regidate(java.sql.Date bp_regidate) {
 		this.bp_regidate = bp_regidate;
 	}
 

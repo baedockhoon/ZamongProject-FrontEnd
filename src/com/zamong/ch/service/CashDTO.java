@@ -1,6 +1,6 @@
 package com.zamong.ch.service;
 
-import java.util.Date;
+import java.sql.Date;
 
 import com.zamong.mm.service.MinusDTO;
 import com.zamong.pd.service.ProductDTO;
@@ -15,7 +15,7 @@ CH_HAVECASH                               NOT NULL NUMBER
 public class CashDTO extends MinusDTO{
 	private String me_id;
 private String ch_no;
-private java.util.Date ch_regidate;
+private java.sql.Date ch_regidate;
 private String me_no;
 private String ch_havecash;
 private String bp_price;
@@ -113,7 +113,7 @@ public void setCh_no(String ch_no) {
 
 
 
-public java.util.Date getCh_regidate() {
+public java.sql.Date getCh_regidate() {
 	return ch_regidate;
 }
 
@@ -127,7 +127,7 @@ public java.util.Date getCh_regidate() {
 
 
 
-public void setCh_regidate(java.util.Date ch_regidate) {
+public void setCh_regidate(java.sql.Date ch_regidate) {
 	this.ch_regidate = ch_regidate;
 }
 
