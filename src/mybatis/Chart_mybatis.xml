@@ -29,14 +29,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  	<!-- id속성에 지정한 값을 자바코드(DAO계열 클래스)에서 
            식별자로 사용 -->
   
-  	<select id="ChartList" parameterType="java.util.Map" resultMap="ChartDTOResult">
-		select * from(
-		select s.*, (NVL2(dn_count, dn_count,'0')+NVL2(lk_count, lk_count,'0')) as count_sum from
-		(select * from ss_soundsource where ss_regidate > (sysdate-(interval '1' month))) s
-		full outer join (select count(*) as dn_count, ss_no from dn_downcount group by ss_no) d
-		on s.ss_no = d.ss_no 
-		full outer join (select count(*) lk_count, lk_targetno as ss_no from lk_like group by lk_targetno) l
-		on s.ss_no = l.ss_no) al_album order by count_sum desc
+  	<select id="ChartList" parameterType="java.util.Map" resultType="Chart">
+		select ss.*, al.al_albumimage from(
+      select s.*, (NVL2(dn_count, dn_count,'0')+NVL2(lk_count, lk_count,'0')) as count_sum from
+      (select * from ss_soundsource where ss_regidate > (sysdate-(interval '1' month))) s
+      full outer join (select count(*) as dn_count, ss_no from dn_downcount group by ss_no) d
+      on s.ss_no = d.ss_no 
+      full outer join (select count(*) lk_count, lk_targetno as ss_no from lk_like group by lk_targetno) l
+      on s.ss_no = l.ss_no
+      ) ss join al_album al on ss.al_no = al.al_no
+      
+      order by count_sum desc
 	</select>
   
   
