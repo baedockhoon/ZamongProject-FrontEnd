@@ -148,7 +148,7 @@ if(CP_ID!="" && CP_ID!=null){
 												<p id="memberPwd1_msg" class="txt_error03" style="display:none;"></p>
 												<div id="memberPwd2_tr" class="wrap_input_info04 wrap_input_pw d_input_write mt12" style="width:331px;">
 													<div class="wrap_input" style="display: block;">
-														<input type="password" id="me_pass" name="me_pass1"  title="비밀번호 확인 편집창" placeholder="비밀번호 확인" class="text53 d_input_key" style="width:212px;">
+														<input type="password" id="me_pass" name="me_pass2"  title="비밀번호 확인 편집창" placeholder="비밀번호 확인" class="text53 d_input_key" style="width:212px;">
 														<label for="memberPwd2" class="pw_label">비밀번호 확인</label>
 													</div>
 													<div class="wrap_input_check">
