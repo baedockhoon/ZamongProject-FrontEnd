@@ -1,95 +1,80 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="ko">
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	
-	
 
-	
-	
-	
-	
-	
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>Melon::음악이 필요한 순간, 멜론</title>
+<meta name="keywords"
+	content="음악서비스, 멜론차트, 멜론TOP100, 최신음악, 인기가요, 뮤직비디오, 앨범, 플레이어, 스트리밍, 다운로드, 아티스트플러스, 아티스트채널" />
+<meta name="description"
+	content="국내 최대 1,000만곡 확보 No.1 음악사이트, 멜론! 최신음악과 실시간 차트는 기본, 내 취향을 아는 똑똑한 추천 라디오, 내가 좋아하는 아티스트의 새로운 소식까지 함께 즐겨보세요." />
+<meta name="naver-site-verification"
+	content="f13fc46b807bef984aa341efeb1adec8de12264c" />
+<meta property="og:title" content="Melon" />
+<meta property="og:image"
+	content="http://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png" />
+<meta property="og:description" content="음악이 필요한 순간, 멜론" />
+<meta property="og:url" content="http://www.melon.com/" />
+<meta property="og:type" content="website" />
+<meta name="viewport" content="width=device-width" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?2"
+	id="favicon" />
 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title>고객센터>자주하는 질문>멜론</title>
-	<meta name="keywords" content="음악서비스, 멜론차트, 멜론TOP100, 최신음악, 인기가요, 뮤직비디오, 앨범, 플레이어, 스트리밍, 다운로드, 아티스트플러스, 아티스트채널" />
-	<meta name="description" content="국내 최대 1,000만곡 확보 No.1 음악사이트, 멜론! 최신음악과 실시간 차트는 기본, 내 취향을 아는 똑똑한 추천 라디오, 내가 좋아하는 아티스트의 새로운 소식까지 함께 즐겨보세요." />
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:description" content="음악이 필요한 순간, 멜론"/>
-	<meta name="viewport" content="width=device-width"/>
-	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?2" />
-	
-	
-<script type="text/javascript" src="${pageContext.request.contextPath}/Styles/js/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/Styles/js/melonweb_member_external.js"></script>
-	
-	
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/b0oedst30j.css" type="text/css" />
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/14j3tr44urn.css" type="text/css" />
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/14g2jf0vkd.css" type="text/css" />
-	<script type="text/javascript">
-	MelonPersonal.init();
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/Styles/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/Styles/js/melonweb_member_external.js"></script>
 
+
+
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/Styles/css/faq/melonweb_customer.css"
+	type="text/css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/Styles/css/b0oedst30j.css"
+	type="text/css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/Styles/css/14j3tr44urn.css"
+	type="text/css" />
+<script type="text/javascript">
 	(function() {
 		WEBPOCIMG = {
-			defaultImg : function(obj){
+			defaultImg : function(obj, width){
+				if(width == null || width == '') width = $(obj).width();
+				if(width == 0) width = 500;
+				var thumbType = "_500";
+				//가장 큰사이즈로 리사이즈함
+				var thumbType = "_500";
+				var defaultImg = "http://cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + "_160727.jpg/melon/resize/" + width;
+				if(obj.src != defaultImg){
+					obj.src = defaultImg;
+				}
 			},
+			
 			defaultAlbumImg : function(obj, width){
 				if(width == null || width == '') width = $(obj).width();
-
+				if(width == 0) width = 500;
+				//가장 큰사이즈로 리사이즈함
 				var thumbType = "_500";
-				if(width > 0 && width <= 38){
-					thumbType = "_38";
-				} else if(width > 38 && width <= 52){
-					thumbType = "_52";
-				} else if(width > 52 && width <= 70){
-					thumbType = "_70";
-				} else if(width > 70 && width <= 114){
-					// thumbType = "_114";
-					thumbType = "_120";
-				} else if(width > 114 && width <= 120){
-					thumbType = "_120";
-				} else if(width > 120 && width <= 200){
-					thumbType = "_200";
-				} else if(width > 200){
-					thumbType = "_500";
+				var defaultImg = "http://cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + "_160727.jpg/melon/resize/" + width;
+				if(obj.src != defaultImg){
+					obj.src = defaultImg;
 				}
-
-				altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + ".jpg";
-
-				obj.src = altSrc;
 			},
+			
 			defaultArtistImg : function(obj, width){
 				if(width == null || width == '') width = $(obj).width();
-
+				if(width == 0) width = 300;
+				//가장 큰사이즈로 리사이즈함
 				var thumbType = "_300";
-				if(width > 0 && width <= 34){
-					thumbType = "_34";
-				} else if(width > 34 && width <= 40){
-					thumbType = "_40";
-				} else if(width > 40 && width <= 54){
-					thumbType = "_54";
-				} else if(width > 54 && width <= 70){
-					thumbType = "_70";
-				} else if(width > 70 && width <= 100){
-					thumbType = "_100";
-				} else if(width > 100 && width <= 120){
-					thumbType = "_120";
-				} else if(width > 120 && width <= 160){
-					thumbType = "_160";
-				} else if(width > 160 && width <= 200){
-					thumbType = "_200";
-				} else if(width > 200 && width <= 300){
-					thumbType = "_300";
+				var defaultImg = "http://cdnimg.melon.co.kr/resource/image/web/default/noArtist" + thumbType + "_160727.jpg/melon/resize/" + width;
+				if(obj.src != defaultImg){
+					obj.src = defaultImg;
 				}
-
-				altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noArtist" + thumbType + ".jpg";
-
-				obj.src = altSrc;
 			},
 			defaultDjImg : function(obj){
 			},
@@ -110,93 +95,84 @@
 					if(ratioObj > 1.5) ratio = "16x9";
 					else ratio = "4x3";
 				}
+				
+				if(width == 0) width = 640;
+				if(height == 0) ratio = "16x9";
 
+				//가장 큰사이즈로 리사이즈함
 				var thumbType = "_" + ratio + "_640";
-				if(width > 0 && width <= 60){
-					thumbType = "_" + ratio + "_60";
-				} else if(width > 60 && width <= 120){
-					thumbType = "_" + ratio + "_120";
-				} else if(width > 120 && width <= 144){
-					thumbType = "_" + ratio + "_144";
-				} else if(width > 144 && width <= 240){
-					thumbType = "_" + ratio + "_240";
-				} else if(width > 240 && width <= 480){
-					thumbType = "_" + ratio + "_480";
-				} else if(width > 480){
-					thumbType = "_" + ratio + "_640";
+				var defaultImg = "http://cdnimg.melon.co.kr/resource/image/web/default/noMovie" + thumbType + "_160727.jpg/melon/resize/" + width;
+				if(obj.src != defaultImg){
+					obj.src = defaultImg;
 				}
-
-				var altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noMovie" + thumbType + ".jpg";
-
-				obj.src = altSrc;
 			},
 			defaultPlaylistImg : function(obj, width){
 				if(width == null || width == '') width = $(obj).width();
-
+				if(width == 0) width = 500;
+				//가장 큰사이즈로 리사이즈함
 				var thumbType = "_500";
-				if(width > 0 && width <= 38){
-					thumbType = "_38";
-				} else if(width > 38 && width <= 52){
-					thumbType = "_52";
-				} else if(width > 52 && width <= 70){
-					thumbType = "_70";
-				} else if(width > 70 && width <= 114){
-					thumbType = "_114";
-				} else if(width > 114 && width <= 120){
-					thumbType = "_120";
-				} else if(width > 120 && width <= 200){
-					thumbType = "_200";
-				} else if(width > 200){
-					thumbType = "_500";
+				var defaultImg = "http://cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + "_160727.jpg/melon/resize/" + width;
+				if(obj.src != defaultImg){
+					obj.src = defaultImg;
 				}
-
-				altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + ".jpg";
-
-				obj.src = altSrc;
 			},
 			defaultMemberImg : function(obj, width){
 				if(width == null || width == '') width = $(obj).width();
-
-				var thumbType = "_130";
-				if(width > 0 && width <= 40){
-					thumbType = "_40";
-				} else if(width > 40 && width <= 54){
-					thumbType = "_54";
-				} else if(width > 54 && width <= 72){
-					thumbType = "_72";
-				} else if(width > 72 && width <= 96){
-					thumbType = "_96";
-				} else if(width > 96 && width <= 112){
-					thumbType = "_112";
-				} else if(width > 112){
-					thumbType = "_130";
+				if(width == 0) width = 300;
+				//가장 큰사이즈로 리사이즈함
+				var thumbType = "_300";
+				var defaultImg = "http://cdnimg.melon.co.kr/resource/image/web/default/noArtist" + thumbType + "_160727.jpg/melon/resize/" + width;
+				if(obj.src != defaultImg){
+					obj.src = defaultImg;
 				}
-
-				altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noUser" + thumbType + ".jpg";
-
-				obj.src = altSrc;
 			},
 			defaultPhotoImg : function(obj, width){
 				if(width == null || width == '') width = $(obj).width();
+				if(width == 0) width = 500;
+				//가장 큰사이즈로 리사이즈함
+				var thumbType = "_500";
+				var defaultImg = "http://cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + "_160727.jpg/melon/resize/" + width;
+				if(obj.src != defaultImg){
+					obj.src = defaultImg;
+				}
+			},
+			defaultShopImg : function(obj, width){
+				if(width == null || width == '') width = $(obj).width();
+				if(width == 0) width = 256;
+				//가장 큰사이즈로 리사이즈함
+				var thumbType = "_256";
+				var defaultImg = "http://cdnimg.melon.co.kr/resource/image/web/default/noProduct" + thumbType + "_160727.jpg/melon/resize/" + width;
+				if(obj.src != defaultImg){
+					obj.src = defaultImg;
+				}
+			},
+			defaultShowwingImg : function(obj, width){
+				if(width == null || width == '') width = $(obj).width();
 
-				var thumbType = "_200";
-/* 				if(width > 0 && width <= 60){
-					thumbType = "_60";
-				} else if(width > 60 && width <= 120){
-					thumbType = "_120";
-				} else if(width > 120 && width <= 200){
-					thumbType = "_200";
-				} else if(width > 200 && width <= 300){
-					thumbType = "_300";
-				} else if(width > 300 && width <= 500){
-					thumbType = "_500";
-				} else if(width > 500){
-					thumbType = "_700";
-				} */
+				var thumbType = "_256";
+				if(width > 0 && width <= 300){
+					thumbType = "_256";
+				} else {
+					thumbType = "_313";//추후 조절값
+				}
+				altSrc = "http://cdnimg.melon.co.kr/resource/image/web/default/noShowing" + thumbType + ".jpg";
+				if(obj.src != altSrc){
+					obj.src = altSrc;
+				}
+			},
+			defaultTicketImg : function(obj, width){
+				if(width == null || width == '') width = $(obj).width();
 
-				altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + ".jpg";
-
-				obj.src = altSrc;
+				var thumbType = "_256";
+				if(width > 0 && width <= 300){
+					thumbType = "_256";
+				} else {
+					thumbType = "_313";//추후 조절값
+				}
+				altSrc = "http://cdnimg.melon.co.kr/resource/image/web/default/noTicket" + thumbType + ".png";
+				if(obj.src != altSrc){
+					obj.src = altSrc;
+				}
 			}
 		}
 		,WEBELLIPSIS = {
@@ -205,162 +181,156 @@
 		        var arObj = $('.' + ellipsisName);
 		        for(var i = 0; i < arObj.length; i++){
 		            if (arObj.eq(i).width() > eWidth ){
-		                arObj.eq(i).parent().parent().parent().find('.' + moreClassName).show();
+		                arObj.eq(i).parent().parent().parent().find('.' + moreClassName).css("display","");
 		            }
 		        }
 			}
 		}
+
+		if(isMelonLogin() && getCookie("CHECK_POP") == 'Y'){
+			window.open('http://www.melon.com/error_page/popup_check.html','mainCheckPopup','scrollbars=no, resizable=no, location=no, width=50, height=50, left=10000, top=10000');
+		}
 	})();
 	</script>
 </head>
+
 <jsp:include page="/WEB-INF/bbs/template/Top.jsp" />
 <body>
-<div id="wrap">
-	<nav id="skip_nav">skip navigation
-		<ul>
-			<li><a href="#gnb_menu">메뉴</a></li>
-			<li><a href="#id_box">마이영역</a></li>
-			<li><a href="#conts_section">본문</a></li>
-			<li><a href="#footer">하단 정보</a></li>
-		</ul>
-	</nav>
-
-
-	<div id="cont_wrap" class="clfix">
-		<div id="conts_section" class="my_fold">
-			<!-- contents -->
-			
-
-<!-- contents -->
-<div id="conts">
-	<!-- 고객센터 공통 메뉴  start-->
-	
-
-<h2 class="f_tit mb20">고객지원센터</h2>
-<div class="wrap_tab03 type05">
-	<ul>
-		
-		
-		<li class="first_child"><a href="http://faqs2.melon.com/customer/index.htm" class="link_tab" title="홈 - 페이지 이동">
-			<span class="cntt">홈</span>
-		</a></li>
-		<li ><a href="NoticeList.do" class="link_tab" title="공지사항 - 페이지 이동">
-			<span class="cntt">공지사항</span>
-		</a></li>
-		<li class="on"><a href="UserQuestionList.do" class="link_tab" title="자주하는 질문 - 페이지 이동">
-			<span class="cntt">자주 하는 질문</span>
-		</a></li>
-		<li ><a href="ProblemList.do" class="link_tab" title="나의 문의 내역 - 페이지 이동">
-			<span class="cntt">나의 문의 내역</span>
-		</a></li>
-		<li class="last_child"><a href="http://www.melon.com/customer/dcf/index.htm" class="link_tab" title="DCF 지원 기기 - 페이지 이동">
-			<span class="cntt">DCF 지원 기기</span>
-		</a></li>
-	</ul>
-</div>
-	
-	
-	<div class="tb_list02 type02 mt30">
-		<table border="1" style="width:100%">
-			<caption><span>이 표는 선택하신 자주하는 질문 상세 내용 입니다.</span></caption>
-			<colgroup><col style="width:60px" /><col style="width:170px" /><col style="width:130px" /><col /><col style="width:80px" /><col style="width:100px" /></colgroup>
-			<thead>
-			<tr>
-				<th scope="col" class="th02"><div class="wrap pd_none">${dto.qu_no }</div></th>
-				<th scope="col" class="th02"><div class="wrap">${dto.qu_largedivide}</div></th>
-				<th scope="col" class="th02"><div class="wrap">${dto.qu_mediumdivide}</div></th>
-				<th scope="col" class="t_left fc_gray"><div class="wrap subject_type">${dto.qu_title}</div></th>
-				<th scope="col" class="th02"><div class="wrap">${dto.qu_hitcount}</div></th>
-				<th scope="col" class="th02"><div class="wrap">${dto.qu_lastdate}</div></th>
-			</tr>
-			
-			</thead>
-			<tbody>
-			<tr class="first_child"><!-- 140502_수정 aty -->
-				<td colspan="6" class="no_bg">
-					<div class="dtl">
-				${dto.qu_contents }
-
+	<div id="wrap">
+		<div id="cont_wrap" class="clfix">
+			<div id="conts_section" class="my_fold fold_on">
+				<div id="conts">
+					<h2 class="f_tit mb20">고객지원센터</h2>
+					<div class="wrap_tab03 type05">
+						<ul>
+							
+							
+							<li class="first_child"><a href="http://faqs2.melon.com/customer/index.htm" class="link_tab" title="홈 - 페이지 이동">
+								<span class="cntt">홈</span>
+							</a></li>
+							<li ><a href="NoticeList.do" class="link_tab" title="공지사항 - 페이지 이동">
+								<span class="cntt">공지사항</span>
+							</a></li>
+							<li class="on"><a href="UserQuestionList.do" class="link_tab" title="자주하는 질문 - 페이지 이동">
+								<span class="cntt">자주 하는 질문</span>
+							</a></li>
+							<li ><a href="ProblemList.do" class="link_tab" title="나의 문의 내역 - 페이지 이동">
+								<span class="cntt">나의 문의 내역</span>
+							</a></li>
+							<li class="last_child"><a href="http://www.melon.com/customer/dcf/index.htm" class="link_tab" title="DCF 지원 기기 - 페이지 이동">
+								<span class="cntt">DCF 지원 기기</span>
+							</a></li>
+						</ul>
 					</div>
-				</td>
-			</tr>
-			</tbody>
-		</table>
-	</div>
-	<div class="help_check_wrap">
-		<div class="help_check">
-			<span class="fc_strong">이 도움말에 만족하셨습니까?</span>
-			<label for="help1"><input type="radio" name="help" id="help1" value="1"/>아주 만족</label>
-			<label for="help2"><input type="radio" name="help" id="help2" value="2"/>만족</label>
-			<label for="help3"><input type="radio" name="help" id="help3" value="3"/>보통</label>
-			<label for="help4"><input type="radio" name="help" id="help4" value="4"/>불만</label>
-			<label for="help5"><input type="radio" name="help" id="help5" value="5"/>아주 불만</label>
-			<button type="button" onclick="javascript:goSurvey();" class="btn_emphs03_small" title="도움말 평가하기 버튼 - 새창"><span class="odd_span"><span class="even_span">평가하기</span></span></button>
-		</div>
+	
+	
+					<div class="tb_list02 type02 mt30">
+						<table border="1" style="width:100%">
+							<caption><span>이 표는 선택하신 자주하는 질문 상세 내용 입니다.</span></caption>
+							<colgroup>
+								<col style="width: 60px" />
+								<col style="width: 170px" />
+								<col style="width: 130px" />
+								<col />
+								<col style="width: 80px" />
+								<col style="width: 120px" />
+							</colgroup>
+							<thead>
+							<tr>
+								<th scope="col" class="th02"><div class="wrap pd_none">${dto.qu_no }</div></th>
+								<th scope="col" class="th02"><div class="wrap">${dto.qu_largedivide}</div></th>
+								<th scope="col" class="th02"><div class="wrap">${dto.qu_mediumdivide}</div></th>
+								<th scope="col" class="t_left fc_gray"><div class="wrap subject_type">${dto.qu_title}</div></th>
+								<th scope="col" class="th02"><div class="wrap">${dto.qu_hitcount}</div></th>
+								<th scope="col" class="th02"><div class="wrap">${dto.qu_lastdate}</div></th>
+							</tr>
+							
+							</thead>
+							<tbody>
+							<tr class="first_child"><!-- 140502_수정 aty -->
+								<td colspan="6" class="no_bg">
+									<div class="dtl">
+										${dto.qu_contents }
+									</div>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="help_check_wrap">
+						<div class="help_check">
+							<span class="fc_strong">이 도움말에 만족하셨습니까?</span>
+							<label for="help1"><input type="radio" name="help" id="help1" value="1"/>아주 만족</label>
+							<label for="help2"><input type="radio" name="help" id="help2" value="2"/>만족</label>
+							<label for="help3"><input type="radio" name="help" id="help3" value="3"/>보통</label>
+							<label for="help4"><input type="radio" name="help" id="help4" value="4"/>불만</label>
+							<label for="help5"><input type="radio" name="help" id="help5" value="5"/>아주 불만</label>
+							<button type="button" onclick="javascript:goSurvey();" class="btn_emphs03_small" title="도움말 평가하기 버튼 - 새창"><span class="odd_span"><span class="even_span">평가하기</span></span></button>
+						</div>
 
-		<!-- 만족도 평가 레이어 팝업 -->
-		<div class="layer_popup small" style="top:50%; left:30%; width:384px; display:none;" id="required">
-			<h1 class="layer_title">만족도 평가</h1>
-			<div class="layer_cntt">
-				<div><p class="txt_emphs mb0">만족도를 선택하신 후 평가해 주세요</p></div>
-				<div class="wrap_btn_c">
-					<button type="button" class="btn_emphs02_small d_close" title="만족도 평가 닫기 버튼"><span class="odd_span"><span class="even_span">닫기</span></span></button>
+						<!-- 만족도 평가 레이어 팝업 -->
+						<div class="layer_popup small" style="top:50%; left:30%; width:384px; display:none;" id="required">
+							<h1 class="layer_title">만족도 평가</h1>
+							<div class="layer_cntt">
+								<div><p class="txt_emphs mb0">만족도를 선택하신 후 평가해 주세요</p></div>
+								<div class="wrap_btn_c">
+									<button type="button" class="btn_emphs02_small d_close" title="만족도 평가 닫기 버튼"><span class="odd_span"><span class="even_span">닫기</span></span></button>
+								</div>
+							</div>
+							<button type="button" class="btn_close d_close" title="만족도 평가 닫기 버튼"><span class="odd_span">닫기</span></button>
+							<span class="shadow"></span>
+						</div>
+						<!-- //만족도 평가 레이어 팝업 -->
+						<!-- 만족도 평가 레이어 팝업 -->
+						<div class="layer_popup small" style="width:390px; display:none;" id="already">
+							<h1 class="layer_title">만족도 평가</h1>
+							<div class="layer_cntt">
+								<div><p class="txt_emphs mb0">고객님의 답변 만족도는 이미 반영되었습니다.</p></div>
+								<div class="wrap_btn_c">
+									<button type="button" class="btn_emphs02_small d_close" title="만족도 평가 닫기 버튼"><span class="odd_span"><span class="even_span">닫기</span></span></button>
+								</div>
+							</div>
+							<button type="button" class="btn_close d_close" title="만족도 평가 닫기 버튼"><span class="odd_span">닫기</span></button>
+							<span class="shadow"></span>
+						</div>
+						<!-- //만족도 평가 레이어 팝업 -->
+						<!-- 만족도 평가 레이어 팝업 -->
+						<div class="layer_popup small" style="top:68%; left:30%; width:384px; display:none;" id="success">
+							<h1 class="layer_title">만족도 평가</h1>
+							<div class="layer_cntt">
+								<div class="box_default">
+									<p class="txt_emphs ">고객님의 <span class="fc_point">답변 만족도</span>를 반영하였습니다.</p>
+									<p class="fc_strong">고객님께서 보내주신 소중한 의견은 보다 나은<br />멜론서비스를 위한 소중한 자료로 사용하겠습니다.<br /><br />감사합니다.</p>
+								</div>
+								<div class="wrap_btn_c">
+									<button type="button" class="btn_emphs02_small d_close" title="만족도 평가 닫기 버튼"><span class="odd_span"><span class="even_span">닫기</span></span></button>
+								</div>
+							</div>
+							<button type="button" class="btn_close d_close" title="만족도 평가 닫기 버튼"><span class="odd_span">닫기</span></button>
+							<span class="shadow"></span>
+						</div>
+						<!-- //만족도 평가 레이어 팝업 -->
+						<!-- 만족도 평가 레이어 팝업 -->
+						<div class="layer_popup small" style="top:68%; left:30%; width:384px; display:none;" id="fail">
+							<h1 class="layer_title">만족도 평가</h1>
+							<div class="layer_cntt">
+								<div class="box_default">
+									<p class="txt_emphs ">고객님의 <span class="fc_point">답변 만족도</span>를 반영하지 못했습니다.</p>
+								</div>
+								<div class="wrap_btn_c">
+									<button type="button" class="btn_emphs02_small d_close" title="만족도 평가 닫기 버튼"><span class="odd_span"><span class="even_span">닫기</span></span></button>
+								</div>
+							</div>
+							<button type="button" class="btn_close d_close" title="만족도 평가 닫기 버튼"><span class="odd_span">닫기</span></button>
+							<span class="shadow"></span>
+						</div>
+						<!-- //만족도 평가 레이어 팝업 -->
+					</div>
+					<div class="btn_wrap clfix">
+						<button type="button" onclick="javascript:goHelp();" class="btn btn_big fl_left" title="1:1문의하기 버튼 - 페이지 이동"><span class="odd_span"><span class="even_span">1:1문의하기</span></span></button>
+						<button type="button" onclick="javascript:goList();" class="btn btn_big fl_right" title="질문 전체 목록 이동 버튼 - 페이지 이동"><span class="odd_span"><span class="even_span">목록</span></span></button>
+					</div>
 				</div>
-			</div>
-			<button type="button" class="btn_close d_close" title="만족도 평가 닫기 버튼"><span class="odd_span">닫기</span></button>
-			<span class="shadow"></span>
-		</div>
-		<!-- //만족도 평가 레이어 팝업 -->
-		<!-- 만족도 평가 레이어 팝업 -->
-		<div class="layer_popup small" style="width:390px; display:none;" id="already">
-			<h1 class="layer_title">만족도 평가</h1>
-			<div class="layer_cntt">
-				<div><p class="txt_emphs mb0">고객님의 답변 만족도는 이미 반영되었습니다.</p></div>
-				<div class="wrap_btn_c">
-					<button type="button" class="btn_emphs02_small d_close" title="만족도 평가 닫기 버튼"><span class="odd_span"><span class="even_span">닫기</span></span></button>
-				</div>
-			</div>
-			<button type="button" class="btn_close d_close" title="만족도 평가 닫기 버튼"><span class="odd_span">닫기</span></button>
-			<span class="shadow"></span>
-		</div>
-		<!-- //만족도 평가 레이어 팝업 -->
-		<!-- 만족도 평가 레이어 팝업 -->
-		<div class="layer_popup small" style="top:68%; left:30%; width:384px; display:none;" id="success">
-			<h1 class="layer_title">만족도 평가</h1>
-			<div class="layer_cntt">
-				<div class="box_default">
-					<p class="txt_emphs ">고객님의 <span class="fc_point">답변 만족도</span>를 반영하였습니다.</p>
-					<p class="fc_strong">고객님께서 보내주신 소중한 의견은 보다 나은<br />멜론서비스를 위한 소중한 자료로 사용하겠습니다.<br /><br />감사합니다.</p>
-				</div>
-				<div class="wrap_btn_c">
-					<button type="button" class="btn_emphs02_small d_close" title="만족도 평가 닫기 버튼"><span class="odd_span"><span class="even_span">닫기</span></span></button>
-				</div>
-			</div>
-			<button type="button" class="btn_close d_close" title="만족도 평가 닫기 버튼"><span class="odd_span">닫기</span></button>
-			<span class="shadow"></span>
-		</div>
-		<!-- //만족도 평가 레이어 팝업 -->
-		<!-- 만족도 평가 레이어 팝업 -->
-		<div class="layer_popup small" style="top:68%; left:30%; width:384px; display:none;" id="fail">
-			<h1 class="layer_title">만족도 평가</h1>
-			<div class="layer_cntt">
-				<div class="box_default">
-					<p class="txt_emphs ">고객님의 <span class="fc_point">답변 만족도</span>를 반영하지 못했습니다.</p>
-				</div>
-				<div class="wrap_btn_c">
-					<button type="button" class="btn_emphs02_small d_close" title="만족도 평가 닫기 버튼"><span class="odd_span"><span class="even_span">닫기</span></span></button>
-				</div>
-			</div>
-			<button type="button" class="btn_close d_close" title="만족도 평가 닫기 버튼"><span class="odd_span">닫기</span></button>
-			<span class="shadow"></span>
-		</div>
-		<!-- //만족도 평가 레이어 팝업 -->
-	</div>
-	<div class="btn_wrap clfix">
-		<button type="button" onclick="javascript:goHelp();" class="btn btn_big fl_left" title="1:1문의하기 버튼 - 페이지 이동"><span class="odd_span"><span class="even_span">1:1문의하기</span></span></button>
-		<button type="button" onclick="javascript:goList();" class="btn btn_big fl_right" title="질문 전체 목록 이동 버튼 - 페이지 이동"><span class="odd_span"><span class="even_span">목록</span></span></button>
-	</div>
-</div>
 <!-- //contents -->
 <!-- 전체 공통 스크립트 -->
 
