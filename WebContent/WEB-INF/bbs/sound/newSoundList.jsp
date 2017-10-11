@@ -121,8 +121,8 @@
 						<ul>
 							<li class="first_child on"><a href="javascript:;"
 								class="link_tab" data-area-flg="I"><span class="cntt">국내</span></a></li>
-							<!-- <li class="last_child "><a href="javascript:;"
-								class="link_tab" data-area-flg="O"><span class="cntt">해외</span></a></li> -->
+							<li class="last_child "><a href="javascript:;"
+								class="link_tab" data-area-flg="O"><span class="cntt">해외</span></a></li>
 						</ul>
 					</div>
 
