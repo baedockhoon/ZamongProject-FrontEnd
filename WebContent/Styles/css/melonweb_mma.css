@@ -3491,7 +3491,7 @@ a.play_artist:hover span{text-decoration:underline;}
 .week-timeline,
 .month-timeline {position:relative}
 .month-timeline.first {padding-top:60px;}/* 174025 수정 */
-.sec-week-wrap {position:relative; padding-bottom:80px; padding-top:60px; }/* 170309 수정 */
+.sec-week-wrap {position:relative; padding-bottom:80px; padding-top:60px; font-size: 30px;}/* 170309 수정 */
 .sec-week-wrap.first{padding-top:0;}/* 170309 수정 */
 .sec-week-wrap {position:relative; padding-bottom:80px;padding-top:60px;}/* 161221 수정 */
 .sec-week-wrap.type02{padding-bottom:120px; }/* 161110 추가 */
@@ -3500,7 +3500,7 @@ a.play_artist:hover span{text-decoration:underline;}
 .sec-week-wrap .area-type3{position:relative;width:1008px;margin:0 auto;}/* 161129 수정 */
 .sec-week-wrap.timer{padding-bottom:0;}
 .sec-week-wrap.first{padding-top:0;}/* 161221 추가 */
-/* .sec-title h2 {font-size:40px; color:#1d1d1d; font-weight:300; line-height:130%; letter-spacing:-1px } */
+.sec-title h2 {font-size:50px; color:#1d1d1d; font-weight:600; line-height:130%; letter-spacing:-1px }
 
 
 /* 161110 수정 */

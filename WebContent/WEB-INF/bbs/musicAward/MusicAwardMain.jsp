@@ -121,15 +121,16 @@
 						<div class="area">
 							<div class="row-voteinfo-area">
 								<dl class="col-closing-time">
-								<dd>투표 종료시간 : ${item.ma_endofday}</dd>
 									<dt><strong>남은시간</strong></dt>
+									<dd><span class="text">${item.ma_endofday}</span></dd>
 										
 								</dl>
 							
 								<dl class="col-participate">
 									<dt><strong>투표수</strong></dt>
+									<dd><span class="text">${item.vt_vote }</span></dd>
 								</dl>
-								이 어워드 총 투표수 표시
+								
 							
 								<div class="vote-sns">
 									<p>친구에게 공유</p>

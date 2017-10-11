@@ -30,7 +30,7 @@ MA_ENDOFDAY; -->
            
     <select id="MusicAwardlist" parameterType="java.util.Map" resultType="MusicAward">
 		<!-- SELECT * FROM MA_MUSICAWARD ORDER BY MA_REGIDATE DESC -->
-		select * from MA_MUSICAWARD order by ma_no desc
+		select m.*, nvl(v.vt_vote, 0) vt_vote from MA_MUSICAWARD m left outer join (select count(*) vt_vote, ma_no from ca_candidates c join vt_vote v on c.ca_no = v.ca_no group by ma_no) v on m.ma_no = v.ma_no  order by m.ma_no desc
 	</select>
            
 	<select id="MusicAwardArtistlist" parameterType="java.util.Map" resultType="MusicAward">
@@ -44,6 +44,8 @@ MA_ENDOFDAY; -->
 		FULL OUTER join (select count(*) votecount, CA_NO from vt_vote group by ca_no) v on c.ca_no = v.ca_no
     	where t.ma_no between '1' and '100' order by t.ma_no desc
 	</select>
+	
+	
 	
 	<insert id="MusicAwardVote" parameterType="java.util.Map">
 		<!-- SELECT * FROM MA_MUSICAWARD ORDER BY MA_REGIDATE DESC -->

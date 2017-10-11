@@ -463,8 +463,8 @@ body.scroll_no {overflow: hidden;}/*150413 추가 lyr*/
 .row-voteinfo-area dl.col-closing-time dd span.txt-second {width:26px; height:30px; background:url('http://cdnimg.melon.co.kr/resource/image/MMA2014/web/vote/sp_votepage_txt.png') -102px -18px; text-indent:-999px; overflow:hidden;}
 /* .row-voteinfo-area dl.col-participate {border-bottom:2px solid #05b8b0;} */
 .row-voteinfo-area dl.col-participate dt strong{display:block; text-indent:-999px; overflow:hidden; width:108px; height:18px; background:url('http://cdnimg.melon.co.kr/resource/image/MMA2014/web/vote/sp_votepage_txt.png') -140px 0;}
-.row-voteinfo-area dl.col-participate dd {overflow:hidden; *zoom:1}
-.row-voteinfo-area dl.col-participate dd span{display:block; float:left; width:18px; height:32px; background-image:url('http://cdnimg.melon.co.kr/resource/image/MMA2014/web/vote/sp_count_num.png'); text-indent:-999px; overflow:hidden}
+.row-voteinfo-area dl.col-participate dd {overflow:hidden; *zoom:1; margin-top: -5px;}
+/* .row-voteinfo-area dl.col-participate dd span{display:block; float:left; width:18px; height:32px; background-image:url('http://cdnimg.melon.co.kr/resource/image/MMA2014/web/vote/sp_count_num.png'); text-indent:-999px; overflow:hidden} */
 .row-voteinfo-area span.n0 {background-position:0 0}
 .row-voteinfo-area span.n1 {background-position:-17px 0}
 .row-voteinfo-area span.n2 {background-position:-35px 0}
@@ -3492,14 +3492,15 @@ a.play_artist:hover span{text-decoration:underline;}
 .month-timeline.first {padding-top:60px;}/* 174025 수정 */
 .sec-week-wrap {position:relative; padding-bottom:80px; padding-top:60px; }/* 170309 수정 */
 .sec-week-wrap.first{padding-top:0;}/* 170309 수정 */
-.sec-week-wrap {position:relative; padding-bottom:80px;padding-top:60px;}/* 161221 수정 */
+.sec-week-wrap {position:relative; padding-bottom:80px;padding-top:60px; }/* 161221 수정 */
 .sec-week-wrap.type02{padding-bottom:120px; }/* 161110 추가 */
 .sec-week-wrap .area {padding:0 0 0 100px; width:908px; }/* 161110 수정 */
 .sec-week-wrap .area-type2{width:1008px;margin:0 auto;}/* 161110 추가 */
 .sec-week-wrap .area-type3{position:relative;width:1008px;margin:0 auto;}/* 161129 수정 */
 .sec-week-wrap.timer{padding-bottom:0;}
 .sec-week-wrap.first{padding-top:0;}/* 161221 추가 */
-/* .sec-title h2 {font-size:40px; color:#1d1d1d; font-weight:300; line-height:130%; letter-spacing:-1px } */
+.sec-title {font-size: 30px;}
+.sec-title h2 {font-size:50px; color:#00a9a3; font-weight:300; letter-spacing:-1px }
 
 
 /* 161110 수정 */
@@ -3547,6 +3548,7 @@ a.play_artist:hover span{text-decoration:underline;}
 .sec-week-wrap .fix-timeline .green-box strong {color:#fff;font-size:22px;font-family:"맑은 고딕", "Malgun Gothic",arial,"돋움","dotum",sans-serif, "Apple Gothic", sans-serif;letter-spacing:-1px;}/* 161110 수정 */
 .sec-week-wrap .fix-timeline .green-box.line2 {height:100px; padding-top:20px; line-height:1.3; font-size:28px; font-weight:300;}
 .sec-week-wrap .row-voteinfo-area dl.col-closing-time {width:288px; }/* 161110 수정 */
+.sec-week-wrap .row-voteinfo-area dl.col-closing-time dd span.text {font-size: 30px; font-weight: 600; color: #5a5a5a}/* 161110 수정 */
 .sec-week-wrap .row-voteinfo-area dl.col-closing-time strong {width:56px; height:16px; background:url(http://cdnimg.melon.co.kr/resource/image/MMA2014/web/award/txt_vote_sp.png) 0 0 no-repeat;}/* 161110 수정 */
 .sec-week-wrap .row-voteinfo-area dl.col-participate {width:auto;min-width:66px;max-width:400px; margin-left:20px}/*150206 수정 lyr*/
 .sec-week-wrap .row-voteinfo-area dl.col-participate strong {width:43px; height:14px; background:url(http://cdnimg.melon.co.kr/resource/image/MMA2014/web/award/txt_vote_sp.png) 0 -20px no-repeat;}/* 161110 수정 */
@@ -3564,10 +3566,12 @@ a.play_artist:hover span{text-decoration:underline;}
 */
 
 /* 161110 수정 */
-.sec-week-wrap .row-voteinfo-area dl dd span{display:block; float:left; width:20px; height:32px; background:url(http://cdnimg.melon.co.kr/resource/image/MMA2014/web/award/sp_count_num.png) no-repeat; text-indent:-999px; overflow:hidden;}
+/* .sec-week-wrap .row-voteinfo-area dl dd span{display:block; float:left; width:20px; height:32px; background:url(http://cdnimg.melon.co.kr/resource/image/MMA2014/web/award/sp_count_num.png) no-repeat; text-indent:-999px; overflow:hidden;} */
+
+.sec-week-wrap .row-voteinfo-area dl.col-participate dd span.text {font-size: 30px; font-weight: 600; color: #5a5a5a;}/* 161110 수정 */
 .sec-week-wrap .row-voteinfo-area dl.col-closing-time dd span.txt-day {overflow:hidden;height:24px;background:url(http://cdnimg.melon.co.kr/resource/image/MMA2014/web/award/txt_time.png) 0 0 no-repeat; text-indent:-999px;width:20px;margin:2px 12px 0 0;background-position: 0 0;}
 .sec-week-wrap .row-voteinfo-area dl.col-closing-time dd span.txt-clock{overflow:hidden;height:24px;background:url(http://cdnimg.melon.co.kr/resource/image/MMA2014/web/award/txt_time.png) 0 0 no-repeat; text-indent:-999px;width:6px;margin:2px 8px 0 5px;background-position:-23px 0;}
-.sec-week-wrap .row-voteinfo-area dl.col-participate dd span{display:block; float:left; width:20px; height:32px; background:url(http://cdnimg.melon.co.kr/resource/image/MMA2014/web/award/sp_count_num.png) no-repeat; text-indent:-999px; overflow:hidden;}
+/* .sec-week-wrap .row-voteinfo-area dl.col-participate dd span{display:block; float:left; width:20px; height:32px; background:url(http://cdnimg.melon.co.kr/resource/image/MMA2014/web/award/sp_count_num.png) no-repeat; text-indent:-999px; overflow:hidden;} */
 
 .sec-week-wrap .row-voteinfo-area dl dd span.n0,
 .sec-week-wrap .row-voteinfo-area dl dd span.num0 {background-position:0 0 !important;}
