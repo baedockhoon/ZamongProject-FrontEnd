@@ -68,7 +68,7 @@ if(CP_ID!="" && CP_ID!=null){
 				
 				
 				
-				<h2 class="mem_info_title02">멜론 회원가입 완료<br> <span class="point">${dto.me_name}</span> 님, 환영합니다.</h2>
+				<h2 class="mem_info_title02">자몽 회원가입 완료<br> <span class="point">${dto.me_name}</span> 님, 환영합니다.</h2>
 
 				<div class="mem_info_cont">
 					<div class="tb_list04 pt24">
