@@ -16,7 +16,6 @@ import com.zamong.at.service.ArtistDTO;
 import com.zamong.at.service.ArtistService;
 import com.zamong.ss.service.SoundDTO;
 
-import oracle.net.aso.s;
 
 @Controller
 public class ArtistController {

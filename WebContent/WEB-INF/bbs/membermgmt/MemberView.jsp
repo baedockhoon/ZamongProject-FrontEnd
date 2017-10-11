@@ -21,7 +21,7 @@
 	
 
 
-<link rel="stylesheet" href="https://cdnimg.melon.co.kr/static/member/resource/style/me1/qy/y/1edydz6hfyj.css" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/1edydz6hfyj.css" type="text/css" />
 
 <script type="text/javascript" src="/resource/script/web/common/jquery-1.9.1.min.js"></script>
 <script type="text/javascript">

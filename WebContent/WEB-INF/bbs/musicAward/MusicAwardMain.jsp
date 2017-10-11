@@ -192,7 +192,8 @@
 													<div class="count-vote">
 														<dl>
 															<dt>득표수</dt>
-															<dd class="txt">${item2.vt_vote}<span class="sum_txt">득표</span>
+															<dd class="txt"><span class="sum_txt"></span>
+															득표수 : ${item2.vt_vote}
 															</dd>
 															<dd class="graph">
 																<div class="liner"><p style="width:     1.5%"></p></div>

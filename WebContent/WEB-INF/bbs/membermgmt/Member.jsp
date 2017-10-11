@@ -15,16 +15,22 @@
 
 <meta name="viewport"
 	content="user-scalable=yes, width=858, target-densityDpi=device-dpi" />
-<title>Melon::음악이 필요한 순간, 멜론</title>
-<meta name="keywords"
-	content="음악서비스, 멜론차트, 맬론TOP100, 최신음악, 인기가요, 뮤직비디오, 앨범, 플레이어, 스트리밍, 다운로드, 아티스트플러스, 아티스트채널" />
-<meta name="description"
-	content="국내 최대 1000만곡 확보 No.1 음악사이트, 멜론! 최신음악과 실시간 차트는 기본, 내 취향을 아는 똑똑한 추천 라디오, 내가 좋아하는 아티스트의 새로운 소식까지 함께 즐겨보세요." />
+	<title>Zamong::음악이 필요한 지금, 자몽</title>
+	<meta name="keywords" content="음악서비스, 멜론차트, 멜론TOP100, 최신음악, 인기가요, 뮤직비디오, 앨범, 플레이어, 스트리밍, 다운로드, 아티스트플러스, 아티스트채널" />
+	<meta name="description" content="국내 최대 1,000만곡 확보 No.1 음악사이트, 멜론! 최신음악과 실시간 차트는 기본, 내 취향을 아는 똑똑한 추천 라디오, 내가 좋아하는 아티스트의 새로운 소식까지 함께 즐겨보세요." />
+	<meta name="naver-site-verification" content="f13fc46b807bef984aa341efeb1adec8de12264c"/>
+	<meta property="og:title" content="Melon"/>
+	<meta property="og:image" content="http://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png"/>
+	<meta property="og:description" content="음악이 필요한 순간, 멜론"/>
+	<meta property="og:url" content="http://www.melon.com/"/>
+	<meta property="og:type" content="website"/>
+	<meta name="viewport" content="width=device-width"/>
+	<link rel="icon" href="<c:url value='/Styles/image/zamongicon.gif'/>"/>
 
 
 
 
-<link rel="stylesheet" href="https://cdnimg.melon.co.kr/static/member/resource/style/me1/qy/y/1edydz6hfyj.css" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/1edydz6hfyj.css" type="text/css" />
 
 <script type="text/javascript"
 	src="/resource/script/web/common/jquery-1.9.1.min.js"></script>
