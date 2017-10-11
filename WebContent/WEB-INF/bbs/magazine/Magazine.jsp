@@ -5,12 +5,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-
-	
-	
-	
-	
-
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title>Zamong::음악이 필요한 지금, 자몽</title>
@@ -24,46 +18,11 @@
 	<meta property="og:type" content="website"/>
 	<meta name="viewport" content="width=device-width"/>
 	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?2" id="favicon"/>
-	
-		
-		
-		
-		
-		
-	
-	<script type="text/javascript">
-		checkWin8Metro();
-		function checkWin8Metro(){
-			var userAgent = navigator.userAgent.toLowerCase();
-			var canRunActiveX = false;
-			try
-			{
-				canRunActiveX = !!new ActiveXObject("htmlfile");
-			}
-			catch (e)
-			{
-				canRunActiveX = false;
-			}
-			if ((userAgent.indexOf("windows nt 6.2") >= 0 || userAgent.indexOf("windows nt 6.3") >= 0 ) && userAgent.indexOf("msie") >= 0)
-			{
-				// windows 8
-				if (canRunActiveX == false)
-				{
-					document.location.href = "http://t.melon.com";
-				}
-			}
-		}
-	</script>
-	
-	
-	
-		
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/b0oedst30j.css" type="text/css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/14j3tr44urn.css" type="text/css" />
 	
 	<!-- 댓글 css 파일 네임 변경 -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/uolshpokn9.css" type="text/css" /> 
-  	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/melonweb_musicstory.css" type="text/css" />
 	
 	<script type="text/javascript" src="${pageContext.request.contextPath}/Styles/js/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/Styles/js/melonweb_member_external.js"></script>
@@ -240,43 +199,24 @@
 <body>
 
 <jsp:include page="/WEB-INF/bbs/template/Top.jsp" />
-
+<div id="wrap">
+		<div id="cont_wrap" class="clfix">
+			<div id="conts_section" class="my_fold fold_on">
+				<div id="conts">
+					<h2 class="f_tit mb20">자몽매거진</h2>
+					<div class="wrap_tab03 type05" align="center">
+						<ul>
+							<li data-gubn="D" class="first_child on">
+								<a href="<c:url value='/ZamongFrontEnd/Magazine.do'/>" class="link_tab" title="홈 - 페이지 이동">
+				                <span class="cntt">자몽매거진</span>
+				            </a></li>
+							<li data-gubn="H" class="last_child ">
+								<a href="<c:url value='/ZamongFrontEnd/MagazineToday.do'/>" class="link_tab" title="공지사항 - 페이지 이동">
+				            <span class="cntt">오늘의 매거진</span>
+				            </a></li>
+						</ul>
+					</div>
 <!-- contents -->
-<h2 class="f_tit mb20" align="center">자몽매거진</h2>
-
-<div id="conts" align="center">
-    <div class="wrap_tab03 type02 page_move">
-        <%-- <ul>
-            <li data-gubn="D" class="first_child on">
-            	<a href="<c:url value='/ZamongFrontEnd/Magazine.do'/>" class="link_tab" title="홈 - 페이지 이동">
-                <span class="cntt">자몽매거진</span>
-            </a></li>
-      		
-            <li data-gubn="H" class="last_child ">
-            <a href="<c:url value='/ZamongFrontEnd/MagazineToday.do'/>" class="link_tab" title="공지사항 - 페이지 이동">
-            <span class="cntt">오늘의 매거진</span>
-            </a></li>
-        </ul> --%>
-        <ul style="width:100%;">
-			<li data-gubn="D" class="first_child on">
-				<a href="<c:url value='/ZamongFrontEnd/Magazine.do'/>" class="link_tab" title="홈 - 페이지 이동">
-                <span class="cntt">자몽매거진</span>
-            </a></li>
-			<li data-gubn="H" class="last_child ">
-				<a href="<c:url value='/ZamongFrontEnd/MagazineToday.do'/>" class="link_tab" title="공지사항 - 페이지 이동">
-            <span class="cntt">오늘의 매거진</span>
-            </a></li>
-		</ul>
-    </div>
- <div class="search_head mt24">
-				<div class="search_head mt24">
-  
-					
-				
-
-
-
-		<div class="search_head mt24">
 
 				<div class="search_head mt24">
 						<div class="select_wrap">
@@ -308,14 +248,17 @@
 				<input type="submit" value="검색" />
                            </form>
                         </div>
-				
-
-
-
+                        </div>
 		<div class="tb_list02 type02 mt8">
 	<table class="table table-striped">
-		<colgroup><col style="width:60px" /><col style="width:120px" /><col /><col style="width:80px" /><col style="width:100px" /></colgroup>
-		<thead>
+									<colgroup>
+										<col style="width: 60px" />
+										<col style="width: 120px" />
+										<col />
+										<col style="width: 80px" />
+										<col style="width: 100px" />
+									</colgroup>
+									<thead>
 			<tr>
 				<th scope="col"><div class="wrap pd_none">NO.</div></th>
 				<th scope="col" class="t_center"><div class="wrap">분류</div></th>
@@ -347,45 +290,34 @@
 		</c:choose>
 
 	</table>
+</div>
+	<div class="paginate">
+		<a href="javascript:;" class="btn_first disabled"><span>맨처음</span></a>
+		<a href="javascript:;" class="btn_pre disabled"><span>이전</span></a>
+		<span class="page_num"><strong><span
+				class="none">현재페이지</span>1</strong><a
+			href="javascript:pageObj.sendPage('21');">2</a><a
+			href="javascript:pageObj.sendPage('41');">3</a><a
+			href="javascript:pageObj.sendPage('61');">4</a><a
+			href="javascript:pageObj.sendPage('81');">5</a><a
+			href="javascript:pageObj.sendPage('101');">6</a><a
+			href="javascript:pageObj.sendPage('121');">7</a><a
+			href="javascript:pageObj.sendPage('141');">8</a><a
+			href="javascript:pageObj.sendPage('161');">9</a><a
+			href="javascript:pageObj.sendPage('181');">10</a></span> <a
+			href="javascript:pageObj.sendPage('201');" class="btn_next"><span>다음</span></a>
+		<a href="javascript:pageObj.sendPage('321');" class="btn_last"><span>맨끝</span></a>
 	</div>
-   <div id="pageObjNavgation" style="">
-                     <div class="paginate">
-                        <a href="javascript:;" class="btn_first disabled"><span>맨처음</span></a>
-                        <a href="javascript:;" class="btn_pre disabled"><span>이전</span></a>
-                        <span class="page_num"><strong><span
-                              class="none">현재페이지</span>1</strong><a
-                           href="javascript:pageObj.sendPage('21');">2</a><a
-                           href="javascript:pageObj.sendPage('41');">3</a><a
-                           href="javascript:pageObj.sendPage('61');">4</a><a
-                           href="javascript:pageObj.sendPage('81');">5</a><a
-                           href="javascript:pageObj.sendPage('101');">6</a><a
-                           href="javascript:pageObj.sendPage('121');">7</a><a
-                           href="javascript:pageObj.sendPage('141');">8</a><a
-                           href="javascript:pageObj.sendPage('161');">9</a><a
-                           href="javascript:pageObj.sendPage('181');">10</a></span> <a
-                           href="javascript:pageObj.sendPage('201');" class="btn_next"><span>다음</span></a>
-                        <a href="javascript:pageObj.sendPage('321');" class="btn_last"><span>맨끝</span></a>
-                     </div>
-                  </div>
-                  
-                  <div class="wrap_search">
-                  <input type="text" id="schText" title="공지사항 검색 입력 편집창" value=""
-                     placeholder="검색어를 입력해 주세요" class="input_text"
-                     style="width: 184px;"
-                     onKeypress="if(event.keyCode==13) {javascript:jsSearch(); return false;}" />
-                  <button type="button" id="schBtn" title="글 검색" class="btn_base02">
-                     <span class="odd_span"><span class="even_span">검색</span></span>
-                  </button>
-               </div>
-                  
-</div>
-</div>
+	<div class="wrap_search">
+        <input type="text" id="schText" title="공지사항 검색 입력 편집창" value="" placeholder="검색어를 입력해 주세요" class="input_text" style="width:184px;" onKeypress="if(event.keyCode==13) {javascript:jsSearch(); return false;}"/>
+        <button type="button" id="schBtn" title="글 검색" class="btn_base02"><span class="odd_span"><span class="even_span">검색</span></span></button>
+    </div>
+	</div>
 </div>
 
 </div>
 </div>
 <!-- contents -->
-			
 </body>
 <jsp:include page="/WEB-INF/bbs/template/Foot.jsp" />
 

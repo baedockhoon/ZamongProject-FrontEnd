@@ -18,31 +18,6 @@
 	<meta property="og:type" content="website"/>
 	<meta name="viewport" content="width=device-width"/>
 	<link rel="icon" href="<c:url value='/Styles/image/zamongicon.gif'/>"/>
-	
-	<script type="text/javascript">
-		checkWin8Metro();
-		function checkWin8Metro(){
-			var userAgent = navigator.userAgent.toLowerCase();
-			var canRunActiveX = false;
-			try
-			{
-				canRunActiveX = !!new ActiveXObject("htmlfile");
-			}
-			catch (e)
-			{
-				canRunActiveX = false;
-			}
-			if ((userAgent.indexOf("windows nt 6.2") >= 0 || userAgent.indexOf("windows nt 6.3") >= 0 ) && userAgent.indexOf("msie") >= 0)
-			{
-				// windows 8
-				if (canRunActiveX == false)
-				{
-					document.location.href = "http://t.melon.com";
-					
-				}
-			}
-		}
-	</script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/Styles/js/jquery-1.9.1.min.js""></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/Styles/js/melonweb_member_external.js"></script>
 	
@@ -50,37 +25,15 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/b0oedst30j.css" type="text/css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/14j3tr44urn.css" type="text/css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/14g2jf0vkd.css" type="text/css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/css/audio/melonweb_video.css" type="text/css" />
 
 </head>
 <body>
 <jsp:include page="/WEB-INF/bbs/template/Top.jsp" />
 <!-- contents -->
-
-	<div class="cont_area">
-		<div class="ltcont">
-			<div class="s_tit_wrap pt0">
-				<h3 class="all_vdo"><span class="none">전체 영상</span></h3>
-			</div>
-			
-			<!-- Tab Area -->
-			<div class="wrap_tab03 type02 page_move">
-				<ul style="width:100%;">
-					<li data-gubn="D" class="first_child on">
-						<a href="javascript:;" title="최신 영상 - 페이지 이동" class="link_tab"><span class="cntt">최신 영상</span></a></li>
-					<li data-gubn="H" class="last_child ">
-						<a href="javascript:;" title="인기 영상 - 페이지 이동" class="link_tab"><span class="cntt">인기 영상</span></a></li>
-				</ul>
-			</div>
-			<!-- //Tab Area -->
-			<div class="tv_ltwrap d_video_list mt16">
-				<!-- 영상목록 -->
-				<div id="pageList">
-									
-
-
+<div id="cont_wrap" class="clfix">
+	<div id="conts_section" class="my_fold fold_on"> 
 <div id="conts" class="cont_type ban">
-
-					
 					<h2 class="f_tit line">
 					${dto.mv_title }
 					</h2>
@@ -92,43 +45,30 @@
 						<div class="ltcont">
 							<div class="vod_field vod_position">
 								<!-- 동영상 플레이어 -->
-								
+								<div class="vod_player" style="width:736px;height:414px;">
+									<div class="mgoonjs">
+										${dto.mv_link }
+									</div>
 								</div>
 								<!-- 2016-04-12 LBY youTube 연결처리 -->
-								${dto.mv_link }
-									
-								
 								<!-- SNS 포스팅용 이미지 -->
 								<div id="mvdImgArea" style="display:none;"><img onerror="WEBPOCIMG.defaultMvImg(this);" width="100px" src="http://cdnimg.melon.co.kr/cm/mv/images/43/501/72/925/50172925.jpg" alt="어젯밤 이야기"/></div>
 								<!-- //SNS 포스팅용 이미지 -->
-
 								<div class="sharing_vod">
 									<div class="hourly_ancm" style="display:none;"><div><div class="d_layer"><!-- style="display:none;" -->
-										
 										<a href="#" title="공지 닫기" class="delt d_close"><img width="15" height="15" src="http://image.melon.co.kr/resource/image/web/common/btn_close.png" alt="공지 닫기"/></a>
 									</div></div></div>
 									<input type="hidden" class="src_info" id="urlObj" readonly="readonly" value="http://www.melon.com/video/detail.htm?mvId=50172925"/>
 									<div class="sns_wrap">
-										
 										<span class="wrap_btn_sns">
 											<button type="button" class="btn_sns frend type" title="친구에게 영상 추천하기 - 새 창" onclick="javascript:melon.link.goMultiMessagePop('mv','50172925');"><span class="odd_span">친구</span></button>
 											<button type="button" id="mvdFacebook" class="btn_sns facebook type" title="페이스북 - 새 창"><span class="odd_span">페이스북</span></button>
 											<button type="button" id="mvdTwitter" class="btn_sns twitter" title="트위터 - 새 창"><span class="odd_span">트위터</span></button>
 										</span>
-										
-										
-
-										
 									</div>
 									<div class="like_wrap d_video_list">
 										<button type="button" title="어젯밤 이야기 다운로드 - 새창"  class="btn_small dl " data-control="dropdown" data-dropdown-target="#d_vdo_type" onClick="melon.buy.goBuyProduct('frmMvInform', '50172925', '3C0002', '','0', '60030101');"><span class="odd_span"><span class="even_span"><span class="icon"></span>다운로드</span></span></button>
-										
-											
-											
 												<button style="display:none;" type="button" title="어젯밤 이야기 좋아요" class="btn_like_m like" data-video-no="50172925" data-video-menuId="60030101" data-target-id="d_like_count" name="likeMv"><span class="odd_span">좋아요</span></button><span class="cnt_like_m" style="display:none;"><span id="d_like_count" class="cnt_span">0</span></span>
-											
-										
-
 									</div>
 								</div>
 
@@ -136,9 +76,9 @@
 								<div class="vod_sumry d_artist_list">
 									<dl class="player_info pt10 line">
 										<!--<dl class="player_info ynlk">--><!-- 다운로드 버튼이 없을경우 -->
-										<dt class="title"><span class="none"></span>어젯밤 이야기</dt>
+										<dt class="title"><span class="none"></span>${dto.mv_title }</dt>
 										
-										<dd class="vdo_artist">
+										<!-- <dd class="vdo_artist">
 											<div class="box_userlk02 vdo_detail">
 												<a href="javascript:melon.link.goArtistDetail('261143')" title="아이유 - 페이지 이동" class="thumb">
 													<span class="thumb_frame"></span>
@@ -156,8 +96,8 @@
 														
 														
 														<input type="hidden" name="artistId" value="261143" />
-														<!-- //140401_수정 -->
-														<!-- 140410_추가 khr -->
+														//140401_수정
+														140410_추가 khr
 														
 													</dd>
 												</dl>
@@ -169,7 +109,7 @@
 												<span class="count"><span>조회</span><strong id="stronReadCnt">${dto.mv_hitcount }</strong></span>
 											</span>
 											<span class="datelk mt3"><span>등록일 </span><em>${dto.mv_regidate }</em></span>
-										</dd>
+										</dd> -->
 									</dl>
 
 									<div class="atist_sumry">
@@ -266,5 +206,5 @@ var pageObj = new Pagination('/tv/index.htm', 'pageList', 'pageObjNavgation', '2
 <br/>
 
 <jsp:include page="/WEB-INF/bbs/template/Foot.jsp" />
-
+</body>
 </html>

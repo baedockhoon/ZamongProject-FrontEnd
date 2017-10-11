@@ -7433,7 +7433,8 @@ caption {
 }
 
 .tb_list02 table {
-	border-collapse: separate
+	border-collapse: separate;
+	width: 100%
 }
 
 .tb_list02 table {

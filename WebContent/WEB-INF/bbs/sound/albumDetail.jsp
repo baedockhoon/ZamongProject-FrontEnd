@@ -154,6 +154,24 @@ $(function (){
 </script>
 <script type="text/javascript">
 
+function playFormSong(formId, checkBoxName) {
+	var songIds = new Array();
+	if (typeof checkBoxName == "undefined") {
+		checkBoxName = "input_check"
+	}
+	$("#" + formId).find("input[name='" + checkBoxName + "']:checked")
+			.each(function() {
+				if (!isNaN(this.value)) {
+					songIds.push($(this).val())
+				}
+			});
+	if (songIds.length == 0) {
+		alert("곡을 선택해 주세요")
+	} else {
+		playSong(songIds)
+	}
+};
+
 function goArtistDetail(at_no, al_divide){
 	var st =  "<c:url value='/ZamongFrontEnd/artist/Info.do?' />";
 	if (al_divide == "A"){

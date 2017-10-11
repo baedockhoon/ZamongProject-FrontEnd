@@ -24,32 +24,8 @@
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?2"
 	id="favicon" />
 
-<script type="text/javascript">
-		checkWin8Metro();
-		function checkWin8Metro(){
-			var userAgent = navigator.userAgent.toLowerCase();
-			var canRunActiveX = false;
-			try
-			{
-				canRunActiveX = !!new ActiveXObject("htmlfile");
-			}
-			catch (e)
-			{
-				canRunActiveX = false;
-			}
-			if ((userAgent.indexOf("windows nt 6.2") >= 0 || userAgent.indexOf("windows nt 6.3") >= 0 ) && userAgent.indexOf("msie") >= 0)
-			{
-				// windows 8
-				if (canRunActiveX == false)
-				{
-					document.location.href = "http://t.melon.com";
-					
-				}
-			}
-		}
-	</script>
 <script type="text/javascript"
-	src="${pageContext.request.contextPath}/Styles/js/jquery-1.9.1.min.js""></script>
+	src="${pageContext.request.contextPath}/Styles/js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/Styles/js/melonweb_member_external.js"></script>
 

@@ -42,6 +42,24 @@
 	if(!isNaN(this.value)){songIds.push($(this).val())}});
 	if(songIds.length==0){alert("곡을 선택해 주세요")}
 	else{MELON.WEBSVC.POC.play.playSong(menuId,songIds)}} */
+	
+	function playFormSong(formId, checkBoxName) {
+		var songIds = new Array();
+		if (typeof checkBoxName == "undefined") {
+			checkBoxName = "input_check"
+		}
+		$("#" + formId).find("input[name='" + checkBoxName + "']:checked")
+				.each(function() {
+					if (!isNaN(this.value)) {
+						songIds.push($(this).val())
+					}
+				});
+		if (songIds.length == 0) {
+			alert("곡을 선택해 주세요")
+		} else {
+			playSong(songIds)
+		}
+	};
 	function goAlbumDetail(al_no, al_divide){
 		var st = "<c:url value='/ZamongFrontEnd/album/Detail.do?al_no=' />"+al_no;
 		if (al_divide == "G"){
@@ -126,6 +144,15 @@
 						</ul>
 					</div>
 
+					<div class="wrap_btn_tb top">
+					
+						<button type="button" title="선택된 곡 듣기" class="button_rbox" onclick="playFormSong('frm');"><span class="button_icons type02 play"></span><span class="cnt">듣기</span></button>
+						<button type="button" title="선택된 곡 담기" class="button_rbox" onclick="melon.play.addFormPlayList('frm');"><span class="button_icons type02 scrap"></span><span class="cnt">담기</span></button>
+						<button type="button" title="선택된 곡 다운로드" class="button_rbox" onclick="melon.buy.goBuyProduct('frm','','3C0001','input_check','0','');"><span class="button_icons type02 download"></span><span class="cnt">다운</span></button>
+						<button type="button" title="선택된 곡 원음다운로드" class="button_rbox" onclick="melon.buy.goBuyProduct('frm','','3C0001','input_check','110','18030123');"><span class="button_icons type02 download"></span><span class="cnt"><span class="eng">FLAC</span></span></button>
+						<button type="button" title="선택된 곡 선물하기" class="button_rbox" onclick="melon.buy.goPresent('song', 'frm', '18030123');"><span class="button_icons type02 gift"></span><span class="cnt">선물</span></button>
+					
+					</div>
 					<div id="songList" style="">
 						<!-- 곡리스트 테이블 -->
 
