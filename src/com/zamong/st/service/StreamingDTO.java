@@ -62,7 +62,7 @@ public class StreamingDTO extends CashDTO{
 	public void setPd_name(String pd_name) {
 		this.pd_name = pd_name;
 	}
-	public StreamingDTO(String me_id, String st_no, Date st_start_date, Date st_end_date, String bp_no, String me_no,String pd_name) {
+	public StreamingDTO(String me_id, String st_no, java.sql.Date st_start_date, java.sql.Date st_end_date, String bp_no, String me_no,String pd_name) {
 
 		this.me_id = me_id;
 		this.st_no = st_no;

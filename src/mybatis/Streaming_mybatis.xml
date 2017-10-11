@@ -28,7 +28,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
            식별자로 사용 -->
            
 	<select id="Streaminglist" parameterType="java.util.Map" resultMap="StreamingDTOResult">
-		SELECT M.ME_ID,ST_NO,TO_CHAR(ST_START_DATE,'YYYY-MM-DD HH:mm:ss')AS ST_START_DATE, TO_CHAR(ST_END_DATE,'YYYY-MM-DD HH:mm:SS')AS ST_END_DATE, S.BP_NO,M.ME_NO, P.PD_NAME FROM ST_STREAMING S JOIN ME_MEMBER M ON S.ME_NO = M.ME_NO  
+		SELECT M.ME_ID,ST_NO,ST_START_DATE, ST_END_DATE, S.BP_NO,M.ME_NO, P.PD_NAME FROM ST_STREAMING S JOIN ME_MEMBER M ON S.ME_NO = M.ME_NO  
 				JOIN (SELECT BP_NO, PD_NAME FROM BP_BUYPRODUCT B JOIN PD_PRODUCT P ON B.PD_NO = P.PD_NO) P ON S.BP_NO = P.BP_NO
 				WHERE M.ME_NO=(select me_no from me_member where me_id = #{me_id}) ORDER BY ST_NO DESC
 	</select>
