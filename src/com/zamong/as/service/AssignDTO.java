@@ -16,6 +16,7 @@ public class AssignDTO {
 
 	public AssignDTO(int as_no, Date as_regidate, int me_no, int al_no, String as_getpoint, String me_id, String avg,
 			String count) {
+		
 		super();
 		this.as_no = as_no;
 		this.as_regidate = as_regidate;

@@ -36,6 +36,7 @@ public class ChartDTO {
 			String lk_flag, int lk_targetno, Date al_regidate, String al_albumname, String al_artist,
 			Date al_releasedate, String al_publishcorp, String al_entertaincorp, String al_albumimage,
 			String al_albuminfo, String al_divide, int al_artistno) {
+		
 		super();
 		this.ss_no = ss_no;
 		this.ss_regidate = ss_regidate;
