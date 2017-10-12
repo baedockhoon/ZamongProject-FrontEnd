@@ -30,7 +30,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
            식별자로 사용 -->
   
   	<select id="ChartList" parameterType="java.util.Map" resultType="Chart">
-		select ss.*, al.al_albumimage from(
+		select ss.*, al.al_albumimage, al.al_albumname from(
       select s.*, (NVL2(dn_count, dn_count,'0')+NVL2(lk_count, lk_count,'0')) as count_sum from
       (select * from ss_soundsource where ss_regidate > (sysdate-(interval '1' month))) s
       full outer join (select count(*) as dn_count, ss_no from dn_downcount group by ss_no) d

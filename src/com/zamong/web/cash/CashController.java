@@ -41,7 +41,7 @@ public class CashController {
 			@RequestParam Map map,//검색용 파라미터 받기
 			Model model,@ModelAttribute("me_id") String me_id//리퀘스트 영역 저장용
 			) throws Exception{
-		
+		map.put("me_id",me_id);
 			//서비스 호출]
 		List<CashDTO> list= service.selectList(map);
 		//데이타 저장]		

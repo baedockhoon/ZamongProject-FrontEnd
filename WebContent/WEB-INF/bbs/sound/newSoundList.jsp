@@ -81,7 +81,7 @@
 	};
 	
 	function Download(ss_no, ss_path){
-		if(confirm("정말로 음원을 구매 하시겠습니까?")){
+		if(confirm("정말로 음원을 구매 하시겠습니까? 차감금액 500원")){
 			location.href = "<c:url value='/ZamongFrontEnd/Download.do'/>?ss_no="+ss_no+"&ss_path="+ss_path;
 		}
 	};
@@ -331,7 +331,7 @@
 												<td><div class="wrap">
 														<div class="wrap_song_info">
 															<div class="ellipsis rank03">
-																<a href="javascript:goAlbumDetail(${item.al_no });"
+																<a href="javascript:goAlbumDetail('${item.al_no }');"
 																	title="${item.al_albumname } - 페이지 이동">${item.al_albumname }</a>
 															</div>
 														</div>

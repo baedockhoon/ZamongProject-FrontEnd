@@ -774,7 +774,7 @@
 									<a href="javascript:;" title="실시간 보기" class="d_link tab_link realtime"><span></span></a>
 									<span class="none">실시간</span>
 									<div class="list_wrap typeRealtime">
-										<span class="txt_intro">2017.08.01 <strong>17:00</strong> 기준</span>
+										<span class="txt_intro">2017.10.12 <strong>12:00</strong> 기준</span>
 										<ul>
 											
 											<li class="rank_item active">

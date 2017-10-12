@@ -6,7 +6,7 @@ public class AssignDTO {
 	private int as_no;
 	private java.sql.Date as_regidate;
 	private int me_no;
-	private int al_no;
+	private String al_no;
 	private String as_getpoint;
 	private String me_id;
 	private String avg;
@@ -14,7 +14,7 @@ public class AssignDTO {
 	
 	public AssignDTO() {}
 
-	public AssignDTO(int as_no, Date as_regidate, int me_no, int al_no, String as_getpoint, String me_id, String avg,
+	public AssignDTO(int as_no, Date as_regidate, int me_no, String al_no, String as_getpoint, String me_id, String avg,
 			String count) {
 		
 		super();
@@ -52,11 +52,11 @@ public class AssignDTO {
 		this.me_no = me_no;
 	}
 
-	public int getAl_no() {
+	public String getAl_no() {
 		return al_no;
 	}
 
-	public void setAl_no(int al_no) {
+	public void setAl_no(String al_no) {
 		this.al_no = al_no;
 	}
 

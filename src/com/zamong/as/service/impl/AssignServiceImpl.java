@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.zamong.as.service.AssignDTO;
 import com.zamong.as.service.AssignService;
+import com.zamong.ss.service.SoundDTO;
 
 
 @Service
@@ -20,12 +21,12 @@ public class AssignServiceImpl implements AssignService {
 	}
 
 	@Override
-	public int count(AssignDTO dto) throws Exception {
+	public int count(SoundDTO dto) throws Exception {
 		return dao.count(dto);
 	}
 
 	@Override
-	public float avg(AssignDTO dto) throws Exception {
+	public float avg(SoundDTO dto) throws Exception {
 		return dao.avg(dto);
 	}
 	

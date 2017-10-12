@@ -7,7 +7,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="mybatis.Buyproduct_mybatis.xml">
 	<!--resultMap사용시 column속성 필수  -->
 	
-	<resultMap id="AssignDTOResult" type="Assign">
+<!-- 	<resultMap id="AssignDTOResult" type="Assign">
 	    <result property="as_no" column="as_no"/>
 	    <result property="as_regidate" column="as_regidate"/>
 	    <result property="me_no" column="me_no"/>
@@ -16,7 +16,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	    <result property="me_id" column="me_id"/>
 	    <result property="avg" column="avg"/>
 	    <result property="count" column="count"/>
- 	</resultMap>
+ 	</resultMap> -->
  
  	
 	<!-- private String nt_no;//키값
@@ -45,13 +45,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="Assigninsert"  parameterType="Assign">
 		INSERT INTO AS_ASSIGN VALUES(AS_SEQ.NEXTVAL,sysdate,2,#{al_no},#{as_getpoint})
 	</insert>
-	<select id="AssignCount" resultType="int">
+	<select id="AssignCount" parameterType="java.util.Map" resultType="int">
 		<!-- SELECT COUNT(AS_GETPOINT) FROM AS_ASSIGN -->
-		SELECT COUNT(AS_GETPOINT) FROM AS_ASSIGN WHERE AL_NO = #{al_no}
+		SELECT nvl(COUNT(AS_GETPOINT), 0) FROM AS_ASSIGN WHERE AL_NO = #{al_no}
 	</select>
-	<select id="AssignAvg" resultType="float">
+	<select id="AssignAvg" parameterType="java.util.Map" resultType="float">
 		<!-- SELECT ROUND(AVG(AS_GETPOINT),2) FROM AS_ASSIGN -->
-		SELECT ROUND(AVG(AS_GETPOINT),2) FROM AS_ASSIGN WHERE AL_NO = #{al_no}
+		SELECT nvl(ROUND(AVG(AS_GETPOINT),2), 0) FROM AS_ASSIGN WHERE AL_NO = #{al_no}
 	</select>
 	
 	

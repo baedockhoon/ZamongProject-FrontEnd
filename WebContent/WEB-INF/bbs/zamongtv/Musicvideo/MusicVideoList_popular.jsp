@@ -124,7 +124,7 @@
 					
 					<span class="playtime">
 						<strong class="none">재생시간</strong>
-						<span class="time">03:50</span>
+						<span class="time"></span>
 					</span>
 					
 				</a>

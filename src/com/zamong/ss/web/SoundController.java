@@ -86,33 +86,36 @@ public class SoundController {
 	public String albumDetail(
 			//@Param("al_divide") String al_divide,
 			SoundDTO dto,//검색용 파라미터 받기
-			Model model,//리퀘스트 영역 저장용
-			AssignDTO assdto
+			Model model//,//리퀘스트 영역 저장용
+			//AssignDTO assdto
 			) throws Exception{
 		//dto.setAl_divide(al_divide);
 		dto = service.selectAlbumOne(dto);
-
+		AssignDTO assdto = new AssignDTO();
+		/*assdto.setAl_no(dto.getAl_no().toString());*/
+		System.out.println("assdto.getAl_no() : "+assdto.getAl_no());
 		List<SoundDTO> list = service.selectSoundList(dto);
-		
-		count = assign.count(assdto);
-		
-		avg = assign.avg(assdto);
-		
+		System.out.println("1");
+		count = assign.count(dto);
+		System.out.println("2");
+		avg = assign.avg(dto);
+		System.out.println("3");
 		if(count == 0) {
 			count =0;
 			model.addAttribute("assdto",count);
 		}
 		else {
-			count = assign.count(assdto);
+			count = assign.count(dto);
+			System.out.println("4");
 			model.addAttribute("assdto",count);
 		}
-		
 		if(avg == 0) {
 			avg =0;
 			model.addAttribute("assdtod",avg);
 		}
 		else {
-			avg = assign.avg(assdto);
+			avg = assign.avg(dto);
+			System.out.println("5");
 			model.addAttribute("assdtod",avg);
 		}
 		

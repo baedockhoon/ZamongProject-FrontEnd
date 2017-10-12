@@ -396,7 +396,7 @@ function goArtistDetail(at_no, al_divide){
 														<input type="hidden" name="as_regidate" value="1"/>
 														<input type="hidden" name="me_no" value="1"/>
 														--%>
-														<input type="hidden" name="al_no" value="${dto.al_no }"/> 
+														<input type="hidden" name="al_no" value="${dto.al_no }"/>
 														<span class="starinput">
 														  <span class="input">
 														    <input type="radio" name="as_getpoint" id="p2" value="1"><label for="p2">1</label>
